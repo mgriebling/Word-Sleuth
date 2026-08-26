@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Skillful.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
