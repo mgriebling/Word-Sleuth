@@ -25,14 +25,14 @@ struct GameEditor: View {
 	@State private var showWordList: Bool = true
 	@State private var showEmptyAlert: Bool = false
 	@State private var gameID: UUID = UUID()			// forces letter grid updates
-	@State private var level: Difficulty = .five
+	@State private var level: Level = .five
 	
 	var body: some View {
 		NavigationStack {
 			Form {
-				Section("Default Difficulty") {
-					Picker("Difficulty:", selection: $level) {
-						ForEach(Difficulty.allCases.dropFirst(), id:\.self) { level in
+				Section("Default Level") {
+					Picker("Level:", selection: $level) {
+						ForEach(Level.allCases.dropFirst(), id:\.self) { level in
 							Text("\(level.rawValue)").tag(level)
 						}
 					}
@@ -129,9 +129,9 @@ struct GameEditor: View {
 	}
 	
 	func updateGame() {
-		print("Grid size: \(settings.difficulty.size)")
+		print("Grid size: \(settings.level.size)")
 		print("Updating game with \(selectedWordList.words.count) words")
-		lgame = Game(size: settings.difficulty.size, words: selectedWordList)
+		lgame = Game(size: settings.level.size, words: selectedWordList)
 		gameID = UUID()
 		print("Finished game update")
 	}

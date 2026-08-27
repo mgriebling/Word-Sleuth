@@ -14,7 +14,7 @@ public struct SettingsType {
 	var player: Player
 	
 	var gameNumber: Int
-	var difficulty: Difficulty
+	var level: Level
 	
 	var highlight: HighLight
 	var selectionColor: Color
@@ -33,6 +33,9 @@ public struct SettingsType {
 	
 	var sortAcrossCols: Bool
 	
+	var sortPuzzles: PuzzleOrder
+	var sortIncreasing: Bool
+	
 	init() {
 		self.gameNumber = 1
 		self.player = Player()
@@ -45,9 +48,11 @@ public struct SettingsType {
 		self.showTimer = true
 		self.horizontal = .left
 		self.vertical = .below
-		self.difficulty = .five
+		self.level = .five
 		self.fontStyle = .regular
 		self.sortAcrossCols = false
+		self.sortPuzzles = .manual
+		self.sortIncreasing = true
 	}
 	
 	init(_ settings: Self) {
@@ -63,7 +68,8 @@ extension SettingsType: Codable {
 	enum CodingKeys: String, CodingKey {
 		case gameNumber, player, highlight, selectionColor,
 			 selectionOKColor, highlightColor, soundsOn, soundVolume, showTimer,
-			 horizontal, vertical, difficulty, fontStyle, sortAcrossCols
+			 horizontal, vertical, level, fontStyle, sortAcrossCols,
+			 sortPuzzles, sortIncreasing
 	}
 	
 	public init(from decoder: Decoder) throws {
@@ -79,9 +85,11 @@ extension SettingsType: Codable {
 		self.showTimer = try container.decode(Bool.self, forKey: .showTimer)
 		self.horizontal = try container.decode(Horizontal.self, forKey: .horizontal)
 		self.vertical = try container.decode(Vertical.self, forKey: .vertical)
-		self.difficulty = try container.decode(Difficulty.self, forKey: .difficulty)
+		self.level = try container.decode(Level.self, forKey: .level)
 		self.fontStyle = try container.decode(FontStyle.self, forKey: .fontStyle)
 		self.sortAcrossCols = try container.decode(Bool.self, forKey: .sortAcrossCols)
+		self.sortPuzzles = try container.decode(PuzzleOrder.self, forKey: .sortPuzzles)
+		self.sortIncreasing = try container.decode(Bool.self, forKey: .sortIncreasing)
 	}
 	
 	public func encode(to encoder: Encoder) throws {
@@ -97,9 +105,11 @@ extension SettingsType: Codable {
 		try container.encode(self.showTimer, forKey: .showTimer)
 		try container.encode(self.horizontal, forKey: .horizontal)
 		try container.encode(self.vertical, forKey: .vertical)
-		try container.encode(self.difficulty, forKey: .difficulty)
+		try container.encode(self.level, forKey: .level)
 		try container.encode(self.fontStyle, forKey: .fontStyle)
 		try container.encode(self.sortAcrossCols, forKey: .sortAcrossCols)
+		try container.encode(self.sortPuzzles, forKey: .sortPuzzles)
+		try container.encode(self.sortIncreasing, forKey: .sortIncreasing)
 	}
 }
 
@@ -145,13 +155,20 @@ enum FontStyle: Int, CaseIterable, Identifiable, Codable {
 	var id: Self { self }
 }
 
-enum Difficulty: String, CaseIterable, Identifiable, Codable {
+enum PuzzleOrder: String, CaseIterable, Identifiable, Codable {
+	case manual = "Man", level = "Level", name = "Name"
+	case date = "Date"
+	
+	var id: Self { self }
+}
+
+enum Level: String, CaseIterable, Identifiable, Codable {
 	case manual = "Man", three = "3", four = "4", five = "5", six = "6"
 	case seven = "7", eight = "8", nine = "9", ten = "10"
 	
 	var value: Int { Int(self.rawValue) ?? 0 }
 	
-	/// returns the game grid size to give this difficulty
+	/// returns the game grid size to give this level
 	var size: Int {
 		switch self {
 			case .three:  5

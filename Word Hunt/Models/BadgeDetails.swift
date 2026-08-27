@@ -30,7 +30,7 @@ enum BadgeDetails: Int, Codable, CaseIterable {
 			case .puzzle7:
 				"Unravel seven puzzles to earn this badge. A minimum of three need to be at level 7 or higher."
 			case .puzzle10:
-				"Crack ten puzzles to earn this badge. Four need to be at difficulty level 8 or higher."
+				"Crack ten puzzles to earn this badge. Four need to be at level 8 or higher."
 			case .puzzle20:
 				"Decipher twenty puzzles for this badge. At least five need to be at level 9 or higher."
 			case .puzzle30:

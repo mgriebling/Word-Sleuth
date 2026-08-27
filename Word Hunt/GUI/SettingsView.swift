@@ -56,12 +56,24 @@ struct SettingsView: View {
 			
 					HStack {
 						Text("Level:")
-						Picker("Difficulty:", selection: $internalSettings.difficulty) {
-							ForEach(Difficulty.allCases.dropFirst(), id:\.self) { level in
+						Picker("Level:", selection: $internalSettings.level) {
+							ForEach(Level.allCases.dropFirst(), id:\.self) { level in
 								Text("\(level.rawValue)").tag(level)
 							}
 						}
 						.pickerStyle(.segmented)
+					}
+				}
+				
+				Section("Sort Puzzles") {
+					Picker("Order by:", selection: $internalSettings.sortPuzzles) {
+						ForEach(PuzzleOrder.allCases, id:\.self) { level in
+							Text("\(level.rawValue)").tag(level)
+						}
+					}
+					.pickerStyle(.segmented)
+					if internalSettings.sortPuzzles != .manual {
+						Toggle("Increasing Order", isOn: $internalSettings.sortIncreasing)
 					}
 				}
 	
@@ -122,7 +134,7 @@ struct SettingsView: View {
 					
 					HStack {
 						Text("Font Weight:")
-						Picker("Difficulty:", selection: $internalSettings.fontStyle) {
+						Picker("Weight:", selection: $internalSettings.fontStyle) {
 							ForEach(FontStyle.allCases, id:\.self) { level in
 								Text("\(level.rawValue)").tag(level)
 							}
@@ -147,11 +159,10 @@ struct SettingsView: View {
 						ColorPicker("Highlight Color", selection: $internalSettings.highlightColor, supportsOpacity: false)
 					}
 				}
-				
-				Section("Word List Author Default Name") {
-					TextField("Enter your name", text: $internalSettings.player.name)
-						.showClearButton($internalSettings.player.name)
-				}
+//				Section("Word List Author Default Name") {
+//					TextField("Enter your name", text: $internalSettings.player.name)
+//						.showClearButton($internalSettings.player.name)
+//				}
 			}
 			.onAppear {
 				internalSettings = settings

@@ -14,6 +14,7 @@ import SwiftUI
 		set { _board = newValue }
 	}
 	var timer: Timer
+	var creationDate: Date
 	var badges: [Badge] = []
 	
 	// MARK: Convenience attributes
@@ -29,9 +30,10 @@ import SwiftUI
 	var invert: Bool = false
 	
 	// MARK: Initializer
-	init(level: Difficulty, words: WordList) {
+	init(level: Level, words: WordList) {
 		self._board = GameBoard(size: level.size, words: words)
 		self.timer = Timer()
+		self.creationDate = .now
 	}
 	
 	convenience init(size: Int, words: WordList) {
@@ -47,6 +49,7 @@ import SwiftUI
 			self._board = GameBoard(rows, cols: cols, words: words)
 		}
 		self.timer = Timer()
+		self.creationDate = .now
 	}
 	
 	/// Copies a game
@@ -54,6 +57,7 @@ import SwiftUI
 		self._board = game._board
 		self.timer = game.timer
 		self.badges = game.badges
+		self.creationDate = game.creationDate
 	}
 	
 	// MARK: Required for manual Codable compliance, warning issued otherwise
@@ -62,6 +66,7 @@ import SwiftUI
 		self._board = try container.decode(GameBoard.self, forKey: .board)
 		self.timer = try container.decode(Timer.self, forKey: .timer)
 		self.badges = try container.decode([Badge].self, forKey: .badges)
+		self.creationDate = try container.decode(Date.self, forKey: .creationDate)
 	}
 	
 	convenience init?(from file: URL) {
@@ -80,7 +85,7 @@ import SwiftUI
 	}
 	
 	var level: Int {
-		// first calculate average difficulty of the words (5 is typical word length)
+		// first calculate average difficulty level of the words (5 is typical word length)
 		let averageWordLength = 6.0
 		let cells = SettingsType.maxRowRange.upperBound * SettingsType.maxColRange.upperBound
 		let wordsCount = Double(placedWords.count)
@@ -175,9 +180,10 @@ extension Game: Codable {
 		try container.encode(board, forKey: .board)
 		try container.encode(timer, forKey: .timer)
 		try container.encode(badges, forKey: .badges)
+		try container.encode(creationDate, forKey: .creationDate)
 	}
 	
-	enum CodingKeys: String, CodingKey { case board, timer, badges }
+	enum CodingKeys: String, CodingKey { case board, timer, badges, creationDate }
 }
 
 extension Game: Hashable {

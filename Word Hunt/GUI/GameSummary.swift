@@ -17,10 +17,11 @@ struct GameSummary: View {
 	var body: some View {
 		VStack(alignment: .leading) {
 			Text("\(game.board.words.name) Puzzle").font(.title2).bold()
+			Text("Created: ") + Text(game.creationDate, format: Date.FormatStyle(date: .long, time: .shortened))
 			Text("Size: \(game.rows) ⨉ \(game.cols)")
 			Text("Matched: \(game.matched) of \(game.placedWords.count) words")
 			ElapsedTime(text: "Time: ", timer: game.timer)
-			Text("Difficulty: \(game.level)")
+			Text("Level: \(game.level)")
 			WordView(words: game.placedWords, style: .paragraph)
 					.lineLimit(2)
 					.frame(maxWidth: .infinity)

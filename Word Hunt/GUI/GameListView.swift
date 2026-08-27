@@ -15,11 +15,18 @@ struct GameListView: View {
 	
 	@AppStorage(.settings) private var settings
 	
+	enum Filter : String, CaseIterable, Identifiable {
+		case all, won, new, active
+		
+		var id: Filter { return self }
+	}
+	
 	// MARK: Data Owned by me
 	// @State private var gameToEdit: Game?
 	@State private var showGameEditor = false
 	@State private var showOptions = false
 	@State private var isShowingDeleteConfirmation = false
+	@State private var filter = Filter.all
 	
     var body: some View {
 		let colors = [Color.red.opacity(0.5), Color.red.opacity(0.2)]
@@ -34,11 +41,19 @@ struct GameListView: View {
 				GameMenuView(game: nil)
 			}
 		} else {
+			Picker("Filter By:", selection: $filter.animation()) {
+				ForEach(Filter.allCases, id: \.self) { mode in
+					Text("\(mode.rawValue.capitalized)").tag(mode)
+				}
+			}
+			.pickerStyle(.segmented)
 			List(selection: $selection) {
-				ForEach(dataContainer.games) { game in
+				ForEach(filteredSorted) { game in
+					let move = settings.sortPuzzles == .manual
 					NavigationLink(value: game) {
 						GameSummary(game: game)
 							.tag(game)
+							.moveDisabled(move)
 					}
 					.selectionDisabled(true)
 					.foregroundStyle(Color.primary)
@@ -69,6 +84,8 @@ struct GameListView: View {
 					}
 				}
 			}
+			.navigationTitle("Puzzles")
+			.navigationBarTitleDisplayMode(.inline)
 			.onAppear {
 				if selection == nil {
 					print("Nothing selected")
@@ -76,7 +93,7 @@ struct GameListView: View {
 					print("Selected: \(selection!.name)")
 				}
 			}
-			.listStyle(.sidebar)
+			.listStyle(.plain)  // (.sidebar)
 			.onChange(of: selection) {
 				if let selection, !dataContainer.games.contains(selection) {
 					self.selection = nil
@@ -90,10 +107,40 @@ struct GameListView: View {
 		}
     }
 	
+	var filteredSorted: [Game] {
+		var filtered: [Game]
+		switch filter {
+			case .won:
+				filtered = dataContainer.games.filter { $0.isOver }
+			case .new:
+				filtered = dataContainer.games.filter { $0.timer.elapsedTime == 0 }
+			case .active:
+				filtered = dataContainer.games.filter { !$0.isOver && $0.timer.elapsedTime > 0 }
+			default:
+				filtered = dataContainer.games
+		}
+		switch settings.sortPuzzles {
+			case .date:
+				return filtered.sorted {
+					settings.sortIncreasing ? $0.creationDate < $1.creationDate : $0.creationDate > $1.creationDate
+				}
+			case .name:
+				return filtered.sorted {
+					settings.sortIncreasing ? $0.name < $1.name : $0.name > $1.name
+				}
+			case .level:
+				return filtered.sorted {
+					settings.sortIncreasing ? $0.level < $1.level : $0.level > $1.level
+				}
+			default:
+				return filtered
+		}
+	}
+	
 	var addButton: some View {
 		Button("Add Game", systemImage: "plus") {
 			let number = settings.gameNumber
-			let sizes = Array(repeating: settings.difficulty.size, count: number)
+			let sizes = Array(repeating: settings.level.size, count: number)
 			dataContainer.createGames(number: number, sizes: sizes)
 			self.selection = dataContainer.games.first
 		}

@@ -43,7 +43,9 @@ struct WordListView: View {
 				dataContainer.wordLists.move(fromOffsets: offsets, toOffset: destination)
 			}
 		}
-		.listStyle(.sidebar)
+		.navigationTitle("Word Lists")
+		.navigationBarTitleDisplayMode(.inline)
+		.listStyle(.plain)
 		.toolbar {
 			addButton
 		}

@@ -17,7 +17,7 @@ struct GameCreationView: View {
 	@State private var minSize = Int(SettingsType.maxColRange.lowerBound)
 	@State private var maxSize = Int(SettingsType.maxColRange.upperBound)
 	@State private var sizeToAdd: Int?
-	@State private var level: Difficulty = .manual
+	@State private var level: Level = .manual
 	@State private var wordList: WordList?
 	@State private var wordListsToUse = [WordList]()
 	@State private var creationMode = CreationMode.custom
@@ -54,8 +54,8 @@ struct GameCreationView: View {
 				}
 	
 				Section("Puzzle Level") {
-					Picker("Difficulty:", selection: $level) {
-						ForEach(Difficulty.allCases, id:\.self) { level in
+					Picker("Level:", selection: $level) {
+						ForEach(Level.allCases, id:\.self) { level in
 							Text("\(level.rawValue)").tag(level)
 						}
 					}

@@ -12,7 +12,6 @@ struct Timer : Codable {
 	var startTime: Date?
 	var endTime: Date?
 	var elapsedTime: TimeInterval = 0
-	var lastAttemptDate: Date? = Date.now
 	var isOver: Bool = false
 	
 	mutating func update() {
