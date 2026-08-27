@@ -222,7 +222,7 @@ struct GameView: View {
 		let unselected = game.board.wordPlacements.filter { !$0.highlighted }
 		let word = unselected.randomElement()!
 		let index = game.board.wordPlacements.firstIndex(of: word)!
-		settings.player.add(points: -1)
+		settings.player.add(points: -5)
 		Task {
 			withAnimation {
 				game.board.highlightWord(index)

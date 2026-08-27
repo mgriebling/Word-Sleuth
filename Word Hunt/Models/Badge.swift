@@ -11,7 +11,7 @@ import Foundation
 /// A `Game` may be deleted but the timestamp stays.
 /// Once awarded, badges aren't relocked.
 ///
-class Badge: Codable {
+final class Badge {
 	var details: BadgeDetails
 	var game: Game?
 	var timestamp: Date?
@@ -27,6 +27,13 @@ class Badge: Codable {
 		self.details = badge.details
 		self.game = badge.game
 		self.timestamp = badge.timestamp
+	}
+	
+	// MARK: Required for manual Codable compliance, warning issued otherwise
+	required init(from decoder: any Decoder) throws {
+		let container = try decoder.container(keyedBy: CodingKeys.self)
+		self.details = try container.decode(BadgeDetails.self, forKey: .details)
+		self.timestamp = try container.decode(Date.self, forKey: .timestamp)
 	}
 	
 	convenience init?(from file: URL) {
@@ -101,4 +108,15 @@ extension Badge {
 	static var sample: Badge {
 		Badge(details: .puzzle1, timestamp: .now)
 	}
+}
+
+extension Badge: Codable {
+	
+	func encode(to encoder: any Encoder) throws {
+		var container = encoder.container(keyedBy: CodingKeys.self)
+		try container.encode(details, forKey: .details)
+		try container.encode(timestamp, forKey: .timestamp)
+	}
+	
+	enum CodingKeys: String, CodingKey { case details, timestamp }
 }

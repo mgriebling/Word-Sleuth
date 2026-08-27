@@ -12,7 +12,7 @@ struct WinnerView: View {
 	let game: Game
 	let width: CGFloat
 	let points: Int
-	var badge: Badge? = nil
+	var badges = [Badge]()
 	var animation = true
 	
 	@State private var displayValue = 0
@@ -44,11 +44,15 @@ struct WinnerView: View {
 	private func basicView(fontSize: CGFloat, scale: CGFloat) -> some View {
 		VStack(spacing: 0) {
 			let fontSize = fontSize * scale
-			if let badge {
-				Image(badge.details.image)
-					.resizable()
-					.aspectRatio(1, contentMode: .fit)
-					.frame(width: 75 * scale, height: 75 * scale)
+			if !badges.isEmpty {
+				HStack {
+					ForEach(badges) { badge in
+						Image(badge.details.image)
+							.resizable()
+							.aspectRatio(1, contentMode: .fit)
+							.frame(width: 75 * scale, height: 75 * scale)
+					}
+				}
 			}
 			Text("WINNER!")
 				.font(.system(size: fontSize, weight: .heavy, design: .rounded))
@@ -91,7 +95,7 @@ struct WinnerView: View {
 #Preview {
 	@Previewable @State var game = Game(size: 15, words: WordList())
 	WinnerView(game: game, width: 270, points: 100, animation: false)
-	WinnerView(game: game, width: 400, points: 10, badge: Badge(details: .puzzle1))
-	WinnerView(game: game, width: 800, points: 1000, badge: Badge(details: .puzzle100))
+	WinnerView(game: game, width: 400, points: 10, badges: [Badge(details: .puzzle1), Badge(details: .puzzle3)])
+	WinnerView(game: game, width: 800, points: 1000, badges: [Badge(details: .puzzle100)])
 }
 

@@ -262,6 +262,7 @@ struct LetterGridView: View {
 				effect("success.mp3")
 				removeActiveWord(colorIndex: colors.indices.randomElement()!)
 				dataContainer.unlockBadges(newGame: game)
+				settings.player.updateTimes(level: game.level, interval: game.timer.elapsedTime)
 				game.save(to: game.name)
 				print("SUCCESS: Found Word \(targetWord.capitalized)")
 			}

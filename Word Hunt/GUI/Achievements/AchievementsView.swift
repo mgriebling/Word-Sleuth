@@ -11,7 +11,6 @@ struct AchievementsView: View {
 	
 	@State private var unlockedBadges: [Badge] = []
 	@State private var lockedBadges: [Badge] = []
-//	private var moments: [Moment]
 	
 	@Environment(DataContainer.self) private var dataContainer
 	
@@ -45,8 +44,34 @@ struct AchievementsView: View {
 	private var contentStack: some View {
 		VStack(alignment: .leading) {
 			header("Earned Points: \(settings.player.points)")
-			Text("Earn points for each completed puzzle. More difficult puzzles award more points. One point is lost for each **hint \(Image(systemName: "lightbulb"))** button use. Compete with friends to see who has the most points!")
+			Text("Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint \(Image(systemName: "lightbulb"))** button use. Compete with friends to see who has the most points!")
 				.font(.caption)
+//			
+//			let bestTimes =
+//				[Time(level: 10, interval: 300),
+//				Time(level: 3, interval: 1000),
+//				Time(level: 1, interval: 500)]
+			
+			if !settings.player.bestTimes.isEmpty {
+				header("Best Puzzle Times")
+				let s = settings.player.bestTimes
+				Grid(alignment: .center, horizontalSpacing: 20, verticalSpacing: 8) {
+					GridRow {
+						Text("Game Level").bold()
+						Text("Best Time").bold()
+					}
+					.foregroundStyle(.secondary)
+					Divider()
+					
+					// Data Rows
+					ForEach(s.sorted(by: { $0.level < $1.level })) { item in
+						GridRow(alignment: .center) {
+							Text("\(item.level)")
+							Text(Duration.seconds(item.interval), format: .time(pattern: .hourMinuteSecond))
+						}
+					}
+				}
+			}
 
 			if !unlockedBadges.isEmpty {
 				header("Your Earned Badges")
@@ -76,24 +101,9 @@ struct AchievementsView: View {
 	func header(_ text: String) -> some View {
 		Text(text)
 			.font(.subheadline.bold())
-			.padding()
+			.padding(.top)
+			.padding(.bottom, 3)
 	}
-	
-//	func createBadges() -> [Badge] {
-//		var badges: [Badge] = []
-//		for id in BadgeDetails.allCases.dropFirst(3) {
-//			badges.append(Badge(details: id))
-//		}
-//		return badges
-//	}
-//	
-//	func createUnlockedBadges() -> [Badge] {
-//		var badges: [Badge] = []
-//		for id in [BadgeDetails.puzzle1, .puzzle3, .puzzle5] {
-//			badges.append(Badge(details: id))
-//		}
-//		return badges
-//	}
 	
 	private var sortedUnlockedBadges: [Badge] {
 		unlockedBadges.sorted {

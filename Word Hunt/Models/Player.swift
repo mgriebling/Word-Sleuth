@@ -7,20 +7,35 @@
 
 import Foundation
 
+struct Time: Identifiable {
+	let level: Int
+	let interval: TimeInterval
+	let id: Int
+	
+	init(level: Int, interval: TimeInterval) {
+		self.level = level
+		self.interval = interval
+		self.id = level
+	}
+}
+
 struct Player : Codable {
 	var name: String = "Unknown"
 	var points: Int = 0
-	var bestTimes = [Difficulty:Duration]()
+	var bestTimes: [Time] {
+		_bestTimes.map { Time(level: $0.key, interval: $0.value)  }
+	}
+	private var _bestTimes = [Int:TimeInterval]()
 	
 	mutating func add(points: Int) {
 		self.points += points
 	}
 	
-	mutating func updateTimes(level: Difficulty, duration: Duration) {
-		if let d = bestTimes[level] {
-			bestTimes[level] = min(d, duration)
+	mutating func updateTimes(level: Int, interval: TimeInterval) {
+		if let d = _bestTimes[level] {
+			_bestTimes[level] = min(d, interval)
 		} else {
-			bestTimes[level] = duration
+			_bestTimes[level] = interval
 		}
 	}
 }

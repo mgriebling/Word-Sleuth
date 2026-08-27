@@ -23,7 +23,7 @@ struct GameSummary: View {
 			Text("Difficulty: \(game.level)")
 			// Text("Language: \(game.board.words.language.description)")
 			WordView(words: game.placedWords, style: .paragraph)
-				.lineLimit(2)
+					.lineLimit(2)
 		}
 		.onGeometryChange(for: CGFloat.self) { proxy in
 			proxy.size.width
@@ -32,7 +32,9 @@ struct GameSummary: View {
 		}
 		.overlay {
 			if game.isOver {
-				WinnerView(game: game, width: width, points: settings.player.points,
+				WinnerView(game: game, width: width,
+						   points: settings.player.points,
+						   badges: game.badges,
 						   animation: false)
 			}
 		}
