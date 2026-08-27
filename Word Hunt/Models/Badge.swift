@@ -29,15 +29,24 @@ final class Badge {
 		self.timestamp = badge.timestamp
 	}
 	
-	// MARK: Required for manual Codable compliance, warning issued otherwise
-	required init(from decoder: any Decoder) throws {
-		let container = try decoder.container(keyedBy: CodingKeys.self)
-		self.details = try container.decode(BadgeDetails.self, forKey: .details)
-		self.timestamp = try container.decode(Date.self, forKey: .timestamp)
+	// MARK: Required for manual Codable compliance, error otherwise
+	convenience init(from decoder: any Decoder) {
+		self.init(details: BadgeDetails.puzzle1) // dummy init
+		do {
+			let container = try? decoder.container(keyedBy: CodingKeys.self)
+			if let container {
+				self.details = try container.decode(BadgeDetails.self, forKey: .details)
+				self.timestamp = try container.decode(Date?.self, forKey: .timestamp)
+				self.game = nil
+			}
+		} catch {
+			print("Failed to read JSON file: \(error.localizedDescription)")
+		}
 	}
 	
 	convenience init?(from file: URL) {
 		if let rawData = try? Data(contentsOf: file) {
+			print("Reading from \(file.absoluteString)")
 			let decoder = JSONDecoder()
 			if let badge = try? decoder.decode(Badge.self, from: rawData) {
 				print("Loaded badge: \(badge.details.title)")

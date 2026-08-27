@@ -14,7 +14,7 @@ extension View {
 }
 
 struct ElapsedTimeTracker: ViewModifier {
-    // @Environment(\.modelContext) var modelContext
+
     @Environment(\.scenePhase) var scenePhase
 	
     let game: Game
@@ -23,31 +23,38 @@ struct ElapsedTimeTracker: ViewModifier {
         content
             .onAppear {
 				if game.isOver {
+					print("Paused timer \(game.name)")
 					game.timer.pause()
 				} else {
+					print("Started timer \(game.name)")
 					game.timer.start()
 				}
             }
             .onDisappear {
+				print("Paused timer \(game.name)")
 				game.timer.pause()
             }
             .onChange(of: game) { oldGame, newGame in
+				print("Paused timer \(oldGame.name)")
 				oldGame.timer.pause()
 				if !newGame.isOver {
+					print("Started timer \(newGame.name)")
 					newGame.timer.start()
 				}
             }
             .onChange(of: scenePhase) {
                 switch scenePhase {
-					case .active: if !game.isOver { game.timer.start() }
-					case .background: game.timer.pause()
+					case .active:
+						if !game.isOver {
+							print("Started timer \(game.name)")
+							game.timer.start()
+						}
+					case .background:
+						print("Paused timer \(game.name)")
+						game.timer.pause()
 					default: break
                 }
             }
-//            .onReceive(modelContextWillSavePublisher) { _ in
-//				game.timer.update()
-//				print("updated elapsed time to \(game.timer.elapsedTime)")
-//            }
     }
 }
 

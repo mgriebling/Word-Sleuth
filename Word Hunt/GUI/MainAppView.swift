@@ -73,9 +73,6 @@ struct MainAppView: View {
 							.onTapGesture {
 								columnVisibility = .detailOnly
 							}
-							.onAppear {
-								print("Showing \(game.name)")
-							}
 					} else {
 						blankView(for: activeTab)
 					}

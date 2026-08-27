@@ -22,7 +22,10 @@ struct WordView: View {
 			if style == .columns {
 				wordColumns
 			} else {
-				concatenatedText
+				HStack {
+					concatenatedText
+					Spacer()
+				}
 			}
 		}
 		.fontWeight(.regular)

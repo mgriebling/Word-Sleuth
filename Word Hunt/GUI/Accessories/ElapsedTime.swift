@@ -17,7 +17,6 @@ struct ElapsedTime: View {
     var body: some View {
 		if settings.showTimer {
 			HStack {
-				//if text.isEmpty { Text("\(Image(systemName: "clock"))") }
 				if !text.isEmpty { Text(text) }
 				if let start = timer.startTime {
 					let offset = start - timer.elapsedTime

@@ -107,7 +107,7 @@ struct LetterGridView: View {
 			)
 			.overlay {
 				if game.isOver && animateWin {
-					WinnerView(game: game, width: width, points: settings.player.points)
+					WinnerView(game: game, width: width, points: settings.player.points, badges: game.badges)
 				}
 			}
 	}
@@ -261,9 +261,6 @@ struct LetterGridView: View {
 			if let _ = dragStartCell, let _ = dragCurrentCell {
 				effect("success.mp3")
 				removeActiveWord(colorIndex: colors.indices.randomElement()!)
-				dataContainer.unlockBadges(newGame: game)
-				settings.player.updateTimes(level: game.level, interval: game.timer.elapsedTime)
-				game.save(to: game.name)
 				print("SUCCESS: Found Word \(targetWord.capitalized)")
 			}
 		} else {
@@ -273,7 +270,10 @@ struct LetterGridView: View {
 		
 		if game.isOver {
 			effect("victory-chime.mp3")
-			game.timer.pause()
+			game.timer.stop()
+			dataContainer.unlockBadges(newGame: game)
+			settings.player.updateTimes(level: game.level, interval: game.timer.elapsedTime)
+			game.save(to: game.name)
 			settings.player.add(points: game.words.count)
 			animateWin = true
 		}

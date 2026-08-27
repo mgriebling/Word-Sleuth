@@ -97,29 +97,7 @@ struct GameListView: View {
 			dataContainer.createGames(number: number, sizes: sizes)
 			self.selection = dataContainer.games.first
 		}
-//		.sheet(isPresented: $showOptions, content: {
-//			GameCreationView(games: $games, wordLists: datawordLists)
-//		})
-//		.sheet(isPresented: $showGameEditor) {
-//			GameEditor(game: $gameToEdit) {
-//				if let gameToEdit {
-//					if !games.contains(gameToEdit) {
-//						games.insert(gameToEdit, at: 0)
-//					}
-//				}
-//			}
-//		}
 	}
-	
-//	private func addSampleGames() {
-//		if games.isEmpty {
-//			for i in 0..<4 {
-//				let game = Game(size: 14 + i*2,
-//								words: SampleWordLists.all.randomElement()!)
-//				games.append(game)
-//			}
-//		}
-//	}
 }
 
 #Preview {

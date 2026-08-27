@@ -21,18 +21,19 @@ struct GameSummary: View {
 			Text("Matched: \(game.matched) of \(game.placedWords.count) words")
 			ElapsedTime(text: "Time: ", timer: game.timer)
 			Text("Difficulty: \(game.level)")
-			// Text("Language: \(game.board.words.language.description)")
 			WordView(words: game.placedWords, style: .paragraph)
 					.lineLimit(2)
+					.frame(maxWidth: .infinity)
 		}
 		.onGeometryChange(for: CGFloat.self) { proxy in
 			proxy.size.width
 		} action: { width in
-			self.width = width * 0.6
+			self.width = width
+			print("Width = \(self.width)")
 		}
 		.overlay {
 			if game.isOver {
-				WinnerView(game: game, width: width,
+				WinnerView(game: game, width: max(width, 275) * 0.6,
 						   points: settings.player.points,
 						   badges: game.badges,
 						   animation: false)

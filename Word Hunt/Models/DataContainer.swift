@@ -90,7 +90,8 @@ class DataContainer {
 		for badge in newlyUnlocked {
 			newGame.badges.append(badge)
 			badge.game = newGame
-			badge.timestamp = newGame.timer.startTime
+			badge.timestamp = newGame.timer.endTime
+			badge.save(to: badge.details.title)
 		}
 	}
 	
