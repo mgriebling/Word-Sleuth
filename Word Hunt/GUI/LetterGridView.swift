@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import Subsonic
+// import Subsonic
 
 /// Row x Col Game Board Matrix
 struct LetterGridView: View {
@@ -259,20 +259,20 @@ struct LetterGridView: View {
 		if let targetWord = detectedWord {
 			// Check to avoid duplicates
 			if let _ = dragStartCell, let _ = dragCurrentCell {
-				effect("success.mp3")
+				effect("success")
 				removeActiveWord(colorIndex: colors.indices.randomElement()!)
 				print("SUCCESS: Found Word \(targetWord.capitalized)")
 			}
 		} else {
 			game.selectedWord = ""
-			effect("oops.mp3")
+			effect("oops")
 		}
 		
 		if game.isOver {
-			effect("victory-chime.mp3")
+			effect("victory-chime")
 			game.timer.stop()
 			dataContainer.unlockBadges(newGame: game)
-			settings.player.updateTimes(level: game.level, interval: game.timer.elapsedTime)
+			settings.player.updateTimes(level: game.level, interval: TimeInterval(game.timer.elapsedTime))
 			game.save(to: game.name)
 			settings.player.add(points: game.words.count)
 			animateWin = true
@@ -288,7 +288,7 @@ struct LetterGridView: View {
 	
 	private func effect(_ sound: String) {
 		if settings.soundsOn {
-			play(sound: sound, volume: settings.soundVolume)
+			SoundManager.shared.playSound(named: sound, type: "mp3", volume: Float(settings.soundVolume))
 		}
 	}
 }

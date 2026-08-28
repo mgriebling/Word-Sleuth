@@ -16,7 +16,7 @@ struct GameListView: View {
 	@AppStorage(.settings) private var settings
 	
 	enum Filter : String, CaseIterable, Identifiable {
-		case all, won, new, active
+		case all, recent, active, new
 		
 		var id: Filter { return self }
 	}
@@ -27,6 +27,7 @@ struct GameListView: View {
 	@State private var showOptions = false
 	@State private var isShowingDeleteConfirmation = false
 	@State private var filter = Filter.all
+	@State private var showWins = true
 	
     var body: some View {
 		let colors = [Color.red.opacity(0.5), Color.red.opacity(0.2)]
@@ -41,12 +42,22 @@ struct GameListView: View {
 				GameMenuView(game: nil)
 			}
 		} else {
-			Picker("Filter By:", selection: $filter.animation()) {
-				ForEach(Filter.allCases, id: \.self) { mode in
-					Text("\(mode.rawValue.capitalized)").tag(mode)
+			HStack {
+				Picker("Filter By:", selection: $filter.animation()) {
+					ForEach(Filter.allCases, id: \.self) { mode in
+						Text("\(mode.rawValue.capitalized)").tag(mode)
+					}
 				}
+				.pickerStyle(.segmented)
+				
+				Button(action: { withAnimation { showWins.toggle() }}) {
+					MedalIcon(noMedal: !showWins, scaling: 0.25)
+				}
+				.padding(.trailing, 2)
+				.buttonBorderShape(.capsule)
+				.buttonStyle(.bordered)
+				.disabled(filter == .new || filter == .active)
 			}
-			.pickerStyle(.segmented)
 			List(selection: $selection) {
 				ForEach(filteredSorted) { game in
 					let move = settings.sortPuzzles == .manual
@@ -110,14 +121,21 @@ struct GameListView: View {
 	var filteredSorted: [Game] {
 		var filtered: [Game]
 		switch filter {
-			case .won:
-				filtered = dataContainer.games.filter { $0.isOver }
+			case .recent:
+				filtered = dataContainer.games.filter {
+					showWins ? $0.isRecent : $0.isRecent && !$0.isOver
+				}
 			case .new:
-				filtered = dataContainer.games.filter { $0.timer.elapsedTime == 0 }
+				filtered = dataContainer.games.filter { 	$0.timer.elapsedTime == 0
+				}
 			case .active:
-				filtered = dataContainer.games.filter { !$0.isOver && $0.timer.elapsedTime > 0 }
+				filtered = dataContainer.games.filter {
+					!$0.isOver && $0.timer.elapsedTime > 0
+				}
 			default:
-				filtered = dataContainer.games
+				filtered = dataContainer.games.filter {
+					showWins ? true : !$0.isOver
+				}
 		}
 		switch settings.sortPuzzles {
 			case .date:

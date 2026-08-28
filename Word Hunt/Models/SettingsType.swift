@@ -156,8 +156,7 @@ enum FontStyle: Int, CaseIterable, Identifiable, Codable {
 }
 
 enum PuzzleOrder: String, CaseIterable, Identifiable, Codable {
-	case manual = "Man", level = "Level", name = "Name"
-	case date = "Date"
+	case manual = "Man", level = "Level", name = "Name", date = "Date"
 	
 	var id: Self { self }
 }

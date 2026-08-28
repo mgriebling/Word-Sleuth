@@ -22,38 +22,45 @@ struct ElapsedTimeTracker: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onAppear {
-				if game.isOver {
-					print("Paused timer \(game.name)")
-					game.timer.pause()
-				} else {
-					print("Started timer \(game.name)")
-					game.timer.start()
-				}
+				game.timer.handleViewAppearing()
+//				if game.isOver {
+//					print("Paused timer \(game.name)")
+//					game.timer.pause()
+//				} else {
+//					print("Started timer \(game.name)")
+//					game.timer.start()
+//				}
             }
             .onDisappear {
-				print("Paused timer \(game.name)")
-				game.timer.pause()
+				game.timer.handleViewDisappearing()
+//				print("Paused timer \(game.name)")
+//				game.timer.pause()
             }
-            .onChange(of: game) { oldGame, newGame in
-				print("Paused timer \(oldGame.name)")
-				oldGame.timer.pause()
-				if !newGame.isOver {
-					print("Started timer \(newGame.name)")
-					newGame.timer.start()
+//            .onChange(of: game) { oldGame, newGame in
+//				print("Paused timer \(oldGame.name)")
+//				oldGame.timer.pause()
+//				if !newGame.isOver {
+//					print("Started timer \(newGame.name)")
+//					newGame.timer.start()
+//				}
+//            }
+            .onChange(of: scenePhase) { _, newPhase in
+				if newPhase == .active {
+					game.timer.handleViewAppearing()
+				} else {
+					game.timer.handleViewDisappearing()
 				}
-            }
-            .onChange(of: scenePhase) {
-                switch scenePhase {
-					case .active:
-						if !game.isOver {
-							print("Started timer \(game.name)")
-							game.timer.start()
-						}
-					case .background:
-						print("Paused timer \(game.name)")
-						game.timer.pause()
-					default: break
-                }
+//                switch scenePhase {
+//					case .active:
+//						if !game.isOver {
+//							print("Started timer \(game.name)")
+//							game.timer.start()
+//						}
+//					case .background:
+//						print("Paused timer \(game.name)")
+//						game.timer.pause()
+//					default: break
+//                }
             }
     }
 }

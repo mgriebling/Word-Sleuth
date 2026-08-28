@@ -13,9 +13,11 @@ import SwiftUI
 		get { invert ? _board.transpose() : _board }
 		set { _board = newValue }
 	}
-	var timer: Timer
+	var timer: MyTimer
 	var creationDate: Date
 	var badges: [Badge] = []
+	
+	private let oneWeek: TimeInterval = 7 * 24 * 60 * 60 // seconds/week
 	
 	// MARK: Convenience attributes
 	var placedWords: [PlacedWord] { _board.wordPlacements }
@@ -25,6 +27,7 @@ import SwiftUI
 	var matched: Int 			  { placedWords.filter({ $0.highlighted }).count }
 	var words: [String]			  { placedWords.map { $0.word }}
 	var isOver: Bool 		  	  { matched == placedWords.count }
+	var isRecent: Bool 		  	  { creationDate.timeIntervalSinceNow < oneWeek }
 	
 	var selectedWord: String = ""
 	var invert: Bool = false
@@ -32,7 +35,7 @@ import SwiftUI
 	// MARK: Initializer
 	init(level: Level, words: WordList) {
 		self._board = GameBoard(size: level.size, words: words)
-		self.timer = Timer()
+		self.timer = MyTimer(name: words.name)
 		self.creationDate = .now
 	}
 	
@@ -48,7 +51,7 @@ import SwiftUI
 		} else {
 			self._board = GameBoard(rows, cols: cols, words: words)
 		}
-		self.timer = Timer()
+		self.timer = MyTimer(name: words.name)
 		self.creationDate = .now
 	}
 	
@@ -64,7 +67,7 @@ import SwiftUI
 	required init(from decoder: any Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		self._board = try container.decode(GameBoard.self, forKey: .board)
-		self.timer = try container.decode(Timer.self, forKey: .timer)
+		self.timer = try container.decode(MyTimer.self, forKey: .timer)
 		self.badges = try container.decode([Badge].self, forKey: .badges)
 		self.creationDate = try container.decode(Date.self, forKey: .creationDate)
 	}

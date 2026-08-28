@@ -100,7 +100,7 @@ struct SettingsView: View {
 					Toggle("Enable", isOn: $internalSettings.soundsOn)
 						.onChange(of: internalSettings.soundsOn) {
 							if internalSettings.soundsOn {
-								play(sound: "success.mp3", volume: internalSettings.soundVolume)
+								play(sound: "success", volume: internalSettings.soundVolume)
 							}
 						}
 					HStack {
@@ -114,7 +114,7 @@ struct SettingsView: View {
 							Image(systemName: "speaker.wave.3")
 						} onEditingChanged: { editing in
 							if !editing {
-								play(sound: "success.mp3", volume: internalSettings.soundVolume)
+								play(sound: "success", volume: internalSettings.soundVolume)
 							}
 						}
 					}
@@ -184,6 +184,10 @@ struct SettingsView: View {
 //				}
 			}
 		}
+	}
+	
+	private func play(sound: String, volume: Double) {
+		SoundManager.shared.playSound(named: sound, type: "mp3", volume: Float(settings.soundVolume))
 	}
 }
 
