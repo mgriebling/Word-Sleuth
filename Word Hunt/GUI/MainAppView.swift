@@ -28,7 +28,7 @@ struct MainAppView: View {
 				withAnimation {
 					dataContainer.isLandscape = geometry.size.width > geometry.size.height
 				}
-				print("Top Size = \(geometry.size.width) x \(geometry.size.height)")
+				// print("Top Size = \(geometry.size.width) x \(geometry.size.height)")
 			}
 			.onChange(of: activeTab, showDetailOrAll)
 			.onChange(of: selectedPuzzle, showDetailOnly)
@@ -88,7 +88,7 @@ struct MainAppView: View {
 	}
 	
 	private func initialize(size: CGSize) {
-		print("Init Size = \(size.width) x \(size.height)")
+		// print("Init Size = \(size.width) x \(size.height)")
 		withAnimation {
 			dataContainer.isLandscape = size.width > size.height
 			selectedPuzzle = dataContainer.games.first

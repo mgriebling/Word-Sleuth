@@ -44,12 +44,10 @@ struct GameMenuView: View {
 				Label("About Word Sleuth", systemImage: "info.circle")
 			}
 			Divider()
-			Section("Advanced") {
-				Button(action: { isShowingDeleteConfirmation = true } ) {
-					Label("Delete All", systemImage: "trash")
-				}
-				.disabled(dataContainer.games.isEmpty)
+			Button(action: { isShowingDeleteConfirmation = true } ) {
+				Label("Delete All", systemImage: "trash")
 			}
+			.disabled(dataContainer.games.isEmpty)
 		} label: {
 			Image(systemName: "ellipsis")
 		}

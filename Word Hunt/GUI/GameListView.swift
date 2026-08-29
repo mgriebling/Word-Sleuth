@@ -51,7 +51,7 @@ struct GameListView: View {
 				.pickerStyle(.segmented)
 				
 				Button(action: { withAnimation { showWins.toggle() }}) {
-					MedalIcon(noMedal: !showWins, scaling: 0.25)
+					MedalIcon(noMedal: showWins, scaling: 0.25)
 				}
 				.padding(.trailing, 2)
 				.buttonBorderShape(.capsule)
@@ -64,7 +64,6 @@ struct GameListView: View {
 					NavigationLink(value: game) {
 						GameSummary(game: game)
 							.tag(game)
-							.moveDisabled(move)
 					}
 					.selectionDisabled(true)
 					.foregroundStyle(Color.primary)
@@ -74,12 +73,12 @@ struct GameListView: View {
 								selection == game ? LinearGradient(colors: colors, startPoint: .bottom, endPoint: .top) : LinearGradient(colors: [.clear, .clear], startPoint: .bottom, endPoint: .top)
 							)
 					)
-					.contextMenu {
-						ShareLink(item: game.url(name: game.name))
-						Button(action: {} ) {
-							Label("Save Puzzle", systemImage: "arrow.down.doc")
-						}
-					}
+//					.contextMenu {
+//						ShareLink(item: game.url(name: game.name))
+//						Button(action: {} ) {
+//							Label("Save Puzzle", systemImage: "arrow.down.doc")
+//						}
+//					}
 				}
 				.onDelete { indexSet in
 					withAnimation {
@@ -114,6 +113,7 @@ struct GameListView: View {
 			.toolbar {
 				addButton
 				GameMenuView(game: selection)
+					.tint(Color.accentColor)
 			}
 		}
     }
@@ -126,7 +126,9 @@ struct GameListView: View {
 					showWins ? $0.isRecent : $0.isRecent && !$0.isOver
 				}
 			case .new:
-				filtered = dataContainer.games.filter { 	$0.timer.elapsedTime == 0
+				filtered = dataContainer.games.filter {
+					showWins ? $0.timer.elapsedTime == 0
+						     : $0.timer.elapsedTime == 0 && !$0.isOver
 				}
 			case .active:
 				filtered = dataContainer.games.filter {
@@ -162,6 +164,7 @@ struct GameListView: View {
 			dataContainer.createGames(number: number, sizes: sizes)
 			self.selection = dataContainer.games.first
 		}
+		.tint(Color.accentColor)
 	}
 }
 

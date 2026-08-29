@@ -46,10 +46,10 @@ final class Badge {
 	
 	convenience init?(from file: URL) {
 		if let rawData = try? Data(contentsOf: file) {
-			print("Reading from \(file.absoluteString)")
+//			print("Reading from \(file.absoluteString)")
 			let decoder = JSONDecoder()
 			if let badge = try? decoder.decode(Badge.self, from: rawData) {
-				print("Loaded badge: \(badge.details.title)")
+//				print("Loaded badge: \(badge.details.title)")
 				self.init(badge: badge)
 				return
 			} else {

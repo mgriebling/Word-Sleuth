@@ -11,26 +11,42 @@ struct GameSummary: View {
 	let game: Game
 	
 	@State private var width: CGFloat = 200
+	@State private var showWords = false
 	
 	@AppStorage(.settings) private var settings
-	
+
 	var body: some View {
 		VStack(alignment: .leading) {
 			Text("\(game.board.words.name) Puzzle").font(.title2).bold()
-			Text("Created: ") + Text(game.creationDate, format: Date.FormatStyle(date: .long, time: .shortened))
-			Text("Size: \(game.rows) ⨉ \(game.cols)")
-			Text("Matched: \(game.matched) of \(game.placedWords.count) words")
-			ElapsedTime(text: "Time: ", timer: game.timer)
-			Text("Level: \(game.level)")
-			WordView(words: game.placedWords, style: .paragraph)
-					.lineLimit(2)
-					.frame(maxWidth: .infinity)
+			Text("Created: ") +
+			Text(game.creationDate.formatted(.relative(presentation: .named, unitsStyle: .wide)).capitalized)
+			if game.matched > 0 {
+				Text("Matched: \(game.matched) of \(game.placedWords.count) words")
+			}
+			if game.timer.elapsedTime > 0 {
+				ElapsedTime(text: "Elapsed Time: ", timer: game.timer)
+			}
+			Text("Level: \(game.level) (\(game.rows) ⨉ \(game.cols))")
+				.frame(maxWidth: .infinity, alignment: .leading)
+			Text("Words: \(Image(systemName: showWords ? "arrow.down" : "arrow.right"))")
+				.foregroundStyle(Color.accentColor)
+				.highPriorityGesture(
+					TapGesture(count: 1)
+						.onEnded {
+							withAnimation {
+								showWords.toggle()
+							}
+						}
+				)
+			if showWords {
+				WordView(words: game.placedWords, style: .paragraph)
+			}
 		}
 		.onGeometryChange(for: CGFloat.self) { proxy in
 			proxy.size.width
 		} action: { width in
 			self.width = width
-			print("Width = \(self.width)")
+			// print("Width = \(self.width)")
 		}
 		.overlay {
 			if game.isOver {

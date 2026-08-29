@@ -50,7 +50,7 @@ public struct SettingsType {
 		self.vertical = .below
 		self.level = .five
 		self.fontStyle = .regular
-		self.sortAcrossCols = false
+		self.sortAcrossCols = true
 		self.sortPuzzles = .manual
 		self.sortIncreasing = true
 	}

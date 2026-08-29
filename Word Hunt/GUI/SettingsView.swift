@@ -66,14 +66,19 @@ struct SettingsView: View {
 				}
 				
 				Section("Sort Puzzles") {
-					Picker("Order by:", selection: $internalSettings.sortPuzzles) {
-						ForEach(PuzzleOrder.allCases, id:\.self) { level in
-							Text("\(level.rawValue)").tag(level)
+					HStack {
+						Picker("Order by:", selection: $internalSettings.sortPuzzles) {
+							ForEach(PuzzleOrder.allCases, id:\.self) { level in
+								Text("\(level.rawValue)").tag(level)
+							}
 						}
-					}
-					.pickerStyle(.segmented)
-					if internalSettings.sortPuzzles != .manual {
-						Toggle("Increasing Order", isOn: $internalSettings.sortIncreasing)
+						.pickerStyle(.segmented)
+					
+						Button("", systemImage: internalSettings.sortIncreasing ? "arrow.down" : "arrow.up")
+						{
+							internalSettings.sortIncreasing.toggle()
+						}
+						.disabled(internalSettings.sortPuzzles == .manual)
 					}
 				}
 	
@@ -103,23 +108,23 @@ struct SettingsView: View {
 								play(sound: "success", volume: internalSettings.soundVolume)
 							}
 						}
-					HStack {
-						Text("Volume:")
-						Text("\(Int(internalSettings.soundVolume * 100))%")
-						Slider(value: $internalSettings.soundVolume, in: 0.0...1.0) {
-							Text("Sound Volume")
-						} minimumValueLabel: {
-							Image(systemName: "speaker")
-						} maximumValueLabel: {
-							Image(systemName: "speaker.wave.3")
-						} onEditingChanged: { editing in
-							if !editing {
-								play(sound: "success", volume: internalSettings.soundVolume)
+					if internalSettings.soundsOn {
+						HStack {
+							Text("Volume:")
+							Text("\(Int(internalSettings.soundVolume * 100))%")
+							Slider(value: $internalSettings.soundVolume, in: 0.0...1.0) {
+								Text("Sound Volume")
+							} minimumValueLabel: {
+								Image(systemName: "speaker")
+							} maximumValueLabel: {
+								Image(systemName: "speaker.wave.3")
+							} onEditingChanged: { editing in
+								if !editing {
+									play(sound: "success", volume: internalSettings.soundVolume)
+								}
 							}
 						}
 					}
-					.opacity(internalSettings.soundsOn ? 1.0 : 0.5)
-					.disabled(!internalSettings.soundsOn)
 				}
 				
 				Section("Grid Appearance") {
@@ -159,10 +164,6 @@ struct SettingsView: View {
 						ColorPicker("Highlight Color", selection: $internalSettings.highlightColor, supportsOpacity: false)
 					}
 				}
-//				Section("Word List Author Default Name") {
-//					TextField("Enter your name", text: $internalSettings.player.name)
-//						.showClearButton($internalSettings.player.name)
-//				}
 			}
 			.onAppear {
 				internalSettings = settings
@@ -178,10 +179,7 @@ struct SettingsView: View {
 				EditToolbar() {
 					settings = internalSettings
 					dismiss()
-				} //(okDisabled: internalSettings == settings) {
-//					settings = internalSettings
-//					dismiss()
-//				}
+				} 
 			}
 		}
 	}

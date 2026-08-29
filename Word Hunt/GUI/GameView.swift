@@ -134,6 +134,7 @@ struct GameView: View {
 		}
 		let settingsButton = Button(action: { showSettings = true } ) {
 			Label("Settings", systemImage: "gearshape")
+				.foregroundStyle(.secondary)
 		}
 		let winButton = Button(action: { showAwards = true } ) {
 			Text("\(Image(systemName: game.badges.isEmpty ? "fireworks" : "medal"))")
@@ -165,6 +166,7 @@ struct GameView: View {
 						.fontDesign(.monospaced)
 				}
 			}
+			.foregroundStyle(.secondary)
 		}
 		if #available(iOS 26.0, *) {
 			titleItem
@@ -176,11 +178,14 @@ struct GameView: View {
 			Button(action: highlightWord) {
 				Image(systemName: "lightbulb")
 			}
+			.tint(Color.accentColor)
 			.disabled(game.isOver)
 			if horizontalSizeClass != .compact {
 				settingsButton
+					.tint(Color.accentColor)
 			}
 			GameMenuView(game: game, isInDetail: true)
+				.tint(Color.accentColor)
 		}
 	}
 	
@@ -190,9 +195,11 @@ struct GameView: View {
 			Text(name + " Puzzle")
 				.allowsTightening(true)
 				.fixedSize(horizontal: true, vertical: false)
+				.foregroundStyle(.secondary)
 		} else {
 			Text(name)
 				.allowsTightening(true)
+				.foregroundStyle(.secondary)
 		}
 	}
 	
