@@ -64,7 +64,7 @@ struct WordView: View {
 	
 	@ViewBuilder
 	private func sortedAcross(maxColumns: Int) -> some View {
-		let colWidth = CGFloat(9 * maxWordLength)
+		let colWidth = CGFloat(10 * maxWordLength)
 		let columns = Array(repeating:GridItem(.flexible(minimum: colWidth)), count: maxColumns)
 		ScrollView(.vertical) {
 			LazyVGrid(columns: columns, alignment: .leading) {

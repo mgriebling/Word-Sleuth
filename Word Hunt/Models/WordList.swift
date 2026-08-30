@@ -310,7 +310,7 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 		var words: [String] = []
 		while words.count < total {
 			if let word = largeWordBank.randomElement() {
-				if size.contains(word.count), !word.contains(word.capitalized) {
+				if size.contains(word.count), !words.contains(word.capitalized) {
 					words.append(word.capitalized)
 				}
 			}

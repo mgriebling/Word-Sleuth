@@ -10,19 +10,23 @@ import SwiftUI
 struct GameCreationView: View {
 	@Environment(DataContainer.self) private var dataContainer
 	
-	@State private var numberOfGames = 6
-	@State private var wordListOption = 2
+	@State private var numberOfGames = 1
+	@State private var wordListOption = 1
 	@State private var size = -2
 	@State private var sizes = [Int]()
 	@State private var minSize = Int(SettingsType.maxColRange.lowerBound)
 	@State private var maxSize = Int(SettingsType.maxColRange.upperBound)
 	@State private var sizeToAdd: Int?
-	@State private var level: Level = .manual
+	@State private var level = Level.five
+	@State private var prevLevel = Level.five
 	@State private var wordList: WordList?
 	@State private var wordListsToUse = [WordList]()
-	@State private var creationMode = CreationMode.custom
+	@State private var creationMode = CreationMode.oneGame
+	@State private var showSize = false
+	@State private var showWordList = false
 	
-    var body: some View {
+	var body: some View {
+		let sortedWordList = dataContainer.wordLists.sorted { $0.name < $1.name }
 		NavigationStack {
 			Form {
 				Section("Number of Puzzles to Create") {
@@ -60,65 +64,83 @@ struct GameCreationView: View {
 						}
 					}
 					.pickerStyle(.segmented)
+					.onChange(of: level) { prev, newValue in
+						prevLevel = prev
+						showSize = level == .manual
+					}
 				}
-				if level == .manual {
-					Section("Puzzle Size") {
-						Picker("Choose size:", selection: $size) {
-							Text("Random").tag(0)
-							Text("Random in range").tag(-1)
-							Text("Selected Sizes").tag(-2)
+				
+				let puzzleTitle = "Puzzle Size" + (level == .manual ? "" : " (" + puzzleSize(size: level.size) + ")")
+
+				Section(puzzleTitle, isExpanded: $showSize) {
+					Picker("Choose size:", selection: $size) {
+						Text("Random").tag(0)
+						Text("Random in range").tag(-1)
+						Text("Selected Sizes").tag(-2)
+						ForEach(SettingsType.maxRowRange, id:\.self) { index in
+							Text(puzzleSize(size: index)).tag(index)
+						}
+					}
+					.onAppear {
+						size = prevLevel.size
+					}
+					if size == -1 {
+						Stepper("Min: " + puzzleSize(size:minSize), value: $minSize, in: SettingsType.maxRowRange)
+						Stepper("Max: " + puzzleSize(size:maxSize), value: $maxSize, in: SettingsType.maxRowRange)
+					} else if size == -2 {
+						Picker("Size:", selection: $sizeToAdd) {
 							ForEach(SettingsType.maxRowRange, id:\.self) { index in
-								Text(puzzleSize(size: index)).tag(index)
+								Text(puzzleSize(size:index)).tag(index)
 							}
 						}
-						if size == -1 {
-							Stepper("Min: " + puzzleSize(size:minSize), value: $minSize, in: SettingsType.maxRowRange)
-							Stepper("Max: " + puzzleSize(size:maxSize), value: $maxSize, in: SettingsType.maxRowRange)
-						} else if size == -2 {
-							Picker("Size:", selection: $sizeToAdd) {
-								ForEach(SettingsType.maxRowRange, id:\.self) { index in
-									Text(puzzleSize(size:index)).tag(index)
-								}
+						.onChange(of: sizeToAdd) {
+							if let size = sizeToAdd {
+								sizes.append(size)
 							}
-							.onChange(of: sizeToAdd) {
-								if let size = sizeToAdd {
-									sizes.append(size)
-								}
-							}
-							List(sizes, id: \.self) { size in
-								Text(puzzleSize(size:size))
-							}
+						}
+						List(sizes, id: \.self) { size in
+							Text(puzzleSize(size:size))
 						}
 					}
-					Section("Word List to Use") {
-						Picker("Word List to Use:", selection: $wordListOption) {
-							Text("Random").tag(1)
-							Text("Selected").tag(2)
+				}
+				.onTapGesture {
+					showSize.toggle()
+					if showSize { level = .manual }
+					else { level = prevLevel }
+				}
+		
+				Section("Word List to Use", isExpanded: $showWordList) {
+					Picker("Word List to Use:", selection: $wordListOption) {
+						Text("Random").tag(1)
+						Text("Selected").tag(2)
+					}
+					.pickerStyle(.segmented)
+					if wordListOption == 2 {
+						Picker("Choose:", selection: $wordList) {
+							ForEach(sortedWordList) { list in
+								Text("\(list.name)").tag(list)
+							}
 						}
-						.pickerStyle(.segmented)
-						if wordListOption == 2 {
-							Picker("Choose:", selection: $wordList) {
-								ForEach(dataContainer.wordLists) { list in
-									Text("\(list.name)").tag(list)
-								}
+						.onChange(of: wordList) {
+							if let words = wordList {
+								wordListsToUse.append(words)
 							}
-							.onChange(of: wordList) {
-								if let words = wordList {
-									wordListsToUse.append(words)
-								}
-							}
-							
-							List(wordListsToUse, id: \.self) { list in
-								Text(list.name)
-							}
+						}
+						
+						List(wordListsToUse, id: \.self) { list in
+							Text(list.name)
 						}
 					}
+				}
+				.onTapGesture {
+					showWordList.toggle()
+					if !showWordList { wordListOption = 1 }
 				}
 			}
 			.toolbar {
 				EditToolbar(onDone: createGames)
 			}
-			.navigationTitle(Text("Advanced Game Generator"))
+			.navigationTitle("Advanced Game Generator")
 			.navigationBarTitleDisplayMode(.inline)
 		}
     }

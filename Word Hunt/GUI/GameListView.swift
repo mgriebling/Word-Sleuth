@@ -60,7 +60,6 @@ struct GameListView: View {
 			}
 			List(selection: $selection) {
 				ForEach(filteredSorted) { game in
-					let move = settings.sortPuzzles == .manual
 					NavigationLink(value: game) {
 						GameSummary(game: game)
 							.tag(game)
@@ -73,12 +72,14 @@ struct GameListView: View {
 								selection == game ? LinearGradient(colors: colors, startPoint: .bottom, endPoint: .top) : LinearGradient(colors: [.clear, .clear], startPoint: .bottom, endPoint: .top)
 							)
 					)
-//					.contextMenu {
-//						ShareLink(item: game.url(name: game.name))
-//						Button(action: {} ) {
-//							Label("Save Puzzle", systemImage: "arrow.down.doc")
-//						}
-//					}
+					.swipeActions(edge: .leading, allowsFullSwipe: false) {
+						ShareLink(item: game.url(name: game.name))
+							.tint(Color(.systemBlue))
+						Button(action: {} ) {
+							Label("Save Puzzle", systemImage: "arrow.down.doc")
+						}
+						.tint(Color(.systemGreen))
+					}
 				}
 				.onDelete { indexSet in
 					withAnimation {
@@ -88,11 +89,11 @@ struct GameListView: View {
 						}
 					}
 				}
-				.onMove { offsets, destination in
-					withAnimation {
-						dataContainer.games.move(fromOffsets: offsets, toOffset: destination)
-					}
-				}
+//				.onMove { offsets, destination in
+//					withAnimation {
+//						dataContainer.games.move(fromOffsets: offsets, toOffset: destination)
+//					}
+//				}
 			}
 			.navigationTitle("Puzzles")
 			.navigationBarTitleDisplayMode(.inline)

@@ -13,39 +13,44 @@ struct GameEditor: View {
 	// MARK: Action Function
 	let onChoose: () -> Void
 	
+	@Environment(DataContainer.self) private var dataContainer
+	
 	// MARK: Data (Function) In
 	@Environment(\.dismiss) var dismiss
 	
 	@AppStorage(.settings) private var settings
 	
 	// MARK: Internal State
-	@State private var lgame = Game(size: 4, words: WordList()) // dummy board
+	@State private var lgame = Game(size: 5, words: WordList()) // dummy board
 	@State private var selectedWordList = WordList()    // active word list
-	@State private var wordLists = [WordList]()			// all the word lists
-	@State private var showWordList: Bool = true
-	@State private var showEmptyAlert: Bool = false
-	@State private var gameID: UUID = UUID()			// forces letter grid updates
-	@State private var level: Level = .five
+	@State private var showWordList = false
+	@State private var showEmptyAlert = false
+	@State private var gameID = UUID()			// forces letter grid updates
+	
+	var words: [WordList] {
+		dataContainer.wordLists.sorted { $0.name < $1.name }
+	}
 	
 	var body: some View {
 		NavigationStack {
 			Form {
 				Section("Default Level") {
-					Picker("Level:", selection: $level) {
+					Picker("Level:", selection: $settings.level) {
 						ForEach(Level.allCases.dropFirst(), id:\.self) { level in
 							Text("\(level.rawValue)").tag(level)
 						}
 					}
 					.pickerStyle(.segmented)
+					.onChange(of: settings.level, updateGame)
+	
 				}
-				Section(wordHeader, isExpanded: $showWordList) {
+				Section("Word List", isExpanded: $showWordList) {
 					Picker("Word List Selection:", selection: $selectedWordList) {
-						ForEach(wordLists, id:\.self) { Text($0.name) }
+						ForEach(words, id:\.self) { Text($0.name) }
 					}
 					.onChange(of: selectedWordList, updateWords)
 								
 					WordView(words: lgame.placedWords, style: .paragraph)
-						.padding(.top, -15)
 				}
 				.onTapGesture(perform: toggleWordList)
 
@@ -55,16 +60,8 @@ struct GameEditor: View {
 			}
 			.onAppear(perform: setUpGame)
 			.toolbar {
-				ToolbarItem(placement: .cancellationAction) {
-					Button("Cancel") { dismiss() }
-						.tint(Color(.systemRed))
-				}
-				ToolbarItem(placement: .confirmationAction) {
-					Button("Done") { done() }
-						.tint(Color(.systemGreen))
-						.alert(isPresented: $showEmptyAlert) {
-							Alert(title: Text("Error"), message: Text("The game must contain a non-empty word list."), dismissButton: .cancel())
-						}
+				EditToolbar() {
+					done()
 				}
 			}
 			.navigationTitle(Text("Game Generator"))
@@ -77,7 +74,6 @@ struct GameEditor: View {
 	func updateWords() {
 		print("Updating words for \(selectedWordList.name)")
 		withAnimation {
-			showWordList = true
 			print("Selected word list: \(selectedWordList.words)")
 			updateGame()
 		}
@@ -86,13 +82,6 @@ struct GameEditor: View {
 	func setUpGame() {
 		if let game {
 			lgame = game.copy()
-			if wordLists.isEmpty {
-				wordLists = SampleWordLists.all
-			}
-			if !game.board.words.words.isEmpty, !wordLists.contains(game.board.words) {
-				wordLists.insert(game.board.words, at: 0)
-			}
-			selectedWordList = game.board.words.words.isEmpty ? wordLists.first! : game.board.words
 			updateGame()
 		}
 	}
@@ -107,10 +96,6 @@ struct GameEditor: View {
 		game = lgame.copy()
 		onChoose()
 		dismiss()
-	}
-	
-	var wordHeader: String {
-		"Word List " + (showWordList && !lgame.placedWords.isEmpty ? "(Tap to hide)" : "(Tap to show)")
 	}
 	
 	private var wordListTitle: some View {
@@ -137,10 +122,11 @@ struct GameEditor: View {
 	}
 }
 
-//#Preview {
-//	@Previewable
-//	@State var game: Game? = Game(size: 12, words: SampleWordLists.all[1])
-//	GameEditor(game: $game) {
-//		print("Updated game")
-//	}
-//}
+#Preview {
+	@Previewable
+	@State var game: Game? = Game(size: 12, words: SampleWordLists.all[1])
+	GameEditor(game: $game) {
+		print("Updated game")
+	}
+	.environment(DataContainer())
+}

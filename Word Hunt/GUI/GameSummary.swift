@@ -28,16 +28,20 @@ struct GameSummary: View {
 			}
 			Text("Level: \(game.level) (\(game.rows) ⨉ \(game.cols))")
 				.frame(maxWidth: .infinity, alignment: .leading)
-			Text("Words: \(Image(systemName: showWords ? "arrow.down" : "arrow.right"))")
-				.foregroundStyle(Color.accentColor)
-				.highPriorityGesture(
-					TapGesture(count: 1)
-						.onEnded {
-							withAnimation {
-								showWords.toggle()
-							}
+			HStack {
+				Text("Words: ")
+				Image(systemName: "arrow.right")
+					.rotationEffect(Angle(degrees: showWords ? 90 : 0))
+			}
+			.foregroundStyle(Color.accentColor)
+			.highPriorityGesture(
+				TapGesture(count: 1)
+					.onEnded {
+						withAnimation(.easeInOut(duration: 0.3)) {
+							showWords.toggle()
 						}
-				)
+					}
+			)
 			if showWords {
 				WordView(words: game.placedWords, style: .paragraph)
 			}
