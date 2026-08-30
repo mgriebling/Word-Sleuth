@@ -12,12 +12,14 @@ struct GameView: View {
 	
 	@Environment(\.horizontalSizeClass) var horizontalSizeClass
 	@Environment(\.colorScheme) var colorScheme
+	@Environment(\.scenePhase) var scenePhase
 	
 	@AppStorage(.settings) private var settings
 	@Environment(DataContainer.self) private var dataContainer
 	
 	@State private var showSettings = false
 	@State private var showAwards = false
+	@State private var toolbarID = UUID()
 	
 	#if os(iOS)
 	typealias HSView = HStack
@@ -49,6 +51,11 @@ struct GameView: View {
 				.navigationTitle("Settings")
 		}
 		.toolbar { toolBar(isLandscape: dataContainer.isLandscape) }
+		.onChange(of: scenePhase) { oldValue, newValue in
+			if newValue == .active {
+				toolbarID = UUID()   // trigger toolbar update
+			}
+		}
 //		#if os(ios)
 		.navigationTitle("")
 		.navigationBarTitleDisplayMode(.inline)
@@ -130,6 +137,7 @@ struct GameView: View {
 	func toolBar(isLandscape: Bool) -> some ToolbarContent {
 		let titleItem = ToolbarItem(placement: .topBarLeading) {
 			title(name: game.name, isLandscape: isLandscape)
+				.id(toolbarID)
 		}
 		let settingsButton = Button(action: { showSettings = true } ) {
 			Label("Settings", systemImage: "gearshape")
@@ -142,16 +150,18 @@ struct GameView: View {
 		
 		ToolbarItemGroup(placement: .principal) { // macOS uses .status
 			ViewThatFits(in: .horizontal) {
-				HStack {
-					if game.isOver {
-						winButton
-					} else {
-						Text("Found: \(game.matched) of \(game.placedWords.count)")
+				if UIDevice.current.userInterfaceIdiom == .pad {
+					HStack {
+						if game.isOver {
+							winButton
+						} else {
+							Text("Found: \(game.matched) of \(game.placedWords.count)")
+						}
+						ElapsedTime(text: "Time:", timer: game.timer)
+							.lineLimit(1)
+							.fixedSize(horizontal: true, vertical: false)
+							.fontDesign(.monospaced)
 					}
-					ElapsedTime(text: "Time:", timer: game.timer)
-						.lineLimit(1)
-						.fixedSize(horizontal: true, vertical: false)
-						.fontDesign(.monospaced)
 				}
 				HStack {
 					if game.isOver {
@@ -165,6 +175,7 @@ struct GameView: View {
 						.fontDesign(.monospaced)
 				}
 			}
+			.id(toolbarID)
 			.foregroundStyle(.secondary)
 		}
 		if #available(iOS 26.0, *) {
