@@ -33,38 +33,4 @@ struct ElapsedTime: View {
 			return String(format: "%d:%02d", minutes, seconds)
 		}
 	}
-//	@AppStorage(.settings) private var settings
-//	
-//	let secondsPerHour = Duration.seconds(60 * 60)
-//
-//    var body: some View {
-//		if settings.showTimer {
-//			HStack {
-//				if !text.isEmpty { Text(text) }
-//				if let start = timer.startTime {
-//					let offset = start - timer.elapsedTime
-//					if let endTime = timer.endTime {
-//						formatTime(.seconds(offset.timeIntervalSince(endTime)))
-//					} else {
-//						if #available(iOS 18.0, *) {
-//							Text(.durationOffset(to: offset), format: .time(pattern: .hourMinuteSecond))
-//						} else {
-//							// Fallback on earlier versions
-//							Text(offset, style: .timer)
-//						}
-//					}
-//				} else {
-//					formatTime(.seconds(timer.elapsedTime))
-//				}
-//			}
-//		}
-//    }
-//	
-//	func formatTime(_ delta: Duration) -> Text {
-//		if delta < secondsPerHour {
-//			Text(delta, format: .time(pattern: .minuteSecond))
-//		} else {
-//			Text(delta, format: .time(pattern: .hourMinuteSecond))
-//		}
-//	}
 }

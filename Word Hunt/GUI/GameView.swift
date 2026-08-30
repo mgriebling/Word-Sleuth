@@ -48,7 +48,6 @@ struct GameView: View {
 			SettingsView()
 				.navigationTitle("Settings")
 		}
-		.trackElapsedTime(in: game)
 		.toolbar { toolBar(isLandscape: dataContainer.isLandscape) }
 //		#if os(ios)
 		.navigationTitle("")
@@ -178,14 +177,11 @@ struct GameView: View {
 			Button(action: highlightWord) {
 				Image(systemName: "lightbulb")
 			}
-			.tint(Color.accentColor)
 			.disabled(game.isOver)
 			if horizontalSizeClass != .compact {
 				settingsButton
-					.tint(Color.accentColor)
 			}
 			GameMenuView(game: game, isInDetail: true)
-				.tint(Color.accentColor)
 		}
 	}
 	

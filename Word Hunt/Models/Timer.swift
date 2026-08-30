@@ -23,9 +23,16 @@ import Combine
 			.appendingPathComponent(name + ".json")
 	}
 	
-	init(name: String) {
+	init() {
+		self.elapsedTime = 0
+		self.state = .stopped
+		self.endTime = nil
+		self.name = "_timer"
+	}
+	
+	convenience init(name: String) {
+		self.init()
 		self.name = name + "_timer"
-		loadTimer()
 	}
 	
 	required init(from decoder: any Decoder) throws {
@@ -33,6 +40,7 @@ import Combine
 		self.elapsedTime = try container.decode(Int.self, forKey: .elapsedTime)
 		self.state = try container.decode(TimerState.self, forKey: .state)
 		self.endTime = try container.decode(Date?.self, forKey: .endTime)
+		self.name = try container.decode(String.self, forKey: .name)
 	}
 	
 	func start() {
@@ -52,6 +60,7 @@ import Combine
 	
 	func pause() {
 		guard state == .running else { return }
+		//print("Timer \(name) paused")
 		update()
 		accumulatedTimeBeforeCurrentRun = elapsedTime
 		state = .paused
@@ -59,6 +68,7 @@ import Combine
 	}
 	
 	func handleViewDisappearing() {
+		print("\(name) disappearing")
 		if state == .running {
 			update()
 			accumulatedTimeBeforeCurrentRun = elapsedTime
@@ -69,12 +79,14 @@ import Combine
 	}
 	
 	func handleViewAppearing() {
+		print("\(name) appearing")
 		if state == .runningBeforeExit || (state == .stopped && endTime == nil) {
 			start()
 		}
 	}
 	
 	func stop() {
+		//print("Timer \(name) stopped")
 		state = .stopped
 		elapsedTime = 0
 		endTime = .now
@@ -92,6 +104,7 @@ import Combine
 	// MARK: - JSON Disk I/O (Saves only on exit, not every tick)
 	private func saveToDisk() {
 		if let data = try? JSONEncoder().encode(self) {
+			print("Saved \(name), state = \(state)")
 			try? data.write(to: fileURL, options: .atomic)
 		}
 	}
@@ -99,7 +112,7 @@ import Combine
 	private func loadTimer() {
 		guard let data = try? Data(contentsOf: fileURL),
 			  let timer = try? JSONDecoder().decode(MyTimer.self, from: data) else { return }
-		
+		print("Loaded \(name), state = \(state)")
 		self.elapsedTime = timer.elapsedTime
 		self.state = timer.state
 		self.endTime = timer.endTime
@@ -114,9 +127,10 @@ extension MyTimer: Codable {
 		try container.encode(elapsedTime, forKey: .elapsedTime)
 		try container.encode(state, forKey: .state)
 		try container.encode(endTime, forKey: .endTime)
+		try container.encode(name, forKey: .name)
 	}
 	
-	enum CodingKeys: String, CodingKey { case elapsedTime, state, endTime }
+	enum CodingKeys: String, CodingKey { case elapsedTime, state, endTime, name }
 }
 
 enum TimerState: String, Codable {
@@ -124,49 +138,3 @@ enum TimerState: String, Codable {
 	case runningBeforeExit // Tracks if the timer needs to auto-resume upon return
 }
 
-
-//struct Timer : Codable {
-//
-//	var startTime: Date?
-//	var endTime: Date?
-//	var elapsedTime: TimeInterval = 0
-//	var isOver: Bool = false
-//	
-//	mutating func update() {
-//		pause()
-//		start()
-//	}
-//	
-//	mutating func start() {
-//		if startTime == nil, !isOver {
-//			startTime = .now
-//			elapsedTime += 0.00001
-//		}
-//	}
-//	
-//	mutating func restart() {
-//		startTime = .now
-//		endTime = nil
-//		elapsedTime = 0
-//		isOver = false
-//	}
-//	
-//	mutating func stop() {
-//		isOver = true
-//		endTime = .now
-//		pause()
-//	}
-//	
-//	mutating func pause() {
-//		if let startTime {
-//			elapsedTime += Date.now.timeIntervalSince(startTime)
-//		}
-//		startTime = nil
-//	}
-//	
-//	enum TimerState: String, Codable {
-//		case stopped, running, paused
-//		case runningBeforeExit // Tracks if the timer needs to auto-resume upon return
-//	}
-//	
-//}

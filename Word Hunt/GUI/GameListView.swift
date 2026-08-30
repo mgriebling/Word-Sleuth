@@ -22,12 +22,12 @@ struct GameListView: View {
 	}
 	
 	// MARK: Data Owned by me
-	// @State private var gameToEdit: Game?
 	@State private var showGameEditor = false
 	@State private var showOptions = false
 	@State private var isShowingDeleteConfirmation = false
 	@State private var filter = Filter.all
 	@State private var showWins = true
+	@State private var prevSelection: Game?
 	
     var body: some View {
 		let colors = [Color.red.opacity(0.5), Color.red.opacity(0.2)]
@@ -53,6 +53,7 @@ struct GameListView: View {
 				Button(action: { withAnimation { showWins.toggle() }}) {
 					MedalIcon(noMedal: showWins, scaling: 0.25)
 				}
+				.tint(Color.primary)
 				.padding(.trailing, 2)
 				.buttonBorderShape(.capsule)
 				.buttonStyle(.bordered)
@@ -89,11 +90,6 @@ struct GameListView: View {
 						}
 					}
 				}
-//				.onMove { offsets, destination in
-//					withAnimation {
-//						dataContainer.games.move(fromOffsets: offsets, toOffset: destination)
-//					}
-//				}
 			}
 			.navigationTitle("Puzzles")
 			.navigationBarTitleDisplayMode(.inline)
@@ -104,8 +100,13 @@ struct GameListView: View {
 					print("Selected: \(selection!.name)")
 				}
 			}
-			.listStyle(.plain)  // (.sidebar)
-			.onChange(of: selection) {
+			.listStyle(.plain)
+			.onChange(of: selection) { prev, current in
+				prevSelection = prev
+				if let prev = prevSelection, selection == nil {
+					print("Previous game = \(prev.name)")
+					prev.timer.handleViewDisappearing()
+				}
 				if let selection, !dataContainer.games.contains(selection) {
 					self.selection = nil
 					print("Setting selection to nil")
@@ -114,7 +115,6 @@ struct GameListView: View {
 			.toolbar {
 				addButton
 				GameMenuView(game: selection)
-					.tint(Color.accentColor)
 			}
 		}
     }
@@ -165,7 +165,6 @@ struct GameListView: View {
 			dataContainer.createGames(number: number, sizes: sizes)
 			self.selection = dataContainer.games.first
 		}
-		.tint(Color.accentColor)
 	}
 }
 

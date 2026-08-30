@@ -99,12 +99,12 @@ class DataContainer {
 		assert(sizes.count >= number, "Expecting at least \(number) sizes!")
 		let game = Game(size: sizes[0],
 						words: SampleWordLists.all.randomElement()!)
-		print("Generating game...")
+//		print("Generating game...")
 		self.games.insert(game, at: 0)
 		game.save(to: game.name)
 		Task.detached(priority: .background) {
 			for i in 1..<number {
-				print("Generating game...")
+//				print("Generating game...")
 				let game = Game(size: sizes[i],
 								words: SampleWordLists.all.randomElement()!)
 				game.save(to: game.name)

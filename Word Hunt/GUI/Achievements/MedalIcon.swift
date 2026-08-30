@@ -17,7 +17,6 @@ struct MedalIcon: View {
 			Image(systemName: "medal")
 				.resizable()
 				.aspectRatio(1, contentMode: .fit)
-				.foregroundStyle(Color.accentColor)
 			
 			DiagonalLine()
 				.stroke(.background, style: StrokeStyle(lineWidth: noMedal ? 0 : 20 * scaling, lineCap: .round))
@@ -25,7 +24,7 @@ struct MedalIcon: View {
 			
 			// 2. The visible diagonal strike line
 			DiagonalLine()
-				.stroke(.red, style: StrokeStyle(lineWidth: noMedal ? 0 : 10 * scaling, lineCap: .round))
+				.stroke(.primary, style: StrokeStyle(lineWidth: noMedal ? 0 : 10 * scaling, lineCap: .round))
 				.padding(2 * scaling)
 		}
 		.frame(width: 100 * scaling, height: 100 * scaling)

@@ -33,7 +33,6 @@ struct GameSummary: View {
 				Image(systemName: "arrow.right")
 					.rotationEffect(Angle(degrees: showWords ? 90 : 0))
 			}
-			.foregroundStyle(Color.accentColor)
 			.highPriorityGesture(
 				TapGesture(count: 1)
 					.onEnded {

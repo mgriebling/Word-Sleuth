@@ -85,7 +85,6 @@ struct StringList: View {
 				self.selectedItems = Set<UUID>()
 			}) {
 				Text(self.editMode.title)
-					.foregroundStyle(Color.accentColor)
 			}
 		}
 	}
@@ -97,7 +96,7 @@ struct StringList: View {
 				Button(action: addItem) {
 					Image(systemName: "plus")
 				}
-				.tint(.accentColor)
+				.tint(Color(.systemGreen))
 				Button(action: done) {
 					Image(systemName: "checkmark")
 				}

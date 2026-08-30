@@ -25,7 +25,7 @@ struct EditToolbar: ToolbarContent {
 			Button(action: { onDone?(); dismiss() }) {
 				Image(systemName: "checkmark")
 			}
-			.tint(Color.accentColor)
+			.tint(Color(.systemGreen))
 			.disabled(okDisabled)
 		}
 	}

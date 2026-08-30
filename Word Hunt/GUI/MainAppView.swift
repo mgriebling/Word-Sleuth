@@ -24,16 +24,11 @@ struct MainAppView: View {
 						.navigationSplitViewStyle(.automatic)
 				}
 			}
-			.onChange(of: geometry.size) {
-				withAnimation {
-					dataContainer.isLandscape = geometry.size.width > geometry.size.height
-				}
-				// print("Top Size = \(geometry.size.width) x \(geometry.size.height)")
-			}
+			.onChange(of: geometry.size) { setLandscape(size: geometry.size) }
 			.onChange(of: activeTab, showDetailOrAll)
 			.onChange(of: selectedPuzzle, showDetailOnly)
 			.focusEffectDisabled(true)
-			.onAppear(perform: { initialize(size: geometry.size) } )
+			.onAppear { initialize(size: geometry.size) }
 		}
 	}
 	
@@ -69,9 +64,16 @@ struct MainAppView: View {
 				case .puzzles:
 					if let game = selectedPuzzle {
 						GameView(game: game)
-							.id(selectedPuzzle)
+							.id(game)
 							.onTapGesture {
 								columnVisibility = .detailOnly
+							}
+							.trackElapsedTime(in: game)
+							.onAppear {
+								print("Puzzle \(game.name) appeared")
+							}
+							.onDisappear {
+								print("Puzzle \(game.name) disappeared")
 							}
 					} else {
 						blankView(for: activeTab)
@@ -88,13 +90,18 @@ struct MainAppView: View {
 	}
 	
 	private func initialize(size: CGSize) {
-		// print("Init Size = \(size.width) x \(size.height)")
+		setLandscape(size: size)
 		withAnimation {
-			dataContainer.isLandscape = size.width > size.height
 			selectedPuzzle = dataContainer.games.first
 			selectedWords = dataContainer.wordLists.first
 			activeTab = .puzzles(selectedPuzzle)
 			columnVisibility = .detailOnly
+		}
+	}
+	
+	private func setLandscape(size: CGSize) {
+		withAnimation {
+			dataContainer.isLandscape = size.width > size.height
 		}
 	}
 	

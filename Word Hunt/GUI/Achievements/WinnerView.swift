@@ -33,6 +33,12 @@ struct WinnerView: View {
 						displayValue = points
 					}
 				}
+				.task {
+					try? await Task.sleep(for: .seconds(10))
+					withAnimation {
+						winner = false
+					}
+				}
 		} else {
 			basicView(fontSize: 50, scale: scale)
 				.onAppear {
