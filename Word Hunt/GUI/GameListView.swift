@@ -83,33 +83,22 @@ struct GameListView: View {
 					}
 				}
 				.onDelete { indexSet in
-					withAnimation {
-						indexSet.forEach { index in
-							let game = dataContainer.games.remove(at: index)
-							game.delete()
-						}
+					indexSet.forEach { index in
+						let game = dataContainer.games.remove(at: index)
+						game.delete()
 					}
 				}
 			}
 			.navigationTitle("Puzzles")
 			.navigationBarTitleDisplayMode(.inline)
-			.onAppear {
-				if selection == nil {
-					print("Nothing selected")
-				} else {
-					print("Selected: \(selection!.name)")
-				}
-			}
 			.listStyle(.plain)
 			.onChange(of: selection) { prev, current in
 				prevSelection = prev
 				if let prev = prevSelection, selection == nil {
-					print("Previous game = \(prev.name)")
 					prev.timer.handleViewDisappearing()
 				}
 				if let selection, !dataContainer.games.contains(selection) {
 					self.selection = nil
-					print("Setting selection to nil")
 				}
 			}
 			.toolbar {
@@ -153,8 +142,6 @@ struct GameListView: View {
 				return filtered.sorted {
 					settings.sortIncreasing ? $0.level < $1.level : $0.level > $1.level
 				}
-//			default:
-//				return filtered
 		}
 	}
 	

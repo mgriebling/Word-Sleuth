@@ -102,8 +102,8 @@ struct GameView: View {
 	func wordsList() -> some View {
 		ZStack {
 			WordView(words: game.board.wordPlacements, maxWordLength: game.board.words.maxLength)
-			floatingWord(game.selectedWord)
-				.frame(maxWidth: 400)
+//			floatingWord(game.selectedWord)
+//				.frame(maxWidth: 400)
 		}
 	}
 	

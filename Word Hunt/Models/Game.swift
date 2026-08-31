@@ -29,8 +29,13 @@ import SwiftUI
 	var isOver: Bool 		  	  { matched == placedWords.count }
 	var isRecent: Bool 		  	  { creationDate.timeIntervalSinceNow < oneWeek }
 	
-	var selectedWord: String = ""
-	var invert: Bool = false
+//	private var _selectedWord = ""
+//	var selectedWord: String {
+//		get { reversed ? String(_selectedWord.reversed()) : _selectedWord }
+//		set { _selectedWord = newValue }
+//	}
+	var invert = false
+	var reversed = false
 	
 	// MARK: Initializer
 	init(level: Level, words: WordList) {
@@ -156,9 +161,7 @@ import SwiftUI
 		}
 	}
 	
-	func reverseSelection() {
-		selectedWord = String(selectedWord.reversed())
-	}
+	func reverseSelection() { reversed = true }
 	
 	func delete() {
 		try? FileManager.default.removeItem(at: url(name: self.name))

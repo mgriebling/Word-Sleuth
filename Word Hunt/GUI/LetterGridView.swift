@@ -31,8 +31,7 @@ struct LetterGridView: View {
 	@State private var numCols = 1
 	@State private var animateWin = false
 	@State private var done: Bool = false
-	//@State private var deviceOrientation = UIDevice.current.orientation
-	//@State private var board = GameBoard(size: 1, words: WordList())
+	@State private var selectedWord = ""
 	
 	@State private var cellSize: CGFloat = 40
 	@State private var width: CGFloat = 400
@@ -50,7 +49,7 @@ struct LetterGridView: View {
 	var body: some View {
 		let isCompact = horizontalSizeClass == .compact
 		let padding: CGFloat = isCompact ? 10 : 20  // space between frame and letters
-		newGrid(board: game.board)
+		newGrid()
 			.padding(padding)
 			.coordinateSpace(name: "GridSpace")
 			.background {
@@ -97,10 +96,10 @@ struct LetterGridView: View {
 			.gesture(
 				DragGesture(minimumDistance: 5, coordinateSpace: .named("GridSpace"))
 					.onChanged { value in
-						processDrag(board: game.board, location: value.location, startLocation: value.startLocation, cellSize: cellSize, pad: padding)
+						processDrag(location: value.location, startLocation: value.startLocation, cellSize: cellSize, pad: padding)
 					}
 					.onEnded { _ in
-						evaluateAndSaveWord(board: game.board)
+						evaluateAndSaveWord()
 					},
 				isEnabled: allowDrag && !game.isOver
 			)
@@ -134,32 +133,32 @@ struct LetterGridView: View {
 	}
 	
 	func isWordMatch(start: CellIndex?, end: CellIndex?) -> Bool {
-		let activeWord = game.selectedWord
+		let activeWord = selectedWord
 		guard !activeWord.isEmpty, let start, let end else { return false }
 		let setElement1 = PlacedWord(word: activeWord, start: start).extended
 		let setElement2 = PlacedWord(word: activeWord, start: end).extended
 		if placedSet.contains(setElement1) || placedSet.contains(setElement2) {
 			return true
 		}
-		let reversedWord = String(game.selectedWord.reversed())
+		let reversedWord = String(activeWord.reversed())
 		let setElement3 = PlacedWord(word: reversedWord, start: end).extended
 		if settings.allowReverseSelection, placedSet.contains(setElement3) {
-			game.reverseSelection()
+			selectedWord = reversedWord
 			return true
 		}
 		return false
 	}
 	
 	@ViewBuilder
-	private func newGrid(board: GameBoard) -> some View {
+	private func newGrid() -> some View {
 		Grid(horizontalSpacing: 0, verticalSpacing: 0) {
-			ForEach(0..<board.rows, id: \.self) { rowIndex in
+			ForEach(0..<game.board.rows, id: \.self) { rowIndex in
 				GridRow {
-					ForEach(0..<board.cols, id: \.self) { columnIndex in
+					ForEach(0..<game.board.cols, id: \.self) { columnIndex in
 						ZStack {
 							RoundedRectangle(cornerRadius: 0)
 								.fill(.clear)
-							Text(board[rowIndex, columnIndex].letter)
+							Text(game.board[rowIndex, columnIndex].letter)
 								.font(.system(size: cellSize * 0.7, weight: settings.fontStyle.weight))
 								.minimumScaleFactor(0.5)
 						}
@@ -170,7 +169,7 @@ struct LetterGridView: View {
 						} action: { newValue in
 							let size = (newValue.height + newValue.width) * 0.5
 							self.cellSize = size
-							self.width = size * CGFloat(board.cols) * 0.8
+							self.width = size * CGFloat(game.board.cols) * 0.8
 						//	print(newValue.width, newValue.height, self.width)
 						}
 					}
@@ -179,7 +178,7 @@ struct LetterGridView: View {
 		}
 		//.background(.pink.opacity(0.3))
 		// 1. Force the grid to maintain a perfect 1:1 square ratio
-		.aspectRatio(CGFloat(board.cols)/CGFloat(board.rows), contentMode: .fit)
+		.aspectRatio(CGFloat(game.board.cols)/CGFloat(game.board.rows), contentMode: .fit)
 		// 2. Expand strictly along the preferred axis based on orientation
 //		.frame(
 //			maxWidth: isLandscape ? nil : .infinity,
@@ -190,7 +189,7 @@ struct LetterGridView: View {
 	
 	// MARK: - Word Evaluation Mechanics
 	
-	private func processDrag(board: GameBoard, location: CGPoint, startLocation: CGPoint, cellSize: CGFloat, pad: CGFloat) {
+	private func processDrag(location: CGPoint, startLocation: CGPoint, cellSize: CGFloat, pad: CGFloat) {
 		let step = cellSize + CGFloat(spacing)
 		let a = startLocation - pad
 		let b = location - pad 
@@ -226,27 +225,27 @@ struct LetterGridView: View {
 			dragCurrentCell = CellIndex(row: bounded.row, col: bounded.col)
 		}
 		
-		extractWordString(board: board)
+		extractWordString()
 	}
 	
-	private func extractWordString(board: GameBoard) {
+	private func extractWordString() {
 		guard let start = dragStartCell, let end = dragCurrentCell, let selectionDirection else { return }
 		
 		var tempWord = ""
 		var curr = start
 		while true {
-			tempWord.append(board[curr.row, curr.col].letter)
+			tempWord.append(game.board[curr.row, curr.col].letter)
 			if curr == end { break }
 			curr = curr + selectionDirection
 		}
 		
-		game.selectedWord = tempWord
+		selectedWord = tempWord
 	}
 	
 	// Helper to evaluate if the current selection forms a valid word
 	private var detectedWord: String? {
 		if isWordMatch(start: dragStartCell, end: dragCurrentCell) {
-			return game.selectedWord
+			return selectedWord
 		}
 		return nil
 	}
@@ -254,13 +253,13 @@ struct LetterGridView: View {
 	
 	func removeActiveWord(colorIndex: Int) {
 		//print(game.selectedWord, words)
-		if let index = game.words.firstIndex(of: game.selectedWord.lowercased()) {
+		if let index = game.words.firstIndex(of: selectedWord.lowercased()) {
 			game.board.highlightWord(index, colorIndex)
-			game.selectedWord = ""
+			selectedWord = ""
 		}
 	}
 	
-	private func evaluateAndSaveWord(board: GameBoard) {
+	private func evaluateAndSaveWord() {
 		// Use computed property to evaluate forward vs reverse match
 		if let targetWord = detectedWord {
 			// Check to avoid duplicates
@@ -270,7 +269,7 @@ struct LetterGridView: View {
 				print("SUCCESS: Found Word \(targetWord.capitalized)")
 			}
 		} else {
-			game.selectedWord = ""
+			selectedWord = ""
 			effect("oops")
 		}
 		
