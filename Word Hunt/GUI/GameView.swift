@@ -100,11 +100,11 @@ struct GameView: View {
 	}
 	
 	func wordsList() -> some View {
-		ZStack {
+//		ZStack {
 			WordView(words: game.board.wordPlacements, maxWordLength: game.board.words.maxLength)
 //			floatingWord(game.selectedWord)
 //				.frame(maxWidth: 400)
-		}
+//		}
 	}
 	
 	/// the custom styled dividing line block by Google AI
@@ -207,29 +207,6 @@ struct GameView: View {
 			Text(name)
 				.allowsTightening(true)
 				.foregroundStyle(.secondary)
-		}
-	}
-	
-	/// Floating selected name
-	@ViewBuilder
-	private func floatingWord(_ activeWord: String) -> some View {
-		let cellSize: CGFloat = 30
-		let grey = Color(.systemGray4)
-		let frameWidth = activeWord.count/2 + 1
-		if !settings.allowReverseSelection {
-			Text(activeWord)
-				.font(.system(size: cellSize * 0.8, weight: .bold))
-				.lineLimit(1)
-				.minimumScaleFactor(0.75)
-				.allowsTightening(true)
-				.fixedSize(horizontal: true, vertical: false)
-				.frame(width: cellSize * CGFloat(frameWidth), height: cellSize)
-				.padding(10)
-				.background(grey)
-				.cornerRadius(15)
-				.zIndex(10)
-				.opacity(activeWord.isEmpty ? 0.0 : 1.0)
-				.animation(.none, value: frameWidth)
 		}
 	}
 	

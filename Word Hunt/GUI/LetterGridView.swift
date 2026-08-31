@@ -49,65 +49,70 @@ struct LetterGridView: View {
 	var body: some View {
 		let isCompact = horizontalSizeClass == .compact
 		let padding: CGFloat = isCompact ? 10 : 20  // space between frame and letters
-		newGrid()
-			.padding(padding)
-			.coordinateSpace(name: "GridSpace")
-			.background {
-				// Backdrop
-				RoundedRectangle(cornerRadius: 20)
-					.fill(LinearGradient(colors: backColors, startPoint: .bottom, endPoint: .top))
-				RoundedRectangle(cornerRadius: 20)
-					.strokeBorder(color, lineWidth: isCompact ? 2 : 4)
-				
-				// 2. Persistent Layer: Displays correctly guessed historical word
-				ForEach(game.board.wordPlacements) { word in
-					if word.highlighted {
-						capsuleView(board: game.board, cellSize: cellSize, start: word.start, end: word.end, selected: false, padding: padding, highlighted: word._colorIndex)
-					}
-				}
-				
-				// 3. Active Layer: Current continuous user gesture drag highlight
-				if let start = dragStartCell, let end = dragCurrentCell {
-					capsuleView(board: game.board, cellSize: cellSize, start: start, end: end, selected: true, padding: padding)
-				}
-			}
-			.onAppear {
-				let invert = isLandscape && (game.rows > game.cols)
-				// board = invert ? game.transpose() : game.board
-//				settings.highlight = .colorFill
-//				settings.highlightColor = Color(.selectionYellow)
-//				settings.selectionColor = Color(.selectionRed)
-//				settings.selectionOKColor = Color(.selectionGreen)
-				game.setOrientation(landscape: isLandscape)
-				numCols = game.cols
-				numRows = game.rows
-//				settings.fontStyle = .regular
-//				for i in 0..<game.placedWords.count {
-//					board.highlightWord(i, Int.random(in: 0...7))
-//				}
-//				game.board.highlightWord(0, 4)
-//				game.board.highlightWord(1, 1)
-//				game.board.highlightWord(5, 2)
-				//game.board.highlightWord(10, 3)
-//				print(game.board.words.words)
-				placedSet = Set(game.board.wordPlacements.map({ $0.extended }))
-				print("invert = \(invert), isLandscape = \(isLandscape)")
-			}
-			.gesture(
-				DragGesture(minimumDistance: 5, coordinateSpace: .named("GridSpace"))
-					.onChanged { value in
-						processDrag(location: value.location, startLocation: value.startLocation, cellSize: cellSize, pad: padding)
-					}
-					.onEnded { _ in
-						evaluateAndSaveWord()
-					},
-				isEnabled: allowDrag && !game.isOver
-			)
-			.overlay {
-				if game.isOver && animateWin {
-					WinnerView(game: game, width: width, points: settings.player.points, badges: game.badges)
+		ZStack {
+			newGrid()
+			//if !settings.allowReverseSelection {
+				floatingWord(selectedWord)
+			//}
+		}
+		.padding(padding)
+		.coordinateSpace(name: "GridSpace")
+		.background {
+			// Backdrop
+			RoundedRectangle(cornerRadius: 20)
+				.fill(LinearGradient(colors: backColors, startPoint: .bottom, endPoint: .top))
+			RoundedRectangle(cornerRadius: 20)
+				.strokeBorder(color, lineWidth: isCompact ? 2 : 4)
+			
+			// 2. Persistent Layer: Displays correctly guessed historical word
+			ForEach(game.board.wordPlacements) { word in
+				if word.highlighted {
+					capsuleView(board: game.board, cellSize: cellSize, start: word.start, end: word.end, selected: false, padding: padding, highlighted: word._colorIndex)
 				}
 			}
+			
+			// 3. Active Layer: Current continuous user gesture drag highlight
+			if let start = dragStartCell, let end = dragCurrentCell {
+				capsuleView(board: game.board, cellSize: cellSize, start: start, end: end, selected: true, padding: padding)
+			}
+		}
+		.onAppear {
+			let invert = isLandscape && (game.rows > game.cols)
+			// board = invert ? game.transpose() : game.board
+			//				settings.highlight = .colorFill
+			//				settings.highlightColor = Color(.selectionYellow)
+			//				settings.selectionColor = Color(.selectionRed)
+			//				settings.selectionOKColor = Color(.selectionGreen)
+			game.setOrientation(landscape: isLandscape)
+			numCols = game.cols
+			numRows = game.rows
+			//				settings.fontStyle = .regular
+			//				for i in 0..<game.placedWords.count {
+			//					board.highlightWord(i, Int.random(in: 0...7))
+			//				}
+			//				game.board.highlightWord(0, 4)
+			//				game.board.highlightWord(1, 1)
+			//				game.board.highlightWord(5, 2)
+			//game.board.highlightWord(10, 3)
+			//				print(game.board.words.words)
+			placedSet = Set(game.board.wordPlacements.map({ $0.extended }))
+			print("invert = \(invert), isLandscape = \(isLandscape)")
+		}
+		.gesture(
+			DragGesture(minimumDistance: 5, coordinateSpace: .named("GridSpace"))
+				.onChanged { value in
+					processDrag(location: value.location, startLocation: value.startLocation, cellSize: cellSize, pad: padding)
+				}
+				.onEnded { _ in
+					evaluateAndSaveWord()
+				},
+			isEnabled: allowDrag && !game.isOver
+		)
+		.overlay {
+			if game.isOver && animateWin {
+				WinnerView(game: game, width: width, points: settings.player.points, badges: game.badges)
+			}
+		}
 	}
 	
 	private func capsuleView(board: GameBoard, cellSize: CGFloat, start: CellIndex, end: CellIndex, selected: Bool, padding: CGFloat, highlighted: Int = 0) -> some View {
@@ -185,6 +190,35 @@ struct LetterGridView: View {
 //			maxHeight: isLandscape ? .infinity : nil
 //		)
 		.ignoresSafeArea()
+	}
+	
+	/// Floating selected name
+	@ViewBuilder
+	private func floatingWord(_ activeWord: String) -> some View {
+		//let cellSize: CGFloat = 30
+		let start = dragStartCell ?? CellIndex()
+		let offset = cellSize * CGFloat(numRows) / 4
+		let grey = Color(.systemGray4)
+		let frameWidth = activeWord.count/2 + 1
+		VStack {
+			Text(activeWord)
+			if settings.allowReverseSelection {
+				Text(String(activeWord.reversed()))
+			}
+		}
+		.font(.system(size: cellSize * 0.7, weight: settings.fontStyle.weight))
+		.lineLimit(1)
+		.minimumScaleFactor(0.75)
+		.allowsTightening(true)
+		.fixedSize(horizontal: true, vertical: false)
+		.frame(width: cellSize * CGFloat(frameWidth), height: cellSize)
+		.padding(10)
+		.background(grey)
+		.cornerRadius(15)
+		.zIndex(10)
+		.opacity(activeWord.isEmpty ? 0.0 : 1.0)
+		.animation(.none, value: frameWidth)
+		.offset(y: start.row > numRows/2 ? -offset : offset)
 	}
 	
 	// MARK: - Word Evaluation Mechanics
