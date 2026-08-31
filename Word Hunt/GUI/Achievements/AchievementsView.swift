@@ -46,19 +46,21 @@ struct AchievementsView: View {
 			header("Earned Points: \(settings.player.points)")
 			Text("Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint \(Image(systemName: "lightbulb"))** button use. Compete with friends to see who has the most points!")
 				.font(.caption)
-//			
-//			let bestTimes =
-//				[Time(level: 10, interval: 300),
-//				Time(level: 3, interval: 1000),
-//				Time(level: 1, interval: 500)]
 			
-			if !settings.player.bestTimes.isEmpty {
-				header("Best Puzzle Times")
-				let s = settings.player.bestTimes
+			let bestTimes =
+			[Time(level: 10, interval: 1000, games: 3, words: 50),
+			 Time(level: 3, interval: 300, games: 5, words: 20),
+			 Time(level: 1, interval: 500, games: 10, words: 5)]
+			
+			if /* !settings.player. */ !bestTimes.isEmpty {
+				header("Puzzle Statistics")
+				let s = bestTimes // settings.player.bestTimes
 				Grid(alignment: .center, horizontalSpacing: 20, verticalSpacing: 8) {
 					GridRow {
-						Text("Game Level").bold()
+						Text("Level").bold()
 						Text("Best Time").bold()
+						Text("Time/Word").bold()
+						Text("Games").bold()
 					}
 					.foregroundStyle(.secondary)
 					Divider()
@@ -68,6 +70,8 @@ struct AchievementsView: View {
 						GridRow(alignment: .center) {
 							Text("\(item.level)")
 							Text(Duration.seconds(item.interval), format: .time(pattern: .hourMinuteSecond))
+							Text("\(Int(item.interval) / item.words) secs")
+							Text("\(item.games)")
 						}
 					}
 				}
@@ -100,7 +104,7 @@ struct AchievementsView: View {
 	
 	func header(_ text: String) -> some View {
 		Text(text)
-			.font(.subheadline.bold())
+			.font(.headline.bold())
 			.padding(.top)
 			.padding(.bottom, 3)
 	}

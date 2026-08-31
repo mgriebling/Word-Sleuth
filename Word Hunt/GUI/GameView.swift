@@ -19,7 +19,7 @@ struct GameView: View {
 	
 	@State private var showSettings = false
 	@State private var showAwards = false
-	@State private var toolbarID = UUID()
+	@State private var toolbarID = UUID() // kludge to fix toolbar disappearing
 	
 	#if os(iOS)
 	typealias HSView = HStack

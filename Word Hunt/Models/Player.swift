@@ -10,32 +10,43 @@ import Foundation
 struct Time: Identifiable {
 	let level: Int
 	let interval: TimeInterval
-	let id: Int
+	let games: Int
+	let words: Int
+	var id: Int { level }
 	
-	init(level: Int, interval: TimeInterval) {
+	init(level: Int, interval: TimeInterval, games: Int, words: Int) {
 		self.level = level
 		self.interval = interval
-		self.id = level
+		self.games = games
+		self.words = words
 	}
+}
+
+struct TimeCount: Codable {
+	let time: TimeInterval
+	let games: Int
+	let words: Int
 }
 
 struct Player : Codable {
 	var name: String = "Unknown"
 	var points: Int = 0
 	var bestTimes: [Time] {
-		_bestTimes.map { Time(level: $0.key, interval: $0.value)  }
+		_bestTimes.map {
+			Time(level: $0.key, interval: $0.value.time, games: $0.value.games, words: $0.value.words)
+		}
 	}
-	private var _bestTimes = [Int:TimeInterval]()
+	private var _bestTimes = [Int:TimeCount]()
 	
 	mutating func add(points: Int) {
 		self.points += points
 	}
 	
-	mutating func updateTimes(level: Int, interval: TimeInterval) {
+	mutating func updateTimes(level: Int, interval: TimeInterval, words: Int) {
 		if let d = _bestTimes[level] {
-			_bestTimes[level] = min(d, interval)
+			_bestTimes[level] = TimeCount(time: min(d.time, interval), games: d.games+1, words: words)
 		} else {
-			_bestTimes[level] = interval
+			_bestTimes[level] = TimeCount(time: interval, games: 1, words: words)
 		}
 	}
 }
