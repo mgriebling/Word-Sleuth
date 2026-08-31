@@ -141,6 +141,12 @@ struct LetterGridView: View {
 		if placedSet.contains(setElement1) || placedSet.contains(setElement2) {
 			return true
 		}
+		let reversedWord = String(game.selectedWord.reversed())
+		let setElement3 = PlacedWord(word: reversedWord, start: end).extended
+		if settings.allowReverseSelection, placedSet.contains(setElement3) {
+			game.reverseSelection()
+			return true
+		}
 		return false
 	}
 	

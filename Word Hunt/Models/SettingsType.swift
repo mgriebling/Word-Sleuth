@@ -36,6 +36,8 @@ public struct SettingsType {
 	var sortPuzzles: PuzzleOrder
 	var sortIncreasing: Bool
 	
+	var allowReverseSelection: Bool
+	
 	init() {
 		self.gameNumber = 1
 		self.player = Player()
@@ -51,8 +53,9 @@ public struct SettingsType {
 		self.level = .five
 		self.fontStyle = .regular
 		self.sortAcrossCols = true
-		self.sortPuzzles = .manual
+		self.sortPuzzles = .name
 		self.sortIncreasing = true
+		self.allowReverseSelection = false
 	}
 	
 	init(_ settings: Self) {
@@ -69,7 +72,7 @@ extension SettingsType: Codable {
 		case gameNumber, player, highlight, selectionColor,
 			 selectionOKColor, highlightColor, soundsOn, soundVolume, showTimer,
 			 horizontal, vertical, level, fontStyle, sortAcrossCols,
-			 sortPuzzles, sortIncreasing
+			 sortPuzzles, sortIncreasing, allowReverseSelection
 	}
 	
 	public init(from decoder: Decoder) throws {
@@ -90,6 +93,7 @@ extension SettingsType: Codable {
 		self.sortAcrossCols = try container.decode(Bool.self, forKey: .sortAcrossCols)
 		self.sortPuzzles = try container.decode(PuzzleOrder.self, forKey: .sortPuzzles)
 		self.sortIncreasing = try container.decode(Bool.self, forKey: .sortIncreasing)
+		self.allowReverseSelection = try container.decode(Bool.self, forKey: .allowReverseSelection)
 	}
 	
 	public func encode(to encoder: Encoder) throws {
@@ -110,6 +114,7 @@ extension SettingsType: Codable {
 		try container.encode(self.sortAcrossCols, forKey: .sortAcrossCols)
 		try container.encode(self.sortPuzzles, forKey: .sortPuzzles)
 		try container.encode(self.sortIncreasing, forKey: .sortIncreasing)
+		try container.encode(self.allowReverseSelection, forKey: .allowReverseSelection)
 	}
 }
 
@@ -156,7 +161,7 @@ enum FontStyle: Int, CaseIterable, Identifiable, Codable {
 }
 
 enum PuzzleOrder: String, CaseIterable, Identifiable, Codable {
-	case manual = "Man", level = "Level", name = "Name", date = "Date"
+	case level = "Level", name = "Name", date = "Date"
 	
 	var id: Self { self }
 }

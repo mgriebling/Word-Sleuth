@@ -78,8 +78,11 @@ struct SettingsView: View {
 						{
 							internalSettings.sortIncreasing.toggle()
 						}
-						.disabled(internalSettings.sortPuzzles == .manual)
 					}
+				}
+				
+				Section("Word Selection") {
+					Toggle("Allow Reverse Selection", isOn: $internalSettings.allowReverseSelection)
 				}
 	
 				Section("Word List") {

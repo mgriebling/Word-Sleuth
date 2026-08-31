@@ -153,8 +153,8 @@ struct GameListView: View {
 				return filtered.sorted {
 					settings.sortIncreasing ? $0.level < $1.level : $0.level > $1.level
 				}
-			default:
-				return filtered
+//			default:
+//				return filtered
 		}
 	}
 	

@@ -156,6 +156,10 @@ import SwiftUI
 		}
 	}
 	
+	func reverseSelection() {
+		selectedWord = String(selectedWord.reversed())
+	}
+	
 	func delete() {
 		try? FileManager.default.removeItem(at: url(name: self.name))
 	}
