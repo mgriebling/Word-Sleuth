@@ -43,6 +43,7 @@ struct WordView: View {
 	
 	@ViewBuilder
 	private func columnText(_ maxColumns: Int) -> some View {
+		let colWidth = CGFloat(10 * maxWordLength)
 		HStack(alignment: .top, spacing: 0) {
 			VStack {
 				Text("Words (\(words.count))")
@@ -60,6 +61,7 @@ struct WordView: View {
 				sortedDown(maxColumns: maxColumns)
 			}
 		}
+		.frame(minWidth: CGFloat(maxColumns) * colWidth, maxHeight: CGFloat(words.count / maxColumns) * 35)
 	}
 	
 	@ViewBuilder
@@ -73,18 +75,19 @@ struct WordView: View {
 				}
 			}
 		}
-		.frame(minWidth: CGFloat(maxColumns) * colWidth)
 	}
 	
 	@ViewBuilder
 	private func sortedDown(maxColumns: Int = 6) ->	some View  {
 		let wordChunks = chunked(words, cols: maxColumns)
+		let colWidth = CGFloat(10 * maxWordLength)
 		ScrollView(.vertical) {
 			HStack {
 				ForEach(wordChunks, id: \.self) { chunk in
 					VStack(alignment: .leading) {
 						ForEach(chunk, id: \.self) { word in
 							wordView(for: word)
+								.frame(minWidth: 1.3 * colWidth, alignment: .leading)
 						}
 					}
 				}

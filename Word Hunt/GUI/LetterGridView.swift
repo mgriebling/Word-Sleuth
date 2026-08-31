@@ -50,7 +50,6 @@ struct LetterGridView: View {
 	var body: some View {
 		let isCompact = horizontalSizeClass == .compact
 		let padding: CGFloat = isCompact ? 10 : 20  // space between frame and letters
-		
 		newGrid(board: game.board)
 			.padding(padding)
 			.coordinateSpace(name: "GridSpace")
@@ -159,13 +158,14 @@ struct LetterGridView: View {
 								.minimumScaleFactor(0.5)
 						}
 						.aspectRatio(1, contentMode: .fit)
+						.frame(maxWidth: 60, maxHeight: 60)
 						.onGeometryChange(for: CGSize.self) { proxy in
 							proxy.size
 						} action: { newValue in
 							let size = (newValue.height + newValue.width) * 0.5
 							self.cellSize = size
 							self.width = size * CGFloat(board.cols) * 0.8
-							//print(newValue.width, newValue.height, size)
+						//	print(newValue.width, newValue.height, self.width)
 						}
 					}
 				}
@@ -175,10 +175,10 @@ struct LetterGridView: View {
 		// 1. Force the grid to maintain a perfect 1:1 square ratio
 		.aspectRatio(CGFloat(board.cols)/CGFloat(board.rows), contentMode: .fit)
 		// 2. Expand strictly along the preferred axis based on orientation
-		.frame(
-			maxWidth: isLandscape ? nil : .infinity,
-			maxHeight: isLandscape ? .infinity : nil
-		)
+//		.frame(
+//			maxWidth: isLandscape ? nil : .infinity,
+//			maxHeight: isLandscape ? .infinity : nil
+//		)
 		.ignoresSafeArea()
 	}
 	
@@ -295,8 +295,8 @@ struct LetterGridView: View {
 
 #Preview {
 	@Previewable
-	@State var game = Game(15, cols: 10, words: SampleWordLists.all[2])
+	@State var game = Game(5, cols: 5, words: SampleWordLists.all[2])
 	@Previewable @State var settings = SettingsType()
-	LetterGridView(game: game, allowDrag: true, isLandscape: false, settings: $settings)
+	LetterGridView(game: game, allowDrag: true, isLandscape: true, settings: $settings)
 		.environment(DataContainer.sample20x20)
 }

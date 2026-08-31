@@ -251,7 +251,7 @@ struct GameView: View {
 
 #Preview {
 	@Previewable
-	@State var game = Game(20, cols: 20, words: SampleWordLists.all[0])
+	@State var game = Game(10, cols: 10, words: SampleWordLists.all[0])
 	NavigationStack {
 		GameView(game: game)
 			.environment(DataContainer())
