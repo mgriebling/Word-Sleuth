@@ -13,11 +13,14 @@ struct GameMenuView: View {
 	@Environment(\.horizontalSizeClass) var horizontalSizeClass
 	@Environment(DataContainer.self) private var dataContainer
 	
+	@AppStorage(.settings) private var settings
+	
 	@State private var showSettings = false
 	@State private var showAwards = false
 	@State private var showAbout = false
 	@State private var isShowingDeleteConfirmation = false
 	@State private var showAdvancedCreate = false
+	@State private var showSortOptions = false
 	
 	var body: some View {
 		let settingsButton = Button(action: { showSettings = true } ) {
@@ -35,7 +38,21 @@ struct GameMenuView: View {
 				Button(action: { showAdvancedCreate = true }) {
 					Label("Create Games (Pro)", systemImage: "square.grid.4x3.fill")
 				}
+				
+				Menu {
+					ForEach(PuzzleOrder.allCases, id:\.self) { level in
+						Button {
+							settings.sortPuzzles = level
+							settings.sortIncreasing.toggle()
+						} label: {
+							Text(level.title(increasing: settings.sortIncreasing))
+						}
+					}
+				} label: {
+					Label("Sort by \(settings.sortPuzzles.rawValue)", systemImage: "line.3.horizontal.decrease")
+				}
 			}
+
 			Divider()
 			Button(action: { showAwards = true }) {
 				Label("My Awards", systemImage: "medal")
@@ -46,6 +63,7 @@ struct GameMenuView: View {
 			Divider()
 			Button(action: { isShowingDeleteConfirmation = true } ) {
 				Label("Delete All", systemImage: "trash")
+					.tint(Color(.systemRed))
 			}
 			.disabled(dataContainer.games.isEmpty)
 		} label: {

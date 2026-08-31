@@ -136,7 +136,7 @@ struct GameListView: View {
 				}
 			case .name:
 				return filtered.sorted {
-					settings.sortIncreasing ? $0.name < $1.name : $0.name > $1.name
+					settings.sortIncreasing ? $0.name > $1.name : $0.name < $1.name
 				}
 			case .level:
 				return filtered.sorted {

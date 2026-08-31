@@ -163,6 +163,17 @@ enum FontStyle: Int, CaseIterable, Identifiable, Codable {
 enum PuzzleOrder: String, CaseIterable, Identifiable, Codable {
 	case level = "Level", name = "Name", date = "Date"
 	
+	func title(increasing: Bool) -> String {
+		switch (self, increasing) {
+			case (.level, true):  "Largest Level First"
+			case (.level, false): "Smallest Level First"
+			case (.name, true):   "Names in order"
+			case (.name, false):  "Names in reverse order"
+			case (.date, true):   "Recent Dates First"
+			case (.date, false):  "Older Dates First"
+		}
+	}
+	
 	var id: Self { self }
 }
 
