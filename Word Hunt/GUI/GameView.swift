@@ -147,6 +147,8 @@ struct GameView: View {
 						HStack {
 							if horizontalSizeClass == .regular {
 								Text("Words")
+							} else {
+								Image(systemName: "text.justify")
 							}
 							Image(systemName: "arrow.right")
 								.rotationEffect(Angle(degrees: showWords ? 90 : 0))
