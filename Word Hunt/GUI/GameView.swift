@@ -21,6 +21,7 @@ struct GameView: View {
 	@State private var showAwards = false
 	@State private var toolbarID = UUID() // kludge to fix toolbar disappearing
 	@State private var showWords = false
+	@State private var showingText = true
 	
 	#if os(iOS)
 	typealias HSView = HStack
@@ -33,9 +34,9 @@ struct GameView: View {
 	var isPhone: Bool { UIDevice.current.userInterfaceIdiom == .phone }
 	
 	@State private var colors = [
-		Color.red.opacity(0.5),
+		Color.red.opacity(0.4),
 		Color(.systemBackground),
-		.blue.opacity(0.5)
+		.blue.opacity(0.4)
 	]
 	
 	var body: some View {
@@ -69,7 +70,7 @@ struct GameView: View {
 	private func landscapeWordList() -> some View {
 		WordView(words: game.board.wordPlacements,
 				 maxWordLength: game.board.words.maxLength)
-			.frame(width: isPhone && game.rows > 16 ? 150 : nil)
+		.frame(maxWidth: isPhone && game.rows > 16 ? 150 : 300, maxHeight: .infinity)
 	}
 	
 	private func landscapeView() -> some View {
@@ -120,12 +121,11 @@ struct GameView: View {
 	func portraitWordList() -> some View {
 		let wordList = WordView(words: game.board.wordPlacements, maxWordLength: game.board.words.maxLength)
 		var listHeight: CGFloat {
-			showWords ? 300 / max(2, CGFloat(game.rows - 12)) + 100 : 0
+			showWords || !isPhone ? 300 / max(2, CGFloat(game.rows - 12)) + 100 : 0
 		}
 		wordList
-			.frame(maxWidth: .infinity, maxHeight: isPhone ? listHeight : nil)
-			.opacity(showWords ? 1 : 0)
-			//.background(.blue)
+			.frame(maxWidth: .infinity, maxHeight: listHeight)
+			.opacity(showWords || !isPhone ? 1 : 0)
 		divider()
 	}
 	
@@ -136,7 +136,7 @@ struct GameView: View {
 				Text(game.name + " Puzzle")
 					.allowsTightening(true)
 					.fixedSize(horizontal: true, vertical: false)
-					.foregroundStyle(.secondary)
+					.foregroundStyle(Color(.systemCyan))
 			} else {
 				if isPhone {
 					Button {
@@ -159,13 +159,13 @@ struct GameView: View {
 						.allowsTightening(true)
 						.lineLimit(1)
 						.frame(width: 130)
-						.foregroundStyle(.secondary)
+						.foregroundStyle(Color(.systemCyan))
 				}
 			}
 		}
 		let settingsButton = Button(action: { showSettings = true } ) {
 			Label("Settings", systemImage: "gearshape")
-				.foregroundStyle(.secondary)
+				.foregroundStyle(Color(.systemCyan))
 		}
 		let winButton = Button(action: { showAwards = true } ) {
 			Text("\(Image(systemName: game.badges.isEmpty ? "fireworks" : "medal"))")
@@ -201,10 +201,15 @@ struct GameView: View {
 
 			}
 			.id(toolbarID)
-			.foregroundStyle(.secondary)
+			.foregroundStyle(Color(.systemCyan))
 		}
 		
-		titleItem
+		if #available(iOS 26.0, *) {
+			titleItem
+				.sharedBackgroundVisibility(!isPhone || isLandscape ? .hidden : .automatic)
+		} else {
+			titleItem  // Fallback on earlier versions
+		}
 		
 		ToolbarItemGroup(placement: .primaryAction) {
 			Button(action: highlightWord) {
@@ -224,11 +229,11 @@ struct GameView: View {
 			Text(name + " Puzzle")
 				.allowsTightening(true)
 				.fixedSize(horizontal: true, vertical: false)
-				.foregroundStyle(.secondary)
+				.foregroundStyle(Color(.systemCyan))
 		} else {
 			Text(name)
 				.allowsTightening(true)
-				.foregroundStyle(.secondary)
+				.foregroundStyle(Color(.systemCyan))
 		}
 	}
 	

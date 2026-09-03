@@ -15,6 +15,7 @@ struct WordView: View {
 
 	@State private var isPhone = UIDevice.current.userInterfaceIdiom == .phone
 	
+	@Environment(DataContainer.self) private var dataContainer
 	@AppStorage(.settings) private var settings
 
 	var body: some View {
@@ -34,11 +35,15 @@ struct WordView: View {
 	@ViewBuilder
 	private var wordColumns: some View {
 		ViewThatFits(in: .horizontal) {
-			columnText(6)
-			columnText(5)
-			columnText(4)
-			columnText(3)
-			columnText(2)
+			if words.count > 10 {
+				if !dataContainer.isLandscape {
+					columnText(6)
+					columnText(5)
+					columnText(4)
+				}
+				columnText(3)
+				columnText(2)
+			}
 			columnText(1)
 		}
 	}
@@ -63,7 +68,7 @@ struct WordView: View {
 				sortedDown(maxColumns: maxColumns)
 			}
 		}
-		.frame(minWidth: CGFloat(maxColumns) * colWidth, maxHeight: CGFloat(words.count / maxColumns) * 35)
+		.frame(minWidth: CGFloat(maxColumns) * colWidth, maxHeight: CGFloat(words.count / maxColumns) * (isPhone ? 35 : 45))
 	}
 	
 	@ViewBuilder

@@ -43,8 +43,14 @@ struct Player : Codable {
 	}
 	
 	mutating func updateTimes(level: Int, interval: TimeInterval, words: Int) {
+		guard interval > 0 else { return }
 		if let d = _bestTimes[level] {
-			_bestTimes[level] = TimeCount(time: min(d.time, interval), games: d.games+1, words: words)
+			if d.time == 0 {
+				// correct erroneous 0 times
+				_bestTimes[level] = TimeCount(time: interval, games: d.games+1, words: words)
+			} else {
+				_bestTimes[level] = TimeCount(time: min(d.time, interval), games: d.games+1, words: words)
+			}
 		} else {
 			_bestTimes[level] = TimeCount(time: interval, games: 1, words: words)
 		}

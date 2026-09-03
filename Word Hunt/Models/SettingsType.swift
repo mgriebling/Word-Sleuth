@@ -142,7 +142,7 @@ extension SettingsType: RawRepresentable {
 }
 
 enum FontStyle: Int, CaseIterable, Identifiable, Codable {
-	case ultraLight, thin, light, regular, medium, semiBold, bold, black
+	case ultraLight, thin, light, regular, medium, semiBold, bold
 	
 	var weight: Font.Weight {
 		switch self {
@@ -153,7 +153,6 @@ enum FontStyle: Int, CaseIterable, Identifiable, Codable {
 			case .medium:  	  Font.Weight.medium
 			case .semiBold:	  Font.Weight.semibold
 			case .bold:    	  Font.Weight.bold
-			case .black:   	  Font.Weight.black
 		}
 	}
 	

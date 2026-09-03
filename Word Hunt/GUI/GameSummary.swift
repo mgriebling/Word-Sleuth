@@ -49,14 +49,20 @@ struct GameSummary: View {
 			proxy.size.width
 		} action: { width in
 			self.width = width
-			// print("Width = \(self.width)")
 		}
 		.overlay {
 			if game.isOver {
-				WinnerView(game: game, width: max(width, 275) * 0.6,
-						   points: settings.player.points,
-						   badges: game.badges,
-						   animation: false)
+				VStack(alignment: .trailing) {
+					HStack(alignment: .center) {
+						Spacer()
+						ForEach(game.badges) { badge in
+							Image(badge.details.image)
+								.resizable()
+								.aspectRatio(1, contentMode: .fit)
+								.frame(width: 75, height: 75)
+						}
+					}
+				}
 			}
 		}
 	}

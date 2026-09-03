@@ -88,7 +88,7 @@ import Combine
 	func stop() {
 		//print("Timer \(name) stopped")
 		state = .stopped
-		elapsedTime = 0
+		// elapsedTime = 0
 		endTime = .now
 		accumulatedTimeBeforeCurrentRun = 0
 		stopTimerLoop()

@@ -66,7 +66,7 @@ struct AchievementsView: View {
 					Divider()
 					
 					// Data Rows
-					ForEach(s.sorted(by: { $0.level < $1.level })) { item in
+					ForEach(s.sorted{ $0.level < $1.level }) { item in
 						GridRow(alignment: .center) {
 							Text("\(item.level)")
 							Text(Duration.seconds(item.interval), format: .time(pattern: .hourMinuteSecond))
