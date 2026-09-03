@@ -55,6 +55,13 @@ struct GameSummary: View {
 				VStack(alignment: .trailing) {
 					HStack(alignment: .center) {
 						Spacer()
+						if game.badges.isEmpty {
+							Image(systemName: "fireworks")
+								.resizable()
+								.aspectRatio(1, contentMode: .fit)
+								.frame(width: 75, height: 75)
+								.foregroundStyle(Color(.systemYellow))
+						}
 						ForEach(game.badges) { badge in
 							Image(badge.details.image)
 								.resizable()

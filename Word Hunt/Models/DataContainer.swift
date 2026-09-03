@@ -117,6 +117,17 @@ class DataContainer {
 		}
 	}
 	
+	func deleteGames(at offsets: IndexSet) {
+		for index in offsets {
+			let game = games[index]
+			print("Deleting game \(game.name)...")
+			game.delete()
+		}
+		
+		// Remove from UI array
+		games.remove(atOffsets: offsets)
+	}
+	
 	private func addSampleGames() {
 		if games.isEmpty {
 			let sizes = (0..<10).map { _ in Int.random(in: 10...20) }

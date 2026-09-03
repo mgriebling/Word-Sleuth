@@ -29,11 +29,6 @@ import SwiftUI
 	var isOver: Bool 		  	  { matched == placedWords.count }
 	var isRecent: Bool 		  	  { creationDate.timeIntervalSinceNow < oneWeek }
 	
-//	private var _selectedWord = ""
-//	var selectedWord: String {
-//		get { reversed ? String(_selectedWord.reversed()) : _selectedWord }
-//		set { _selectedWord = newValue }
-//	}
 	var invert = false
 	var reversed = false
 	
@@ -164,7 +159,17 @@ import SwiftUI
 	func reverseSelection() { reversed = true }
 	
 	func delete() {
-		try? FileManager.default.removeItem(at: url(name: self.name))
+		do {
+			// Delete from disk
+			let url = url(name: self.name)
+			print("url = \(url.path())")
+			if FileManager.default.fileExists(atPath: url.path()) {
+				try FileManager.default.removeItem(at: url)
+				print("Deleting \(url.path)")
+			}
+		} catch {
+			print("Error deleting \(self.name) from disk: \(error)")
+		}
 	}
 	
 	func placeWords(words: [String]) -> [PlacedWord] {
