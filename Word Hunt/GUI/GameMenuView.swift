@@ -49,7 +49,8 @@ struct GameMenuView: View {
 						}
 					}
 				} label: {
-					Label("Sort by \(settings.sortPuzzles.rawValue)", systemImage: "line.3.horizontal.decrease")
+					Label("Sort by \(settings.sortPuzzles.rawValue)",
+						  systemImage: "line.3.horizontal.decrease")
 				}
 			}
 
@@ -64,6 +65,7 @@ struct GameMenuView: View {
 			Button(action: { isShowingDeleteConfirmation = true } ) {
 				Label("Delete All", systemImage: "trash")
 					.tint(Color(.systemRed))
+					.foregroundStyle(Color(.systemRed))
 			}
 			.disabled(dataContainer.games.isEmpty)
 		} label: {

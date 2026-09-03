@@ -20,6 +20,7 @@ struct GameView: View {
 	@State private var showSettings = false
 	@State private var showAwards = false
 	@State private var toolbarID = UUID() // kludge to fix toolbar disappearing
+	@State private var showWords = false
 	
 	#if os(iOS)
 	typealias HSView = HStack
@@ -28,6 +29,8 @@ struct GameView: View {
 	typealias HSView = HSplitView
 	typealias VSView = VSplitView
 	#endif
+	
+	var isPhone: Bool { UIDevice.current.userInterfaceIdiom == .phone }
 	
 	@State private var colors = [
 		Color.red.opacity(0.5),
@@ -62,20 +65,28 @@ struct GameView: View {
 //		#endif
 	}
 	
+	@ViewBuilder
+	private func landscapeWordList() -> some View {
+		WordView(words: game.board.wordPlacements,
+				 maxWordLength: game.board.words.maxLength)
+			.frame(width: isPhone && game.rows > 16 ? 150 : nil)
+	}
+	
 	private func landscapeView() -> some View {
 		// landscape mode
 		HSView {
 			if settings.horizontal == .left {
-				wordsList()
+				landscapeWordList()
 				divider()
 			}
 			
 			LetterGridView(game: game, allowDrag: true, isLandscape: true, settings: $settings)
 				.layoutPriority(1)
+				.frame(maxWidth: .infinity, maxHeight: .infinity)
 			
 			if settings.horizontal == .right {
 				divider()
-				wordsList()
+				landscapeWordList()
 			}
 		}
 		.background(
@@ -83,14 +94,20 @@ struct GameView: View {
 		)
 	}
 	
+	@ViewBuilder
 	private func portraitView() -> some View {
 		// portrait mode
 		VSView {
-			wordsList()
-			divider()
+			portraitWordList()
 			
 			LetterGridView(game: game, allowDrag: true, isLandscape: false, settings: $settings)
 				.layoutPriority(1)
+				.frame(maxWidth: .infinity, maxHeight: .infinity)
+				.onAppear {
+					if !showWords, game.rows < 18 {
+						showWords = true
+					}
+				}
 			Spacer()
 		}
 		.padding(.horizontal)
@@ -99,45 +116,50 @@ struct GameView: View {
 		)
 	}
 	
-	func wordsList() -> some View {
-//		ZStack {
-			WordView(words: game.board.wordPlacements, maxWordLength: game.board.words.maxLength)
-//			floatingWord(game.selectedWord)
-//				.frame(maxWidth: 400)
-//		}
-	}
-	
-	/// the custom styled dividing line block by Google AI
-	func divider() -> some View {
-		#if os(macOS)
-		Group {
-			Rectangle()
-				// Changes color dynamically when the cursor hovers over the area
-				.fill(isHovering ? Color.accentColor : Color(.separatorColor))
-				.frame(width: isHovering ? 3 : 1)
-				.animation(.easeOut(duration: 0.1), value: isHovering)
+	@ViewBuilder
+	func portraitWordList() -> some View {
+		let wordList = WordView(words: game.board.wordPlacements, maxWordLength: game.board.words.maxLength)
+		var listHeight: CGFloat {
+			showWords ? 300 / max(2, CGFloat(game.rows - 12)) + 100 : 0
 		}
-		// Strict sizing so this "middle pane" acts as a slim dividing bar
-		.frame(width: 8)
-		.contentShape(Rectangle()) // Expands hover asset detection region
-		.onHover { inside in
-			isHovering = inside
-			if inside {
-				NSCursor.resizeLeftRight.push()
-			} else {
-				NSCursor.pop()
-			}
-		}
-		#else
-		Spacer()
-		#endif
+		wordList
+			.frame(maxWidth: .infinity, maxHeight: isPhone ? listHeight : nil)
+			.opacity(showWords ? 1 : 0)
+			//.background(.blue)
+		divider()
 	}
 	
 	@ToolbarContentBuilder
 	func toolBar(isLandscape: Bool) -> some ToolbarContent {
 		let titleItem = ToolbarItem(placement: .topBarLeading) {
-			title(name: game.name, isLandscape: isLandscape)
-				.id(toolbarID)
+			if isLandscape || !isPhone {
+				Text(game.name + " Puzzle")
+					.allowsTightening(true)
+					.fixedSize(horizontal: true, vertical: false)
+					.foregroundStyle(.secondary)
+			} else {
+				if isPhone {
+					Button {
+						withAnimation {
+							showWords.toggle()
+						}
+					} label: {
+						HStack {
+							if horizontalSizeClass == .regular {
+								Text("Words")
+							}
+							Image(systemName: "arrow.right")
+								.rotationEffect(Angle(degrees: showWords ? 90 : 0))
+						}
+					}
+				} else {
+					Text(game.name)
+						.allowsTightening(true)
+						.lineLimit(1)
+						.frame(width: 130)
+						.foregroundStyle(.secondary)
+				}
+			}
 		}
 		let settingsButton = Button(action: { showSettings = true } ) {
 			Label("Settings", systemImage: "gearshape")
@@ -150,7 +172,7 @@ struct GameView: View {
 		
 		ToolbarItemGroup(placement: .principal) { // macOS uses .status
 			ViewThatFits(in: .horizontal) {
-				if UIDevice.current.userInterfaceIdiom == .pad {
+				if !isPhone || isLandscape {
 					HStack {
 						if game.isOver {
 							winButton
@@ -174,16 +196,14 @@ struct GameView: View {
 						.fixedSize(horizontal: true, vertical: false)
 						.fontDesign(.monospaced)
 				}
+
 			}
 			.id(toolbarID)
 			.foregroundStyle(.secondary)
 		}
-		if #available(iOS 26.0, *) {
-			titleItem
-			.sharedBackgroundVisibility(.hidden)
-		} else {
-			titleItem  // Fallback on earlier versions
-		}
+		
+		titleItem
+		
 		ToolbarItemGroup(placement: .primaryAction) {
 			Button(action: highlightWord) {
 				Image(systemName: "lightbulb")
@@ -195,10 +215,10 @@ struct GameView: View {
 			GameMenuView(game: game, isInDetail: true)
 		}
 	}
-	
+		
 	@ViewBuilder
 	func title (name: String, isLandscape: Bool) -> some View {
-		if isLandscape || UIDevice.current.userInterfaceIdiom != .phone {
+		if isLandscape || !isPhone {
 			Text(name + " Puzzle")
 				.allowsTightening(true)
 				.fixedSize(horizontal: true, vertical: false)
@@ -226,11 +246,37 @@ struct GameView: View {
 			}
 		}
 	}
+	
+	/// the custom styled dividing line block by Google AI
+	func divider() -> some View {
+		#if os(macOS)
+		Group {
+			Rectangle()
+				// Changes color dynamically when the cursor hovers over the area
+				.fill(isHovering ? Color.accentColor : Color(.separatorColor))
+				.frame(width: isHovering ? 3 : 1)
+				.animation(.easeOut(duration: 0.1), value: isHovering)
+		}
+		// Strict sizing so this "middle pane" acts as a slim dividing bar
+		.frame(width: 8)
+		.contentShape(Rectangle()) // Expands hover asset detection region
+		.onHover { inside in
+			isHovering = inside
+			if inside {
+				NSCursor.resizeLeftRight.push()
+			} else {
+				NSCursor.pop()
+			}
+		}
+		#else
+		Spacer()
+		#endif
+	}
 }
 
 #Preview {
 	@Previewable
-	@State var game = Game(10, cols: 10, words: SampleWordLists.all[0])
+	@State var game = Game(16, cols: 12, words: SampleWordLists.all[0])
 	NavigationStack {
 		GameView(game: game)
 			.environment(DataContainer())

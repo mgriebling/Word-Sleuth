@@ -79,10 +79,10 @@ struct LetterGridView: View {
 		.onAppear {
 			let invert = isLandscape && (game.rows > game.cols)
 			// board = invert ? game.transpose() : game.board
-			//				settings.highlight = .colorFill
-			//				settings.highlightColor = Color(.selectionYellow)
-			//				settings.selectionColor = Color(.selectionRed)
-			//				settings.selectionOKColor = Color(.selectionGreen)
+//			settings.highlight = .outlineFill
+//			settings.highlightColor = Color(.yellow)
+//			settings.selectionColor = Color(.blue)
+//			settings.selectionOKColor = Color(.green)
 			game.setOrientation(landscape: isLandscape)
 			numCols = game.cols
 			numRows = game.rows
@@ -90,9 +90,9 @@ struct LetterGridView: View {
 			//				for i in 0..<game.placedWords.count {
 			//					board.highlightWord(i, Int.random(in: 0...7))
 			//				}
-			//				game.board.highlightWord(0, 4)
-			//				game.board.highlightWord(1, 1)
-			//				game.board.highlightWord(5, 2)
+//			game.board.highlightWord(0, 4)
+//			game.board.highlightWord(1, 1)
+//			game.board.highlightWord(5, 2)
 			//game.board.highlightWord(10, 3)
 			//				print(game.board.words.words)
 			placedSet = Set(game.board.wordPlacements.map({ $0.extended }))
@@ -121,15 +121,13 @@ struct LetterGridView: View {
 		let fill = settings.highlight.isFill || selected
 		let multi = settings.highlight.isColor
 		let lineWidth = settings.highlight.isOutline || selected ? 3.0 : 0.0
-		let fillColor = detectedWord != nil ? settings.selectionOKColor : settings.selectionColor
-		let color = selected ? fillColor : settings.highlightColor
-		let color2 = multi ? color : Color(.gray)
+		let fillColor = detectedWord != nil ? settings.selectionOKColor.myMix(with: Color(.systemBackground), by: 0.4) : settings.selectionColor.myMix(with: Color(.systemBackground), by: 0.5)
+		let color = selected ? fillColor : settings.highlightColor.myMix(with: Color(.systemBackground), by: 0.6)
+		let lineColor = color.myMix(with: settings.highlightColor, by: 0.2)
 		let scale = selected ? 1.0 : 0.80
-		let colorMix1 = color
-		let lineColor = color2.opacity(0.5)
-		let random = colors[highlighted].opacity(0.4)
+		let random = colors[highlighted].opacity(0.5)
 		return Capsule()
-			.fill(fill ? colorMix1 : (multi ? random : .clear))
+			.fill(fill ? color : (multi ? random : .clear))
 			.stroke(lineColor, lineWidth: lineWidth)
 			.frame(width: cellSize * scale, height: startPoint.distance(to: endPoint) + cellSize * scale)
 			.rotationEffect(Angle(radians: startPoint.angle(to: endPoint)))
@@ -206,7 +204,7 @@ struct LetterGridView: View {
 				Text(String(activeWord.reversed()))
 			}
 		}
-		.font(.system(size: cellSize * 0.7, weight: settings.fontStyle.weight))
+		.font(.system(size: cellSize * 0.8, weight: settings.fontStyle.weight))
 		.lineLimit(1)
 		.minimumScaleFactor(0.75)
 		.allowsTightening(true)
@@ -290,6 +288,7 @@ struct LetterGridView: View {
 		if let index = game.words.firstIndex(of: selectedWord.lowercased()) {
 			game.board.highlightWord(index, colorIndex)
 			selectedWord = ""
+			game.save(to: game.name)
 		}
 	}
 	
@@ -334,7 +333,7 @@ struct LetterGridView: View {
 
 #Preview {
 	@Previewable
-	@State var game = Game(5, cols: 5, words: SampleWordLists.all[2])
+	@State var game = Game(20, cols: 10, words: SampleWordLists.all[2])
 	@Previewable @State var settings = SettingsType()
 	LetterGridView(game: game, allowDrag: true, isLandscape: true, settings: $settings)
 		.environment(DataContainer.sample20x20)

@@ -31,6 +31,7 @@ struct WordView: View {
 		.fontWeight(.regular)
 	}
 	
+	@ViewBuilder
 	private var wordColumns: some View {
 		ViewThatFits(in: .horizontal) {
 			columnText(6)
@@ -38,6 +39,7 @@ struct WordView: View {
 			columnText(4)
 			columnText(3)
 			columnText(2)
+			columnText(1)
 		}
 	}
 	
@@ -71,14 +73,14 @@ struct WordView: View {
 		ScrollView(.vertical) {
 			LazyVGrid(columns: columns, alignment: .leading) {
 				ForEach(words, id: \.self) { word in
-					wordView(for: word)
+					PlacedWordView(word: word)
 				}
 			}
 		}
 	}
 	
 	@ViewBuilder
-	private func sortedDown(maxColumns: Int = 6) ->	some View  {
+	private func sortedDown(maxColumns: Int) ->	some View  {
 		let wordChunks = chunked(words, cols: maxColumns)
 		let colWidth = CGFloat(10 * maxWordLength)
 		ScrollView(.vertical) {
@@ -86,25 +88,13 @@ struct WordView: View {
 				ForEach(wordChunks, id: \.self) { chunk in
 					VStack(alignment: .leading) {
 						ForEach(chunk, id: \.self) { word in
-							wordView(for: word)
-								.frame(minWidth: 1.3 * colWidth, alignment: .leading)
+							PlacedWordView(word: word)
+								.frame(minWidth: colWidth, alignment: .leading)
 						}
 					}
 				}
 			}
 		}
-	}
-	
-	@ViewBuilder
-	private func wordView(for word: PlacedWord) -> some View {
-		let highlighted = word.highlighted
-		let textColor = highlighted ? Color(.systemGray) : .primary
-		Text(word.word.capitalized)
-			.foregroundColor(textColor)
-			.strikethrough(highlighted)
-			.allowsTightening(true)
-			.lineLimit(1)
-			.fixedSize(horizontal: true, vertical: false)
 	}
 	
 	private func chunked(_ words: [PlacedWord], cols: Int) -> ChunksOfCountCollection<[PlacedWord]> {

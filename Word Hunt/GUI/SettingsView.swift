@@ -65,22 +65,6 @@ struct SettingsView: View {
 					}
 				}
 				
-//				Section("Sort Puzzles") {
-//					HStack {
-//						Picker("Order by:", selection: $internalSettings.sortPuzzles) {
-//							ForEach(PuzzleOrder.allCases, id:\.self) { level in
-//								Text("\(level.rawValue)").tag(level)
-//							}
-//						}
-//						.pickerStyle(.segmented)
-//					
-//						Button("", systemImage: internalSettings.sortIncreasing ? "arrow.down" : "arrow.up")
-//						{
-//							internalSettings.sortIncreasing.toggle()
-//						}
-//					}
-//				}
-				
 				Section("Word Selection") {
 					Toggle("Allow Reverse Selection", isOn: $internalSettings.allowReverseSelection)
 				}

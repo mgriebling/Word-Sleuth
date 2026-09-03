@@ -22,6 +22,17 @@ extension Array {
 	}
 }
 
+extension Color {
+	func myMix (with color: Color, by ratio: Double) -> Color {
+		if #available(iOS 18.0, *) {
+			return self.mix(with: color, by: ratio)
+		} else {
+			// Fallback on earlier versions
+			return self.opacity(ratio)
+		}
+	}
+}
+
 extension CGPoint {
 	// MARK: - Geometry Math Helpers
 	func distance(to other: CGPoint) -> CGFloat { hypot(x - other.x, y - other.y) }
