@@ -68,7 +68,7 @@ import Combine
 	}
 	
 	func handleViewDisappearing() {
-		print("\(name) disappearing")
+//		print("\(name) disappearing")
 		if state == .running {
 			update()
 			accumulatedTimeBeforeCurrentRun = elapsedTime
@@ -79,7 +79,7 @@ import Combine
 	}
 	
 	func handleViewAppearing() {
-		print("\(name) appearing")
+//		print("\(name) appearing")
 		if state == .runningBeforeExit || (state == .stopped && endTime == nil) {
 			start()
 		}
@@ -104,7 +104,7 @@ import Combine
 	// MARK: - JSON Disk I/O (Saves only on exit, not every tick)
 	private func saveToDisk() {
 		if let data = try? JSONEncoder().encode(self) {
-			print("Saved \(name), state = \(state)")
+//			print("Saved \(name), state = \(state)")
 			try? data.write(to: fileURL, options: .atomic)
 		}
 	}
@@ -112,7 +112,7 @@ import Combine
 	private func loadTimer() {
 		guard let data = try? Data(contentsOf: fileURL),
 			  let timer = try? JSONDecoder().decode(MyTimer.self, from: data) else { return }
-		print("Loaded \(name), state = \(state)")
+//		print("Loaded \(name), state = \(state)")
 		self.elapsedTime = timer.elapsedTime
 		self.state = timer.state
 		self.endTime = timer.endTime

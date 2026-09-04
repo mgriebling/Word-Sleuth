@@ -38,7 +38,7 @@ struct GameEditor: View {
 				Section("Default Level") {
 					Picker("Level:", selection: $settings.level) {
 						ForEach(Level.allCases.dropFirst(), id:\.self) { level in
-							Text("\(level.rawValue)").tag(level)
+							Text(level.rawValue, format: .number).tag(level) //  "\(level.rawValue)").tag(level)
 						}
 					}
 					.pickerStyle(.segmented)

@@ -127,8 +127,8 @@ struct WordView: View {
 	// Reduces the array into a single concatenated Text view
 	// From Goggle AI
 	private var concatenatedText: Text {
-		guard !words.isEmpty else { return Text("") }
-		return words.enumerated().reduce(Text("")) { result, item in
+		guard !words.isEmpty else { return Text(verbatim: "") }
+		return words.enumerated().reduce(Text(verbatim: "")) { result, item in
 			let (index, word) = item
 			let textColor = word.highlighted ? Color(.gray) : .primary
 			
@@ -139,7 +139,7 @@ struct WordView: View {
 			
 			// 2. Add a comma and space if it is not the last item
 			let separator = index < words.count - 1 ?
-				Text(", ").foregroundColor(textColor) : Text("")
+			Text(verbatim: ", ").foregroundColor(textColor) : Text(verbatim: "")
 			
 			// 3. Concatenate to the running result
 			return result + wordText + separator

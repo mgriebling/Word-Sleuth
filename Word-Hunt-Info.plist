@@ -19,6 +19,19 @@
 	</array>
 	<key>CFBundleGetInfoString</key>
 	<string></string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>fr</string>
+		<string>de</string>
+		<string>it</string>
+		<string>Spanish</string>
+		<string>Danish</string>
+		<string>Turkish</string>
+		<string>Czech</string>
+		<string>Russian</string>
+		<string>Polish</string>
+	</array>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>

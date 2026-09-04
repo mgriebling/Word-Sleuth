@@ -162,7 +162,7 @@ enum FontStyle: Int, CaseIterable, Identifiable, Codable {
 enum PuzzleOrder: String, CaseIterable, Identifiable, Codable {
 	case level = "Level", name = "Name", date = "Date"
 	
-	func title(increasing: Bool) -> String {
+	func title(increasing: Bool) -> LocalizedStringKey {
 		switch (self, increasing) {
 			case (.level, true):  "Largest Level First"
 			case (.level, false): "Smallest Level First"
@@ -176,11 +176,11 @@ enum PuzzleOrder: String, CaseIterable, Identifiable, Codable {
 	var id: Self { self }
 }
 
-enum Level: String, CaseIterable, Identifiable, Codable {
-	case manual = "Man", three = "3", four = "4", five = "5", six = "6"
-	case seven = "7", eight = "8", nine = "9", ten = "10"
+enum Level: Int, CaseIterable, Identifiable, Codable {
+	case manual, three, four, five, six
+	case seven, eight, nine, ten
 	
-	var value: Int { Int(self.rawValue) ?? 0 }
+	var value: Int { self.rawValue + 2 }
 	
 	/// returns the game grid size to give this level
 	var size: Int {
@@ -196,14 +196,24 @@ enum Level: String, CaseIterable, Identifiable, Codable {
 			default: 	  5
 		}
 	}
+	
+	var localized: LocalizedStringKey {
+		if self == .manual { return "Man" }
+		return LocalizedStringKey(value.formatted())
+	}
 
 	var id: Self { self }
 }
 
-enum CreationMode: String, CaseIterable, Identifiable, Codable {
-	case oneGame = "1", twoGames = "2", threeGames = "3", fourGrames = "4",
-		 fiveGames = "5", custom = "Custom"
-	var number: Int { Int(self.rawValue) ?? 1 }
+enum CreationMode: Int, CaseIterable, Identifiable, Codable {
+	case oneGame , twoGames, threeGames, fourGrames,
+		 fiveGames, custom
+	
+	var localized: LocalizedStringKey {
+		if self == .custom { return "Custom" }
+		return LocalizedStringKey(number.formatted())
+	}
+	var number: Int { self.rawValue + 1 }
 	var id: Self { self }
 }
 
@@ -214,7 +224,7 @@ enum HighLight: CaseIterable, Identifiable, Codable {
 	var isOutline: Bool { self == .outline || self == .outlineFill }
 	var isColor: Bool { self == .colorFill }
 	
-	var name: String {
+	var name: LocalizedStringKey {
 		switch self {
 			case .outline: 	   "Outline"
 			case .fill: 	   "Fill"

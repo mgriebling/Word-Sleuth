@@ -1917,10 +1917,6 @@ bison
 bisque
 bistro
 bit
-bitch
-bitches
-bitching
-bitchy
 bite
 bites
 biting
@@ -2081,8 +2077,6 @@ blower
 blowfish
 blowhard
 blowing
-blowjob
-blowjobs
 blown
 blowout
 blows
@@ -2642,8 +2636,6 @@ bullies
 bullion
 bullpen
 bulls
-bullshit
-bullshitting
 bully
 bum
 bumble
@@ -3476,7 +3468,6 @@ chickened
 chickening
 chickenpox
 chickens
-chickenshit
 chicks
 chico
 chief
@@ -5219,8 +5210,6 @@ cummerbund
 cumulative
 cuneiform
 cunning
-cunt
-cunts
 cup
 cupboard
 cupboards
@@ -10709,7 +10698,6 @@ horsemen
 horsepower
 horseradish
 horses
-horseshit
 horsey
 horsing
 horticulture
@@ -19812,11 +19800,6 @@ shirking
 shirt
 shirtless
 shirts
-shit
-shithead
-shits
-shitting
-shitty
 shiv
 shiva
 shiver
@@ -23837,7 +23820,6 @@ upwards
 uranium
 urban
 urchin
-urethra
 urge
 urged
 urgency
@@ -24653,8 +24635,6 @@ whoops
 whoosh
 whopper
 whopping
-whore
-whores
 whose
 why
 whys
@@ -25114,8 +25094,6 @@ zipped
 zipper
 zipping
 zippy
-zit
-zits
 zlotys
 zodiac
 zombie

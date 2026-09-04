@@ -25,7 +25,7 @@ struct ElapsedTimeTracker: ViewModifier {
 				// start timer if onAppear didn't activate
 				try? await Task.sleep(for: .seconds(2))
 				if game.timer.state == .runningBeforeExit {
-					print("Task \(game.name) started")
+//					print("Task \(game.name) started")
 					game.timer.handleViewAppearing()
 				}
 			}

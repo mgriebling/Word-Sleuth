@@ -274,9 +274,9 @@ struct LetterGridView: View {
 		}
 		
 		if game.isOver {
+			effect("victory-chime")
 			settings.player.add(points: game.words.count)
 			animateWin = true
-			effect("victory-chime")
 			game.timer.stop()
 			dataContainer.unlockBadges(newGame: game)
 			settings.player.updateTimes(level: game.level, interval: TimeInterval(game.timer.elapsedTime), words: game.words.count)

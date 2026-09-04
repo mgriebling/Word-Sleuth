@@ -18,6 +18,15 @@ struct GameListView: View {
 	enum Filter : String, CaseIterable, Identifiable {
 		case all, recent, active, new
 		
+		var localized: LocalizedStringKey {
+			switch self {
+				case .all: 	  return "All"
+				case .recent: return "Recent"
+				case .active: return "Active"
+				case .new: 	  return "New"
+			}
+		}
+		
 		var id: Filter { return self }
 	}
 	
@@ -45,7 +54,7 @@ struct GameListView: View {
 			HStack {
 				Picker("Filter By:", selection: $filter.animation()) {
 					ForEach(Filter.allCases, id: \.self) { mode in
-						Text("\(mode.rawValue.capitalized)").tag(mode)
+						Text(mode.localized).tag(mode)
 					}
 				}
 				.pickerStyle(.segmented)

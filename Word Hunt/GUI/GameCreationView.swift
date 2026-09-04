@@ -32,7 +32,7 @@ struct GameCreationView: View {
 				Section("Number of Puzzles to Create") {
 					Picker("Create Game:", selection: $creationMode.animation()) {
 						ForEach(CreationMode.allCases.dropLast(), id:\.self) { mode in
-							Text("\(mode.rawValue)").tag(mode)
+							Text(mode.localized).tag(mode)
 						}
 						Image(systemName: "ellipsis")
 							.tag(CreationMode.custom)
@@ -60,7 +60,7 @@ struct GameCreationView: View {
 				Section("Puzzle Level") {
 					Picker("Level:", selection: $level) {
 						ForEach(Level.allCases, id:\.self) { level in
-							Text("\(level.rawValue)").tag(level)
+							Text(level.localized).tag(level)
 						}
 					}
 					.pickerStyle(.segmented)
@@ -118,7 +118,7 @@ struct GameCreationView: View {
 					if wordListOption == 2 {
 						Picker("Choose:", selection: $wordList) {
 							ForEach(sortedWordList) { list in
-								Text("\(list.name)").tag(list)
+								Text(list.name).tag(list)
 							}
 						}
 						.onChange(of: wordList) {

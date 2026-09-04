@@ -68,10 +68,10 @@ struct AchievementsView: View {
 					// Data Rows
 					ForEach(s.sorted{ $0.level < $1.level }) { item in
 						GridRow(alignment: .center) {
-							Text("\(item.level)")
+							Text(item.level, format: .number) //      "\(item.level)")
 							Text(Duration.seconds(item.interval), format: .time(pattern: .hourMinuteSecond))
 							Text("\(Int(item.interval) / item.words) secs")
-							Text("\(item.games)")
+							Text(item.games, format: .number)  // "\(item.games)")
 						}
 					}
 				}

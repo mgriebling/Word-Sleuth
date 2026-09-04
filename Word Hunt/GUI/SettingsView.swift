@@ -30,7 +30,7 @@ struct SettingsView: View {
 						Text("Games:")
 						Picker("Create Game:", selection: $creationMode.animation()) {
 							ForEach(CreationMode.allCases.dropLast(), id:\.self) { mode in
-								Text("\(mode.rawValue)").tag(mode)
+								Text(mode.rawValue, format: .number) //   "\(mode.rawValue)").tag(mode)
 							}
 							Image(systemName: "ellipsis")
 								.tag(CreationMode.custom)
@@ -59,7 +59,7 @@ struct SettingsView: View {
 						Text("Level:")
 						Picker("Level:", selection: $internalSettings.level) {
 							ForEach(Level.allCases.dropFirst(), id:\.self) { level in
-								Text("\(level.rawValue)").tag(level)
+								Text(level.rawValue, format: .number)  // "\(level.rawValue)").tag(level)
 							}
 						}
 						.pickerStyle(.segmented)
@@ -99,7 +99,7 @@ struct SettingsView: View {
 					if internalSettings.soundsOn {
 						HStack {
 							Text("Volume:")
-							Text("\(Int(internalSettings.soundVolume * 100))%")
+							Text(internalSettings.soundVolume, format: .percent.precision(.fractionLength(0)))
 							Slider(value: $internalSettings.soundVolume, in: 0.0...1.0) {
 								Text("Sound Volume")
 							} minimumValueLabel: {
@@ -129,7 +129,7 @@ struct SettingsView: View {
 						Text("Font Weight:")
 						Picker("Weight:", selection: $internalSettings.fontStyle) {
 							ForEach(FontStyle.allCases, id:\.self) { level in
-								Text("\(level.rawValue)").tag(level)
+								Text(level.rawValue, format: .number).tag(level)   // "\(level.rawValue)").tag(level)
 							}
 						}
 						.pickerStyle(.segmented)

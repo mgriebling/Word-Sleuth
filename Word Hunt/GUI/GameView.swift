@@ -79,7 +79,7 @@ struct GameView: View {
 			}
 		}
 //		#if os(ios)
-		.navigationTitle("")
+		.navigationTitle(Text(verbatim: ""))
 		.navigationBarTitleDisplayMode(.inline)
 //		#endif
 	}
@@ -196,7 +196,7 @@ struct GameView: View {
 				.foregroundStyle(Color(.systemCyan))
 		}
 		let winButton = Button(action: { showAwards = true } ) {
-			Text("\(Image(systemName: game.badges.isEmpty ? "fireworks" : "medal"))")
+			Image(systemName: game.badges.isEmpty ? "fireworks" : "medal")
 				.foregroundStyle(colorScheme == .dark ? .yellow : .red)
 		}
 		
