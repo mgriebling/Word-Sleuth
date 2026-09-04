@@ -296,7 +296,7 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	}
 	
 	static func loadSystemWords() -> [String] {
-		if let wordFilePath = Bundle.main.path(forResource: "top35K-english", ofType: "txt") {
+		if let wordFilePath = Bundle.main.path(forResource: "top25K-english", ofType: "txt") {
 			if let content = try? String(contentsOfFile: wordFilePath, encoding: .utf8) {
 				return content.components(separatedBy: .newlines)
 			}

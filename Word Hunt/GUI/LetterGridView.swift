@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-// import Subsonic
 
 /// Row x Col Game Board Matrix
 struct LetterGridView: View {
@@ -15,6 +14,7 @@ struct LetterGridView: View {
 	var allowDrag: Bool = false
 	var isLandscape: Bool = false
 	
+	@Binding var selectedWord: String
 	@Binding var settings: SettingsType
 	
 	@Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -31,7 +31,7 @@ struct LetterGridView: View {
 	@State private var numCols = 1
 	@State private var animateWin = false
 	@State private var done: Bool = false
-	@State private var selectedWord = ""
+	// @State private var selectedWord = ""
 	
 	@State private var cellSize: CGFloat = 40
 	@State private var width: CGFloat = 400
@@ -43,18 +43,14 @@ struct LetterGridView: View {
 	]
 	
 	let spacing: CGFloat = 0	// space between columns and rows
-	let colors = [Color.red, .orange, .yellow, .green, .blue, .purple, .pink, .mint]
+	let colors = [Color.red, .orange, .yellow, .green, .blue, .brown, .purple, .pink, .mint]
 	let color = Color(.systemCyan)
 
 	var body: some View {
 		let isCompact = horizontalSizeClass == .compact
 		let padding: CGFloat = isCompact ? 10 : 20  // space between frame and letters
-		ZStack {
-			newGrid()
-			//if !settings.allowReverseSelection {
-				floatingWord(selectedWord)
-			//}
-		}
+		
+		newGrid()
 		.padding(padding)
 		.coordinateSpace(name: "GridSpace")
 		.background {
@@ -190,35 +186,6 @@ struct LetterGridView: View {
 		.ignoresSafeArea()
 	}
 	
-	/// Floating selected name
-	@ViewBuilder
-	private func floatingWord(_ activeWord: String) -> some View {
-		//let cellSize: CGFloat = 30
-		let start = dragStartCell ?? CellIndex()
-		let offset = cellSize * CGFloat(numRows) / 4
-		let grey = Color(.systemGray4)
-		let frameWidth = activeWord.count/2 + 1
-		VStack {
-			Text(activeWord)
-			if settings.allowReverseSelection {
-				Text(String(activeWord.reversed()))
-			}
-		}
-		.font(.system(size: cellSize * 0.8, weight: settings.fontStyle.weight))
-		.lineLimit(1)
-		.minimumScaleFactor(0.75)
-		.allowsTightening(true)
-		.fixedSize(horizontal: true, vertical: false)
-		.frame(width: cellSize * CGFloat(frameWidth), height: cellSize)
-		.padding(10)
-		.background(grey)
-		.cornerRadius(15)
-		.zIndex(10)
-		.opacity(activeWord.isEmpty ? 0.0 : 1.0)
-		.animation(.none, value: frameWidth)
-		.offset(y: start.row > numRows/2 ? -offset : offset)
-	}
-	
 	// MARK: - Word Evaluation Mechanics
 	
 	private func processDrag(location: CGPoint, startLocation: CGPoint, cellSize: CGFloat, pad: CGFloat) {
@@ -307,13 +274,13 @@ struct LetterGridView: View {
 		}
 		
 		if game.isOver {
+			settings.player.add(points: game.words.count)
+			animateWin = true
 			effect("victory-chime")
 			game.timer.stop()
 			dataContainer.unlockBadges(newGame: game)
 			settings.player.updateTimes(level: game.level, interval: TimeInterval(game.timer.elapsedTime), words: game.words.count)
 			game.save(to: game.name)
-			settings.player.add(points: game.words.count)
-			animateWin = true
 		}
 		
 		// UI cleanup sequence
@@ -335,6 +302,7 @@ struct LetterGridView: View {
 	@Previewable
 	@State var game = Game(20, cols: 10, words: SampleWordLists.all[2])
 	@Previewable @State var settings = SettingsType()
-	LetterGridView(game: game, allowDrag: true, isLandscape: true, settings: $settings)
+	@Previewable @State var selectedWord = ""
+	LetterGridView(game: game, allowDrag: true, isLandscape: true, selectedWord: $selectedWord, settings: $settings)
 		.environment(DataContainer.sample20x20)
 }

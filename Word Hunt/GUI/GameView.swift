@@ -22,6 +22,7 @@ struct GameView: View {
 	@State private var toolbarID = UUID() // kludge to fix toolbar disappearing
 	@State private var showWords = false
 	@State private var showingText = true
+	@State private var selectedWord = ""
 	
 	#if os(iOS)
 	typealias HSView = HStack
@@ -46,6 +47,23 @@ struct GameView: View {
 			} else {
 				portraitView()
 			}
+			
+//			// Places floating word selection near the top
+//			if dataContainer.isLandscape {
+//				VStack {
+//					HStack {
+//						FloatingWord(activeWord: $selectedWord)
+//							.padding(.leading, 100)
+//						Spacer()
+//					}
+//					Spacer()
+//				}
+//			} else {
+//				VStack {
+//					FloatingWord(activeWord: $selectedWord)
+//					Spacer()
+//				}
+//			}
 		}
 		.sheet(isPresented: $showAwards) {
 			AchievementsView()
@@ -68,9 +86,16 @@ struct GameView: View {
 	
 	@ViewBuilder
 	private func landscapeWordList() -> some View {
-		WordView(words: game.board.wordPlacements,
-				 maxWordLength: game.board.words.maxLength)
-		.frame(maxWidth: isPhone && game.rows > 16 ? 150 : 300, maxHeight: .infinity)
+		ZStack {
+			WordView(words: game.board.wordPlacements,
+					 maxWordLength: game.board.words.maxLength)
+			.frame(maxWidth: isPhone && game.rows > 16 ? 150 : 300, maxHeight: .infinity)
+			
+			VStack {
+				FloatingWord(activeWord: $selectedWord)
+				Spacer()
+			}
+		}
 	}
 	
 	private func landscapeView() -> some View {
@@ -81,7 +106,7 @@ struct GameView: View {
 				divider()
 			}
 			
-			LetterGridView(game: game, allowDrag: true, isLandscape: true, settings: $settings)
+			LetterGridView(game: game, allowDrag: true, isLandscape: true, selectedWord: $selectedWord, settings: $settings)
 				.layoutPriority(1)
 				.frame(maxWidth: .infinity, maxHeight: .infinity)
 			
@@ -101,7 +126,7 @@ struct GameView: View {
 		VSView {
 			portraitWordList()
 			
-			LetterGridView(game: game, allowDrag: true, isLandscape: false, settings: $settings)
+			LetterGridView(game: game, allowDrag: true, isLandscape: false, selectedWord: $selectedWord, settings: $settings)
 				.layoutPriority(1)
 				.frame(maxWidth: .infinity, maxHeight: .infinity)
 				.onAppear {
@@ -123,10 +148,19 @@ struct GameView: View {
 		var listHeight: CGFloat {
 			showWords || !isPhone ? 300 / max(2, CGFloat(game.rows - 12)) + 100 : 0
 		}
-		wordList
-			.frame(maxWidth: .infinity, maxHeight: listHeight)
-			.opacity(showWords || !isPhone ? 1 : 0)
-		divider()
+		ZStack {
+			VStack {
+				wordList
+					.frame(maxWidth: .infinity, maxHeight: listHeight)
+					.opacity(showWords || !isPhone ? 1 : 0)
+				divider()
+			}
+			
+			VStack {
+				FloatingWord(activeWord: $selectedWord)
+				Spacer()
+			}
+		}
 	}
 	
 	@ToolbarContentBuilder
@@ -140,16 +174,10 @@ struct GameView: View {
 			} else {
 				if isPhone {
 					Button {
-						withAnimation {
-							showWords.toggle()
-						}
+						withAnimation { showWords.toggle() 	}
 					} label: {
-						HStack {
-							if horizontalSizeClass == .regular {
-								Text("Words")
-							} else {
-								Image(systemName: "text.justify")
-							}
+						HStack(spacing: 0) {
+							Image(systemName: "text.justify")
 							Image(systemName: "arrow.right")
 								.rotationEffect(Angle(degrees: showWords ? 90 : 0))
 						}
@@ -192,6 +220,9 @@ struct GameView: View {
 						winButton
 					} else {
 						Text("\(game.matched) / \(game.placedWords.count)")
+							.allowsTightening(true)
+							.lineLimit(1)
+							.fixedSize(horizontal: true, vertical: false)
 					}
 					ElapsedTime(text: "", timer: game.timer)
 						.lineLimit(1)

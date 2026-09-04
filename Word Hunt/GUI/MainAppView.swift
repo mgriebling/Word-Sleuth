@@ -69,12 +69,6 @@ struct MainAppView: View {
 								columnVisibility = .detailOnly
 							}
 							.trackElapsedTime(in: game)
-							.onAppear {
-								print("Puzzle \(game.name) appeared")
-							}
-							.onDisappear {
-								print("Puzzle \(game.name) disappeared")
-							}
 					} else {
 						blankView(for: activeTab)
 					}

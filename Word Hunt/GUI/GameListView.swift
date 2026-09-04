@@ -83,14 +83,14 @@ struct GameListView: View {
 					}
 				}
 				.onDelete { indexSet in
-					let realIndexes = indexSet.map { index in
+					// converted sorted indices to original indices
+					var realIndices: [Int] = []
+					for index in indexSet {
 						if let newIndex = dataContainer.games.firstIndex(of: filteredSorted[index]) {
-							return newIndex
+							realIndices.append(newIndex)
 						}
-						return -1
 					}
-					let set = IndexSet(realIndexes.filter({ $0 >= 0 }))
-					dataContainer.deleteGames(at: set)
+					dataContainer.deleteGames(at: IndexSet(realIndices))
 				}
 			}
 			.navigationTitle("Puzzles")

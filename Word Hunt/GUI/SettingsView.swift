@@ -20,6 +20,7 @@ struct SettingsView: View {
 	@State private var internalSettings = SettingsType()
 	@State private var game = Game(size: SettingsType.maxColRange.lowerBound, words: words)
 	@State private var creationMode: CreationMode = .oneGame
+	@State private var selectedWord = ""
 	
 	var body: some View {
 		NavigationStack {
@@ -136,7 +137,7 @@ struct SettingsView: View {
 					
 					HStack {
 						Spacer()
-						LetterGridView(game: game, allowDrag: true, settings: $internalSettings).id(UUID())
+						LetterGridView(game: game, allowDrag: true, selectedWord: $selectedWord, settings: $internalSettings).id(UUID())
 							.frame(maxWidth: 300, maxHeight: 300)
 							.onAppear {
 								game.board.highlightWord(0, 1)
