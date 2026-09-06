@@ -17,6 +17,8 @@ struct WordHunt: App {
 	// State variable to control the visibility of the About screen sheet
 	@State private var showAboutWindow = false
 	
+	let name = "Word Sleuth"
+	
 	var body: some Scene {
 		WindowGroup {
 			MainAppView()
@@ -25,13 +27,13 @@ struct WordHunt: App {
 				.sheet(isPresented: $showAboutWindow) {
 					AboutView()
 				}
-				.onOpenURL { url in
-					print("Opening Word Sleuth puzzle: \(url)")
-				}
+//				.onOpenURL { url in
+//					print("Opening Word Sleuth puzzle: \(url)")
+//				}
 		}
 		.commands {
 			CommandGroup(replacing: .appInfo) {
-				Button("About Word Sleuth") {
+				Button("About \(name)") {
 					showAboutWindow = true
 				}
 				// Optional: Provide a native keyboard shortcut (e.g., Command + I)
@@ -40,7 +42,7 @@ struct WordHunt: App {
 			
 			// Replaces the system Help menu items
 			CommandGroup(replacing: .help) {
-				Button("Word Sleuth User Guide") {
+				Button("\(name) User Guide") {
 					if let url = URL(string: "https://zenadesign.org") {
 						openURL(url)
 					}

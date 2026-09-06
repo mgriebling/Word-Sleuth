@@ -78,6 +78,12 @@ struct AboutView: View {
 	}
 }
 
-#Preview {
+#Preview("English") {
 	AboutView()
+		.environment(\.locale, Locale(identifier: "en"))
+}
+
+#Preview("German") {
+	AboutView()
+		.environment(\.locale, Locale(identifier: "de"))
 }

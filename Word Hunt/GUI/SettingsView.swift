@@ -25,10 +25,10 @@ struct SettingsView: View {
 	var body: some View {
 		NavigationStack {
 			Form {
-				Section("Game Creation Defaults (\(Image(systemName: "plus")) Touched)") {
+				Section("Puzzle Creation Defaults (\(Image(systemName: "plus")) Touched)") {
 					HStack {
-						Text("Games:")
-						Picker("Create Game:", selection: $creationMode.animation()) {
+						Text("Puzzles:")
+						Picker("Create Puzzle:", selection: $creationMode.animation()) {
 							ForEach(CreationMode.allCases.dropLast(), id:\.self) { mode in
 								Text(mode.rawValue, format: .number) //   "\(mode.rawValue)").tag(mode)
 							}
@@ -47,7 +47,7 @@ struct SettingsView: View {
 					
 					if creationMode == .custom {
 						HStack {
-							Text("Games: \(internalSettings.gameNumber) ")
+							Text("Puzzles: \(internalSettings.gameNumber) ")
 							Slider(value: Binding(
 								get: { Double(internalSettings.gameNumber) },
 								set: { internalSettings.gameNumber = Int($0) }
@@ -177,7 +177,15 @@ struct SettingsView: View {
 	}
 }
 
-#Preview {
+#Preview("English") {
 	SettingsView()
 		.environment(DataContainer.sample20x20)
+		.environment(\.locale, Locale(identifier: "en"))
 }
+
+#Preview("German") {
+	SettingsView()
+		.environment(DataContainer.sample20x20)
+		.environment(\.locale, Locale(identifier: "de"))
+}
+

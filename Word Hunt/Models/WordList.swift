@@ -167,15 +167,13 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	public var date: Date
 	public var words: [String]
 	
-	public var averageLength: Double {
-		words.map({ Double($0.count) }).reduce(0, +) / Double(words.count)
-	}
+	public var averageLength: Double { Double(totalLetters) / Double(words.count) }
+	
+	public var totalLetters: Int { words.reduce(0) { $1.count + $0	} }
 	
 	public var maxLength: Int { longestWord.count }
 	
-	public var longestWord: String {
-		words.max(by: {$0.count < $1.count} ) ?? ""
-	}
+	public var longestWord: String { words.max(by: {$0 < $1} ) ?? "" }
 	
 	convenience init() {
 		self.init(name: "Empty", language: .english,
@@ -184,7 +182,7 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	
 	required public init(from decoder: Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
-		self._name = try container.decode(String.self, forKey: ._name)
+		self.name = try container.decode(String.self, forKey: ._name)
 		self.language = try container.decode(Language.self, forKey: .language)
 		self.author = try container.decode(String.self, forKey: .author)
 		self.date = try container.decode(Date.self, forKey: .date)
@@ -214,19 +212,26 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	
 	init(name: String = "Empty", language: Language = .english,
 		 author: String = "Unknown", date: Date = Date(), words: [String]) {
-		self._name = name
+		self.name = name
 		self.language = language
 		self.author = author
 		self.date = date
 		self.words = words
 	}
 	
+	init(name2: LocalizedStringResource, words2: [LocalizedStringResource]) {
+		self.name = name2.localizedStringResource.key
+		self.words = words2.map({ $0.key })
+		self.language = .english
+		self.date = Date()
+		self.author = "Unknown"
+	}
+	
 	/// Get word list with random words of a certain size (i.e., wordRange)
 	init(name: String = "Empty", language: Language = .english,
 		 author: String = "Unknown", date: Date = Date(),
 		 wordRange: CountableClosedRange<Int>, totalWords: Int) {
-		//print("Creating word list")
-		self._name = name
+		self.name = name
 		self.language = language
 		self.author = author
 		self.date = date
@@ -265,6 +270,29 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	
 	func delete() {
 		try? FileManager.default.removeItem(at: url(name: self.name))
+	}
+	
+	func resource(from s: String, list: Int, word: Int = 0) -> String {
+		let comment = word == 0 ? "L\(list)-Title" : "L\(list)-word \(word)"
+		return "LocalizedStringResource(\"\(s)\", table: \"WordLists\", comment: \"\(comment)\")"
+	}
+	
+	func makeWordListCode(list: Int) {
+		let name = resource(from: name, list: list)
+		var fileWords: String = "WordList(name2: \(name), \n\twords2: [\n"
+		for (i, word) in words.enumerated() {
+			fileWords.append("\t\t\(resource(from: word, list: list, word: i+1)),\n")
+		}
+		fileWords.append("\t]),")
+		print(fileWords, "\n\n")
+	}
+ 
+	static func makeWordListCode(for wordLists: [WordList]) {
+		print("struct SampleWordLists {\n\tstatic var all: [WordList] { [\n")
+		wordLists.indices.forEach { index in
+			wordLists[index].makeWordListCode(list: index+1)
+		}
+		print("\t]}\n}")
 	}
 	
 	static func save(wordLists: [WordList]) {

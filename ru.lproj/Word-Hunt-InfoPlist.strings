@@ -1,0 +1,12 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "Слово Sleuth";
+
+/* Get Info string */
+"CFBundleGetInfoString" = "";
+
+/* Bundle name */
+"CFBundleName" = "Охота за словами";
+
+/* No comment provided by engineer. */
+"Word Sleuth Puzzle" = "Головоломка Word Sleuth";
+

@@ -102,7 +102,7 @@ struct GameEditor: View {
 	private var wordListTitle: some View {
 		VStack(alignment: .leading, spacing: 0) {
 			HStack {
-				Text("Game Board Layout")
+				Text("Letter Grid Layout")
 				Button("Update") { withAnimation { updateGame() } }
 			}
 			let missing = lgame.board.missingWords
@@ -115,11 +115,11 @@ struct GameEditor: View {
 	}
 	
 	func updateGame() {
-		print("Grid size: \(settings.level.size)")
-		print("Updating game with \(selectedWordList.words.count) words")
+//		print("Grid size: \(settings.level.size)")
+//		print("Updating game with \(selectedWordList.words.count) words")
 		lgame = Game(size: settings.level.size, words: selectedWordList)
 		gameID = UUID()
-		print("Finished game update")
+//		print("Finished game update")
 	}
 }
 

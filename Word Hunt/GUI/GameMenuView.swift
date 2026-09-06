@@ -59,7 +59,8 @@ struct GameMenuView: View {
 				Label("My Awards", systemImage: "medal")
 			}
 			Button(action: { showAbout = true }) {
-				Label("About Word Sleuth", systemImage: "info.circle")
+				let name = "Word Sleuth"
+				Label("About \(name)", systemImage: "info.circle")
 			}
 			Divider()
 			Button(action: { isShowingDeleteConfirmation = true } ) {

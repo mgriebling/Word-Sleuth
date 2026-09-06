@@ -30,7 +30,7 @@ struct GameCreationView: View {
 		NavigationStack {
 			Form {
 				Section("Number of Puzzles to Create") {
-					Picker("Create Game:", selection: $creationMode.animation()) {
+					Picker("Create Puzzle:", selection: $creationMode.animation()) {
 						ForEach(CreationMode.allCases.dropLast(), id:\.self) { mode in
 							Text(mode.localized).tag(mode)
 						}
@@ -48,7 +48,7 @@ struct GameCreationView: View {
 					
 					if creationMode == .custom {
 						HStack {
-							Text("Games: \(numberOfGames) ")
+							Text("Puzzles: \(numberOfGames) ")
 							Slider(value: Binding(
 								get: { Double(numberOfGames) },
 								set: { numberOfGames = Int($0) }

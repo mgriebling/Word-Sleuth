@@ -1,0 +1,12 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "Le détective du mot";
+
+/* Get Info string */
+"CFBundleGetInfoString" = "";
+
+/* Bundle name */
+"CFBundleName" = "Chasse au mot";
+
+/* No comment provided by engineer. */
+"Word Sleuth Puzzle" = "Puzzle de détective de mots";
+
