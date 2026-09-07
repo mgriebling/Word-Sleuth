@@ -50,7 +50,7 @@ struct WordView: View {
 	
 	@ViewBuilder
 	private func columnText(_ maxColumns: Int) -> some View {
-		let colWidth = CGFloat(10 * maxWordLength)
+		let colWidth = CGFloat(15 * maxWordLength)
 		HStack(alignment: .top, spacing: 0) {
 			VStack {
 				Text("Words (\(words.count))")
@@ -60,7 +60,7 @@ struct WordView: View {
 					.rotationEffect(Angle(degrees: 270))
 					.padding(.top, isPhone ? 35 : 45)
 			}
-			.frame(maxWidth: 50)
+			.frame(minWidth: colWidth)
 
 			if settings.sortAcrossCols {
 				sortedAcross(maxColumns: maxColumns)
@@ -73,7 +73,7 @@ struct WordView: View {
 	
 	@ViewBuilder
 	private func sortedAcross(maxColumns: Int) -> some View {
-		let colWidth = CGFloat(10 * maxWordLength)
+		let colWidth = CGFloat(15 * maxWordLength)
 		let columns = Array(repeating:GridItem(.flexible(minimum: colWidth)), count: maxColumns)
 		ScrollView(.vertical) {
 			LazyVGrid(columns: columns, alignment: .leading) {
@@ -153,16 +153,23 @@ struct WordView: View {
 
 #Preview {
 	let words: [PlacedWord] =
-		SampleWordLists.all[10].words.enumerated().map { index, word in
+		SampleWordLists.all[1].words.enumerated().map { index, word in
 			PlacedWord(word: word, highlighted: Bool.random() ? -1 : 0)
 		}
-//	let words2: [PlacedWord] =
-//	SampleWordLists.all[4].words.enumerated().map { index, word in
-//		PlacedWord(word: word, highlighted: Bool.random() ? -1 : 0)
-//	}
-	WordView(words: words, style: .columns, maxWordLength: SampleWordLists.all[10].maxLength)
-//	WordView(words: words2, style: .columns, maxWordLength: SampleWordLists.all[4].maxLength)
+	WordView(words: words, style: .columns, maxWordLength: SampleWordLists.all[1].maxLength)
+		.environment(DataContainer())
 	WordView(words: words, style: .paragraph)
+		.environment(DataContainer())
+}
+
+#Preview("German") {
+	let words: [PlacedWord] =
+		SampleWordLists.all[3].words.enumerated().map { index, word in
+			PlacedWord(word: word, highlighted: Bool.random() ? -1 : 0)
+		}
+	WordView(words: words, style: .columns, maxWordLength: SampleWordLists.all[3].maxLength)
+		.environment(\.locale, Locale(identifier: "de"))
+		.environment(DataContainer())
 }
 
 

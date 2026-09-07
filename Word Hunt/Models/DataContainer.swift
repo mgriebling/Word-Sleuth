@@ -26,7 +26,8 @@ class DataContainer {
 			addSampleGames()
 		}
 		
-		wordLists = WordList.loadWordLists()
+		print("Default language = \(Locale.preferredLanguages.first ?? "en")")
+		//wordLists = WordList.loadWordLists()
 		if wordLists.isEmpty {
 			addSampleWords()
 		}
@@ -138,6 +139,7 @@ class DataContainer {
 	private func addSampleWords() {
 		if wordLists.isEmpty {
 			wordLists = SampleWordLists.all
+			print(SampleWordLists.all[5])
 		}
 	}
 	

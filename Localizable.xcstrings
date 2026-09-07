@@ -23,16 +23,34 @@
             "value" : "%@ Puzzle"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ पहेली"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Puzzle"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Puzzel"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Puzzle"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Quebra-cabeça"
           }
         },
         "ru" : {
@@ -45,6 +63,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Bulmaca"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Головоломка"
           }
         }
       }
@@ -71,16 +95,34 @@
             "value" : "%@ Guide de l'utilisateur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ उपयोक्ता गाइड"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Guida per l'utente"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Gebruikershandleiding"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Podręcznik użytkownika"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Guia do Usuário"
           }
         },
         "ru" : {
@@ -93,6 +135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Kullanım Kılavuzu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Посібник користувача"
           }
         }
       }
@@ -119,16 +167,34 @@
             "value" : "%@ Mots"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ शब्द"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Parole"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Woorden"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Słowa"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Palavras"
           }
         },
         "ru" : {
@@ -141,6 +207,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Kelimeler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Слова"
           }
         }
       }
@@ -173,13 +245,31 @@
             "value" : "%1$lld / %2$lld"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld / %2$lld"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$lld / %2$lld"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld / %2$lld"
+          }
+        },
         "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld / %2$lld"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$lld / %2$lld"
@@ -195,6 +285,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$lld/%2$lld"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld / %2$lld"
           }
         }
       }
@@ -275,6 +371,24 @@
             }
           }
         },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld बिंदु"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld अंक"
+                }
+              }
+            }
+          }
+        },
         "it" : {
           "variations" : {
             "plural" : {
@@ -288,6 +402,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%Lld punti"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld punt"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld punten"
                 }
               }
             }
@@ -318,6 +450,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%Lld punkty"
+                }
+              }
+            }
+          }
+        },
+        "pt-BR" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld ponto"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld pontos"
                 }
               }
             }
@@ -366,6 +516,36 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%Lld puanları"
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld бали"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld бали"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld точка"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld бали"
                 }
               }
             }
@@ -449,6 +629,24 @@
             }
           }
         },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld सेकंड"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld सेकंड"
+                }
+              }
+            }
+          }
+        },
         "it" : {
           "variations" : {
             "plural" : {
@@ -462,6 +660,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%Lld secondi"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld sec"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld seconden"
                 }
               }
             }
@@ -492,6 +708,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%Lld sekund"
+                }
+              }
+            }
+          }
+        },
+        "pt-BR" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld segundo"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld segundos"
                 }
               }
             }
@@ -544,11 +778,41 @@
               }
             }
           }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld сек"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld сек"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld сек"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld сек"
+                }
+              }
+            }
+          }
         }
       }
     },
-    "^[%lld word](inflect: true) (%@)" : {
-      "comment" : "A footnote that describes the number of words in the list and the language of the list. The first argument is the count of words in the list. The second argument is the language of the list.",
+    "%lld words (%@)" : {
+      "comment" : "A subheading that displays the number of words in a word list. The first argument is the count of words in the list. The second argument is the language of the words in the list.",
       "isCommentAutoGenerated" : true,
       "localizations" : {
         "de" : {
@@ -580,7 +844,7 @@
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "translated",
+                  "state" : "new",
                   "value" : "%1$lld words (%2$@)"
                 }
               }
@@ -623,6 +887,24 @@
             }
           }
         },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "% 1$lld शब्द (% 2$@)"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "% 1$lld शब्द (% 2$@)"
+                }
+              }
+            }
+          }
+        },
         "it" : {
           "variations" : {
             "plural" : {
@@ -636,6 +918,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%1$lld parole (%2$@)"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld woord (%2$@)"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld woorden (%2$@)"
                 }
               }
             }
@@ -666,6 +966,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%1$lld słowa (%2$@)"
+                }
+              }
+            }
+          }
+        },
+        "pt-BR" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld palavra (%2$@)"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld palavras (%2$@)"
                 }
               }
             }
@@ -718,6 +1036,36 @@
               }
             }
           }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld слів (%2$@)"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld слів (%2$@)"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld слово (%2$@)"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld слів (%2$@)"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -743,16 +1091,34 @@
             "value" : "À propos de %@"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ के बारे में"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Circa %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Over %@"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "O %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobre %@"
           }
         },
         "ru" : {
@@ -765,6 +1131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yaklaşık %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Про %@"
           }
         }
       }
@@ -791,16 +1163,34 @@
             "value" : "Réalisations"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उपलब्धियां"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Risultati"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prestaties"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Osiągnięcia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conquistas"
           }
         },
         "ru" : {
@@ -813,6 +1203,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Başarılar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Досягнення"
           }
         }
       }
@@ -838,16 +1234,34 @@
             "value" : "Actif"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सक्रिय"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Attivo"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actief"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aktywny"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ativo"
           }
         },
         "ru" : {
@@ -860,6 +1274,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aktif"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Активний"
           }
         }
       }
@@ -885,16 +1305,34 @@
             "value" : "Ajouter un jeu"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खेल जोड़ें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aggiungi gioco"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spel toevoegen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dodaj grę"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar Jogo"
           }
         },
         "ru" : {
@@ -907,6 +1345,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oyun Ekle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати гру"
           }
         }
       }
@@ -933,16 +1377,34 @@
             "value" : "Ajouter une liste de mots"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द सूची जोड़ें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aggiungi elenco di parole"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordenlijst toevoegen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dodaj listę słów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar Lista De Palavras"
           }
         },
         "ru" : {
@@ -955,6 +1417,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelime Listesi Ekle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати список слів"
           }
         }
       }
@@ -980,16 +1448,34 @@
             "value" : "Générateur de jeux avancé"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उन्नत गेम जनरेटर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Generatore di giochi avanzato"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geavanceerde spelgenerator"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zaawansowany generator gier"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerador de Jogos Avançado"
           }
         },
         "ru" : {
@@ -1002,6 +1488,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gelişmiş Oyun Oluşturucu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розширений ігровий генератор"
           }
         }
       }
@@ -1027,16 +1519,34 @@
             "value" : "Tous"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "समस्त"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tutti"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alles"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wszystko"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tudo"
           }
         },
         "ru" : {
@@ -1049,6 +1559,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hepsi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всі"
           }
         }
       }
@@ -1074,16 +1590,34 @@
             "value" : "Autoriser la sélection inversée"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रिवर्स चयन की अनुमति दें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Consenti la selezione inversa"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omgekeerde selectie toestaan"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zezwól na odwrotny wybór"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permitir Seleção Reversa"
           }
         },
         "ru" : {
@@ -1096,6 +1630,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ters Seçime İzin Ver"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дозволити зворотний вибір"
           }
         }
       }
@@ -1122,13 +1662,31 @@
             "value" : "Auteur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लेखक"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Autore"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auteur"
+          }
+        },
         "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autor"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Autor"
@@ -1144,6 +1702,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yazar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автор"
           }
         }
       }
@@ -1170,13 +1734,31 @@
             "value" : "Auteur : %@"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लेखक: %@"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Autore: %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auteur: %@"
+          }
+        },
         "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autor: %@"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Autor: %@"
@@ -1192,6 +1774,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yazar: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автор: %@"
           }
         }
       }
@@ -1218,16 +1806,34 @@
             "value" : "Meilleur moment"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सबसे अच्छा समय"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Il momento migliore"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beste tijd"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Najlepszy czas"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Melhor Hora"
           }
         },
         "ru" : {
@@ -1240,6 +1846,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En İyi Zaman"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Найкращий час"
           }
         }
       }
@@ -1266,16 +1878,34 @@
             "value" : "Annuler"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रद्द करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annulla"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuleren"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anulować"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         },
         "ru" : {
@@ -1288,6 +1918,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Iptal etmek"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скасувати"
           }
         }
       }
@@ -1313,16 +1949,34 @@
             "value" : "Choisissez la taille :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आकार चुनें:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scegli la taglia:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies maat:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybierz rozmiar:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha o tamanho:"
           }
         },
         "ru" : {
@@ -1335,6 +1989,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Boyut seçin:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть розмір:"
           }
         }
       }
@@ -1360,16 +2020,34 @@
             "value" : "Choisissez :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चुनें:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scegli:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybierz:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha:"
           }
         },
         "ru" : {
@@ -1382,6 +2060,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seç:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибрати:"
           }
         }
       }
@@ -1407,16 +2091,34 @@
             "value" : "Remplissade De Couleur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग भरण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Riempimento di colore"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kleurvulling"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wypełnienie Kolorem"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preenchimento De Cor"
           }
         },
         "ru" : {
@@ -1429,6 +2131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Renk Dolgusu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кольорова Заливка"
           }
         }
       }
@@ -1455,16 +2163,34 @@
             "value" : "Contacter l'assistance"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "समर्थन से संपर्क करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Contatta l'assistenza"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neem contact op met ondersteuning"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Skontaktuj się z pomocą techniczną"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entre em contato com o suporte"
           }
         },
         "ru" : {
@@ -1477,6 +2203,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Destekle İletişime Geçin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зв'язатися зі службою підтримки"
           }
         }
       }
@@ -1503,16 +2235,34 @@
             "value" : "Créer des jeux (Pro)"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "गेम बनाएं (प्रो)"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crea giochi (Pro)"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Games maken (Pro)"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Twórz gry (Pro)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criar Jogos (Pro)"
           }
         },
         "ru" : {
@@ -1525,6 +2275,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oyun Oluştur (Pro)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створюйте ігри (Pro)"
           }
         }
       }
@@ -1549,16 +2305,34 @@
             "value" : "Créer un puzzle :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पहेली बनाएँ:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crea Puzzle:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puzzel maken:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utwórz Puzzle:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criar Quebra-Cabeça:"
           }
         },
         "ru" : {
@@ -1571,6 +2345,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bulmaca Oluştur:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створити головоломку:"
           }
         }
       }
@@ -1597,16 +2377,34 @@
             "value" : "Créé :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बनाया गया:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Creato:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemaakt:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stworzony:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criado:"
           }
         },
         "ru" : {
@@ -1619,6 +2417,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oluşturuldu:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створено:"
           }
         }
       }
@@ -1645,16 +2449,34 @@
             "value" : "Créé : %@"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बनाया गया: %@"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Creato: %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemaakt: %@"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utworzono: %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criado: %@"
           }
         },
         "ru" : {
@@ -1667,6 +2489,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oluşturuldu: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створено: %@"
           }
         }
       }
@@ -1692,16 +2520,34 @@
             "value" : "Coutume"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रथा"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Costume"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Op maat"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Na zamówienie"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Costume"
           }
         },
         "ru" : {
@@ -1714,6 +2560,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Örf ve âdet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Звичай"
           }
         }
       }
@@ -1740,13 +2592,31 @@
             "value" : "Date"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "तिथि"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Data"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datum"
+          }
+        },
         "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Data"
@@ -1762,6 +2632,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tarih"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата"
           }
         }
       }
@@ -1788,16 +2664,34 @@
             "value" : "Niveau par défaut"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिफ़ॉल्ट स्तर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Livello predefinito"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standaard niveau"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Domyślny poziom"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nível Padrão"
           }
         },
         "ru" : {
@@ -1810,6 +2704,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Varsayılan Seviye"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рівень за замовчуванням"
           }
         }
       }
@@ -1836,16 +2736,34 @@
             "value" : "Supprimer"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मिटाएं"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancellare"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwijderen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wykreślić"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagar"
           }
         },
         "ru" : {
@@ -1858,6 +2776,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Silmek"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Видалити"
           }
         }
       }
@@ -1884,16 +2808,34 @@
             "value" : "Tout supprimer"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी को हटा दें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elimina tutto"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alles verwijderen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usuń wszystko"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagar Tudo"
           }
         },
         "ru" : {
@@ -1906,6 +2848,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tümünü Sil"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Видалити все"
           }
         }
       }
@@ -1931,16 +2879,34 @@
             "value" : "Supprimer Les Mots"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्दों को हटा दें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elimina parole"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woorden verwijderen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usuń Słowa"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir Palavras"
           }
         },
         "ru" : {
@@ -1953,6 +2919,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelimeleri Sil"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Видалити Слова"
           }
         }
       }
@@ -2033,6 +3005,24 @@
             }
           }
         },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld पहेली को त्यागें"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld पहेली त्यागें"
+                }
+              }
+            }
+          }
+        },
         "it" : {
           "variations" : {
             "plural" : {
@@ -2046,6 +3036,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "Scarta %lld Puzzle"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Gooi %lld puzzel weg"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Gooi %lld puzzels weg"
                 }
               }
             }
@@ -2076,6 +3084,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "Odrzuć łamigłówki %lld"
+                }
+              }
+            }
+          }
+        },
+        "pt-BR" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Descartar %lld Quebra-cabeça"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Descartar %lld Quebra-cabeças"
                 }
               }
             }
@@ -2124,6 +3150,36 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%Lld Bulmacaları At"
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Відкинути %lld Головоломки"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Відкинути %lld Головоломки"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Відкинути %lld Головоломку"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Відкинути %lld Головоломки"
                 }
               }
             }
@@ -2207,6 +3263,24 @@
             }
           }
         },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%Lld पहेली को त्यागें"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "सभी %lld पहेलियों को त्यागें"
+                }
+              }
+            }
+          }
+        },
         "it" : {
           "variations" : {
             "plural" : {
@@ -2220,6 +3294,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "Scarta TUTTI i puzzle %lld"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Gooi %lld puzzel weg"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Gooi ALLE %lld puzzels weg"
                 }
               }
             }
@@ -2250,6 +3342,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "Wyrzuć WSZYSTKIE łamigłówki %lld"
+                }
+              }
+            }
+          }
+        },
+        "pt-BR" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Descartar %lld Quebra-cabeça"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Descartar TODOS os quebra-cabeças %lld"
                 }
               }
             }
@@ -2302,6 +3412,36 @@
               }
             }
           }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Відкинути ВСІ %lld Головоломки"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Відкинути ВСІ %lld Головоломки"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Відкинути %lld Головоломку"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Відкинути ВСІ %lld Головоломки"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -2327,16 +3467,34 @@
             "value" : "Gagnez des points pour chaque puzzle terminé avec un point pour chaque mot. Cinq points sont perdus pour chaque utilisation du bouton **indice %@**. Affrontez vos amis pour voir qui a le plus de points !"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रत्येक शब्द के लिए एक अंक के साथ प्रत्येक पूर्ण पहेली के लिए अंक अर्जित करें। प्रत्येक **संकेत %@** बटन उपयोग के लिए पांच अंक खो जाते हैं। यह देखने के लिए दोस्तों के साथ प्रतिस्पर्धा करें कि किसके पास सबसे अधिक अंक हैं!"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guadagna punti per ogni puzzle completato con un punto per ogni parola. Si perdono cinque punti per ogni utilizzo del pulsante **suggerimento %@**. Competi con gli amici per vedere chi ha più punti!"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verdien punten voor elke voltooide puzzel met één punt voor elk woord. Vijf punten gaan verloren voor elk gebruik van de **hint %@**-knop. Neem het op tegen vrienden om te zien wie de meeste punten heeft!"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zdobywaj punkty za każdą ukończoną zagadkę z jednym punktem za każde słowo. Pięć punktów jest straconych za każde użycie przycisku **wskazówka %@**. Rywalizuj ze znajomymi, aby zobaczyć, kto ma najwięcej punktów!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganhe pontos para cada quebra-cabeça concluído com um ponto para cada palavra. Cinco pontos são perdidos para cada uso do botão **dica %@**. Competir com amigos para ver quem tem mais pontos!"
           }
         },
         "ru" : {
@@ -2349,6 +3507,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tamamlanan her bulmaca için her kelime için bir puanla puan kazanın. Her **ipucu %@** düğme kullanımı için beş puan kaybolur. Kimin en çok puana sahip olduğunu görmek için arkadaşlarınızla yarışın!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заробляйте бали за кожну завершену головоломку з одним балом за кожне слово. П'ять балів втрачається за кожне використання кнопки **підказка %@**. Змагайтеся з друзями, щоб побачити, хто має найбільше очок!"
           }
         }
       }
@@ -2375,16 +3539,34 @@
             "value" : "Éditer"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "संपादित करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Editare"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewerken"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Być odpowiedzialnym za"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
           }
         },
         "ru" : {
@@ -2397,6 +3579,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Düzenle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редагувати"
           }
         }
       }
@@ -2422,16 +3610,34 @@
             "value" : "Favoriser"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सक्षम करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Permettere"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mogelijk maken"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Umożliwić"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Habilitar"
           }
         },
         "ru" : {
@@ -2444,6 +3650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Etkinleştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкнути"
           }
         }
       }
@@ -2469,16 +3681,34 @@
             "value" : "Remplir"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "भरना"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Riempire"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vullen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wypełnić"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preencher"
           }
         },
         "ru" : {
@@ -2491,6 +3721,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dolmak"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заповнити"
           }
         }
       }
@@ -2517,16 +3753,34 @@
             "value" : "Filtrer par :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "द्वारा फ़िल्टर करें:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Filtra per:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filteren op:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Filtruj według:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrar por:"
           }
         },
         "ru" : {
@@ -2539,6 +3793,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Şuna Göre Filtrele:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фільтрувати за:"
           }
         }
       }
@@ -2564,16 +3824,34 @@
             "value" : "Poids de la police :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ॉन्ट भार:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Peso del carattere:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lettertypegewicht:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Waga czcionki:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso da Fonte:"
           }
         },
         "ru" : {
@@ -2586,6 +3864,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yazı Tipi Ağırlığı:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вага шрифту:"
           }
         }
       }
@@ -2618,16 +3902,34 @@
             "value" : "Trouvé : %1$lld de %2$lld"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मिला:%2$lld में से%1$lld"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trovato: %1$lld di %2$lld"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gevonden: %1$lld van %2$lld"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Znaleziono: %1$lld z %2$lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encontrado: %1$lld de %2$lld"
           }
         },
         "ru" : {
@@ -2640,6 +3942,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bulundu: %2$lld'den %1$lld"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знайдено: %1$lld з %2$lld"
           }
         }
       }
@@ -2666,16 +3974,34 @@
             "value" : "Générateur de jeux"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "गेम जेनरेटर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Generatore di giochi"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spelgenerator"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Generator gier"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerador de Jogos"
           }
         },
         "ru" : {
@@ -2688,6 +4014,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oyun Oluşturucu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ігровий Генератор"
           }
         }
       }
@@ -2714,16 +4046,34 @@
             "value" : "Jeux"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खेल"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Giochi"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spelen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gry"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jogos"
           }
         },
         "ru" : {
@@ -2736,6 +4086,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oyunlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ігри"
           }
         }
       }
@@ -2760,16 +4116,34 @@
             "value" : "Apparence de la grille"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ग्रिड उपस्थिति"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aspetto della griglia"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raster Uiterlijk"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wygląd siatki"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aparência da grade"
           }
         },
         "ru" : {
@@ -2782,6 +4156,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Izgara Görünümü"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зовнішній вигляд сітки"
           }
         }
       }
@@ -2806,16 +4186,34 @@
             "value" : "Couleur de surbrillance"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हाइलाइट रंग"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Evidenzia il colore"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kleur markeren"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kolor podświetlenia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cor de destaque"
           }
         },
         "ru" : {
@@ -2828,6 +4226,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vurgu Rengi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Колір виділення"
           }
         }
       }
@@ -2852,16 +4256,34 @@
             "value" : "Horizontal"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "समतल"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Orizzontale"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horizontaal"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Poziomy"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horizontal"
           }
         },
         "ru" : {
@@ -2874,6 +4296,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yatay"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Горизонтальний"
           }
         }
       }
@@ -2900,16 +4328,34 @@
             "value" : "Langue"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "भाषा"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lingua"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taal"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Język"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linguagem"
           }
         },
         "ru" : {
@@ -2922,6 +4368,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dil"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мова"
           }
         }
       }
@@ -2946,16 +4398,34 @@
             "value" : "Le plus grand niveau d'abord"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सबसे बड़ा स्तर पहले"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prima il livello più grande"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grootste niveau eerst"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Największy Poziom Pierwszy"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maior Nível Primeiro"
           }
         },
         "ru" : {
@@ -2968,6 +4438,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Önce En Büyük Seviye"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Найбільший рівень перший"
           }
         }
       }
@@ -2994,16 +4470,34 @@
             "value" : "Disposition de la grille de lettres"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पत्र ग्रिड लेआउट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Layout della griglia delle lettere"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Letterrasterlay-out"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Układ siatki listowej"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layout da Grade de Letras"
           }
         },
         "ru" : {
@@ -3016,6 +4510,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mektup Izgarası Düzeni"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Макет сітки з літерами"
           }
         }
       }
@@ -3042,16 +4542,34 @@
             "value" : "Niveau"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "समतल"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Livello"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Poziom"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nível"
           }
         },
         "ru" : {
@@ -3064,6 +4582,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seviye"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рівень"
           }
         }
       }
@@ -3088,16 +4612,34 @@
             "value" : "Niveau :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "स्तर:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Livello:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Poziom:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nível:"
           }
         },
         "ru" : {
@@ -3110,6 +4652,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seviye:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рівень:"
           }
         }
       }
@@ -3142,16 +4690,34 @@
             "value" : "Niveau : %1$lld (%2$lld ⨉ %3$lld)"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "स्तर: %1$lld (%2$lld ⨉ %3$lld)"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Livello: %1$lld (%2$lld ⨉ %3$lld)"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau: %1$lld (%2$lld ⨉ %3$lld)"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Poziom: %1$lld (%2$lld ⨉ %3$lld)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nível: %1$lld (%2$lld ⨉ %3$lld)"
           }
         },
         "ru" : {
@@ -3165,6 +4731,12 @@
             "state" : "translated",
             "value" : "Seviye: %1$lld (%2$lld ⨉ %3$lld)"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рівень: %1$lld (%2$lld ⨉ %3$lld)"
+          }
         }
       }
     },
@@ -3177,6 +4749,12 @@
             "value" : "Mensch"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Man."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3186,7 +4764,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Homme"
+            "value" : "Man"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पुरुष"
           }
         },
         "it" : {
@@ -3195,10 +4779,22 @@
             "value" : "Uomo"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Man."
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Człowiek"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cara."
           }
         },
         "ru" : {
@@ -3211,6 +4807,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Adam"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Людина."
           }
         }
       }
@@ -3243,16 +4845,34 @@
             "value" : "Correspondance : %1$lld de %2$lld mots"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मिलान किया गया: %2$lld शब्दों का%1$lld"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abbinato: %1$lld di %2$lld parole"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overeengekomen: %1$lld van %2$lld woorden"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dopasowane: %1$lld z %2$lld słów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correspondido: %1$lld de %2$lld palavras"
           }
         },
         "ru" : {
@@ -3265,6 +4885,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eşleşti: %2$lld sözcüklerin %1$lld'si"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відповідність: %1$lld з %2$lld слів"
           }
         }
       }
@@ -3297,16 +4923,34 @@
             "value" : "Manquant %1$lld : %2$@"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "गुम है% 1$lld: %2$@"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Manca %1$lld: %2$@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ontbrekende %1$lld: %2$@"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Brakujące %1$lld: %2$@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faltando %1$lld: %2$@"
           }
         },
         "ru" : {
@@ -3319,6 +4963,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eksik %1$lld: %2$@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відсутній %1$lld: %2$@"
           }
         }
       }
@@ -3345,16 +4995,34 @@
             "value" : "Mes récompenses"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मेरे पुरस्कार"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "I miei premi"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mijn prijzen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Moje nagrody"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meus Prêmios"
           }
         },
         "ru" : {
@@ -3367,6 +5035,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ödüllerim"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мої нагороди"
           }
         }
       }
@@ -3391,16 +5065,34 @@
             "value" : "Noms dans l'ordre"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "क्रम में नाम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nomi in ordine"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Namen in volgorde"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nazwy w kolejności"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nomes em ordem"
           }
         },
         "ru" : {
@@ -3413,6 +5105,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İsimler sırayla"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Імена в порядку"
           }
         }
       }
@@ -3437,16 +5135,34 @@
             "value" : "Noms dans l'ordre inverse"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रिवर्स ऑर्डर में नाम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nomi in ordine inverso"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Namen in omgekeerde volgorde"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nazwy w odwrotnej kolejności"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nomes em ordem inversa"
           }
         },
         "ru" : {
@@ -3459,6 +5175,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İsimler ters sırayla"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Імена у зворотному порядку"
           }
         }
       }
@@ -3484,16 +5206,34 @@
             "value" : "Nouveau"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नया"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuovo"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuw"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nowy"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novo"
           }
         },
         "ru" : {
@@ -3506,6 +5246,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yeni"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новий"
           }
         }
       }
@@ -3532,16 +5278,34 @@
             "value" : "Aucun %@ sélectionné pour l'instant !"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अभी तक चयनित नहीं है!"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nessun %@ ancora selezionato!"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog geen %@ geselecteerd!"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nie wybrano jeszcze %@!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum %@ selecionado ainda!"
           }
         },
         "ru" : {
@@ -3554,6 +5318,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Henüz %@ seçilmedi!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ще не вибрано %@!"
           }
         }
       }
@@ -3580,16 +5350,34 @@
             "value" : "Pas encore de puzzles créés !"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अभी तक कोई पहेली नहीं बनाई गई है!"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nessun puzzle ancora creato!"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog geen puzzels gemaakt!"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nie stworzono jeszcze żadnych łamigłówek!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum quebra-cabeça criado ainda!"
           }
         },
         "ru" : {
@@ -3602,6 +5390,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Henüz bulmaca oluşturulmadı!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Головоломки ще не створені!"
           }
         }
       }
@@ -3626,16 +5420,34 @@
             "value" : "Nombre de puzzles à créer"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बनाने के लिए पहेली की संख्या"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Numero di puzzle da creare"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aantal puzzels om te maken"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Liczba puzzli do stworzenia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de quebra-cabeças para criar"
           }
         },
         "ru" : {
@@ -3648,6 +5460,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oluşturulacak Bulmaca Sayısı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кількість головоломок для створення"
           }
         }
       }
@@ -3672,16 +5490,34 @@
             "value" : "Dates plus anciennes d'abord"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पहले पुरानी तिथियां"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prima le date più vecchie"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oudere Dates Eerst"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Najpierw starsze randki"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datas Mais Antigas Primeiro"
           }
         },
         "ru" : {
@@ -3694,6 +5530,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Önce Eski Tarihler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Старі Побачення Спочатку"
           }
         }
       }
@@ -3719,16 +5561,34 @@
             "value" : "Plan"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रूपरेखा"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Contorno"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omtrek"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zarys"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esboço"
           }
         },
         "ru" : {
@@ -3741,6 +5601,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Özet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аналюс"
           }
         }
       }
@@ -3766,16 +5632,34 @@
             "value" : "Contour et remplissage"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रूपरेखा और भरें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delineare e riempire"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omlijnen & Vullen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zarys i wypełnienie"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esboçar e preencher"
           }
         },
         "ru" : {
@@ -3788,6 +5672,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anahat ve Doldur"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Окреслити та заповнити"
           }
         }
       }
@@ -3812,16 +5702,34 @@
             "value" : "Position par rapport à la grille de lettres"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पत्र ग्रिड के सापेक्ष स्थिति"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Posizione rispetto alla griglia delle lettere"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Positie ten opzichte van letterraster"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pozycja względem siatki liter"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posição em relação à grade de letras"
           }
         },
         "ru" : {
@@ -3834,6 +5742,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Harf ızgarasına göre konumlandırın"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Позиція відносно сітки літер"
           }
         }
       }
@@ -3858,16 +5772,34 @@
             "value" : "Création de puzzle par défaut (%@ touché)"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पहेली निर्माण डिफ़ॉल्ट (% @ छुआ)"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Creazione di puzzle predefinito (%@ toccato)"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puzzel Creatie Standaarden (%@ Aangeraakt)"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Domyślne Ustawienia Tworzenia Puzzli (%@ Dotknięte)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padrões de Criação de Quebra-Cabeça (%@ Tocado)"
           }
         },
         "ru" : {
@@ -3880,6 +5812,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bulmaca Oluşturma Varsayılanları (%@ Touched)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "За замовчуванням створення головоломки (%@ Touched)"
           }
         }
       }
@@ -3904,16 +5842,34 @@
             "value" : "Niveau de puzzle"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पहेली स्तर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Livello di puzzle"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puzzelniveau"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Poziom łamigłówki"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nível de quebra-cabeça"
           }
         },
         "ru" : {
@@ -3926,6 +5882,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bulmaca Seviyesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рівень головоломки"
           }
         }
       }
@@ -3952,16 +5914,34 @@
             "value" : "Puzzles"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पहेलियां"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enigmi"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puzzels"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Łamigłówki"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quebra-cabeças"
           }
         },
         "ru" : {
@@ -3974,6 +5954,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bulmacalar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Головоломки"
           }
         }
       }
@@ -4000,16 +5986,34 @@
             "value" : "Les puzzles seront définitivement supprimés. Les badges gagnés ne sont pas supprimés."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पहेलियां स्थायी रूप से हटा दी जाएंगी। अर्जित बैज नहीं हटाए जाते हैं।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "I puzzle saranno eliminati definitivamente. I badge guadagnati non vengono rimossi."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puzzels worden permanent verwijderd. Verdiende badges worden niet verwijderd."
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Puzzle zostaną trwale usunięte. Zdobyte odznaki nie są usuwane."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os quebra-cabeças serão excluídos permanentemente. Os emblemas ganhos não são removidos."
           }
         },
         "ru" : {
@@ -4022,6 +6026,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bulmacalar kalıcı olarak silinecektir. Kazanılan rozetler kaldırılmaz."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Головоломки будуть видалені назавжди. Зароблені значки не видаляються."
           }
         }
       }
@@ -4046,16 +6056,34 @@
             "value" : "Puzzles :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पहेलियाँ:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Puzzle:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puzzels:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Puzzle:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quebra-cabeças:"
           }
         },
         "ru" : {
@@ -4068,6 +6096,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bulmacalar:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Головоломки:"
           }
         }
       }
@@ -4092,16 +6126,34 @@
             "value" : "Puzzles : %lld"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पज़ल्स: %lld"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Puzzle: %lld"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puzzels: %lld"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zagadki: %lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quebra-cabeças: %lld"
           }
         },
         "ru" : {
@@ -4114,6 +6166,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bulmacalar: %lld"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Головоломки: %lld"
           }
         }
       }
@@ -4138,16 +6196,34 @@
             "value" : "(Fait) au hasard"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सांयोगिक"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Casuale"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Willekeurig"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Losowy"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aleatório"
           }
         },
         "ru" : {
@@ -4160,6 +6236,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gelişigüzel"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Випадковий"
           }
         }
       }
@@ -4184,16 +6266,34 @@
             "value" : "Aléatoire dans la gamme"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रेंज में रैंडम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Casuale nella gamma"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Willekeurig in bereik"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Losowy w zasięgu"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aleatório no alcance"
           }
         },
         "ru" : {
@@ -4206,6 +6306,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aralıkta rastgele"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Випадковий діапазон"
           }
         }
       }
@@ -4230,16 +6336,34 @@
             "value" : "Récent"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हालिया"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recente"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recent"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ostatni"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recente"
           }
         },
         "ru" : {
@@ -4252,6 +6376,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Son"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Недавній"
           }
         }
       }
@@ -4276,16 +6406,34 @@
             "value" : "Dates récentes d'abord"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हाल की तारीख़ें पहले"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Date recenti prima"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recente datums eerst"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Najpierw ostatnie daty"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datas Recentes Primeiro"
           }
         },
         "ru" : {
@@ -4298,6 +6446,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Önce Son Tarihler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спочатку останні дати"
           }
         }
       }
@@ -4324,16 +6478,34 @@
             "value" : "Enregistrer le puzzle"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पहेली सहेजें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salva Puzzle"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puzzel opslaan"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zapisz Puzzle"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salve o quebra-cabeça"
           }
         },
         "ru" : {
@@ -4346,6 +6518,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bulmacayı Kaydet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберегти головоломку"
           }
         }
       }
@@ -4372,16 +6550,34 @@
             "value" : "Sélectionnez un %@ à gauche pour commencer."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शुरू करने के लिए बाईं ओर %@ चुनें."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleziona un %@ a sinistra per iniziare."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecteer een %@ aan de linkerkant om te beginnen."
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybierz %@ po lewej stronie, aby rozpocząć."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione um %@ à esquerda para começar."
           }
         },
         "ru" : {
@@ -4394,6 +6590,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Başlamak için soldaki %@'yi seçin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть %@ зліва, щоб розпочати."
           }
         }
       }
@@ -4418,16 +6620,34 @@
             "value" : "Sélectionné"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चुना गया"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selezionato"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geselecteerd"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybrany"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecionado"
           }
         },
         "ru" : {
@@ -4440,6 +6660,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seçilmiş"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибраний"
           }
         }
       }
@@ -4464,16 +6690,34 @@
             "value" : "Tailles sélectionnées"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चयनित आकार"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taglie selezionate"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geselecteerde maten"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybrane rozmiary"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamanhos Selecionados"
           }
         },
         "ru" : {
@@ -4486,6 +6730,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seçilen Boyutlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибрані розміри"
           }
         }
       }
@@ -4510,16 +6760,34 @@
             "value" : "Sélection"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चयन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selezione"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selectie"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybór"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleção"
           }
         },
         "ru" : {
@@ -4532,6 +6800,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seçme"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибір"
           }
         }
       }
@@ -4556,16 +6830,34 @@
             "value" : "Couleur de sélection"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चयन रंग"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colore di selezione"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selectiekleur"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybór Koloru"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleção de Cor"
           }
         },
         "ru" : {
@@ -4578,6 +6870,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seçim Rengi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибір кольору"
           }
         }
       }
@@ -4602,16 +6900,34 @@
             "value" : "Sélection OK Couleur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चयन ठीक रंग"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selezione OK Colore"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selectie OK Kleur"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybór OK Kolor"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleção OK Cor"
           }
         },
         "ru" : {
@@ -4624,6 +6940,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seçim Tamam Renk"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибір кольору ОК"
           }
         }
       }
@@ -4650,16 +6972,34 @@
             "value" : "Paramètres"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सेटिंग"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impostazioni"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instellingen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ustawienia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações"
           }
         },
         "ru" : {
@@ -4672,6 +7012,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ayarlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштування"
           }
         }
       }
@@ -4696,16 +7042,34 @@
             "value" : "Taille :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आकार:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dimensione:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grootte:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rozmiar:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamanho:"
           }
         },
         "ru" : {
@@ -4718,6 +7082,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Boyut:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розмір:"
           }
         }
       }
@@ -4742,16 +7112,34 @@
             "value" : "Le plus petit niveau d'abord"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सबसे छोटा स्तर पहले"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prima il livello più piccolo"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kleinste niveau eerst"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Najmniejszy poziom pierwszy"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Menor Nível Primeiro"
           }
         },
         "ru" : {
@@ -4764,6 +7152,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Önce En Küçük Seviye"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Найменший рівень спочатку"
           }
         }
       }
@@ -4790,16 +7184,34 @@
             "value" : "Trier par %@"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ के अनुसार छाँटें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ordina per %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorteer op %@"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sortuj według %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Classificar por %@"
           }
         },
         "ru" : {
@@ -4812,6 +7224,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@'Ye göre sırala"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сортувати за %@"
           }
         }
       }
@@ -4836,16 +7254,34 @@
             "value" : "Trié Entre Les Colonnes"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "स्तंभों में क्रमबद्ध"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ordinato Tra Le Colonne"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gesorteerd Over Kolommen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Posortowane W Kolumnach"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Classificado Entre Colunas"
           }
         },
         "ru" : {
@@ -4858,6 +7294,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sütunlar Arasında Sıralanmış"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відсортовано За Стовпцями"
           }
         }
       }
@@ -4882,16 +7324,34 @@
             "value" : "Effets sonores"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ध्वनि प्रभाव"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Effetti sonori"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geluidseffecten"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Efekty dźwiękowe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Efeitos sonoros"
           }
         },
         "ru" : {
@@ -4904,6 +7364,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ses Efektleri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Звукові ефекти"
           }
         }
       }
@@ -4928,16 +7394,34 @@
             "value" : "Volume sonore"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ध्वनि की मात्रा"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volume del suono"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geluidsvolume"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Głośność dźwięku"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume de som"
           }
         },
         "ru" : {
@@ -4950,6 +7434,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ses Seviyesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Гучність звуку"
           }
         }
       }
@@ -4976,16 +7466,34 @@
             "value" : "Onglets"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "टैब्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Schede"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tabbladen"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zakładki"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guias"
           }
         },
         "ru" : {
@@ -4998,6 +7506,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sekmeler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вкладки"
           }
         }
       }
@@ -5022,16 +7536,34 @@
             "value" : "Les mots seront définitivement supprimés."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्दों को हमेशा के लिए हटा दिया जाएगा।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Le parole saranno eliminate definitivamente."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De woorden worden permanent verwijderd."
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Słowa zostaną trwale usunięte."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As palavras serão excluídas permanentemente."
           }
         },
         "ru" : {
@@ -5044,6 +7576,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelimeler kalıcı olarak silinecektir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слова будуть назавжди видалені."
           }
         }
       }
@@ -5070,16 +7608,34 @@
             "value" : "Temps/Mot"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "समय/शब्द"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tempo/Parola"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tijd/Woord"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Czas/Słowo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempo/Palavra"
           }
         },
         "ru" : {
@@ -5092,6 +7648,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zaman/Kelime"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Час/Слова"
           }
         }
       }
@@ -5116,7 +7678,19 @@
             "value" : "Minuterie"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "टाइमर"
+          }
+        },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timer"
+          }
+        },
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Timer"
@@ -5126,6 +7700,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Timer"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temporizador"
           }
         },
         "ru" : {
@@ -5138,6 +7718,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zamanlayıcı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Таймер"
           }
         }
       }
@@ -5164,16 +7750,34 @@
             "value" : "Touchez %@ en haut à droite pour commencer."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शुरू करने के लिए शीर्ष दाईं ओर %@ को स्पर्श करें."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tocca %@ in alto a destra per iniziare."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raak %@ rechtsboven aan om te beginnen."
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dotknij %@ w prawym górnym rogu, aby rozpocząć."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque em %@ no canto superior direito para começar."
           }
         },
         "ru" : {
@@ -5186,6 +7790,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Başlamak için sağ üstteki %@'ye dokunun."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Торкніться %@ у верхньому правому куті, щоб розпочати."
           }
         }
       }
@@ -5212,16 +7822,34 @@
             "value" : "Tapez ici..."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यहाँ टाइप करें..."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Digita qui..."
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ hier..."
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wpisz tutaj..."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digite aqui..."
           }
         },
         "ru" : {
@@ -5234,6 +7862,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Buraya yazın..."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть тут..."
           }
         }
       }
@@ -5260,16 +7894,34 @@
             "value" : "Mise à jour"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अपडेट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aggiornare"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bijwerken"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aktualizacja"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atualização"
           }
         },
         "ru" : {
@@ -5282,6 +7934,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Güncelleme"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оновлення"
           }
         }
       }
@@ -5308,16 +7966,34 @@
             "value" : "Nom d'utilisateur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उपयोगकर्ता नाम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nome utente"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruikersnaam"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nazwa użytkownika"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome de usuário"
           }
         },
         "ru" : {
@@ -5330,6 +8006,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kullanıcı adı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ім'я користувача"
           }
         }
       }
@@ -5356,16 +8038,34 @@
             "value" : "Version : %@"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "संस्करण: %@"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Versione: %@"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versie: %@"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wersja: %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versão: %@"
           }
         },
         "ru" : {
@@ -5378,6 +8078,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sürüm: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версія: %@"
           }
         }
       }
@@ -5403,7 +8109,19 @@
             "value" : "Volume :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मात्रा:"
+          }
+        },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume:"
+          }
+        },
+        "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volume:"
@@ -5413,6 +8131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Objętość:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume:"
           }
         },
         "ru" : {
@@ -5425,6 +8149,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hacim:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Об'єм:"
           }
         }
       }
@@ -5450,16 +8180,34 @@
             "value" : "Poids :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वजन:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Peso:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gewicht:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Waga:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso:"
           }
         },
         "ru" : {
@@ -5472,6 +8220,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ağırlık:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вага:"
           }
         }
       }
@@ -5498,16 +8252,34 @@
             "value" : "GAGNANT !"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "विजेता!"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "VINCITORE!"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WINNAAR!"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ZWYCIĘZCA!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VENCEDOR!"
           }
         },
         "ru" : {
@@ -5520,6 +8292,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "KAZANAN!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ПЕРЕМОЖЕЦЬ!"
           }
         }
       }
@@ -5546,16 +8324,34 @@
             "value" : "Liste de mots"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द सूची"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lista di parole"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordenlijst"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lista słów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista de palavras"
           }
         },
         "ru" : {
@@ -5568,6 +8364,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelime Listesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Список слів"
           }
         }
       }
@@ -5594,16 +8396,34 @@
             "value" : "Éditeur de liste de mots"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द सूची संपादक"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Editor di elenchi di parole"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordenlijst Editor"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Edytor listy słów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editor de Lista de Palavras"
           }
         },
         "ru" : {
@@ -5616,6 +8436,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Word Listesi Düzenleyicisi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактор списку слів"
           }
         }
       }
@@ -5642,16 +8468,34 @@
             "value" : "Nom de la liste de mots"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द सूची नाम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nome della lista di parole"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordenlijst Naam"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nazwa listy słów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome da Lista de Palavras"
           }
         },
         "ru" : {
@@ -5664,6 +8508,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelime Listesi Adı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва списку слів"
           }
         }
       }
@@ -5690,16 +8540,34 @@
             "value" : "Sélection de la liste de mots :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द सूची चयन:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selezione dell'elenco di parole:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordenlijstselectie:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybór listy słów:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleção da Lista de Palavras:"
           }
         },
         "ru" : {
@@ -5712,6 +8580,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelime Listesi Seçimi:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибір списку слів:"
           }
         }
       }
@@ -5736,16 +8610,34 @@
             "value" : "Liste de mots à utiliser"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उपयोग करने के लिए शब्द सूची"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elenco di parole da usare"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordenlijst om te gebruiken"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lista słów do użycia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista de palavras para usar"
           }
         },
         "ru" : {
@@ -5758,6 +8650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kullanılacak Kelime Listesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Список слів для використання"
           }
         }
       }
@@ -5782,16 +8680,34 @@
             "value" : "Liste de mots à utiliser :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उपयोग करने के लिए शब्द सूची:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elenco di parole da usare:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordenlijst om te gebruiken:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lista słów do użycia:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista de palavras para usar:"
           }
         },
         "ru" : {
@@ -5804,6 +8720,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kullanılacak Kelime Listesi:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Список слів для використання:"
           }
         }
       }
@@ -5830,16 +8752,34 @@
             "value" : "Listes de mots"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द सूची"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Liste di parole"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordenlijsten"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Listy słów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listas de palavras"
           }
         },
         "ru" : {
@@ -5852,6 +8792,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelime Listeleri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Списки слів"
           }
         }
       }
@@ -5876,16 +8822,34 @@
             "value" : "Sélection de mots"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द चयन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selezione delle parole"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordselectie"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybór słów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleção de Palavras"
           }
         },
         "ru" : {
@@ -5898,6 +8862,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelime Seçimi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибір слів"
           }
         }
       }
@@ -5924,16 +8894,34 @@
             "value" : "Mots (%lld)"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द (%lld)"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parole (%lld)"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woorden (%lld)"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Słowa (%lld)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palavras (%lld)"
           }
         },
         "ru" : {
@@ -5946,6 +8934,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelimeler (%lld)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слова (%lld)"
           }
         }
       }
@@ -5972,16 +8966,34 @@
             "value" : "Mots (%lld) _Appuyez sur la liste pour modifier"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द (%lld) संपादन के लिए सूची पर टैप करें (_T)"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parole (%lld) _Tocca elenco per modificare"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woorden (%lld) _Tik op de lijst om te bewerken"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Słowa (%lld) _Stuknij listy, aby edytować"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palavras (%lld) _Toque na Lista para Editar"
           }
         },
         "ru" : {
@@ -5994,6 +9006,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelimeler (%lld) _Düzenlemek için Listeye dokunun"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слова (%lld) _Торкніться списку, щоб редагувати"
           }
         }
       }
@@ -6020,16 +9038,34 @@
             "value" : "Mots :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द:"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parole:"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woorden:"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Słowa:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palavras:"
           }
         },
         "ru" : {
@@ -6042,6 +9078,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelimeler:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слова:"
           }
         }
       }
@@ -6074,16 +9116,34 @@
             "value" : "Mots : (Moire/maximum %1$.2f/%2$lld lettres)"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द: (औसत/अधिकतम %1$.2f/%2$lld अक्षर)"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parole: (Media/Massimo %1$.2f/%2$lld lettere)"
           }
         },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woorden: (Gemende/Maximale %1$.2f/%2$lld letters)"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Słowa: (średnia/maksymalna %1$.2f/%2$lld litery)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palavras: (Média/Máxima %1$.2f/%2$lld letras)"
           }
         },
         "ru" : {
@@ -6096,6 +9156,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kelimeler: (Ortalama/Maksimum %1$.2f/%2$lld harfleri)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слова: (Середні/Максимум %1$.2f/%2$lld букви)"
           }
         }
       }

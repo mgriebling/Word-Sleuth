@@ -23,7 +23,7 @@ struct WordListSummary: View {
 			if !isCompact {
 				Text("Created: \(wordList.date, format: .dateTime.day().month().year())")
 			}
-			Text("^[\(wordList.words.count) word](inflect: true) (\(wordList.language.description))")
+			Text("\(wordList.words.count) words (\(wordList.language.description))")
 			Text("Words: (Average/Maximum \(wordList.averageLength, specifier: "%.2f")/\(wordList.maxLength) letters)")
 			Text(wordList.words.map({ $0.capitalized }).joined(separator: ", "))
 					.font(.caption)
