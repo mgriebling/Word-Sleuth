@@ -5,12 +5,6 @@
       "comment" : "Bundle display name",
       "extractionState" : "extracted_with_value",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Word Sleuth"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -24,12 +18,6 @@
       "comment" : "Get Info string",
       "extractionState" : "extracted_with_value",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -43,12 +31,6 @@
       "comment" : "Bundle name",
       "extractionState" : "extracted_with_value",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Word Sleuth"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -59,14 +41,6 @@
       "shouldTranslate" : false
     },
     "Word Sleuth Puzzle" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Word Sleuth Puzzle"
-          }
-        }
-      },
       "shouldTranslate" : false
     }
   },

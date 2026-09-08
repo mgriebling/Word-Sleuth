@@ -47,23 +47,6 @@ struct GameView: View {
 			} else {
 				portraitView()
 			}
-			
-//			// Places floating word selection near the top
-//			if dataContainer.isLandscape {
-//				VStack {
-//					HStack {
-//						FloatingWord(activeWord: $selectedWord)
-//							.padding(.leading, 100)
-//						Spacer()
-//					}
-//					Spacer()
-//				}
-//			} else {
-//				VStack {
-//					FloatingWord(activeWord: $selectedWord)
-//					Spacer()
-//				}
-//			}
 		}
 		.sheet(isPresented: $showAwards) {
 			AchievementsView()

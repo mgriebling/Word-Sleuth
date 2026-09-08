@@ -47,7 +47,7 @@
             "value" : "%@ Puzzle"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Quebra-cabeça"
@@ -119,7 +119,7 @@
             "value" : "%@ Podręcznik użytkownika"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Guia do Usuário"
@@ -191,7 +191,7 @@
             "value" : "%@ Słowa"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Palavras"
@@ -269,7 +269,7 @@
             "value" : "%1$lld / %2$lld"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$lld / %2$lld"
@@ -455,7 +455,7 @@
             }
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "variations" : {
             "plural" : {
               "one" : {
@@ -713,7 +713,7 @@
             }
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "variations" : {
             "plural" : {
               "one" : {
@@ -971,7 +971,7 @@
             }
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "variations" : {
             "plural" : {
               "one" : {
@@ -1115,7 +1115,7 @@
             "value" : "O %@"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sobre %@"
@@ -1187,7 +1187,7 @@
             "value" : "Osiągnięcia"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Conquistas"
@@ -1258,7 +1258,7 @@
             "value" : "Aktywny"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ativo"
@@ -1329,7 +1329,7 @@
             "value" : "Dodaj grę"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Adicionar Jogo"
@@ -1401,7 +1401,7 @@
             "value" : "Dodaj listę słów"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Adicionar Lista De Palavras"
@@ -1472,7 +1472,7 @@
             "value" : "Zaawansowany generator gier"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gerador de Jogos Avançado"
@@ -1543,7 +1543,7 @@
             "value" : "Wszystko"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tudo"
@@ -1614,7 +1614,7 @@
             "value" : "Zezwól na odwrotny wybór"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Permitir Seleção Reversa"
@@ -1686,7 +1686,7 @@
             "value" : "Autor"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Autor"
@@ -1758,7 +1758,7 @@
             "value" : "Autor: %@"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Autor: %@"
@@ -1830,7 +1830,7 @@
             "value" : "Najlepszy czas"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Melhor Hora"
@@ -1902,7 +1902,7 @@
             "value" : "Anulować"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancelar"
@@ -1973,7 +1973,7 @@
             "value" : "Wybierz rozmiar:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Escolha o tamanho:"
@@ -2044,7 +2044,7 @@
             "value" : "Wybierz:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Escolha:"
@@ -2115,7 +2115,7 @@
             "value" : "Wypełnienie Kolorem"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Preenchimento De Cor"
@@ -2187,7 +2187,7 @@
             "value" : "Skontaktuj się z pomocą techniczną"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Entre em contato com o suporte"
@@ -2259,7 +2259,7 @@
             "value" : "Twórz gry (Pro)"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Criar Jogos (Pro)"
@@ -2329,7 +2329,7 @@
             "value" : "Utwórz Puzzle:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Criar Quebra-Cabeça:"
@@ -2401,7 +2401,7 @@
             "value" : "Stworzony:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Criado:"
@@ -2473,7 +2473,7 @@
             "value" : "Utworzono: %@"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Criado: %@"
@@ -2544,7 +2544,7 @@
             "value" : "Na zamówienie"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Costume"
@@ -2616,7 +2616,7 @@
             "value" : "Data"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Data"
@@ -2688,7 +2688,7 @@
             "value" : "Domyślny poziom"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nível Padrão"
@@ -2760,7 +2760,7 @@
             "value" : "Wykreślić"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apagar"
@@ -2832,7 +2832,7 @@
             "value" : "Usuń wszystko"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apagar Tudo"
@@ -2903,7 +2903,7 @@
             "value" : "Usuń Słowa"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Excluir Palavras"
@@ -3089,7 +3089,7 @@
             }
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "variations" : {
             "plural" : {
               "one" : {
@@ -3347,7 +3347,7 @@
             }
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "variations" : {
             "plural" : {
               "one" : {
@@ -3491,7 +3491,7 @@
             "value" : "Zdobywaj punkty za każdą ukończoną zagadkę z jednym punktem za każde słowo. Pięć punktów jest straconych za każde użycie przycisku **wskazówka %@**. Rywalizuj ze znajomymi, aby zobaczyć, kto ma najwięcej punktów!"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ganhe pontos para cada quebra-cabeça concluído com um ponto para cada palavra. Cinco pontos são perdidos para cada uso do botão **dica %@**. Competir com amigos para ver quem tem mais pontos!"
@@ -3563,7 +3563,7 @@
             "value" : "Być odpowiedzialnym za"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Editar"
@@ -3634,7 +3634,7 @@
             "value" : "Umożliwić"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Habilitar"
@@ -3705,7 +3705,7 @@
             "value" : "Wypełnić"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Preencher"
@@ -3777,7 +3777,7 @@
             "value" : "Filtruj według:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Filtrar por:"
@@ -3848,7 +3848,7 @@
             "value" : "Waga czcionki:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Peso da Fonte:"
@@ -3926,7 +3926,7 @@
             "value" : "Znaleziono: %1$lld z %2$lld"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Encontrado: %1$lld de %2$lld"
@@ -3998,7 +3998,7 @@
             "value" : "Generator gier"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gerador de Jogos"
@@ -4070,7 +4070,7 @@
             "value" : "Gry"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jogos"
@@ -4140,7 +4140,7 @@
             "value" : "Wygląd siatki"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aparência da grade"
@@ -4210,7 +4210,7 @@
             "value" : "Kolor podświetlenia"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cor de destaque"
@@ -4280,7 +4280,7 @@
             "value" : "Poziomy"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Horizontal"
@@ -4352,7 +4352,7 @@
             "value" : "Język"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Linguagem"
@@ -4422,7 +4422,7 @@
             "value" : "Największy Poziom Pierwszy"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Maior Nível Primeiro"
@@ -4494,7 +4494,7 @@
             "value" : "Układ siatki listowej"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Layout da Grade de Letras"
@@ -4566,7 +4566,7 @@
             "value" : "Poziom"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nível"
@@ -4636,7 +4636,7 @@
             "value" : "Poziom:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nível:"
@@ -4714,7 +4714,7 @@
             "value" : "Poziom: %1$lld (%2$lld ⨉ %3$lld)"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nível: %1$lld (%2$lld ⨉ %3$lld)"
@@ -4791,7 +4791,7 @@
             "value" : "Człowiek"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cara."
@@ -4869,7 +4869,7 @@
             "value" : "Dopasowane: %1$lld z %2$lld słów"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Correspondido: %1$lld de %2$lld palavras"
@@ -4947,7 +4947,7 @@
             "value" : "Brakujące %1$lld: %2$@"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Faltando %1$lld: %2$@"
@@ -5019,7 +5019,7 @@
             "value" : "Moje nagrody"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meus Prêmios"
@@ -5089,7 +5089,7 @@
             "value" : "Nazwy w kolejności"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nomes em ordem"
@@ -5159,7 +5159,7 @@
             "value" : "Nazwy w odwrotnej kolejności"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nomes em ordem inversa"
@@ -5230,7 +5230,7 @@
             "value" : "Nowy"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Novo"
@@ -5302,7 +5302,7 @@
             "value" : "Nie wybrano jeszcze %@!"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nenhum %@ selecionado ainda!"
@@ -5374,7 +5374,7 @@
             "value" : "Nie stworzono jeszcze żadnych łamigłówek!"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nenhum quebra-cabeça criado ainda!"
@@ -5444,7 +5444,7 @@
             "value" : "Liczba puzzli do stworzenia"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Número de quebra-cabeças para criar"
@@ -5514,7 +5514,7 @@
             "value" : "Najpierw starsze randki"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Datas Mais Antigas Primeiro"
@@ -5585,7 +5585,7 @@
             "value" : "Zarys"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Esboço"
@@ -5656,7 +5656,7 @@
             "value" : "Zarys i wypełnienie"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Esboçar e preencher"
@@ -5726,7 +5726,7 @@
             "value" : "Pozycja względem siatki liter"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Posição em relação à grade de letras"
@@ -5796,7 +5796,7 @@
             "value" : "Domyślne Ustawienia Tworzenia Puzzli (%@ Dotknięte)"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Padrões de Criação de Quebra-Cabeça (%@ Tocado)"
@@ -5866,7 +5866,7 @@
             "value" : "Poziom łamigłówki"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nível de quebra-cabeça"
@@ -5938,7 +5938,7 @@
             "value" : "Łamigłówki"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quebra-cabeças"
@@ -6010,7 +6010,7 @@
             "value" : "Puzzle zostaną trwale usunięte. Zdobyte odznaki nie są usuwane."
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Os quebra-cabeças serão excluídos permanentemente. Os emblemas ganhos não são removidos."
@@ -6080,7 +6080,7 @@
             "value" : "Puzzle:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quebra-cabeças:"
@@ -6150,7 +6150,7 @@
             "value" : "Zagadki: %lld"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quebra-cabeças: %lld"
@@ -6220,7 +6220,7 @@
             "value" : "Losowy"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aleatório"
@@ -6290,7 +6290,7 @@
             "value" : "Losowy w zasięgu"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aleatório no alcance"
@@ -6360,7 +6360,7 @@
             "value" : "Ostatni"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recente"
@@ -6430,7 +6430,7 @@
             "value" : "Najpierw ostatnie daty"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Datas Recentes Primeiro"
@@ -6502,7 +6502,7 @@
             "value" : "Zapisz Puzzle"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salve o quebra-cabeça"
@@ -6574,7 +6574,7 @@
             "value" : "Wybierz %@ po lewej stronie, aby rozpocząć."
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selecione um %@ à esquerda para começar."
@@ -6644,7 +6644,7 @@
             "value" : "Wybrany"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selecionado"
@@ -6714,7 +6714,7 @@
             "value" : "Wybrane rozmiary"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tamanhos Selecionados"
@@ -6784,7 +6784,7 @@
             "value" : "Wybór"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleção"
@@ -6854,7 +6854,7 @@
             "value" : "Wybór Koloru"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleção de Cor"
@@ -6924,7 +6924,7 @@
             "value" : "Wybór OK Kolor"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleção OK Cor"
@@ -6996,7 +6996,7 @@
             "value" : "Ustawienia"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Configurações"
@@ -7066,7 +7066,7 @@
             "value" : "Rozmiar:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tamanho:"
@@ -7136,7 +7136,7 @@
             "value" : "Najmniejszy poziom pierwszy"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "O Menor Nível Primeiro"
@@ -7208,7 +7208,7 @@
             "value" : "Sortuj według %@"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Classificar por %@"
@@ -7278,7 +7278,7 @@
             "value" : "Posortowane W Kolumnach"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Classificado Entre Colunas"
@@ -7348,7 +7348,7 @@
             "value" : "Efekty dźwiękowe"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Efeitos sonoros"
@@ -7418,7 +7418,7 @@
             "value" : "Głośność dźwięku"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volume de som"
@@ -7490,7 +7490,7 @@
             "value" : "Zakładki"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guias"
@@ -7560,7 +7560,7 @@
             "value" : "Słowa zostaną trwale usunięte."
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "As palavras serão excluídas permanentemente."
@@ -7632,7 +7632,7 @@
             "value" : "Czas/Słowo"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tempo/Palavra"
@@ -7702,7 +7702,7 @@
             "value" : "Timer"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Temporizador"
@@ -7774,7 +7774,7 @@
             "value" : "Dotknij %@ w prawym górnym rogu, aby rozpocząć."
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toque em %@ no canto superior direito para começar."
@@ -7846,7 +7846,7 @@
             "value" : "Wpisz tutaj..."
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Digite aqui..."
@@ -7918,7 +7918,7 @@
             "value" : "Aktualizacja"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Atualização"
@@ -7990,7 +7990,7 @@
             "value" : "Nazwa użytkownika"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nome de usuário"
@@ -8062,7 +8062,7 @@
             "value" : "Wersja: %@"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Versão: %@"
@@ -8133,7 +8133,7 @@
             "value" : "Objętość:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volume:"
@@ -8204,7 +8204,7 @@
             "value" : "Waga:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Peso:"
@@ -8276,7 +8276,7 @@
             "value" : "ZWYCIĘZCA!"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "VENCEDOR!"
@@ -8348,7 +8348,7 @@
             "value" : "Lista słów"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lista de palavras"
@@ -8420,7 +8420,7 @@
             "value" : "Edytor listy słów"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Editor de Lista de Palavras"
@@ -8492,7 +8492,7 @@
             "value" : "Nazwa listy słów"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nome da Lista de Palavras"
@@ -8564,7 +8564,7 @@
             "value" : "Wybór listy słów:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleção da Lista de Palavras:"
@@ -8634,7 +8634,7 @@
             "value" : "Lista słów do użycia"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lista de palavras para usar"
@@ -8704,7 +8704,7 @@
             "value" : "Lista słów do użycia:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lista de palavras para usar:"
@@ -8776,7 +8776,7 @@
             "value" : "Listy słów"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Listas de palavras"
@@ -8846,7 +8846,7 @@
             "value" : "Wybór słów"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleção de Palavras"
@@ -8918,7 +8918,7 @@
             "value" : "Słowa (%lld)"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Palavras (%lld)"
@@ -8990,7 +8990,7 @@
             "value" : "Słowa (%lld) _Stuknij listy, aby edytować"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Palavras (%lld) _Toque na Lista para Editar"
@@ -9062,7 +9062,7 @@
             "value" : "Słowa:"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Palavras:"
@@ -9140,7 +9140,7 @@
             "value" : "Słowa: (średnia/maksymalna %1$.2f/%2$lld litery)"
           }
         },
-        "pt-BR" : {
+        "pt" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Palavras: (Média/Máxima %1$.2f/%2$lld letras)"
