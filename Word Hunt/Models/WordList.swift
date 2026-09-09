@@ -173,11 +173,10 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	
 	public var maxLength: Int { longestWord.count }
 	
-	public var longestWord: String { words.max(by: {$0 < $1} ) ?? "" }
+	public var longestWord: String { words.max(by: {$0.count < $1.count} ) ?? "" }
 	
 	convenience init() {
-		self.init(name: "Empty", language: .english,
-				  author: "Unknown", date: Date(), words: [])
+		self.init(name: "Empty", author: "Unknown", date: Date(), words: [])
 	}
 	
 	required public init(from decoder: Decoder) throws {
@@ -191,8 +190,7 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	
 	/// Create a copy of words
 	convenience init(words: WordList) {
-		self.init(name: words.name, language: words.language,
-			 author: words.author, date: words.date, words: words.words)
+		self.init(name: words.name, author: words.author, date: words.date, words: words.words)
 	}
 	
 	convenience init?(from file: URL) {
@@ -210,29 +208,19 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 		return nil
 	}
 	
-	init(name: String = "Empty", language: Language = .english,
-		 author: String = "Unknown", date: Date = Date(), words: [String]) {
+	init(name: String = "Empty", author: String = "Unknown", date: Date = Date(), words: [String]) {
 		self.name = name
-		self.language = language
+		self.language = Language(rawValue: Locale.current.identifier) ?? .english
 		self.author = author
 		self.date = date
 		self.words = words
 	}
 	
-	init(name2: LocalizedStringResource, words2: [LocalizedStringResource]) {
-		self.name = name2.localizedStringResource.key
-		self.words = words2.map({ $0.key })
-		self.language = .english
-		self.date = Date()
-		self.author = "Unknown"
-	}
-	
 	/// Get word list with random words of a certain size (i.e., wordRange)
-	init(name: String = "Empty", language: Language = .english,
-		 author: String = "Unknown", date: Date = Date(),
+	init(name: String = "Empty", author: String = "Unknown", date: Date = Date(),
 		 wordRange: CountableClosedRange<Int>, totalWords: Int) {
 		self.name = name
-		self.language = language
+		self.language = Language(rawValue: Locale.current.identifier) ?? .english
 		self.author = author
 		self.date = date
 		self.words = Self.generateWords(with: wordRange, total: totalWords)

@@ -81,8 +81,8 @@ struct GameView: View {
 		ZStack {
 			WordView(words: game.board.wordPlacements,
 					 maxWordLength: game.board.words.maxLength)
-			.frame(maxWidth: isPhone && game.rows > 16 ? 150 : 300, maxHeight: .infinity)
-			.background(.gray.opacity(0.2))
+			.frame(maxWidth: isPhone && game.rows > 16 ? 150 : 400, maxHeight: .infinity)
+			//.background(.gray.opacity(0.2))
 			
 			VStack {
 				FloatingWord(activeWord: $selectedWord)

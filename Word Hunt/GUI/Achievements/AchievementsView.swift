@@ -84,8 +84,10 @@ struct AchievementsView: View {
 					HStack {
 						ForEach(sortedUnlockedBadges) { badge in
 							UnlockedAwardView(badge: badge)
+								.frame(maxHeight: .infinity)
 						}
 					}
+					.fixedSize(horizontal: false, vertical: true)
 				}
 				.scrollClipDisabled(true)
 				.scrollIndicators(.hidden)

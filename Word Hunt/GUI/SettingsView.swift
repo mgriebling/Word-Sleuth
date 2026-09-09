@@ -30,7 +30,7 @@ struct SettingsView: View {
 						Text("Puzzles:")
 						Picker("Create Puzzle:", selection: $creationMode.animation()) {
 							ForEach(CreationMode.allCases.dropLast(), id:\.self) { mode in
-								Text(mode.rawValue, format: .number) //   "\(mode.rawValue)").tag(mode)
+								Text(mode.number, format: .number) //   "\(mode.rawValue)").tag(mode)
 							}
 							Image(systemName: "ellipsis")
 								.tag(CreationMode.custom)
@@ -59,7 +59,7 @@ struct SettingsView: View {
 						Text("Level:")
 						Picker("Level:", selection: $internalSettings.level) {
 							ForEach(Level.allCases.dropFirst(), id:\.self) { level in
-								Text(level.rawValue, format: .number)  // "\(level.rawValue)").tag(level)
+								Text(level.value, format: .number)
 							}
 						}
 						.pickerStyle(.segmented)

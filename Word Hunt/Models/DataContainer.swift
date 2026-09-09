@@ -64,9 +64,9 @@ class DataContainer {
 			switch badge.details {
 				case .puzzle1 where finishedGames.count >= 1,
 					 .puzzle3 where finishedGames.count >= 3 &&
-					finishedGames.count(where: {$0.level >= 5}) >= 1,
+						finishedGames.count(where: {$0.level >= 5}) >= 1,
 					 .puzzle5 where finishedGames.count >= 5 &&
-					finishedGames.count(where: {$0.level >= 6}) >= 2,
+						finishedGames.count(where: {$0.level >= 6}) >= 2,
 					 .puzzle7 where finishedGames.count >= 7 &&
 						finishedGames.count(where: {$0.level >= 7}) >= 3,
 					 .puzzle10 where finishedGames.count >= 10 &&

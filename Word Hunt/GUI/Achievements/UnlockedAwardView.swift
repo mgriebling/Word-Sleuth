@@ -33,7 +33,7 @@ struct UnlockedAwardView: View {
 			.padding()
 			.frame(width: 210)
 			.frame(minHeight: 225)
-			.fixedSize()
+			//.fixedSize()
 			.multilineTextAlignment(.leading)
 			.foregroundColor(.white)
 			.background(badge.details.color.opacity(0.8))

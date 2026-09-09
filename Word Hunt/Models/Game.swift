@@ -154,6 +154,7 @@ import SwiftUI
 			var games = [Game]()
 			for url in gameURLs {
 				if let game = Game(from: url) {
+					print("Loading game \(game.name)")
 					games.append(game)
 				}
 			}
