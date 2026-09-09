@@ -199,7 +199,7 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 		if let rawData = try? Data(contentsOf: file) {
 			let decoder = JSONDecoder()
 			if let wordList = try? decoder.decode(WordList.self, from: rawData) {
-				print("Loaded word List: \(wordList.name)")
+//				print("Loaded word List: \(wordList.name)")
 				self.init(words: wordList)
 				return
 			} else {
@@ -327,6 +327,7 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 		let language = Locale.preferredLanguages.first ?? "en"
 		if let wordFilePath = Bundle.main.path(forResource: "words_\(language)", ofType: "txt") {
 			if let content = try? String(contentsOfFile: wordFilePath, encoding: .utf8) {
+				print("Loaded words_\(language).txt")
 				return content.components(separatedBy: .newlines)
 			}
 		}

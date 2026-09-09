@@ -55,6 +55,16 @@
         <target state="translated">%1$lld Wörter (%2$@)</target>
         <note from="auto-generated">A subheading that displays the number of words in a word list. The first argument is the count of words in the list. The second argument is the language of the words in the list.</note>
       </trans-unit>
+      <trans-unit id="5 Stars" xml:space="preserve">
+        <source>5 Stars</source>
+        <target state="translated">5 Sterne</target>
+        <note from="auto-generated">The name of the badge when the user has completed 5 puzzles.</note>
+      </trans-unit>
+      <trans-unit id="A Hat Trick" xml:space="preserve">
+        <source>A Hat Trick</source>
+        <target state="translated">Ein Hattrick</target>
+        <note from="auto-generated">The title of a badge that is unlocked when the user has completed 3 puzzles.</note>
+      </trans-unit>
       <trans-unit id="About %@" xml:space="preserve">
         <source>About %@</source>
         <target state="translated">Über %@</target>
@@ -95,6 +105,11 @@
         <target state="translated">Umgekehrte Auswahl zulassen</target>
         <note>Allow puzzle words to be selected by touching the letters forwards or in reverse.</note>
       </trans-unit>
+      <trans-unit id="Amazing Achievement" xml:space="preserve">
+        <source>Amazing Achievement</source>
+        <target state="translated">Erstaunliche Leistung</target>
+        <note from="auto-generated">The title of the badge for the "Amazing Achievement" badge.</note>
+      </trans-unit>
       <trans-unit id="Author" xml:space="preserve">
         <source>Author</source>
         <target state="translated">Autor</target>
@@ -130,10 +145,18 @@
         <target state="translated">Farbfüllung</target>
         <note>Letter grid outline style with only random color fills.</note>
       </trans-unit>
+      <trans-unit id="Complete three puzzles with to earn this badge. Earlier solved puzzles count as well. At least one should be level five or higher." xml:space="preserve">
+        <source>Complete three puzzles with to earn this badge. Earlier solved puzzles count as well. At least one should be level five or higher.</source>
+        <note from="auto-generated">Badge description for the badge with the ID `puzzle3`.</note>
+      </trans-unit>
       <trans-unit id="Contact Support" xml:space="preserve">
         <source>Contact Support</source>
         <target state="translated">Support kontaktieren</target>
         <note from="auto-generated">A button that opens the user's email client with a pre-filled email address for support.</note>
+      </trans-unit>
+      <trans-unit id="Crack ten puzzles to earn this badge. Four need to be at level eight or higher." xml:space="preserve">
+        <source>Crack ten puzzles to earn this badge. Four need to be at level eight or higher.</source>
+        <note from="auto-generated">Badge description for "Puzzle 10" badge.</note>
       </trans-unit>
       <trans-unit id="Create Games (Pro)" xml:space="preserve">
         <source>Create Games (Pro)</source>
@@ -164,6 +187,10 @@
         <source>Date</source>
         <target state="translated">Datum</target>
         <note from="auto-generated">A label for the date of a word list.</note>
+      </trans-unit>
+      <trans-unit id="Decipher 20 puzzles for this badge. At least five need to be at level nine or higher." xml:space="preserve">
+        <source>Decipher 20 puzzles for this badge. At least five need to be at level nine or higher.</source>
+        <note from="auto-generated">Badge description for "Decipher 20 puzzles for this badge. At least five need to be at level nine or higher."</note>
       </trans-unit>
       <trans-unit id="Default Level" xml:space="preserve">
         <source>Default Level</source>
@@ -215,10 +242,25 @@
         <target state="translated">Bearbeiten</target>
         <note from="auto-generated">A pencil icon that opens a sheet for editing a word list.</note>
       </trans-unit>
+      <trans-unit id="Elapsed Time: " xml:space="preserve">
+        <source>Elapsed Time: </source>
+        <target state="translated">Verstrichene Zeit:</target>
+        <note from="auto-generated">Label for the elapsed time in a game.</note>
+      </trans-unit>
       <trans-unit id="Enable" xml:space="preserve">
         <source>Enable</source>
         <target state="translated">Aktivieren</target>
         <note>Enables  the game timer or sound effects.</note>
+      </trans-unit>
+      <trans-unit id="Every journey begins with a single step. Congratulations — you’re on your way!" xml:space="preserve">
+        <source>Every journey begins with a single step. Congratulations — you’re on your way!</source>
+        <target state="translated">Jede Reise beginnt mit einem einzigen Schritt. Herzlichen Glückwunsch - Sie sind auf dem Weg!</target>
+        <note from="auto-generated">A congratulatory message for the first badge.</note>
+      </trans-unit>
+      <trans-unit id="Exercising the mind is as important as exercise for the body. Keep up the great work!" xml:space="preserve">
+        <source>Exercising the mind is as important as exercise for the body. Keep up the great work!</source>
+        <target state="translated">Das Trainieren des Geistes ist für den Körper genauso wichtig wie Bewegung. Mach weiter so!</target>
+        <note from="auto-generated">A congratulatory message for the badge with the same name.</note>
       </trans-unit>
       <trans-unit id="Fill" xml:space="preserve">
         <source>Fill</source>
@@ -230,10 +272,20 @@
         <target state="translated">Filtern nach:</target>
         <note from="auto-generated">A label for a picker that filters the list of games.</note>
       </trans-unit>
+      <trans-unit id="Finding a word in a word search puzzle is like finding a needle in a haystack — but one that you know is there, just waiting to be discovered." xml:space="preserve">
+        <source>Finding a word in a word search puzzle is like finding a needle in a haystack — but one that you know is there, just waiting to be discovered.</source>
+        <target state="translated">Ein Wort in einem Wortsuchrätsel zu finden, ist wie eine Nadel in einem Heuhaufen zu finden - aber eines, von dem man weiß, dass es da ist und nur darauf wartet, entdeckt zu werden.</target>
+        <note from="auto-generated">A description of a puzzle with a level of 7.</note>
+      </trans-unit>
       <trans-unit id="Font Weight:" xml:space="preserve">
         <source>Font Weight:</source>
         <target state="translated">Schriftstärke:</target>
         <note>Picker to select the weight of a font for the grid letters.</note>
+      </trans-unit>
+      <trans-unit id="For me, the most enjoyable part is the puzzle, the process of solving, not the solution itself. — Ernő Rubik" xml:space="preserve">
+        <source>For me, the most enjoyable part is the puzzle, the process of solving, not the solution itself. — Ernő Rubik</source>
+        <target state="translated">Für mich ist der angenehmste Teil das Rätsel, der Lösungsprozess, nicht die Lösung selbst. — Ernő Rubik</target>
+        <note from="auto-generated">A quote by the famous cognitive scientist and psychologist, Ernő Rubik, that describes the importance of the process of solving puzzles rather than just the final solution.</note>
       </trans-unit>
       <trans-unit id="Found: %lld of %lld" xml:space="preserve">
         <source>Found: %1$lld of %2$lld</source>
@@ -249,6 +301,11 @@
         <source>Games</source>
         <target state="translated">Spiele</target>
         <note from="auto-generated">A label displayed next to the number of games played.</note>
+      </trans-unit>
+      <trans-unit id="Grand Master" xml:space="preserve">
+        <source>Grand Master</source>
+        <target state="translated">Großmeister</target>
+        <note from="auto-generated">The title of the badge for the 100th puzzle.</note>
       </trans-unit>
       <trans-unit id="Grid Appearance" xml:space="preserve">
         <source>Grid Appearance</source>
@@ -295,10 +352,20 @@
         <target state="translated">Stufe: %1$lld (%2$lld ⨉ %3$lld)</target>
         <note from="auto-generated">A label that shows the game level and the size of the game board. The first argument is the game level. The second argument is the width of the game board. The third argument is the height of the game board.</note>
       </trans-unit>
+      <trans-unit id="Look at you, improving yourself by solving all of these puzzles!" xml:space="preserve">
+        <source>Look at you, improving yourself by solving all of these puzzles!</source>
+        <target state="translated">Sieh dich an, du verbesserst dich, indem du all diese Rätsel löst!</target>
+        <note from="auto-generated">A congratulatory message for the badge with the ID `puzzle10`.</note>
+      </trans-unit>
       <trans-unit id="Man" xml:space="preserve">
         <source>Man.</source>
-        <target state="translated">Mensch</target>
+        <target state="translated">Man</target>
         <note>Label for manual mode when selecting puzzle level for game creation.</note>
+      </trans-unit>
+      <trans-unit id="Master" xml:space="preserve">
+        <source>Master</source>
+        <target state="translated">Meister</target>
+        <note from="auto-generated">The title of the badge for the puzzle 75 case.</note>
       </trans-unit>
       <trans-unit id="Matched: %lld of %lld words" xml:space="preserve">
         <source>Matched: %1$lld of %2$lld words</source>
@@ -350,6 +417,15 @@
         <target state="translated">Ältere Daten zuerst</target>
         <note/>
       </trans-unit>
+      <trans-unit id="On a Streak" xml:space="preserve">
+        <source>On a Streak</source>
+        <target state="translated">Auf einer Serie</target>
+        <note from="auto-generated">The title of the badge for the puzzle 7 case.</note>
+      </trans-unit>
+      <trans-unit id="Out of 30 puzzles for this badge, you'll need at least five puzzles rated at level ten." xml:space="preserve">
+        <source>Out of 30 puzzles for this badge, you'll need at least five puzzles rated at level ten.</source>
+        <note from="auto-generated">Badge description for "Amazing Achievement" badge.</note>
+      </trans-unit>
       <trans-unit id="Outline" xml:space="preserve">
         <source>Outline</source>
         <target state="translated">Umriss</target>
@@ -359,6 +435,11 @@
         <source>Outline &amp; Fill</source>
         <target state="translated">Umreißen &amp; Füllen</target>
         <note>Letter grid outline style with user-colored fill and lines.</note>
+      </trans-unit>
+      <trans-unit id="Perfect 10" xml:space="preserve">
+        <source>Perfect 10</source>
+        <target state="translated">Perfekt 10</target>
+        <note from="auto-generated">The title of the badge when the user has completed 10 puzzles.</note>
       </trans-unit>
       <trans-unit id="Position relative to letter grid" xml:space="preserve">
         <source>Position relative to letter grid</source>
@@ -379,6 +460,11 @@
         <source>Puzzles</source>
         <target state="translated">Rätsel</target>
         <note from="auto-generated">A title for a list of puzzles.</note>
+      </trans-unit>
+      <trans-unit id="Puzzles are a great way to invigorate your brain and keep your mind active. You're doing amazing work!" xml:space="preserve">
+        <source>Puzzles are a great way to invigorate your brain and keep your mind active. You're doing amazing work!</source>
+        <target state="translated">Rätsel sind eine großartige Möglichkeit, Ihr Gehirn zu beleben und Ihren Geist aktiv zu halten. Du machst einen tollen Jorb!</target>
+        <note from="auto-generated">A congratulatory message for the badge with the same name.</note>
       </trans-unit>
       <trans-unit id="Puzzles will be permanently deleted. Earned badges are not removed." xml:space="preserve">
         <source>Puzzles will be permanently deleted. Earned badges are not removed.</source>
@@ -407,13 +493,23 @@
       </trans-unit>
       <trans-unit id="Recent" xml:space="preserve">
         <source>Recent</source>
-        <target state="translated">Neu</target>
+        <target state="translated">Letzte</target>
         <note/>
       </trans-unit>
       <trans-unit id="Recent Dates First" xml:space="preserve">
         <source>Recent Dates First</source>
         <target state="translated">Letzte Daten zuerst</target>
         <note/>
+      </trans-unit>
+      <trans-unit id="Roaring Twenties" xml:space="preserve">
+        <source>Roaring Twenties</source>
+        <target state="translated">Brüllende Zwanziger</target>
+        <note from="auto-generated">The title of the badge for the badge with the ID `puzzle20`.</note>
+      </trans-unit>
+      <trans-unit id="Savant" xml:space="preserve">
+        <source>Savant</source>
+        <target state="translated">Savant</target>
+        <note from="auto-generated">The name of the badge for the puzzle 50 case.</note>
       </trans-unit>
       <trans-unit id="Save Puzzle" xml:space="preserve">
         <source>Save Puzzle</source>
@@ -465,6 +561,15 @@
         <target state="translated">Kleinste Stufe zuerst</target>
         <note/>
       </trans-unit>
+      <trans-unit id="Solve a puzzle to unlock this award." xml:space="preserve">
+        <source>Solve a puzzle to unlock this award.</source>
+        <target state="translated">Löse ein Rätsel, um diesen Preis freizuschalten.</target>
+        <note from="auto-generated">A localized string resource for the requirements of a badge.</note>
+      </trans-unit>
+      <trans-unit id="Solve a total of 75 puzzles. A minimum of 20 puzzles must be rated at level ten." xml:space="preserve">
+        <source>Solve a total of 75 puzzles. A minimum of 20 puzzles must be rated at level ten.</source>
+        <note from="auto-generated">Badge title for puzzles 75.</note>
+      </trans-unit>
       <trans-unit id="Sort by %@" xml:space="preserve">
         <source>Sort by %@</source>
         <target state="translated">Sortieren nach %@</target>
@@ -485,10 +590,23 @@
         <target state="translated">Lautstärke</target>
         <note/>
       </trans-unit>
+      <trans-unit id="Start the Journey" xml:space="preserve">
+        <source>Start the Journey</source>
+        <target state="translated">Beginnen Sie die Reise</target>
+        <note from="auto-generated">Title of the badge for the first puzzle.</note>
+      </trans-unit>
+      <trans-unit id="Successfully complete 100 puzzles and have all nine earlier badges. At least 30 puzzles must be at level ten." xml:space="preserve">
+        <source>Successfully complete 100 puzzles and have all nine earlier badges. At least 30 puzzles must be at level ten.</source>
+        <note from="auto-generated">The congratulatory message for the badge with the title "Grand Master".</note>
+      </trans-unit>
       <trans-unit id="Tabs" xml:space="preserve">
         <source>Tabs</source>
         <target state="translated">Registerkarten</target>
         <note from="auto-generated">A label that describes a list of tabs.</note>
+      </trans-unit>
+      <trans-unit id="The magic number is 50 puzzles. Ten or more puzzles must be rated at level ten." xml:space="preserve">
+        <source>The magic number is 50 puzzles. Ten or more puzzles must be rated at level ten.</source>
+        <note from="auto-generated">Badge description for the badge with the ID `puzzle50`.</note>
       </trans-unit>
       <trans-unit id="The words will be permanently deleted." xml:space="preserve">
         <source>The words will be permanently deleted.</source>
@@ -514,6 +632,10 @@
         <source>Type here...</source>
         <target state="translated">Geben Sie hier ein...</target>
         <note from="auto-generated">A placeholder text for a text field.</note>
+      </trans-unit>
+      <trans-unit id="Unravel seven puzzles to earn this badge. A minimum of three need to be at level seven or higher." xml:space="preserve">
+        <source>Unravel seven puzzles to earn this badge. A minimum of three need to be at level seven or higher.</source>
+        <note from="auto-generated">Badge description for "Puzzle 7" badge.</note>
       </trans-unit>
       <trans-unit id="Update" xml:space="preserve">
         <source>Update</source>
@@ -544,6 +666,11 @@
         <source>Weight:</source>
         <target state="translated">Gewicht:</target>
         <note>Font weight of text shown in the letter grid.</note>
+      </trans-unit>
+      <trans-unit id="Willingness to be puzzled is a valuable trait to cultivate, from childhood to advanced inquiry. — Noam Chomsky" xml:space="preserve">
+        <source>Willingness to be puzzled is a valuable trait to cultivate, from childhood to advanced inquiry. — Noam Chomsky</source>
+        <target state="translated">Die Bereitschaft, verwirrt zu sein, ist eine wertvolle Eigenschaft, die es zu kultivieren gilt, von der Kindheit bis zur fortgeschrittenen Untersuchung. - Noam Chomsky</target>
+        <note from="auto-generated">A quote by Noam Chomsky about the value of being open to being puzzled.</note>
       </trans-unit>
       <trans-unit id="Word List" xml:space="preserve">
         <source>Word List</source>
@@ -585,6 +712,11 @@
         <target state="translated">Wortauswahl</target>
         <note/>
       </trans-unit>
+      <trans-unit id="Words" xml:space="preserve">
+        <source>Words</source>
+        <target state="translated">Worte</target>
+        <note/>
+      </trans-unit>
       <trans-unit id="Words (%lld)" xml:space="preserve">
         <source>Words (%lld)</source>
         <target state="translated">Wörter (%lld)</target>
@@ -604,6 +736,30 @@
         <source>Words: (Average/Maximum %1$.2f/%2$lld letters)</source>
         <target state="translated">Wörter: (Durchwert/maximal %1$.2f/%2$lld Buchstaben)</target>
         <note from="auto-generated">A footnote that describes the average and maximum word lengths in the list. The first argument is the average word length, formatted to two decimal places. The second argument is the maximum word length.</note>
+      </trans-unit>
+      <trans-unit id="Work out five puzzles to earn this badge. At least two need to be level six or higher." xml:space="preserve">
+        <source>Work out five puzzles to earn this badge. At least two need to be level six or higher.</source>
+        <note from="auto-generated">Badge description for "Puzzle 5" badge.</note>
+      </trans-unit>
+      <trans-unit id="You're almost there. Persistance is key to achieving your goal. You've made amazing progress!" xml:space="preserve">
+        <source>You're almost there. Persistance is key to achieving your goal. You've made amazing progress!</source>
+        <target state="translated">Du bist fast da. Beharrlichkeit ist der Schlüssel zum Erreichen Ihres Ziels. Du hast erstaunliche Fortschritte gemacht!</target>
+        <note from="auto-generated">A congratulatory message for the badge with the same name.</note>
+      </trans-unit>
+      <trans-unit id="You've unlocked the full potential of your puzzle solving practice. But don't stop now - keep going!" xml:space="preserve">
+        <source>You've unlocked the full potential of your puzzle solving practice. But don't stop now - keep going!</source>
+        <target state="translated">Sie haben das volle Potenzial Ihrer Rätsellösungspraxis freigesetzt. Aber hör jetzt nicht auf - mach weiter!</target>
+        <note from="auto-generated">A congratulatory message for the badge with the title "Grand Master".</note>
+      </trans-unit>
+      <trans-unit id="You’re building momentum! The more you focus on regular practice, the better you get at choosing to keep up your intentioned habits." xml:space="preserve">
+        <source>You’re building momentum! The more you focus on regular practice, the better you get at choosing to keep up your intentioned habits.</source>
+        <target state="translated">Du baust Schwung auf! Je mehr Sie sich auf regelmäßiges Training konzentrieren, desto besser können Sie sich dafür entscheiden, Ihre beabsichtigten Gewohnheiten beizubehalten.</target>
+        <note from="auto-generated">A congratulatory message for the badge with the same name.</note>
+      </trans-unit>
+      <trans-unit id="item" xml:space="preserve">
+        <source>item</source>
+        <target state="translated">Element</target>
+        <note from="auto-generated">A view that shows a message and a description when a user has not selected an item from a list. The argument is the name of the item that is missing.</note>
       </trans-unit>
     </body>
   </file>
@@ -676,7 +832,7 @@
       </trans-unit>
       <trans-unit id="Acting" xml:space="preserve">
         <source>Acting</source>
-        <target state="translated">Die Schauspielerei</target>
+        <target state="translated">Schauspielerei</target>
         <note>L29-word 1</note>
       </trans-unit>
       <trans-unit id="Action" xml:space="preserve">
@@ -711,7 +867,7 @@
       </trans-unit>
       <trans-unit id="Affidavit" xml:space="preserve">
         <source>Affidavit</source>
-        <target state="translated">Eidesstattliche Versicherung</target>
+        <target state="translated">EidesstattlicheVersicherung</target>
         <note>L34-word 2</note>
       </trans-unit>
       <trans-unit id="Afghani" xml:space="preserve">
@@ -736,7 +892,7 @@
       </trans-unit>
       <trans-unit id="Airplane" xml:space="preserve">
         <source>Airplane</source>
-        <target state="translated">Das Flugzeug</target>
+        <target state="translated">Flugzeug</target>
         <note>L52-word 1</note>
       </trans-unit>
       <trans-unit id="Akita" xml:space="preserve">
@@ -874,7 +1030,7 @@ L40-word 2</note>
       </trans-unit>
       <trans-unit id="Ambulance" xml:space="preserve">
         <source>Ambulance</source>
-        <target state="translated">Der Krankenwagen</target>
+        <target state="translated">Krankenwagen</target>
         <note>L52-word 2</note>
       </trans-unit>
       <trans-unit id="American" xml:space="preserve">
@@ -1057,7 +1213,7 @@ L38-word 2</note>
       </trans-unit>
       <trans-unit id="Aquifer" xml:space="preserve">
         <source>Aquifer</source>
-        <target state="translated">Wasser führende Schicht</target>
+        <target state="translated">Grundwasserleiter</target>
         <note>L21-word 1</note>
       </trans-unit>
       <trans-unit id="Arabic" xml:space="preserve">
@@ -1520,7 +1676,7 @@ L47-word 4</note>
       </trans-unit>
       <trans-unit id="Basket" xml:space="preserve">
         <source>Basket</source>
-        <target state="translated">Der Korb</target>
+        <target state="translated">Korb</target>
         <note>L15-word 4</note>
       </trans-unit>
       <trans-unit id="Basketball" xml:space="preserve">
@@ -1728,7 +1884,7 @@ L38-word 8</note>
       </trans-unit>
       <trans-unit id="Birdwatching" xml:space="preserve">
         <source>Birdwatching</source>
-        <target state="translated">Das Beobachten von Vögeln</target>
+        <target state="translated">Vogelbeobachtung</target>
         <note>L29-word 5</note>
       </trans-unit>
       <trans-unit id="Birman" xml:space="preserve">
@@ -1824,12 +1980,12 @@ L54-word 1</note>
       </trans-unit>
       <trans-unit id="Bluebird" xml:space="preserve">
         <source>Bluebird</source>
-        <target state="translated">Elfenblauvogel</target>
+        <target state="translated">Drossel</target>
         <note>L6-word 2</note>
       </trans-unit>
       <trans-unit id="Bluebonnet" xml:space="preserve">
         <source>Bluebonnet</source>
-        <target state="translated">Blaue Bonnet</target>
+        <target state="translated">Blaulupine</target>
         <note>L24-word 8</note>
       </trans-unit>
       <trans-unit id="Bluegrass" xml:space="preserve">
@@ -1839,7 +1995,7 @@ L54-word 1</note>
       </trans-unit>
       <trans-unit id="Bluejay" xml:space="preserve">
         <source>Bluejay</source>
-        <target state="translated">Blauer Jay</target>
+        <target state="translated">Blauhäher</target>
         <note>L6-word 3</note>
       </trans-unit>
       <trans-unit id="Blueprint" xml:space="preserve">
@@ -2079,7 +2235,7 @@ L7-word 6</note>
       </trans-unit>
       <trans-unit id="Briefcase" xml:space="preserve">
         <source>Briefcase</source>
-        <target state="translated">Die Aktentasche</target>
+        <target state="translated">Aktentasche</target>
         <note>L15-word 9</note>
       </trans-unit>
       <trans-unit id="Brier" xml:space="preserve">
@@ -2743,7 +2899,7 @@ L7-word 8</note>
       </trans-unit>
       <trans-unit id="Chickadee" xml:space="preserve">
         <source>Chickadee</source>
-        <target state="translated">Chickadee-Meise</target>
+        <target state="translated">Meise</target>
         <note>L6-word 8</note>
       </trans-unit>
       <trans-unit id="Chicken" xml:space="preserve">
@@ -2830,7 +2986,7 @@ L7-word 9</note>
       </trans-unit>
       <trans-unit id="Chow" xml:space="preserve">
         <source>Chow</source>
-        <target state="translated">Chow-Chow</target>
+        <target state="translated">ChowChow</target>
         <note>L20-word 12</note>
       </trans-unit>
       <trans-unit id="Chromosphere" xml:space="preserve">
@@ -3272,7 +3428,7 @@ L21-word 6</note>
       </trans-unit>
       <trans-unit id="Corgi" xml:space="preserve">
         <source>Corgi</source>
-        <target state="translated">Welsh Corgi</target>
+        <target state="translated">Corgi</target>
         <note>L20-word 15</note>
       </trans-unit>
       <trans-unit id="Cork" xml:space="preserve">
@@ -3633,7 +3789,7 @@ L8-word 12</note>
       </trans-unit>
       <trans-unit id="Daffodil" xml:space="preserve">
         <source>Daffodil</source>
-        <target state="translated">Gelbe Narzisse</target>
+        <target state="translated">Osterglocke</target>
         <note>L24-word 21</note>
       </trans-unit>
       <trans-unit id="Dagger" xml:space="preserve">
@@ -3895,7 +4051,7 @@ L27-word 14</note>
       </trans-unit>
       <trans-unit id="Dinar" xml:space="preserve">
         <source>Dinar</source>
-        <target state="translated">Irakischer Dinar</target>
+        <target state="translated">Dinar</target>
         <note>L19-word 11</note>
       </trans-unit>
       <trans-unit id="Dingo" xml:space="preserve">
@@ -3911,7 +4067,7 @@ L38-word 15</note>
       </trans-unit>
       <trans-unit id="Dirham" xml:space="preserve">
         <source>Dirham</source>
-        <target state="translated">VAE-Dirham</target>
+        <target state="translated">Dirham</target>
         <note>L19-word 12</note>
       </trans-unit>
       <trans-unit id="Disco" xml:space="preserve">
@@ -4036,7 +4192,7 @@ L9-word 22</note>
       </trans-unit>
       <trans-unit id="Dram" xml:space="preserve">
         <source>Dram</source>
-        <target state="translated">Armenischer Dram</target>
+        <target state="translated">Dram</target>
         <note>L19-word 16</note>
       </trans-unit>
       <trans-unit id="Drape" xml:space="preserve">
@@ -4128,7 +4284,7 @@ L54-word 9</note>
       </trans-unit>
       <trans-unit id="Dusk" xml:space="preserve">
         <source>Dusk</source>
-        <target state="translated">Einbruch der Dunkelheit</target>
+        <target state="translated">Dämmerung</target>
         <note>L49-word 12</note>
       </trans-unit>
       <trans-unit id="Duststorm" xml:space="preserve">
@@ -4215,7 +4371,7 @@ L7-word 10</note>
       </trans-unit>
       <trans-unit id="Egypt" xml:space="preserve">
         <source>Egypt</source>
-        <target state="translated">Altes Ägypten</target>
+        <target state="translated">Ägypten</target>
         <note>L17-word 13</note>
       </trans-unit>
       <trans-unit id="Egyptian" xml:space="preserve">
@@ -4438,7 +4594,7 @@ L5-word 14</note>
       </trans-unit>
       <trans-unit id="Escudo" xml:space="preserve">
         <source>Escudo</source>
-        <target state="translated">Portugiesischer Escudo</target>
+        <target state="translated">Escudo</target>
         <note>L19-word 17</note>
       </trans-unit>
       <trans-unit id="Esophagus" xml:space="preserve">
@@ -4682,7 +4838,7 @@ L38-word 20</note>
       </trans-unit>
       <trans-unit id="Ferry" xml:space="preserve">
         <source>Ferry</source>
-        <target state="translated">Die Fähre</target>
+        <target state="translated">Fähre</target>
         <note>L52-word 16</note>
       </trans-unit>
       <trans-unit id="Fiber" xml:space="preserve">
@@ -4837,7 +4993,7 @@ L54-word 11</note>
       </trans-unit>
       <trans-unit id="Florin" xml:space="preserve">
         <source>Florin</source>
-        <target state="translated">Surinamischer Gulden</target>
+        <target state="translated">Gulden</target>
         <note>L19-word 19</note>
       </trans-unit>
       <trans-unit id="Florist" xml:space="preserve">
@@ -4971,7 +5127,7 @@ L51-word 17</note>
       </trans-unit>
       <trans-unit id="Fortnight" xml:space="preserve">
         <source>Fortnight</source>
-        <target state="translated">Vierzehn Tage</target>
+        <target state="translated">VierzehnTage</target>
         <note>L49-word 18</note>
       </trans-unit>
       <trans-unit id="Forty" xml:space="preserve">
@@ -5385,7 +5541,7 @@ L40-word 21</note>
       </trans-unit>
       <trans-unit id="GoldenRatio" xml:space="preserve">
         <source>GoldenRatio</source>
-        <target state="translated">Goldene Ratio</target>
+        <target state="translated">GoldeneRatio</target>
         <note>L45-word 41</note>
       </trans-unit>
       <trans-unit id="Golem" xml:space="preserve">
@@ -5400,7 +5556,7 @@ L40-word 21</note>
       </trans-unit>
       <trans-unit id="Golf1" xml:space="preserve">
         <source>Golf</source>
-        <target state="translated">Gustavr</target>
+        <target state="translated">Gustav</target>
         <note>L35-word 7</note>
       </trans-unit>
       <trans-unit id="Gondola" xml:space="preserve">
@@ -5571,7 +5727,7 @@ L38-word 26</note>
       </trans-unit>
       <trans-unit id="Guilder" xml:space="preserve">
         <source>Guilder</source>
-        <target state="translated">Niederländischer Gulden</target>
+        <target state="translated">NGulden</target>
         <note>L19-word 23</note>
       </trans-unit>
       <trans-unit id="Guilt" xml:space="preserve">
@@ -5652,7 +5808,7 @@ L7-word 16</note>
       </trans-unit>
       <trans-unit id="Half" xml:space="preserve">
         <source>Half</source>
-        <target state="translated">Zur Hälfte</target>
+        <target state="translated">Hälfte</target>
         <note>L45-word 45</note>
       </trans-unit>
       <trans-unit id="Halibut" xml:space="preserve">
@@ -6043,7 +6199,7 @@ L38-word 28</note>
       </trans-unit>
       <trans-unit id="Hovercraft" xml:space="preserve">
         <source>Hovercraft</source>
-        <target state="translated">Das Hovercraft</target>
+        <target state="translated">Hovercraft</target>
         <note>L52-word 23</note>
       </trans-unit>
       <trans-unit id="Hryvnia" xml:space="preserve">
@@ -6109,7 +6265,7 @@ L54-word 20</note>
       </trans-unit>
       <trans-unit id="Hydra" xml:space="preserve">
         <source>Hydra</source>
-        <target state="translated">Hydra-Polyp</target>
+        <target state="translated">HydraPolyp</target>
         <note>L43-word 20</note>
       </trans-unit>
       <trans-unit id="Hydrangea" xml:space="preserve">
@@ -6307,7 +6463,7 @@ L45-word 50</note>
       </trans-unit>
       <trans-unit id="Integer" xml:space="preserve">
         <source>Integer</source>
-        <target state="translated">Ganze Zahl</target>
+        <target state="translated">GanzeZahl</target>
         <note>L41-word 17
 L45-word 53</note>
       </trans-unit>
@@ -6805,7 +6961,7 @@ L38-word 35</note>
       </trans-unit>
       <trans-unit id="Koruna" xml:space="preserve">
         <source>Koruna</source>
-        <target state="translated">Tschechische Krone</target>
+        <target state="translated">Krone</target>
         <note>L19-word 27</note>
       </trans-unit>
       <trans-unit id="Krait" xml:space="preserve">
@@ -6825,12 +6981,12 @@ L38-word 35</note>
       </trans-unit>
       <trans-unit id="Krona" xml:space="preserve">
         <source>Krona</source>
-        <target state="translated">Schwedische Krone</target>
+        <target state="translated">SKrone</target>
         <note>L19-word 28</note>
       </trans-unit>
       <trans-unit id="Krone" xml:space="preserve">
         <source>Krone</source>
-        <target state="translated">Dänische Krone</target>
+        <target state="translated">DKrone</target>
         <note>L19-word 29</note>
       </trans-unit>
       <trans-unit id="Kunai" xml:space="preserve">
@@ -6845,7 +7001,7 @@ L38-word 35</note>
       </trans-unit>
       <trans-unit id="Kwacha" xml:space="preserve">
         <source>Kwacha</source>
-        <target state="translated">Malawi-Kwacha</target>
+        <target state="translated">Kwacha</target>
         <note>L19-word 30</note>
       </trans-unit>
       <trans-unit id="Kwanza" xml:space="preserve">
@@ -7102,7 +7258,7 @@ L38-word 37</note>
       </trans-unit>
       <trans-unit id="Leu" xml:space="preserve">
         <source>Leu</source>
-        <target state="translated">Rumänischer Leu</target>
+        <target state="translated">Leu</target>
         <note>L19-word 37</note>
       </trans-unit>
       <trans-unit id="Lev" xml:space="preserve">
@@ -7122,7 +7278,7 @@ L38-word 37</note>
       </trans-unit>
       <trans-unit id="Libel" xml:space="preserve">
         <source>Libel</source>
-        <target state="translated">Üble Nachrede</target>
+        <target state="translated">Verleumdung</target>
         <note>L18-word 23</note>
       </trans-unit>
       <trans-unit id="Librarian" xml:space="preserve">
@@ -7248,7 +7404,7 @@ L38-word 38</note>
       </trans-unit>
       <trans-unit id="Lira" xml:space="preserve">
         <source>Lira</source>
-        <target state="translated">Italienische Lira</target>
+        <target state="translated">Lira</target>
         <note>L19-word 39</note>
       </trans-unit>
       <trans-unit id="Lisbon" xml:space="preserve">
@@ -7310,7 +7466,7 @@ L45-word 48</note>
       </trans-unit>
       <trans-unit id="Loggerhead" xml:space="preserve">
         <source>Loggerhead</source>
-        <target state="translated">Unechte Karettschildkröte</target>
+        <target state="translated">Karettschildkröte</target>
         <note>L47-word 39</note>
       </trans-unit>
       <trans-unit id="Logic" xml:space="preserve">
@@ -7501,7 +7657,7 @@ L41-word 22</note>
       </trans-unit>
       <trans-unit id="Manat" xml:space="preserve">
         <source>Manat</source>
-        <target state="translated">Turkmenistan-Manat</target>
+        <target state="translated">Manat</target>
         <note>L19-word 41</note>
       </trans-unit>
       <trans-unit id="Manatee" xml:space="preserve">
@@ -8051,7 +8207,7 @@ L50-word 23</note>
       </trans-unit>
       <trans-unit id="Mongoose" xml:space="preserve">
         <source>Mongoose</source>
-        <target state="translated">Indischer Mungo</target>
+        <target state="translated">Mungo</target>
         <note>L38-word 45</note>
       </trans-unit>
       <trans-unit id="Monitor" xml:space="preserve">
@@ -8107,7 +8263,7 @@ L54-word 25</note>
       </trans-unit>
       <trans-unit id="Moose" xml:space="preserve">
         <source>Moose</source>
-        <target state="translated">Amerikanischer Elch</target>
+        <target state="translated">Elch</target>
         <note>L3-word 44
 L38-word 47</note>
       </trans-unit>
@@ -8174,7 +8330,7 @@ L53-word 31</note>
       </trans-unit>
       <trans-unit id="Motorcycle" xml:space="preserve">
         <source>Motorcycle</source>
-        <target state="translated">Das Motorrad</target>
+        <target state="translated">Motorrad</target>
         <note>L52-word 28</note>
       </trans-unit>
       <trans-unit id="Motown" xml:space="preserve">
@@ -9204,7 +9360,7 @@ L24-word 57</note>
       </trans-unit>
       <trans-unit id="Peso" xml:space="preserve">
         <source>Peso</source>
-        <target state="translated">Mexikanischer Peso</target>
+        <target state="translated">Peso</target>
         <note>L19-word 49</note>
       </trans-unit>
       <trans-unit id="Petal" xml:space="preserve">
@@ -9732,7 +9888,7 @@ L32-word 24</note>
       </trans-unit>
       <trans-unit id="Primrose" xml:space="preserve">
         <source>Primrose</source>
-        <target state="translated">Gelbe Schlüsselblume</target>
+        <target state="translated">Schlüsselblume</target>
         <note>L24-word 61</note>
       </trans-unit>
       <trans-unit id="Prism" xml:space="preserve">
@@ -9777,7 +9933,7 @@ L32-word 24</note>
       </trans-unit>
       <trans-unit id="Protocol" xml:space="preserve">
         <source>Protocol</source>
-        <target state="translated">Kommunikationsprotokoll</target>
+        <target state="translated">Protokoll</target>
         <note>L14-word 35</note>
       </trans-unit>
       <trans-unit id="Proton" xml:space="preserve">
@@ -9947,7 +10103,7 @@ L32-word 24</note>
       </trans-unit>
       <trans-unit id="Racketeering" xml:space="preserve">
         <source>Racketeering</source>
-        <target state="translated">Kriminelle Geschäfte</target>
+        <target state="translated">Erpressung</target>
         <note>L18-word 34</note>
       </trans-unit>
       <trans-unit id="Racquetball" xml:space="preserve">
@@ -10086,7 +10242,7 @@ L29-word 27</note>
       </trans-unit>
       <trans-unit id="Real" xml:space="preserve">
         <source>Real</source>
-        <target state="translated">Reelle Zahl</target>
+        <target state="translated">Reelle</target>
         <note>L45-word 52</note>
       </trans-unit>
       <trans-unit id="Recliner" xml:space="preserve">
@@ -10531,7 +10687,7 @@ L26-word 38</note>
       </trans-unit>
       <trans-unit id="Sapling" xml:space="preserve">
         <source>Sapling</source>
-        <target state="translated">Junger Baum</target>
+        <target state="translated">JungerBaum</target>
         <note>L51-word 35</note>
       </trans-unit>
       <trans-unit id="Sapphire" xml:space="preserve">
@@ -10582,7 +10738,7 @@ L54-word 32</note>
       </trans-unit>
       <trans-unit id="Saudiarabia" xml:space="preserve">
         <source>Saudiarabia</source>
-        <target state="translated">Saudi-Arabien</target>
+        <target state="translated">SaudiArabien</target>
         <note>L17-word 38</note>
       </trans-unit>
       <trans-unit id="Sausage" xml:space="preserve">
@@ -10662,7 +10818,7 @@ L54-word 32</note>
       </trans-unit>
       <trans-unit id="Science" xml:space="preserve">
         <source>Science</source>
-        <target state="translated">Wissenschaftliche Disziplin</target>
+        <target state="translated">Wissenschaft</target>
         <note>L1-word 35</note>
       </trans-unit>
       <trans-unit id="Scientist" xml:space="preserve">
@@ -11098,7 +11254,7 @@ L40-word 43</note>
       </trans-unit>
       <trans-unit id="Simmer" xml:space="preserve">
         <source>Simmer</source>
-        <target state="translated">Köcheln lassen</target>
+        <target state="translated">Kochen</target>
         <note>L16-word 40</note>
       </trans-unit>
       <trans-unit id="Singapore" xml:space="preserve">
@@ -11275,7 +11431,7 @@ L7-word 35</note>
       </trans-unit>
       <trans-unit id="Slug" xml:space="preserve">
         <source>Slug</source>
-        <target state="translated">Schnecke</target>
+        <target state="translated">Nacktschnecke</target>
         <note>L30-word 28</note>
       </trans-unit>
       <trans-unit id="Smog" xml:space="preserve">
@@ -11808,7 +11964,7 @@ L7-word 37</note>
       </trans-unit>
       <trans-unit id="Subway" xml:space="preserve">
         <source>Subway</source>
-        <target state="translated">U-Bahn</target>
+        <target state="translated">UBahn</target>
         <note>L52-word 40</note>
       </trans-unit>
       <trans-unit id="Succubus" xml:space="preserve">
@@ -11834,12 +11990,12 @@ L34-word 41</note>
       </trans-unit>
       <trans-unit id="Suitcase" xml:space="preserve">
         <source>Suitcase</source>
-        <target state="translated">Der Koffer</target>
+        <target state="translated">Koffer</target>
         <note>L15-word 43</note>
       </trans-unit>
       <trans-unit id="Summer" xml:space="preserve">
         <source>Summer</source>
-        <target state="translated">Der Sommer</target>
+        <target state="translated">Sommer</target>
         <note>L49-word 36</note>
       </trans-unit>
       <trans-unit id="Summons" xml:space="preserve">
@@ -11962,12 +12118,12 @@ L48-word 41</note>
       </trans-unit>
       <trans-unit id="Swimsuit" xml:space="preserve">
         <source>Swimsuit</source>
-        <target state="translated">Der Badeanzug</target>
+        <target state="translated">Badeanzug</target>
         <note>L12-word 45</note>
       </trans-unit>
       <trans-unit id="Switzerland" xml:space="preserve">
         <source>Switzerland</source>
-        <target state="translated">Die Schweiz</target>
+        <target state="translated">Schweiz</target>
         <note>L17-word 43</note>
       </trans-unit>
       <trans-unit id="Sword" xml:space="preserve">
@@ -12112,7 +12268,7 @@ L48-word 41</note>
       </trans-unit>
       <trans-unit id="Taxi" xml:space="preserve">
         <source>Taxi</source>
-        <target state="translated">Das Taxi</target>
+        <target state="translated">Taxi</target>
         <note>L52-word 41</note>
       </trans-unit>
       <trans-unit id="Taxidermy" xml:space="preserve">
@@ -12855,7 +13011,7 @@ L47-word 26</note>
       </trans-unit>
       <trans-unit id="Twilight" xml:space="preserve">
         <source>Twilight</source>
-        <target state="translated">Dämmerung</target>
+        <target state="translated">Zwielicht</target>
         <note>L49-word 42</note>
       </trans-unit>
       <trans-unit id="Twill" xml:space="preserve">
@@ -12921,12 +13077,12 @@ L54-word 45</note>
       </trans-unit>
       <trans-unit id="Unitedkingdom" xml:space="preserve">
         <source>Unitedkingdom</source>
-        <target state="translated">Vereinigtes Königtum</target>
+        <target state="translated">VereinigtesKönigtum</target>
         <note>L17-word 48</note>
       </trans-unit>
       <trans-unit id="Unitedstates" xml:space="preserve">
         <source>Unitedstates</source>
-        <target state="translated">Vereinigte Staaten</target>
+        <target state="translated">VereinigteStaaten</target>
         <note>L17-word 47</note>
       </trans-unit>
       <trans-unit id="Universe" xml:space="preserve">
@@ -13203,7 +13359,7 @@ L44-word 46</note>
       </trans-unit>
       <trans-unit id="Wallet" xml:space="preserve">
         <source>Wallet</source>
-        <target state="translated">Die Brieftasche</target>
+        <target state="translated">Brieftasche</target>
         <note>L15-word 49</note>
       </trans-unit>
       <trans-unit id="Walrus" xml:space="preserve">
@@ -13234,7 +13390,7 @@ L39-word 45</note>
       </trans-unit>
       <trans-unit id="Washington" xml:space="preserve">
         <source>Washington</source>
-        <target state="translated">Washington DC</target>
+        <target state="translated">Washington</target>
         <note>L11-word 49</note>
       </trans-unit>
       <trans-unit id="Wasp" xml:space="preserve">
@@ -13435,7 +13591,7 @@ L54-word 48</note>
       </trans-unit>
       <trans-unit id="Winter" xml:space="preserve">
         <source>Winter</source>
-        <target state="translated">Der Winter</target>
+        <target state="translated">Winter</target>
         <note>L49-word 47</note>
       </trans-unit>
       <trans-unit id="Wiper" xml:space="preserve">
@@ -13582,7 +13738,7 @@ L29-word 43</note>
       </trans-unit>
       <trans-unit id="Yacht" xml:space="preserve">
         <source>Yacht</source>
-        <target state="translated">Die Jacht</target>
+        <target state="translated">Jacht</target>
         <note>L52-word 49</note>
       </trans-unit>
       <trans-unit id="Yachting" xml:space="preserve">
@@ -13622,7 +13778,7 @@ L29-word 43</note>
       </trans-unit>
       <trans-unit id="Yellowjacket" xml:space="preserve">
         <source>Yellowjacket</source>
-        <target state="translated">Gelbe Jacke</target>
+        <target state="translated">GelbeWespe</target>
         <note>L30-word 39</note>
       </trans-unit>
       <trans-unit id="Yesterday" xml:space="preserve">

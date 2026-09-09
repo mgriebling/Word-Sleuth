@@ -65,7 +65,7 @@ struct GameEditor: View {
 					done()
 				}
 			}
-			.navigationTitle(Text("Game Generator"))
+			.navigationTitle(Text("Puzzle Generator"))
 			#if os(iOS)
 			.navigationBarTitleDisplayMode(.inline)
 			#endif

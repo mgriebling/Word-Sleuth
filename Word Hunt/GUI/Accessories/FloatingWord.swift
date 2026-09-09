@@ -17,7 +17,7 @@ struct FloatingWord: View {
 		let cellSize: CGFloat = 30
 		//let start = dragStartCell ?? CellIndex()
 		//let offset = cellSize * CGFloat(numRows) / 4
-		let grey = Color(.systemGray4)
+		let grey = Color.gray.opacity(0.4) //  .systemGray4)
 		let frameWidth = activeWord.count/2 + 1
 		VStack {
 			Text(activeWord)

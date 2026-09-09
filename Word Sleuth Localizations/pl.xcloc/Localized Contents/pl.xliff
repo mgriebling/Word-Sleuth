@@ -85,6 +85,16 @@
         <target state="translated">%1$lld słowa (%2$@)</target>
         <note from="auto-generated">A subheading that displays the number of words in a word list. The first argument is the count of words in the list. The second argument is the language of the words in the list.</note>
       </trans-unit>
+      <trans-unit id="5 Stars" xml:space="preserve">
+        <source>5 Stars</source>
+        <target state="translated">5 Gwiazdek</target>
+        <note from="auto-generated">The name of the badge when the user has completed 5 puzzles.</note>
+      </trans-unit>
+      <trans-unit id="A Hat Trick" xml:space="preserve">
+        <source>A Hat Trick</source>
+        <target state="translated">Hat-trick</target>
+        <note from="auto-generated">The title of a badge that is unlocked when the user has completed 3 puzzles.</note>
+      </trans-unit>
       <trans-unit id="About %@" xml:space="preserve">
         <source>About %@</source>
         <target state="translated">O %@</target>
@@ -125,6 +135,11 @@
         <target state="translated">Zezwól na odwrotny wybór</target>
         <note>Allow puzzle words to be selected by touching the letters forwards or in reverse.</note>
       </trans-unit>
+      <trans-unit id="Amazing Achievement" xml:space="preserve">
+        <source>Amazing Achievement</source>
+        <target state="translated">Niesamowite Osiągnięcie</target>
+        <note from="auto-generated">The title of the badge for the "Amazing Achievement" badge.</note>
+      </trans-unit>
       <trans-unit id="Author" xml:space="preserve">
         <source>Author</source>
         <target state="translated">Autor</target>
@@ -160,10 +175,18 @@
         <target state="translated">Wypełnienie Kolorem</target>
         <note>Letter grid outline style with only random color fills.</note>
       </trans-unit>
+      <trans-unit id="Complete three puzzles with to earn this badge. Earlier solved puzzles count as well. At least one should be level five or higher." xml:space="preserve">
+        <source>Complete three puzzles with to earn this badge. Earlier solved puzzles count as well. At least one should be level five or higher.</source>
+        <note from="auto-generated">Badge description for the badge with the ID `puzzle3`.</note>
+      </trans-unit>
       <trans-unit id="Contact Support" xml:space="preserve">
         <source>Contact Support</source>
         <target state="translated">Skontaktuj się z pomocą techniczną</target>
         <note from="auto-generated">A button that opens the user's email client with a pre-filled email address for support.</note>
+      </trans-unit>
+      <trans-unit id="Crack ten puzzles to earn this badge. Four need to be at level eight or higher." xml:space="preserve">
+        <source>Crack ten puzzles to earn this badge. Four need to be at level eight or higher.</source>
+        <note from="auto-generated">Badge description for "Puzzle 10" badge.</note>
       </trans-unit>
       <trans-unit id="Create Games (Pro)" xml:space="preserve">
         <source>Create Games (Pro)</source>
@@ -194,6 +217,10 @@
         <source>Date</source>
         <target state="translated">Data</target>
         <note from="auto-generated">A label for the date of a word list.</note>
+      </trans-unit>
+      <trans-unit id="Decipher 20 puzzles for this badge. At least five need to be at level nine or higher." xml:space="preserve">
+        <source>Decipher 20 puzzles for this badge. At least five need to be at level nine or higher.</source>
+        <note from="auto-generated">Badge description for "Decipher 20 puzzles for this badge. At least five need to be at level nine or higher."</note>
       </trans-unit>
       <trans-unit id="Default Level" xml:space="preserve">
         <source>Default Level</source>
@@ -265,10 +292,25 @@
         <target state="translated">Być odpowiedzialnym za</target>
         <note from="auto-generated">A pencil icon that opens a sheet for editing a word list.</note>
       </trans-unit>
+      <trans-unit id="Elapsed Time: " xml:space="preserve">
+        <source>Elapsed Time: </source>
+        <target state="translated">Upłynął czas:</target>
+        <note from="auto-generated">Label for the elapsed time in a game.</note>
+      </trans-unit>
       <trans-unit id="Enable" xml:space="preserve">
         <source>Enable</source>
         <target state="translated">Umożliwić</target>
         <note>Enables  the game timer or sound effects.</note>
+      </trans-unit>
+      <trans-unit id="Every journey begins with a single step. Congratulations — you’re on your way!" xml:space="preserve">
+        <source>Every journey begins with a single step. Congratulations — you’re on your way!</source>
+        <target state="translated">Każda podróż zaczyna się od jednego kroku. Gratulacje - jesteś w drodze!</target>
+        <note from="auto-generated">A congratulatory message for the first badge.</note>
+      </trans-unit>
+      <trans-unit id="Exercising the mind is as important as exercise for the body. Keep up the great work!" xml:space="preserve">
+        <source>Exercising the mind is as important as exercise for the body. Keep up the great work!</source>
+        <target state="translated">Ćwiczenie umysłu jest tak samo ważne jak ćwiczenia dla ciała. Tak trzymaj!</target>
+        <note from="auto-generated">A congratulatory message for the badge with the same name.</note>
       </trans-unit>
       <trans-unit id="Fill" xml:space="preserve">
         <source>Fill</source>
@@ -280,10 +322,20 @@
         <target state="translated">Filtruj według:</target>
         <note from="auto-generated">A label for a picker that filters the list of games.</note>
       </trans-unit>
+      <trans-unit id="Finding a word in a word search puzzle is like finding a needle in a haystack — but one that you know is there, just waiting to be discovered." xml:space="preserve">
+        <source>Finding a word in a word search puzzle is like finding a needle in a haystack — but one that you know is there, just waiting to be discovered.</source>
+        <target state="translated">Znalezienie słowa w łamigłówce wyszukiwania słów jest jak znalezienie igły w stogu siana - ale taka, o której wiesz, że tam jest, tylko czeka na odkrycie.</target>
+        <note from="auto-generated">A description of a puzzle with a level of 7.</note>
+      </trans-unit>
       <trans-unit id="Font Weight:" xml:space="preserve">
         <source>Font Weight:</source>
         <target state="translated">Waga czcionki:</target>
         <note>Picker to select the weight of a font for the grid letters.</note>
+      </trans-unit>
+      <trans-unit id="For me, the most enjoyable part is the puzzle, the process of solving, not the solution itself. — Ernő Rubik" xml:space="preserve">
+        <source>For me, the most enjoyable part is the puzzle, the process of solving, not the solution itself. — Ernő Rubik</source>
+        <target state="translated">Dla mnie najprzyjemniejszą częścią jest układanka, proces rozwiązywania, a nie samo rozwiązanie. - Ernő Rubik</target>
+        <note from="auto-generated">A quote by the famous cognitive scientist and psychologist, Ernő Rubik, that describes the importance of the process of solving puzzles rather than just the final solution.</note>
       </trans-unit>
       <trans-unit id="Found: %lld of %lld" xml:space="preserve">
         <source>Found: %1$lld of %2$lld</source>
@@ -299,6 +351,11 @@
         <source>Games</source>
         <target state="translated">Gry</target>
         <note from="auto-generated">A label displayed next to the number of games played.</note>
+      </trans-unit>
+      <trans-unit id="Grand Master" xml:space="preserve">
+        <source>Grand Master</source>
+        <target state="translated">Wielki Mistrz</target>
+        <note from="auto-generated">The title of the badge for the 100th puzzle.</note>
       </trans-unit>
       <trans-unit id="Grid Appearance" xml:space="preserve">
         <source>Grid Appearance</source>
@@ -345,10 +402,20 @@
         <target state="translated">Poziom: %1$lld (%2$lld ⨉ %3$lld)</target>
         <note from="auto-generated">A label that shows the game level and the size of the game board. The first argument is the game level. The second argument is the width of the game board. The third argument is the height of the game board.</note>
       </trans-unit>
+      <trans-unit id="Look at you, improving yourself by solving all of these puzzles!" xml:space="preserve">
+        <source>Look at you, improving yourself by solving all of these puzzles!</source>
+        <target state="translated">Spójrz na siebie, jak się doskonalisz, rozwiązując wszystkie te zagadki!</target>
+        <note from="auto-generated">A congratulatory message for the badge with the ID `puzzle10`.</note>
+      </trans-unit>
       <trans-unit id="Man" xml:space="preserve">
         <source>Man.</source>
         <target state="translated">Człowiek</target>
         <note>Label for manual mode when selecting puzzle level for game creation.</note>
+      </trans-unit>
+      <trans-unit id="Master" xml:space="preserve">
+        <source>Master</source>
+        <target state="translated">Mistrz</target>
+        <note from="auto-generated">The title of the badge for the puzzle 75 case.</note>
       </trans-unit>
       <trans-unit id="Matched: %lld of %lld words" xml:space="preserve">
         <source>Matched: %1$lld of %2$lld words</source>
@@ -400,6 +467,15 @@
         <target state="translated">Najpierw starsze randki</target>
         <note/>
       </trans-unit>
+      <trans-unit id="On a Streak" xml:space="preserve">
+        <source>On a Streak</source>
+        <target state="translated">Na pasie</target>
+        <note from="auto-generated">The title of the badge for the puzzle 7 case.</note>
+      </trans-unit>
+      <trans-unit id="Out of 30 puzzles for this badge, you'll need at least five puzzles rated at level ten." xml:space="preserve">
+        <source>Out of 30 puzzles for this badge, you'll need at least five puzzles rated at level ten.</source>
+        <note from="auto-generated">Badge description for "Amazing Achievement" badge.</note>
+      </trans-unit>
       <trans-unit id="Outline" xml:space="preserve">
         <source>Outline</source>
         <target state="translated">Zarys</target>
@@ -409,6 +485,11 @@
         <source>Outline &amp; Fill</source>
         <target state="translated">Zarys i wypełnienie</target>
         <note>Letter grid outline style with user-colored fill and lines.</note>
+      </trans-unit>
+      <trans-unit id="Perfect 10" xml:space="preserve">
+        <source>Perfect 10</source>
+        <target state="translated">Idealna 10</target>
+        <note from="auto-generated">The title of the badge when the user has completed 10 puzzles.</note>
       </trans-unit>
       <trans-unit id="Position relative to letter grid" xml:space="preserve">
         <source>Position relative to letter grid</source>
@@ -429,6 +510,11 @@
         <source>Puzzles</source>
         <target state="translated">Łamigłówki</target>
         <note from="auto-generated">A title for a list of puzzles.</note>
+      </trans-unit>
+      <trans-unit id="Puzzles are a great way to invigorate your brain and keep your mind active. You're doing amazing work!" xml:space="preserve">
+        <source>Puzzles are a great way to invigorate your brain and keep your mind active. You're doing amazing work!</source>
+        <target state="translated">Puzzle to świetny sposób na ożywienie mózgu i utrzymanie aktywnego umysłu. Robisz niesamowitą robotę!</target>
+        <note from="auto-generated">A congratulatory message for the badge with the same name.</note>
       </trans-unit>
       <trans-unit id="Puzzles will be permanently deleted. Earned badges are not removed." xml:space="preserve">
         <source>Puzzles will be permanently deleted. Earned badges are not removed.</source>
@@ -464,6 +550,16 @@
         <source>Recent Dates First</source>
         <target state="translated">Najpierw ostatnie daty</target>
         <note/>
+      </trans-unit>
+      <trans-unit id="Roaring Twenties" xml:space="preserve">
+        <source>Roaring Twenties</source>
+        <target state="translated">Ryczące lata dwudzieste</target>
+        <note from="auto-generated">The title of the badge for the badge with the ID `puzzle20`.</note>
+      </trans-unit>
+      <trans-unit id="Savant" xml:space="preserve">
+        <source>Savant</source>
+        <target state="translated">Erudyta</target>
+        <note from="auto-generated">The name of the badge for the puzzle 50 case.</note>
       </trans-unit>
       <trans-unit id="Save Puzzle" xml:space="preserve">
         <source>Save Puzzle</source>
@@ -515,6 +611,15 @@
         <target state="translated">Najmniejszy poziom pierwszy</target>
         <note/>
       </trans-unit>
+      <trans-unit id="Solve a puzzle to unlock this award." xml:space="preserve">
+        <source>Solve a puzzle to unlock this award.</source>
+        <target state="translated">Rozwiąż zagadkę, aby odblokować tę nagrodę.</target>
+        <note from="auto-generated">A localized string resource for the requirements of a badge.</note>
+      </trans-unit>
+      <trans-unit id="Solve a total of 75 puzzles. A minimum of 20 puzzles must be rated at level ten." xml:space="preserve">
+        <source>Solve a total of 75 puzzles. A minimum of 20 puzzles must be rated at level ten.</source>
+        <note from="auto-generated">Badge title for puzzles 75.</note>
+      </trans-unit>
       <trans-unit id="Sort by %@" xml:space="preserve">
         <source>Sort by %@</source>
         <target state="translated">Sortuj według %@</target>
@@ -535,10 +640,23 @@
         <target state="translated">Głośność dźwięku</target>
         <note/>
       </trans-unit>
+      <trans-unit id="Start the Journey" xml:space="preserve">
+        <source>Start the Journey</source>
+        <target state="translated">Rozpocznij podróż</target>
+        <note from="auto-generated">Title of the badge for the first puzzle.</note>
+      </trans-unit>
+      <trans-unit id="Successfully complete 100 puzzles and have all nine earlier badges. At least 30 puzzles must be at level ten." xml:space="preserve">
+        <source>Successfully complete 100 puzzles and have all nine earlier badges. At least 30 puzzles must be at level ten.</source>
+        <note from="auto-generated">The congratulatory message for the badge with the title "Grand Master".</note>
+      </trans-unit>
       <trans-unit id="Tabs" xml:space="preserve">
         <source>Tabs</source>
         <target state="translated">Zakładki</target>
         <note from="auto-generated">A label that describes a list of tabs.</note>
+      </trans-unit>
+      <trans-unit id="The magic number is 50 puzzles. Ten or more puzzles must be rated at level ten." xml:space="preserve">
+        <source>The magic number is 50 puzzles. Ten or more puzzles must be rated at level ten.</source>
+        <note from="auto-generated">Badge description for the badge with the ID `puzzle50`.</note>
       </trans-unit>
       <trans-unit id="The words will be permanently deleted." xml:space="preserve">
         <source>The words will be permanently deleted.</source>
@@ -564,6 +682,10 @@
         <source>Type here...</source>
         <target state="translated">Wpisz tutaj...</target>
         <note from="auto-generated">A placeholder text for a text field.</note>
+      </trans-unit>
+      <trans-unit id="Unravel seven puzzles to earn this badge. A minimum of three need to be at level seven or higher." xml:space="preserve">
+        <source>Unravel seven puzzles to earn this badge. A minimum of three need to be at level seven or higher.</source>
+        <note from="auto-generated">Badge description for "Puzzle 7" badge.</note>
       </trans-unit>
       <trans-unit id="Update" xml:space="preserve">
         <source>Update</source>
@@ -594,6 +716,11 @@
         <source>Weight:</source>
         <target state="translated">Waga:</target>
         <note>Font weight of text shown in the letter grid.</note>
+      </trans-unit>
+      <trans-unit id="Willingness to be puzzled is a valuable trait to cultivate, from childhood to advanced inquiry. — Noam Chomsky" xml:space="preserve">
+        <source>Willingness to be puzzled is a valuable trait to cultivate, from childhood to advanced inquiry. — Noam Chomsky</source>
+        <target state="translated">Chęć bycia zagadkowym jest cenną cechą do kultywowania, od dzieciństwa do zaawansowanych badań. - Noam Chomsky</target>
+        <note from="auto-generated">A quote by Noam Chomsky about the value of being open to being puzzled.</note>
       </trans-unit>
       <trans-unit id="Word List" xml:space="preserve">
         <source>Word List</source>
@@ -635,6 +762,11 @@
         <target state="translated">Wybór słów</target>
         <note/>
       </trans-unit>
+      <trans-unit id="Words" xml:space="preserve">
+        <source>Words</source>
+        <target state="translated">Słowa</target>
+        <note/>
+      </trans-unit>
       <trans-unit id="Words (%lld)" xml:space="preserve">
         <source>Words (%lld)</source>
         <target state="translated">Słowa (%lld)</target>
@@ -654,6 +786,30 @@
         <source>Words: (Average/Maximum %1$.2f/%2$lld letters)</source>
         <target state="translated">Słowa: (średnia/maksymalna %1$.2f/%2$lld litery)</target>
         <note from="auto-generated">A footnote that describes the average and maximum word lengths in the list. The first argument is the average word length, formatted to two decimal places. The second argument is the maximum word length.</note>
+      </trans-unit>
+      <trans-unit id="Work out five puzzles to earn this badge. At least two need to be level six or higher." xml:space="preserve">
+        <source>Work out five puzzles to earn this badge. At least two need to be level six or higher.</source>
+        <note from="auto-generated">Badge description for "Puzzle 5" badge.</note>
+      </trans-unit>
+      <trans-unit id="You're almost there. Persistance is key to achieving your goal. You've made amazing progress!" xml:space="preserve">
+        <source>You're almost there. Persistance is key to achieving your goal. You've made amazing progress!</source>
+        <target state="translated">Jesteś prawie na miejscu. Wytrwałość jest kluczem do osiągnięcia twojego celu. Zrobiłeś niesamowity postęp!</target>
+        <note from="auto-generated">A congratulatory message for the badge with the same name.</note>
+      </trans-unit>
+      <trans-unit id="You've unlocked the full potential of your puzzle solving practice. But don't stop now - keep going!" xml:space="preserve">
+        <source>You've unlocked the full potential of your puzzle solving practice. But don't stop now - keep going!</source>
+        <target state="translated">Odblokowałeś pełny potencjał swojej praktyki rozwiązywania zagadek. Ale nie zatrzymuj się teraz - kontynuuj!</target>
+        <note from="auto-generated">A congratulatory message for the badge with the title "Grand Master".</note>
+      </trans-unit>
+      <trans-unit id="You’re building momentum! The more you focus on regular practice, the better you get at choosing to keep up your intentioned habits." xml:space="preserve">
+        <source>You’re building momentum! The more you focus on regular practice, the better you get at choosing to keep up your intentioned habits.</source>
+        <target state="translated">Budujesz rozpęd! Im bardziej skupiasz się na regularnej praktyce, tym lepiej radzisz sobie z wyborem, aby utrzymać swoje zamierzone nawyki.</target>
+        <note from="auto-generated">A congratulatory message for the badge with the same name.</note>
+      </trans-unit>
+      <trans-unit id="item" xml:space="preserve">
+        <source>item</source>
+        <target state="translated">Pozycja</target>
+        <note from="auto-generated">A view that shows a message and a description when a user has not selected an item from a list. The argument is the name of the item that is missing.</note>
       </trans-unit>
     </body>
   </file>

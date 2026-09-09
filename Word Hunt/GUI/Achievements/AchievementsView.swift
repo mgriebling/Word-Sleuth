@@ -55,12 +55,13 @@ struct AchievementsView: View {
 			if !settings.player.bestTimes.isEmpty {
 				header("Puzzle Statistics")
 				let s = settings.player.bestTimes
-				Grid(alignment: .center, horizontalSpacing: 20, verticalSpacing: 8) {
+				let total = s.reduce(0) { $0 + $1.games }
+				Grid(alignment: .center, horizontalSpacing: 0, verticalSpacing: 8) {
 					GridRow {
 						Text("Level").bold()
 						Text("Best Time").bold()
 						Text("Time/Word").bold()
-						Text("Games").bold()
+						Text("Puzzles (\(total))").bold()
 					}
 					.foregroundStyle(.secondary)
 					Divider()
@@ -68,10 +69,10 @@ struct AchievementsView: View {
 					// Data Rows
 					ForEach(s.sorted{ $0.level < $1.level }) { item in
 						GridRow(alignment: .center) {
-							Text(item.level, format: .number) //      "\(item.level)")
+							Text(item.level, format: .number)
 							Text(Duration.seconds(item.interval), format: .time(pattern: .hourMinuteSecond))
 							Text("\(Int(item.interval) / item.words) secs")
-							Text(item.games, format: .number)  // "\(item.games)")
+							Text(item.games, format: .number)
 						}
 					}
 				}

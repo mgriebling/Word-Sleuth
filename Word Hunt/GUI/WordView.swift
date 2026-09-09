@@ -13,7 +13,11 @@ struct WordView: View {
 	var style: TextStyle = .columns
 	var maxWordLength: Int = 10
 
+    #if os(iOS)
 	@State private var isPhone = UIDevice.current.userInterfaceIdiom == .phone
+	#else
+	@State private var isPhone: Bool = false
+    #endif
 	
 	@Environment(DataContainer.self) private var dataContainer
 	@AppStorage(.settings) private var settings
@@ -50,7 +54,8 @@ struct WordView: View {
 	
 	@ViewBuilder
 	private func columnText(_ maxColumns: Int) -> some View {
-		let colWidth = CGFloat(15 * maxWordLength)
+		let colWidth = CGFloat(20 * maxWordLength)
+		let widthWordsText = CGFloat(50)
 		HStack(alignment: .top, spacing: 0) {
 			VStack {
 				Text("Words (\(words.count))")
@@ -60,7 +65,7 @@ struct WordView: View {
 					.rotationEffect(Angle(degrees: 270))
 					.padding(.top, isPhone ? 35 : 45)
 			}
-			.frame(minWidth: colWidth)
+			.frame(width: widthWordsText)
 
 			if settings.sortAcrossCols {
 				sortedAcross(maxColumns: maxColumns)
@@ -68,12 +73,12 @@ struct WordView: View {
 				sortedDown(maxColumns: maxColumns)
 			}
 		}
-		.frame(minWidth: CGFloat(maxColumns) * colWidth, maxHeight: CGFloat(words.count / maxColumns) * (isPhone ? 35 : 45))
+		.frame(minWidth: CGFloat(maxColumns) * colWidth, maxHeight: CGFloat(words.count / maxColumns) * 20)
 	}
 	
 	@ViewBuilder
 	private func sortedAcross(maxColumns: Int) -> some View {
-		let colWidth = CGFloat(15 * maxWordLength)
+		let colWidth = CGFloat(25 * maxWordLength)
 		let columns = Array(repeating:GridItem(.flexible(minimum: colWidth)), count: maxColumns)
 		ScrollView(.vertical) {
 			LazyVGrid(columns: columns, alignment: .leading) {
@@ -82,6 +87,8 @@ struct WordView: View {
 				}
 			}
 		}
+		.scrollClipDisabled(true)
+		.scrollIndicators(.hidden)
 	}
 	
 	@ViewBuilder
@@ -100,6 +107,8 @@ struct WordView: View {
 				}
 			}
 		}
+		.scrollClipDisabled(true)
+//		.scrollIndicators(.hidden)
 	}
 	
 	private func chunked(_ words: [PlacedWord], cols: Int) -> ChunksOfCountCollection<[PlacedWord]> {

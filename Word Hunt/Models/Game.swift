@@ -28,6 +28,7 @@ import SwiftUI
 	var words: [String]			  { placedWords.map { $0.word }}
 	var isOver: Bool 		  	  { matched == placedWords.count }
 	var isRecent: Bool 		  	  { creationDate.timeIntervalSinceNow < oneWeek }
+	var language: String		  { _board.words.language.rawValue }
 	
 	var invert = false
 	var reversed = false
@@ -46,11 +47,15 @@ import SwiftUI
 	init(_ rows: Int, cols: Int, words: WordList) {
 		assert(SettingsType.maxRowRange.contains(rows), "Expecting rows in \(SettingsType.maxRowRange)")
 		assert(SettingsType.maxColRange.contains(cols), "Expecting columns in \(SettingsType.maxColRange)")
+		#if os(iOS)
 		if UIDevice.current.userInterfaceIdiom == .phone {
 			self._board = GameBoard(rows, cols: min(12, cols), words: words)
 		} else {
 			self._board = GameBoard(rows, cols: cols, words: words)
 		}
+		#else
+		self._board = GameBoard(rows, cols: cols, words: words)
+		#endif
 		self.timer = MyTimer(name: words.name)
 		self.creationDate = .now
 	}
@@ -115,7 +120,7 @@ import SwiftUI
 			let jsonData = try encoder.encode(self)
 			
 			// 6. Write the raw Data to disk
-			try jsonData.write(to: url(name: fileName), options: .atomic)
+			try jsonData.write(to: url(name: fileName + language), options: .atomic)
 			print("Saved game \(fileName)")
 		} catch {
 			print("Failed to write JSON file: \(error.localizedDescription)")
@@ -134,15 +139,18 @@ import SwiftUI
 	
 	static func save(games: [Game]) { games.forEach { $0.save(to: $0.name) } }
 	
-	static func loadGames() -> [Game] {
+	static func loadGames(language: String) -> [Game] {
 		guard let documentsURL = Self.documentDirectory else { return [] }
 		let fileManager = FileManager.default
 		do {
 			let contents = try fileManager.contentsOfDirectory(at: documentsURL,
 					includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
 			
-			// Filter for files with extension (case-insensitive)
-			let gameURLs = contents.filter { $0.pathExtension.lowercased() == Self.fileExt }
+			// Filter for files with extension & language (case-insensitive)
+			let gameURLs = contents.filter {
+				$0.lastPathComponent.hasSuffix("_" + language) &&
+				$0.pathExtension.lowercased() == Self.fileExt
+			}
 			var games = [Game]()
 			for url in gameURLs {
 				if let game = Game(from: url) {

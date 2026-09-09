@@ -56,7 +56,7 @@ extension Color {
 	var hex: String {
 		#if os(macOS)
 		let uiColor = NSColor(self)
-		let rgbColor = uiColor.usingColorSpace(.deviceRGB) ?? UIColor.black
+		let rgbColor = uiColor.usingColorSpace(.deviceRGB) ?? NSColor.black
 		#else
 		let rgbColor = UIColor(self)
 		#endif

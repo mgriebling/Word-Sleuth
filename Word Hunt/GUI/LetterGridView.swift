@@ -36,11 +36,21 @@ struct LetterGridView: View {
 	@State private var cellSize: CGFloat = 40
 	@State private var width: CGFloat = 400
 	
+	#if os(macOS)
+	let background: Color = Color(NSColor.controlBackgroundColor)
+	@State private var backColors = [
+		Color(.systemCyan).opacity(0.3),
+		Color(NSColor.controlBackgroundColor),
+		Color(.systemGray).opacity(0.4)
+	]
+	#else
+	let background: Color = Color(.systemBackground)
 	@State private var backColors = [
 		Color(.systemCyan).opacity(0.3),
 		Color(.systemBackground),
 		Color(.systemGray).opacity(0.4)
 	]
+	#endif
 	
 	let spacing: CGFloat = 0	// space between columns and rows
 	let colors = [Color.red, .orange, .yellow, .green, .blue, .brown, .purple, .pink, .mint]
@@ -117,8 +127,8 @@ struct LetterGridView: View {
 		let fill = settings.highlight.isFill || selected
 		let multi = settings.highlight.isColor
 		let lineWidth = settings.highlight.isOutline || selected ? 3.0 : 0.0
-		let fillColor = detectedWord != nil ? settings.selectionOKColor.myMix(with: Color(.systemBackground), by: 0.4) : settings.selectionColor.myMix(with: Color(.systemBackground), by: 0.5)
-		let color = selected ? fillColor : settings.highlightColor.myMix(with: Color(.systemBackground), by: 0.6)
+		let fillColor = detectedWord != nil ? settings.selectionOKColor.myMix(with: background, by: 0.4) : settings.selectionColor.myMix(with: background, by: 0.5)
+		let color = selected ? fillColor : settings.highlightColor.myMix(with: background, by: 0.6)
 		let lineColor = color.myMix(with: settings.highlightColor, by: 0.2)
 		let scale = selected ? 1.0 : 0.80
 		let random = colors[highlighted].opacity(0.5)

@@ -141,13 +141,19 @@ struct GameCreationView: View {
 				EditToolbar(onDone: createGames)
 			}
 			.navigationTitle("Advanced Game Generator")
+			#if os(iOS)
 			.navigationBarTitleDisplayMode(.inline)
+			#endif
 		}
     }
 	
 	private func puzzleSize(size: Int = 0) -> String {
 		let rows = size == 0 ? level.size : size
+		#if os(iOS)
 		let cols = UIDevice.current.userInterfaceIdiom == .phone ? min(12, rows) : rows
+		#else
+		let cols = rows
+		#endif
 		return "\(rows) ⨉ \(cols)"
 	}
 	

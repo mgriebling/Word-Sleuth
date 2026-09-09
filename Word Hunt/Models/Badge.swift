@@ -80,7 +80,7 @@ final class Badge {
 		Self.documentDirectory!.appendingPathComponent("\(name).\(Self.fileExt)")
 	}
 	
-	static func save(badges: [Badge]) { badges.forEach { $0.save(to: $0.details.title) } }
+	static func save(badges: [Badge]) { badges.forEach { $0.save(to: $0.details.title.key) } }
 	
 	static func loadBadges() -> [Badge] {
 		guard let documentsURL = Self.documentDirectory else { return [] }

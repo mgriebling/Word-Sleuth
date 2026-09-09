@@ -85,7 +85,7 @@ struct MainAppView: View {
 	
 	private func initialize(size: CGSize) {
 		setLandscape(size: size)
-		WordList.makeWordListCode(for: SampleWordLists.all)
+//		WordList.makeWordListCode(for: SampleWordLists.all)
 		withAnimation {
 			selectedPuzzle = dataContainer.games.first
 			selectedWords = dataContainer.wordLists.first
@@ -151,7 +151,7 @@ enum Tabs: Hashable {
 	static var puzzle: Self { .puzzles(nil) }
 	static var wordList: Self { .words(nil) }
 	
-	var name: String {
+	var name: LocalizedStringResource {
 		switch self {
 			case .puzzles: "Puzzles"
 			case .words: "Words"

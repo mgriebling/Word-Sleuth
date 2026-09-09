@@ -44,7 +44,9 @@ struct WordListView: View {
 			}
 		}
 		.navigationTitle("Word Lists")
+		#if os(iOS)
 		.navigationBarTitleDisplayMode(.inline)
+		#endif
 		.listStyle(.plain)
 		.toolbar {
 			addButton

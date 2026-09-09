@@ -103,7 +103,9 @@ struct GameListView: View {
 				}
 			}
 			.navigationTitle("Puzzles")
+			#if os(iOS)
 			.navigationBarTitleDisplayMode(.inline)
+			#endif
 			.listStyle(.plain)
 			.onChange(of: selection) { prev, current in
 				prevSelection = prev

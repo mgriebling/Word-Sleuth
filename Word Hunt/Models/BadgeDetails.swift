@@ -19,32 +19,32 @@ enum BadgeDetails: Int, Codable, CaseIterable {
 	case puzzle75
 	case puzzle100
 	
-	var requirements: String {
+	var requirements: LocalizedStringResource {
 		switch self {
 			case .puzzle1:
 				"Solve a puzzle to unlock this award."
 			case .puzzle3:
-				"Complete three puzzles with to earn this badge. Earlier solved puzzles count as well. At least one should be level 5 or higher."
+				"Complete three puzzles with to earn this badge. Earlier solved puzzles count as well. At least one should be level five or higher."
 			case .puzzle5:
-				"Work out five puzzles to earn this badge. At least two need to be level 6 or higher."
+				"Work out five puzzles to earn this badge. At least two need to be level six or higher."
 			case .puzzle7:
-				"Unravel seven puzzles to earn this badge. A minimum of three need to be at level 7 or higher."
+				"Unravel seven puzzles to earn this badge. A minimum of three need to be at level seven or higher."
 			case .puzzle10:
-				"Crack ten puzzles to earn this badge. Four need to be at level 8 or higher."
+				"Crack ten puzzles to earn this badge. Four need to be at level eight or higher."
 			case .puzzle20:
-				"Decipher twenty puzzles for this badge. At least five need to be at level 9 or higher."
+				"Decipher 20 puzzles for this badge. At least five need to be at level nine or higher."
 			case .puzzle30:
-				"Out of thirty puzzles for this badge, you'll at least five puzzles rated at level 10."
+				"Out of 30 puzzles for this badge, you'll need at least five puzzles rated at level ten."
 			case .puzzle50:
-				"The magic number is 50 puzzles. Ten or more puzzles must be rated at level 10."
+				"The magic number is 50 puzzles. Ten or more puzzles must be rated at level ten."
 			case .puzzle75:
-				"Solve a total of 75 puzzles. A minimum of 20 puzzles must be rated at level 10."
+				"Solve a total of 75 puzzles. A minimum of 20 puzzles must be rated at level ten."
 			case .puzzle100:
-				"Successfully complete 100 puzzles and have all nine earlier badges. At least 30 puzzles must be at level 10."
+				"Successfully complete 100 puzzles and have all nine earlier badges. At least 30 puzzles must be at level ten."
 		}
 	}
 	
-	var congratulatoryMessage: String {
+	var congratulatoryMessage: LocalizedStringResource {
 		switch self {
 			case .puzzle1:
 				"Every journey begins with a single step. Congratulations — you’re on your way!"
@@ -69,7 +69,7 @@ enum BadgeDetails: Int, Codable, CaseIterable {
 		}
 	}
 	
-	var title: String {
+	var title: LocalizedStringResource {
 		switch self {
 			case .puzzle1:   "Start the Journey"
 			case .puzzle3:   "A Hat Trick"

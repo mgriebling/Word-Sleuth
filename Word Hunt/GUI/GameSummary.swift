@@ -24,7 +24,8 @@ struct GameSummary: View {
 				Text("Matched: \(game.matched) of \(game.placedWords.count) words")
 			}
 			if game.timer.elapsedTime > 0 {
-				ElapsedTime(text: "Elapsed Time: ", timer: game.timer)
+				let title = String(localized: "Elapsed Time: ")
+				ElapsedTime(text: title, timer: game.timer)
 			}
 			Text("Level: \(game.level) (\(game.rows) ⨉ \(game.cols))")
 				.frame(maxWidth: .infinity, alignment: .leading)

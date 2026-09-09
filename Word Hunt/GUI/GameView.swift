@@ -23,6 +23,7 @@ struct GameView: View {
 	@State private var showWords = false
 	@State private var showingText = true
 	@State private var selectedWord = ""
+	@State private var isHovering = false
 	
 	#if os(iOS)
 	typealias HSView = HStack
@@ -32,13 +33,21 @@ struct GameView: View {
 	typealias VSView = VSplitView
 	#endif
 	
+	#if os(iOS)
 	var isPhone: Bool { UIDevice.current.userInterfaceIdiom == .phone }
-	
 	@State private var colors = [
 		Color.red.opacity(0.4),
 		Color(.systemBackground),
 		.blue.opacity(0.4)
 	]
+	#else
+	let isPhone: Bool = false
+	@State private var colors = [
+		Color.red.opacity(0.4),
+		Color(NSColor.controlBackgroundColor),
+		.blue.opacity(0.4)
+	]
+	#endif
 	
 	var body: some View {
 		Group {
@@ -61,10 +70,10 @@ struct GameView: View {
 				toolbarID = UUID()   // trigger toolbar update
 			}
 		}
-//		#if os(ios)
 		.navigationTitle(Text(verbatim: ""))
+		#if os(iOS)
 		.navigationBarTitleDisplayMode(.inline)
-//		#endif
+		#endif
 	}
 	
 	@ViewBuilder
@@ -73,6 +82,7 @@ struct GameView: View {
 			WordView(words: game.board.wordPlacements,
 					 maxWordLength: game.board.words.maxLength)
 			.frame(maxWidth: isPhone && game.rows > 16 ? 150 : 300, maxHeight: .infinity)
+			.background(.gray.opacity(0.2))
 			
 			VStack {
 				FloatingWord(activeWord: $selectedWord)
@@ -81,6 +91,7 @@ struct GameView: View {
 		}
 	}
 	
+	@ViewBuilder
 	private func landscapeView() -> some View {
 		// landscape mode
 		HSView {
@@ -108,10 +119,10 @@ struct GameView: View {
 		// portrait mode
 		VSView {
 			portraitWordList()
+//				.background(.pink.opacity(0.3))
 			
 			LetterGridView(game: game, allowDrag: true, isLandscape: false, selectedWord: $selectedWord, settings: $settings)
 				.layoutPriority(1)
-				.frame(maxWidth: .infinity, maxHeight: .infinity)
 				.onAppear {
 					if !showWords, game.rows < 18 {
 						showWords = true
@@ -148,7 +159,12 @@ struct GameView: View {
 	
 	@ToolbarContentBuilder
 	func toolBar(isLandscape: Bool) -> some ToolbarContent {
-		let titleItem = ToolbarItem(placement: .topBarLeading) {
+		#if os(macOS)
+		let placement: ToolbarItemPlacement = .primaryAction
+		#else
+		let placement: ToolbarItemPlacement = .topBarLeading
+		#endif
+		let titleItem = ToolbarItem(placement: placement) {
 			if isLandscape || !isPhone {
 				Text(game.name + " Puzzle")
 					.allowsTightening(true)
@@ -218,7 +234,7 @@ struct GameView: View {
 			.foregroundStyle(Color(.systemCyan))
 		}
 		
-		if #available(iOS 26.0, *) {
+		if #available(iOS 26.0, macOS 26.0, *) {
 			titleItem
 				.sharedBackgroundVisibility(!isPhone || isLandscape ? .hidden : .automatic)
 		} else {
@@ -297,7 +313,7 @@ struct GameView: View {
 
 #Preview {
 	@Previewable
-	@State var game = Game(16, cols: 12, words: SampleWordLists.all[0])
+	@State var game = Game(18, cols: 18, words: SampleWordLists.all[0])
 	NavigationStack {
 		GameView(game: game)
 			.environment(DataContainer())

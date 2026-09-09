@@ -5,7 +5,6 @@
 //  Created by Michael Griebling on 21.08.2026.
 //
 
-import Foundation
 import SwiftUI
 
 @Observable
@@ -15,26 +14,27 @@ class DataContainer {
 	var wordLists = [WordList]()
 	var badges = [Badge]()
 	var isLandscape = false
+	let language = Locale.preferredLanguages.first ?? "en"
 	
 	init(loadSampleGames: Bool = false) {
 		if games.isEmpty {
 			// load any saved games
-			games = Game.loadGames()
+			games = Game.loadGames(language: language)
 		}
 		
 		if loadSampleGames {
 			addSampleGames()
 		}
 		
-		print("Default language = \(Locale.preferredLanguages.first ?? "en")")
+		print("Default language = \(language)")
 		//wordLists = WordList.loadWordLists()
 		if wordLists.isEmpty {
 			addSampleWords()
 		}
 		
-		Task.detached(priority: .background) {
-			await WordList.save(wordLists: self.wordLists)
-		}
+//		Task.detached(priority: .background) {
+//			await WordList.save(wordLists: self.wordLists)
+//		}
 		
 		badges = Badge.loadBadges()
 		createBadgesIfNeeded()
@@ -92,7 +92,7 @@ class DataContainer {
 			newGame.badges.append(badge)
 			badge.game = newGame
 			badge.timestamp = newGame.timer.endTime
-			badge.save(to: badge.details.title)
+			badge.save(to: badge.details.title.key)
 		}
 	}
 	
@@ -139,7 +139,7 @@ class DataContainer {
 	private func addSampleWords() {
 		if wordLists.isEmpty {
 			wordLists = SampleWordLists.all
-			print(SampleWordLists.all[5])
+			//print(SampleWordLists.all[5])
 		}
 	}
 	

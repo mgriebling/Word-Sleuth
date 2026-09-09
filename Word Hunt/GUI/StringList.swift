@@ -48,7 +48,7 @@ struct StringList: View {
 						.padding()
 						.frame(minWidth: 200)
 						.textFieldStyle(.plain)
-						.background(Color(.systemGray4), in: RoundedRectangle(cornerRadius: 12))
+						.background(Color.gray.opacity(0.4), in: RoundedRectangle(cornerRadius: 12))
 				}
 				.listRowInsets(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
 				.listRowBackground(
