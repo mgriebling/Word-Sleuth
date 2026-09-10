@@ -20,7 +20,7 @@ struct GameView: View {
 	@State private var showSettings = false
 	@State private var showAwards = false
 	@State private var toolbarID = UUID() // kludge to fix toolbar disappearing
-	@State private var showWords = false
+	@State private var showWords = true
 	@State private var showingText = true
 	@State private var selectedWord = ""
 	@State private var isHovering = false
@@ -82,7 +82,7 @@ struct GameView: View {
 			WordView(words: game.board.wordPlacements,
 					 maxWordLength: game.board.words.maxLength)
 			.frame(maxWidth: isPhone && game.rows > 16 ? 150 : 400, maxHeight: .infinity)
-			.background(.gray.opacity(0.2))
+			//.background(.gray.opacity(0.2))
 			
 			VStack {
 				FloatingWord(activeWord: $selectedWord)
@@ -119,15 +119,15 @@ struct GameView: View {
 		// portrait mode
 		VSView {
 			portraitWordList()
-//				.background(.pink.opacity(0.3))
+				.background(.pink.opacity(0.3))
 			
 			LetterGridView(game: game, allowDrag: true, isLandscape: false, selectedWord: $selectedWord, settings: $settings)
 				.layoutPriority(1)
-				.onAppear {
-					if !showWords, game.rows < 18 {
-						showWords = true
-					}
-				}
+//				.onAppear {
+//					if !showWords, game.rows < 18 {
+//						showWords = true
+//					}
+//				}
 			Spacer()
 		}
 		.padding(.horizontal)

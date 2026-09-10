@@ -31,7 +31,6 @@ struct LetterGridView: View {
 	@State private var numCols = 1
 	@State private var animateWin = false
 	@State private var done: Bool = false
-	// @State private var selectedWord = ""
 	
 	@State private var cellSize: CGFloat = 40
 	@State private var width: CGFloat = 400
@@ -131,9 +130,9 @@ struct LetterGridView: View {
 		let color = selected ? fillColor : settings.highlightColor.myMix(with: background, by: 0.6)
 		let lineColor = color.myMix(with: settings.highlightColor, by: 0.2)
 		let scale = selected ? 1.0 : 0.80
-		let random = colors[highlighted].opacity(0.5)
+		let random = colors[highlighted].opacity(0.3)
 		return Capsule()
-			.fill(fill ? color : (multi ? random : .clear))
+			.fill(multi ? random : (fill ? color : .clear))
 			.stroke(lineColor, lineWidth: lineWidth)
 			.frame(width: cellSize * scale, height: startPoint.distance(to: endPoint) + cellSize * scale)
 			.rotationEffect(Angle(radians: startPoint.angle(to: endPoint)))

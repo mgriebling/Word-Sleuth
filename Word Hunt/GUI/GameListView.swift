@@ -16,14 +16,14 @@ struct GameListView: View {
 	@AppStorage(.settings) private var settings
 	
 	enum Filter : String, CaseIterable, Identifiable {
-		case all, recent, active, new
+		case all, week, playing, new
 		
 		var localized: LocalizedStringKey {
 			switch self {
-				case .all: 	  return "All"
-				case .recent: return "Recent"
-				case .active: return "Active"
-				case .new: 	  return "New"
+				case .all: 	   return "All"
+				case .week:    return "This Week"
+				case .playing: return "Playing"
+				case .new: 	   return "New"
 			}
 		}
 		
@@ -55,9 +55,13 @@ struct GameListView: View {
 				Picker("Filter By:", selection: $filter.animation()) {
 					ForEach(Filter.allCases, id: \.self) { mode in
 						Text(mode.localized).tag(mode)
+						.minimumScaleFactor(0.5)
 					}
 				}
 				.pickerStyle(.segmented)
+				.onAppear {
+					UISegmentedControl.appearance().apportionsSegmentWidthsByContent = true
+				}
 				
 				Button(action: { withAnimation { showWins.toggle() }}) {
 					MedalIcon(noMedal: showWins, scaling: 0.25)
@@ -66,7 +70,7 @@ struct GameListView: View {
 				.padding(.trailing, 2)
 				.buttonBorderShape(.capsule)
 				.buttonStyle(.bordered)
-				.disabled(filter == .new || filter == .active)
+				.disabled(filter == .new || filter == .playing)
 			}
 			List(selection: $selection) {
 				ForEach(filteredSorted) { game in
@@ -126,7 +130,7 @@ struct GameListView: View {
 	var filteredSorted: [Game] {
 		var filtered: [Game]
 		switch filter {
-			case .recent:
+			case .week:
 				filtered = dataContainer.games.filter {
 					showWins ? $0.isRecent : $0.isRecent && !$0.isOver
 				}
@@ -135,7 +139,7 @@ struct GameListView: View {
 					showWins ? $0.timer.elapsedTime == 0
 						     : $0.timer.elapsedTime == 0 && !$0.isOver
 				}
-			case .active:
+			case .playing:
 				filtered = dataContainer.games.filter {
 					!$0.isOver && $0.timer.elapsedTime > 0
 				}

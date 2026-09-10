@@ -129,7 +129,7 @@ struct SettingsView: View {
 						Text("Font Weight:")
 						Picker("Weight:", selection: $internalSettings.fontStyle) {
 							ForEach(FontStyle.allCases, id:\.self) { level in
-								Text(level.rawValue, format: .number).tag(level)   // "\(level.rawValue)").tag(level)
+								Text(level.rawValue, format: .number).tag(level)
 							}
 						}
 						.pickerStyle(.segmented)
@@ -140,7 +140,7 @@ struct SettingsView: View {
 						LetterGridView(game: game, allowDrag: true, selectedWord: $selectedWord, settings: $internalSettings).id(UUID())
 							.frame(maxWidth: 300, maxHeight: 300)
 							.onAppear {
-								game.board.highlightWord(0, 1)
+								game.board.highlightWord(0, 2)
 								game.board.highlightWord(1, 3)
 							}
 						Spacer()

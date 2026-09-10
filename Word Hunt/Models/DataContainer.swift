@@ -14,19 +14,17 @@ class DataContainer {
 	var wordLists = [WordList]()
 	var badges = [Badge]()
 	var isLandscape = false
-	let language = Locale.preferredLanguages.first ?? "en"
 	
 	init(loadSampleGames: Bool = false) {
 		if games.isEmpty {
 			// load any saved games
-			games = Game.loadGames(language: language)
+			games = Game.loadGames()
 		}
 		
 		if loadSampleGames {
 			addSampleGames()
 		}
 		
-		print("Default language = \(language)")
 		//wordLists = WordList.loadWordLists()
 		if wordLists.isEmpty {
 			addSampleWords()
@@ -132,7 +130,7 @@ class DataContainer {
 	private func addSampleGames() {
 		if games.isEmpty {
 			let sizes = (0..<10).map { _ in Int.random(in: 10...20) }
-			createGames(number: 10, sizes: sizes)
+			createGames(number: sizes.count, sizes: sizes)
 		}
 	}
 	

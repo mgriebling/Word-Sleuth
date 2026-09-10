@@ -42,9 +42,9 @@ public struct SettingsType {
 		self.gameNumber = 1
 		self.player = Player()
 		self.highlight = .allCases.first!
-		self.selectionColor = Color(.selectionRed)
-		self.selectionOKColor = Color(.selectionGreen)
-		self.highlightColor = Color(.selectionYellow)
+		self.selectionColor = Color(.systemBlue)
+		self.selectionOKColor = Color(.systemGreen)
+		self.highlightColor = Color(.systemYellow)
 		self.soundsOn = true
 		self.soundVolume = 0.2
 		self.showTimer = true
@@ -180,7 +180,7 @@ enum Level: Int, CaseIterable, Identifiable, Codable {
 	case manual, one, two, three, four, five, six
 	case seven, eight, nine, ten
 	
-	var value: Int { self.rawValue + 2 }
+	var value: Int { self.rawValue }
 	
 	/// returns the game grid size to give this level
 	var size: Int {

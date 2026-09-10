@@ -154,7 +154,7 @@ import SwiftUI
 	
 	static func save(games: [Game]) { games.forEach { $0.save(to: $0.name) } }
 	
-	static func loadGames(language: String) -> [Game] {
+	static func loadGames() -> [Game] {
 		guard let documentsURL = Self.documentDirectory else { return [] }
 		let fileManager = FileManager.default
 		do {
