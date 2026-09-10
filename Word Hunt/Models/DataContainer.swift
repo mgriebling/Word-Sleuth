@@ -54,38 +54,58 @@ class DataContainer {
 		}
 	}
 	
-	func unlockBadges(newGame: Game) {
+	/// Unlock badges based on the Player _bestTimes
+	func unlockBadges(newGame: Game, player: Player) {
 		let lockedBadges = badges.filter { $0.timestamp == nil }
-		let finishedGames = games.filter { $0.isOver }
+		let finishedGames = player.gamesPerLevel
+		var finishedGamesCount = 0
 		var newlyUnlocked: [Badge] = []
+		
+		func gameCount(for levelRange: ClosedRange<Int>) -> Int {
+			var total = 0
+			for (level, count) in finishedGames {
+				if levelRange.contains(level) {
+					total += count
+				}
+			}
+			return total
+		}
+		
+		// total all the games
+		for count in finishedGames.values {
+			finishedGamesCount += count
+		}
+		
+		// unlock badges
 		for badge in lockedBadges {
 			switch badge.details {
-				case .puzzle1 where finishedGames.count >= 1,
-					 .puzzle3 where finishedGames.count >= 3 &&
-						finishedGames.count(where: {$0.level >= 5}) >= 1,
-					 .puzzle5 where finishedGames.count >= 5 &&
-						finishedGames.count(where: {$0.level >= 6}) >= 2,
-					 .puzzle7 where finishedGames.count >= 7 &&
-						finishedGames.count(where: {$0.level >= 7}) >= 3,
-					 .puzzle10 where finishedGames.count >= 10 &&
-						finishedGames.count(where: {$0.level >= 8}) >= 4,
-					 .puzzle20 where finishedGames.count >= 20 &&
-						finishedGames.count(where: {$0.level >= 9}) >= 5,
-					 .puzzle30 where finishedGames.count >= 30 &&
-						finishedGames.count(where: {$0.level == 10}) >= 5,
-					 .puzzle50 where finishedGames.count >= 50 &&
-						finishedGames.count(where: {$0.level == 10}) >= 10,
-					 .puzzle75 where finishedGames.count >= 75 &&
-						finishedGames.count(where: {$0.level == 10}) >= 20,
-					 .puzzle100 where finishedGames.count >= 100 &&
-						lockedBadges.count == 1 &&
-						finishedGames.count(where: {$0.level == 10}) >= 30:
+				case .puzzle1 where finishedGamesCount >= 1,
+					 .puzzle3 where finishedGamesCount >= 3 &&
+						gameCount(for: 5...10) >= 1,
+					 .puzzle5 where finishedGamesCount >= 5 &&
+						gameCount(for: 6...10) >= 2,
+					 .puzzle7 where finishedGamesCount >= 7 &&
+						gameCount(for: 7...10) >= 3,
+					 .puzzle10 where finishedGamesCount >= 10 &&
+						gameCount(for: 8...10) >= 4,
+					 .puzzle20 where finishedGamesCount >= 20 &&
+						gameCount(for: 9...10) >= 5,
+					 .puzzle30 where finishedGamesCount >= 30 &&
+						finishedGames[10] ?? 0 >= 5,
+					 .puzzle50 where finishedGamesCount >= 50 &&
+						finishedGames[10] ?? 0 >= 10,
+					 .puzzle75 where finishedGamesCount >= 75 &&
+						finishedGames[10] ?? 0 >= 20,
+					 .puzzle100 where finishedGamesCount >= 100 &&
+						finishedGames[10] ?? 0 >= 30 && lockedBadges.count == 1:
 					newlyUnlocked.append(badge)
 					print("Unlocked \(badge.details.title)")
 				default:
 					continue
 			}
 		}
+		
+		// add badges to the current game
 		for badge in newlyUnlocked {
 			newGame.badges.append(badge)
 			badge.game = newGame
@@ -93,6 +113,46 @@ class DataContainer {
 			badge.save(to: badge.details.title.key)
 		}
 	}
+	
+//	func unlockBadges(newGame: Game) {
+//		let lockedBadges = badges.filter { $0.timestamp == nil }
+//		let finishedGames = games.filter { $0.isOver }
+//		var newlyUnlocked: [Badge] = []
+//		for badge in lockedBadges {
+//			switch badge.details {
+//				case .puzzle1 where finishedGames.count >= 1,
+//					 .puzzle3 where finishedGames.count >= 3 &&
+//						finishedGames.count(where: {$0.level >= 5}) >= 1,
+//					 .puzzle5 where finishedGames.count >= 5 &&
+//						finishedGames.count(where: {$0.level >= 6}) >= 2,
+//					 .puzzle7 where finishedGames.count >= 7 &&
+//						finishedGames.count(where: {$0.level >= 7}) >= 3,
+//					 .puzzle10 where finishedGames.count >= 10 &&
+//						finishedGames.count(where: {$0.level >= 8}) >= 4,
+//					 .puzzle20 where finishedGames.count >= 20 &&
+//						finishedGames.count(where: {$0.level >= 9}) >= 5,
+//					 .puzzle30 where finishedGames.count >= 30 &&
+//						finishedGames.count(where: {$0.level == 10}) >= 5,
+//					 .puzzle50 where finishedGames.count >= 50 &&
+//						finishedGames.count(where: {$0.level == 10}) >= 10,
+//					 .puzzle75 where finishedGames.count >= 75 &&
+//						finishedGames.count(where: {$0.level == 10}) >= 20,
+//					 .puzzle100 where finishedGames.count >= 100 &&
+//						lockedBadges.count == 1 &&
+//						finishedGames.count(where: {$0.level == 10}) >= 30:
+//					newlyUnlocked.append(badge)
+//					print("Unlocked \(badge.details.title)")
+//				default:
+//					continue
+//			}
+//		}
+//		for badge in newlyUnlocked {
+//			newGame.badges.append(badge)
+//			badge.game = newGame
+//			badge.timestamp = newGame.timer.endTime
+//			badge.save(to: badge.details.title.key)
+//		}
+//	}
 	
 	func createGames(number: Int, sizes: [Int]) {
 		assert(sizes.count >= number, "Expecting at least \(number) sizes!")

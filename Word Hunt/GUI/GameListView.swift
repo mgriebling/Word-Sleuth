@@ -165,7 +165,7 @@ struct GameListView: View {
 	}
 	
 	var addButton: some View {
-		Button("Add Game", systemImage: "plus") {
+		Button("Add Puzzle", systemImage: "plus") {
 			let number = settings.gameNumber
 			let sizes = Array(repeating: settings.level.size, count: number)
 			dataContainer.createGames(number: number, sizes: sizes)

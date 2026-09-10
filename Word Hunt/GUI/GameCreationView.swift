@@ -140,7 +140,7 @@ struct GameCreationView: View {
 			.toolbar {
 				EditToolbar(onDone: createGames)
 			}
-			.navigationTitle("Advanced Game Generator")
+			.navigationTitle("Advanced Puzzle Generator")
 			#if os(iOS)
 			.navigationBarTitleDisplayMode(.inline)
 			#endif

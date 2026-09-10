@@ -36,7 +36,7 @@ struct GameMenuView: View {
 			if !isInDetail {
 				FileImportButton(name: "Import Puzzle")
 				Button(action: { showAdvancedCreate = true }) {
-					Label("Create Games (Pro)", systemImage: "square.grid.4x3.fill")
+					Label("Create Puzzles (Pro)", systemImage: "square.grid.4x3.fill")
 				}
 				
 				Menu {

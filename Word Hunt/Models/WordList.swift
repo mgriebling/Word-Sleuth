@@ -243,8 +243,7 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	func save(to fileName: String) {
 		// 4. Initialize JSONEncoder and format the output
 		let encoder = JSONEncoder()
-		// encoder.outputFormatting = .prettyPrinted // Makes the JSON file human-readable
-		
+
 		do {
 			// 5. Encode the class instance into raw Data
 			let jsonData = try encoder.encode(self)

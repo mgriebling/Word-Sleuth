@@ -12,7 +12,7 @@ struct SettingsView: View {
 	@AppStorage(.settings) private var settings
 	
 	// Word for the demo grid to show selection/hightling
-	static let words = WordList(words: ["Test", "High", "Push", "Unit"])
+	static let words = WordList(words: ["Test", "High", "Push", "Unit", "Best", "Ever", "Swift"])
 	
 	// MARK: Data (Function) In
 	@Environment(\.dismiss) var dismiss
@@ -21,13 +21,14 @@ struct SettingsView: View {
 	@State private var game = Game(size: SettingsType.maxColRange.lowerBound, words: words)
 	@State private var creationMode: CreationMode = .oneGame
 	@State private var selectedWord = ""
+	@State private var showGridAppearance = false
 	
 	var body: some View {
 		NavigationStack {
 			Form {
 				Section("Puzzle Creation Defaults (\(Image(systemName: "plus")) Touched)") {
 					HStack {
-						Text("Puzzles:")
+						Text("Number:")
 						Picker("Create Puzzle:", selection: $creationMode.animation()) {
 							ForEach(CreationMode.allCases.dropLast(), id:\.self) { mode in
 								Text(mode.number, format: .number) //   "\(mode.rawValue)").tag(mode)
@@ -47,7 +48,7 @@ struct SettingsView: View {
 					
 					if creationMode == .custom {
 						HStack {
-							Text("Puzzles: \(internalSettings.gameNumber) ")
+							Text("\(internalSettings.gameNumber) ")
 							Slider(value: Binding(
 								get: { Double(internalSettings.gameNumber) },
 								set: { internalSettings.gameNumber = Int($0) }
@@ -85,37 +86,36 @@ struct SettingsView: View {
 					Toggle("Sorted Across Columns", isOn: $internalSettings.sortAcrossCols)
 				}
 				
-				Section("Timer") {
-					Toggle("Enable", isOn: $internalSettings.showTimer)
-				}
+				Section("Timer \(internalSettings.showTimer ? "On" : "Off")", isExpanded: $internalSettings.showTimer) { }
+					.onTapGesture { withAnimation { internalSettings.showTimer.toggle() } }
 				
-				Section("Sound Effects") {
-					Toggle("Enable", isOn: $internalSettings.soundsOn)
-						.onChange(of: internalSettings.soundsOn) {
-							if internalSettings.soundsOn {
+				Section("Sound Effects \(internalSettings.soundsOn ? "On" : "Off")", isExpanded: $internalSettings.soundsOn) {
+					HStack {
+						Text("Volume:")
+						Text(internalSettings.soundVolume, format: .percent.precision(.fractionLength(0)))
+						Slider(value: $internalSettings.soundVolume, in: 0.0...1.0) {
+							Text("Sound Volume")
+						} minimumValueLabel: {
+							Image(systemName: "speaker")
+						} maximumValueLabel: {
+							Image(systemName: "speaker.wave.3")
+						} onEditingChanged: { editing in
+							if !editing {
 								play(sound: "success", volume: internalSettings.soundVolume)
-							}
-						}
-					if internalSettings.soundsOn {
-						HStack {
-							Text("Volume:")
-							Text(internalSettings.soundVolume, format: .percent.precision(.fractionLength(0)))
-							Slider(value: $internalSettings.soundVolume, in: 0.0...1.0) {
-								Text("Sound Volume")
-							} minimumValueLabel: {
-								Image(systemName: "speaker")
-							} maximumValueLabel: {
-								Image(systemName: "speaker.wave.3")
-							} onEditingChanged: { editing in
-								if !editing {
-									play(sound: "success", volume: internalSettings.soundVolume)
-								}
 							}
 						}
 					}
 				}
+				.onTapGesture {
+					withAnimation { internalSettings.soundsOn.toggle() }
+				}
+				.onChange(of: internalSettings.soundsOn) {
+					if internalSettings.soundsOn {
+						play(sound: "success", volume: internalSettings.soundVolume)
+					}
+				}
 				
-				Section("Grid Appearance") {
+				Section("\(showGridAppearance ? "Hide" : "Show") Grid Appearance", isExpanded: $showGridAppearance) {
 					Picker("Selection", selection: $internalSettings.highlight) {
 						ForEach(HighLight.allCases) { mode in
 							Image(systemName: mode.image)
@@ -152,6 +152,7 @@ struct SettingsView: View {
 						ColorPicker("Highlight Color", selection: $internalSettings.highlightColor, supportsOpacity: false)
 					}
 				}
+				.onTapGesture { withAnimation { showGridAppearance.toggle() } }
 			}
 			.onAppear {
 				internalSettings = settings
@@ -173,7 +174,7 @@ struct SettingsView: View {
 	}
 	
 	private func play(sound: String, volume: Double) {
-		SoundManager.shared.playSound(named: sound, type: "mp3", volume: Float(settings.soundVolume))
+		SoundManager.shared.playSound(named: sound, type: "mp3", volume: Float(volume))
 	}
 }
 

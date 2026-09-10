@@ -38,6 +38,10 @@ struct Player : Codable {
 	}
 	private var _bestTimes = [Int:TimeCount]()
 	
+	var gamesPerLevel: [Int:Int] {
+		_bestTimes.mapValues(\.games)
+	}
+	
 	mutating func add(points: Int) {
 		self.points += points
 	}
