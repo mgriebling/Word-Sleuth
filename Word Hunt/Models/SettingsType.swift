@@ -177,7 +177,7 @@ enum PuzzleOrder: String, CaseIterable, Identifiable, Codable {
 }
 
 enum Level: Int, CaseIterable, Identifiable, Codable {
-	case manual, three, four, five, six
+	case manual, one, two, three, four, five, six
 	case seven, eight, nine, ten
 	
 	var value: Int { self.rawValue + 2 }
@@ -185,13 +185,15 @@ enum Level: Int, CaseIterable, Identifiable, Codable {
 	/// returns the game grid size to give this level
 	var size: Int {
 		switch self {
-			case .three:  5
-			case .four:   6
-			case .five:   9
-			case .six: 	 11
-			case .seven: 12
-			case .eight: 15
-			case .nine:  18
+			case .one:    4
+			case .two:    6
+			case .three:  8
+			case .four:  10
+			case .five:  12
+			case .six: 	 14
+			case .seven: 16
+			case .eight: 18
+			case .nine:  19
 			case .ten:   20
 			default: 	  5
 		}

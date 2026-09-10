@@ -33,6 +33,12 @@ import SwiftUI
 	var invert = false
 	var reversed = false
 	
+	#if os(iOS)
+	let isPhone = UIDevice.current.userInterfaceIdiom == .phone
+	#else
+	let isPhone = false
+	#endif
+	
 	// MARK: Initializer
 	init(level: Level, words: WordList) {
 		self._board = GameBoard(size: level.size, words: words)
@@ -47,15 +53,11 @@ import SwiftUI
 	init(_ rows: Int, cols: Int, words: WordList) {
 		assert(SettingsType.maxRowRange.contains(rows), "Expecting rows in \(SettingsType.maxRowRange)")
 		assert(SettingsType.maxColRange.contains(cols), "Expecting columns in \(SettingsType.maxColRange)")
-		#if os(iOS)
-		if UIDevice.current.userInterfaceIdiom == .phone {
+		if isPhone {
 			self._board = GameBoard(rows, cols: min(12, cols), words: words)
 		} else {
 			self._board = GameBoard(rows, cols: cols, words: words)
 		}
-		#else
-		self._board = GameBoard(rows, cols: cols, words: words)
-		#endif
 		self.timer = MyTimer(name: words.name)
 		self.creationDate = .now
 	}
@@ -92,17 +94,30 @@ import SwiftUI
 		return nil
 	}
 	
+	/// Calculates the puzzle difficulty based on the grid size
 	var level: Int {
-		// first calculate average difficulty level of the words (5 is typical word length)
-		let averageWordLength = 6.0
-		let cells = SettingsType.maxRowRange.upperBound * SettingsType.maxColRange.upperBound
-		let wordsCount = Double(placedWords.count)
-		let wordScore = placedWords.map({ Double($0.word.count) }).reduce(0, +) /
-						(wordsCount * averageWordLength)
-		let puzzleScore = Double(rows * cols) / Double(cells)
-		let numberOfWordsScore = wordsCount / Double(board.words.words.count)
-		let total = wordScore + puzzleScore + numberOfWordsScore
-		return min(10, Int((10.0 / 3.0) * total + 0.5))
+		func xs(_ i: Int) -> Int { isPhone ? i * min(12, i) : i.² }
+		let cells = rows * cols
+		let s2 = 2.², s4 = 4.², s6 = 6.², s8 = 8.², s10 = 10.², s12 = 12.²
+		let s14 = xs(14), s16 = xs(16), s18 = xs(18), s19 = xs(19), s20 = xs(20)
+		switch cells {
+			case s2...s4: return 1
+			case s4-1...s6: return 2
+			case s6-1...s8: return 3
+			case s8-1...s10: return 4
+			case s10-1...s12: return 5
+			case s12-1...s14: return 6
+			case s14-1...s16: return 7
+			case s16-1...s18: return 8
+			case s18-1...s19: return 9
+			case s19-1...s20: return 10
+			default: return 5
+		}
+	}
+	
+	func rowsAndCols(for level: Level) -> (row: Int, col: Int) {
+	  let i = level.size
+	  return (i, isPhone ? min(12, i) : i)
 	}
 	
 	func setOrientation(landscape: Bool) {
@@ -146,9 +161,8 @@ import SwiftUI
 			let contents = try fileManager.contentsOfDirectory(at: documentsURL,
 					includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
 			
-			// Filter for files with extension & language (case-insensitive)
+			// Filter for files with extension (case-insensitive)
 			let gameURLs = contents.filter {
-				$0.lastPathComponent.hasSuffix("_" + language) &&
 				$0.pathExtension.lowercased() == Self.fileExt
 			}
 			var games = [Game]()
@@ -212,5 +226,10 @@ extension Game: Codable {
 
 extension Game: Hashable {
 	func hash(into hasher: inout Hasher) { hasher.combine(id) }
+}
+
+
+extension Numeric {
+	var ²: Self { self * self }
 }
 	

@@ -30,7 +30,7 @@ struct GameSummary: View {
 			Text("Level: \(game.level) (\(game.rows) ⨉ \(game.cols))")
 				.frame(maxWidth: .infinity, alignment: .leading)
 			HStack {
-				Text("Words: ")
+				Text("Words(\(game.words.count)): ")
 				Image(systemName: "arrow.right")
 					.rotationEffect(Angle(degrees: showWords ? 90 : 0))
 			}
