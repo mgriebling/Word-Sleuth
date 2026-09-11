@@ -21,7 +21,7 @@ class DataContainer {
 			games = Game.loadGames()
 		}
 		
-		if loadSampleGames {
+		if games.isEmpty || loadSampleGames  {
 			addSampleGames()
 		}
 		
@@ -197,7 +197,13 @@ class DataContainer {
 	private func addSampleWords() {
 		if wordLists.isEmpty {
 			wordLists = SampleWordLists.all
-			//print(SampleWordLists.all[5])
+			
+			for i in 3...5 {
+				for j in 7...9 {
+					let words = WordList(name: "Random \(i)-\(j)", wordRange: i...j, totalWords: 100)
+					wordLists.append(words)
+				}
+			}
 		}
 	}
 	

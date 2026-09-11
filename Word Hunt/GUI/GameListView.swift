@@ -60,7 +60,9 @@ struct GameListView: View {
 				}
 				.pickerStyle(.segmented)
 				.onAppear {
+					#if os(iOS)
 					UISegmentedControl.appearance().apportionsSegmentWidthsByContent = true
+					#endif
 				}
 				
 				Button(action: { withAnimation { showWins.toggle() }}) {

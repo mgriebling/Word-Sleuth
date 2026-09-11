@@ -12,6 +12,7 @@ struct GameSummary: View {
 	
 	@State private var width: CGFloat = 200
 	@State private var showWords = false
+	@State private var showAchievements = false
 	
 	@AppStorage(.settings) private var settings
 
@@ -51,6 +52,9 @@ struct GameSummary: View {
 		} action: { width in
 			self.width = width
 		}
+		.sheet(isPresented: $showAchievements) {
+			AchievementsView()
+		}
 		.overlay {
 			if game.isOver {
 				VStack(alignment: .trailing) {
@@ -70,6 +74,14 @@ struct GameSummary: View {
 								.frame(width: 75, height: 75)
 						}
 					}
+					.highPriorityGesture(
+						TapGesture(count: 1)
+							.onEnded {
+								withAnimation(.easeInOut(duration: 0.3)) {
+									showAchievements.toggle()
+								}
+							}
+					)
 				}
 			}
 		}
