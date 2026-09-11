@@ -119,7 +119,7 @@ struct GameView: View {
 		// portrait mode
 		VSView {
 			portraitWordList()
-				.background(.pink.opacity(0.3))
+			//	.background(.pink.opacity(0.3))
 			
 			LetterGridView(game: game, allowDrag: true, isLandscape: false, selectedWord: $selectedWord, settings: $settings)
 				.layoutPriority(1)

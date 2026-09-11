@@ -8,8 +8,8 @@
 import SwiftUI
 
 public struct SettingsType {
-	static let maxRowRange = 5...20
-	static let maxColRange = 5...20
+	static let maxRowRange = 4...20
+	static let maxColRange = 4...20
 	
 	var player: Player
 	
@@ -164,8 +164,8 @@ enum PuzzleOrder: String, CaseIterable, Identifiable, Codable {
 	
 	func title(increasing: Bool) -> LocalizedStringKey {
 		switch (self, increasing) {
-			case (.level, true):  "Largest Level First"
-			case (.level, false): "Smallest Level First"
+			case (.level, true):  "Highest Level First"
+			case (.level, false): "Lowest Level First"
 			case (.name, true):   "Names in order"
 			case (.name, false):  "Names in reverse order"
 			case (.date, true):   "Recent Dates First"

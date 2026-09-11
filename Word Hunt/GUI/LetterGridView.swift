@@ -287,8 +287,8 @@ struct LetterGridView: View {
 			settings.player.add(points: game.words.count)
 			animateWin = true
 			game.timer.stop()
-			dataContainer.unlockBadges(newGame: game, player: settings.player)
 			settings.player.updateTimes(level: game.level, interval: TimeInterval(game.timer.elapsedTime), words: game.words.count)
+			dataContainer.unlockBadges(newGame: game, player: settings.player)
 			game.save(to: game.name)
 		}
 		
