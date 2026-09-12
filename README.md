@@ -1,10 +1,14 @@
 # Word Sleuth
 
 *Word Sleuth* represents the latest generation of word search
-games giving you the ability to not only solve the puzzles but also has
-an unlimited ability to create new puzzles using either the more than
-50 curated word categories, a choice of 10K - 35K built-in common words, 
-or create your own categorized word lists.
+games giving you the ability to not only solve the puzzles but also to create 
+new puzzles using either the more than 50 curated word categories, 
+a choice of 25K built-in common words, or your own categorized word lists.
+
+*Word Sleuth* is intended for the serious puzzle enthusiast who doesn't want
+bells and whistles, just professional-quality puzzles ranging from the easy-to-solve
+to newspaper-quality and better. New puzzles can be created on-the-fly without any
+online connections or added subscriptions. Difficulty level is adjustable.
 
 ## Features
 
@@ -14,7 +18,7 @@ or create your own categorized word lists.
 * Awards are granted for significant milestones as you progress.
 * Points are earned as games are completed — demonstrating your prowess to others.
 * Optional hints can get you started more easily or keep you going when stuck.
-* Customization of how words are highlighted and the colors that are used.
+* You can customize how words are highlighted and the colors that are used.
 * More than 50 word categories, each containing at least 50 words or more.
 * New puzzle creation using either a single touch or an advanced puzzle-generation interface.
 * Puzzles and word lists can be shared with your friends and family.
@@ -27,10 +31,6 @@ or create your own categorized word lists.
 
 ## Examples
 Here are screenshots of typical puzzle grids:
-
-```LaTeX
-x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
-```
 
 ![Quadratic Formula](img/quadratic-light.png#gh-light-mode-only) 
 ![Quadratic Formula](img/quadratic-dark.png#gh-dark-mode-only) 
