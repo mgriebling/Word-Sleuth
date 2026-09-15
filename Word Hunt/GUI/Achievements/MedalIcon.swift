@@ -10,6 +10,7 @@ import SwiftUI
 struct MedalIcon: View {
 	let noMedal: Bool
 	let scaling: CGFloat
+	let disabled: Bool
 	
 	var body: some View {
 		ZStack {
@@ -28,6 +29,7 @@ struct MedalIcon: View {
 				.padding(2 * scaling)
 		}
 		.frame(width: 100 * scaling, height: 100 * scaling)
+		.opacity(disabled ? 0.3 : 1)
 	}
 }
 
@@ -43,6 +45,7 @@ struct DiagonalLine: Shape {
 }
 
 #Preview {
-	MedalIcon(noMedal: true, scaling: 0.8)
-	MedalIcon(noMedal: false, scaling: 0.8)
+	MedalIcon(noMedal: true, scaling: 0.8, disabled: false)
+	MedalIcon(noMedal: false, scaling: 0.8, disabled: false)
+	MedalIcon(noMedal: false, scaling: 0.8, disabled: true)
 }

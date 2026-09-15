@@ -65,14 +65,15 @@ struct GameListView: View {
 					#endif
 				}
 				
+				let disabled = filter == .new || filter == .playing
 				Button(action: { withAnimation { showWins.toggle() }}) {
-					MedalIcon(noMedal: showWins, scaling: 0.25)
+					MedalIcon(noMedal: showWins, scaling: 0.25, disabled: disabled)
 				}
 				.tint(Color.primary)
 				.padding(.trailing, 2)
 				.buttonBorderShape(.capsule)
 				.buttonStyle(.bordered)
-				.disabled(filter == .new || filter == .playing)
+				.disabled(disabled)
 			}
 			List(selection: $selection) {
 				ForEach(filteredSorted) { game in
@@ -178,9 +179,6 @@ struct GameListView: View {
 
 #Preview {
 	@Previewable @State var selection: Game?
-	@Previewable @State var games: [Game] = [
-		Game(size: 14, words: SampleWordLists.all[0])
-	]
 	NavigationStack {
 		GameListView(selection: $selection)
 			.environment(DataContainer())

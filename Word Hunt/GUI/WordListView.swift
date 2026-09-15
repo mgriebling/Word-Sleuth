@@ -86,8 +86,7 @@ struct WordListView: View {
 	
 	var addButton: some View {
 		Button("Add Word List", systemImage: "plus") {
-			let name = uniqueName(for: "Random")
-			wordListToEdit = WordList(name: name, wordRange: 3...7, totalWords: 60)
+			wordListToEdit = WordList()
 			showWordListEditor = true
 		}
 		.sheet(isPresented: $showWordListEditor) {

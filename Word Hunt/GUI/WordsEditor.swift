@@ -97,7 +97,7 @@ struct WordsEditor: View {
 }
 
 #Preview {
-	@Previewable @State var words = SampleWordLists.all.randomElement()
+	@Previewable @State var words = SampleWords.list.randomElement()
 	NavigationStack {
 		WordsEditor(words: $words) {
 			// nothing to do

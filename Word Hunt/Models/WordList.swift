@@ -321,9 +321,12 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 		return ["error", "fallback", "words"]
 	}
 
-	static let largeWordBank = loadSystemWords()
+	static var largeWordBank = [String]()
 	
 	static private func generateWords(with size: CountableClosedRange<Int>, total: Int) -> [String] {
+		if largeWordBank.isEmpty {
+			largeWordBank = loadSystemWords()
+		}
 		var words: [String] = []
 		while words.count < total {
 			if let word = largeWordBank.randomElement() {

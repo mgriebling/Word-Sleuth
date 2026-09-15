@@ -23,13 +23,14 @@ struct WordHunt: App {
 		WindowGroup {
 			MainAppView()
 				.environment(dataContainer)
-				// Listen for state changes to display your About view as a sheet
-				.sheet(isPresented: $showAboutWindow) {
-					AboutView()
-				}
-//				.onOpenURL { url in
-//					print("Opening Word Sleuth puzzle: \(url)")
-//				}
+			
+			// Listen for state changes to display your About view as a sheet
+			.sheet(isPresented: $showAboutWindow) {
+				AboutView()
+			}
+//			.task {
+//				await dataContainer.addSampleWords()
+//			}
 		}
 		.commands {
 			CommandGroup(replacing: .appInfo) {

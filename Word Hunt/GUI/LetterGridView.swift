@@ -309,7 +309,7 @@ struct LetterGridView: View {
 
 #Preview {
 	@Previewable
-	@State var game = Game(20, cols: 10, words: SampleWordLists.all[2])
+	@State var game = Game(20, cols: 10, words: SampleWords.list[2])
 	@Previewable @State var settings = SettingsType()
 	@Previewable @State var selectedWord = ""
 	LetterGridView(game: game, allowDrag: true, isLandscape: true, selectedWord: $selectedWord, settings: $settings)

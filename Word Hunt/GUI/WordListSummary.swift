@@ -34,6 +34,6 @@ struct WordListSummary: View {
 }
 
 #Preview {
-	@Previewable @State var wordList = SampleWordLists.all.randomElement()!
+	@Previewable @State var wordList = SampleWords.list.randomElement()!
     WordListSummary(wordList: wordList)
 }

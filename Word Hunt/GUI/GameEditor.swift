@@ -125,7 +125,7 @@ struct GameEditor: View {
 
 #Preview {
 	@Previewable
-	@State var game: Game? = Game(size: 12, words: SampleWordLists.all[1])
+	@State var game: Game? = Game(size: 12, words: SampleWords.list[1])
 	GameEditor(game: $game) {
 		print("Updated game")
 	}

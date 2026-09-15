@@ -164,6 +164,6 @@ extension EditMode {
 #endif
 
 #Preview {
-	@Previewable @State var strings = SampleWordLists.all[0].words
-	StringList(title: SampleWordLists.all[0].name, strings: $strings)
+	@Previewable @State var strings = SampleWords.list[0].words
+	StringList(title: SampleWords.list[0].name, strings: $strings)
 }
