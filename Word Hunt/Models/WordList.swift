@@ -168,11 +168,8 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	public var words: [String]
 	
 	public var averageLength: Double { Double(totalLetters) / Double(words.count) }
-	
 	public var totalLetters: Int { words.reduce(0) { $1.count + $0	} }
-	
 	public var maxLength: Int { longestWord.count }
-	
 	public var longestWord: String { words.max(by: {$0.count < $1.count} ) ?? "" }
 	
 	convenience init() {
@@ -321,12 +318,9 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 		return ["error", "fallback", "words"]
 	}
 
-	static var largeWordBank = [String]()
+	static var largeWordBank = loadSystemWords()
 	
 	static private func generateWords(with size: CountableClosedRange<Int>, total: Int) -> [String] {
-		if largeWordBank.isEmpty {
-			largeWordBank = loadSystemWords()
-		}
 		var words: [String] = []
 		while words.count < total {
 			if let word = largeWordBank.randomElement() {

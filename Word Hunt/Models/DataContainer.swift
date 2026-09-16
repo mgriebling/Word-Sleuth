@@ -7,28 +7,19 @@
 
 import SwiftUI
 
-//enum State {
-//	case done
-//	case loadingGames
-//	case loadingWords
-//}
-
 @Observable
 @MainActor
 class DataContainer {
+
 	var games = [Game]()
 	var wordLists = [WordList]()
 	var badges = [Badge]()
 	var isLandscape = false
 
-//	var state: State = .loadingGames
-	var initializationID = UUID()
-	
 	init(loadSampleGames: Bool = false) {
 		if games.isEmpty {
 			// load any saved games
 			print("Loading games...")
-//			state = .loadingGames
 			games = Game.loadGames()
 		}
 		
@@ -38,17 +29,11 @@ class DataContainer {
 		}
 		
 		// wordLists = WordList.loadWordLists()
-		if wordLists.isEmpty {
-			print("Word lists is empty, adding samples...")
-			Task.detached(priority: .background) {
-				await self.addSampleWords()
-			}
+		print("Word lists is empty, adding init samples...")
+		Task.detached(priority: .background) {
+			await self.addSampleWords()
 		}
-		
-		//		Task.detached(priority: .background) {
-		//			await WordList.save(wordLists: self.wordLists)
-		//		}
-		
+
 		badges = Badge.loadBadges()
 		createBadgesIfNeeded()
 	}
@@ -179,6 +164,12 @@ class DataContainer {
 		print("Adding sample words...")
 		self.wordLists = SampleWords.list
 		
+		let randomLists = WordList.loadWordLists()
+		if !randomLists.isEmpty {
+			self.wordLists.append(contentsOf: randomLists)
+			return
+		}
+		
 		// 2. Offload the disk read and decoding to the background (Task.detached or Task)
 		// This ensures the main UI thread remains completely untouched and fluid.
 		let list = await Task.detached(priority: .background) { () -> [WordList] in
@@ -188,17 +179,14 @@ class DataContainer {
 				for j in 7...9 {
 					print("Building random \(i)-\(j)...")
 					let words = WordList(name: "Random \(i)-\(j)", wordRange: i...j, totalWords: 100)
-					print("Adding random \(i)-\(j) to list...")
+					words.save(to: words.name)
 					list.append(words)
 				}
 			}
 			return list
 		}.value
 		
-		await MainActor.run {
-			self.wordLists.append(contentsOf: list)
-//			self.state = .done
-			print("Successfully loaded without hanging!")
-		}
+		self.wordLists.append(contentsOf: list)
+		print("Successfully loaded without hanging!")
 	}
 }

@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct WordHunt: App {
-	
 	let dataContainer = DataContainer()
 	
 	@Environment(\.openURL) private var openURL
@@ -28,9 +27,6 @@ struct WordHunt: App {
 			.sheet(isPresented: $showAboutWindow) {
 				AboutView()
 			}
-//			.task {
-//				await dataContainer.addSampleWords()
-//			}
 		}
 		.commands {
 			CommandGroup(replacing: .appInfo) {

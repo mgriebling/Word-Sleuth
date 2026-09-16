@@ -10,7 +10,7 @@ import Foundation
 struct SampleWords {
 	
 	static var list: [WordList] { [
-		WordList(name: "A Test Subject", words: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]),
+//		WordList(name: "A Test Subject", words: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]),
 		WordList(name: String(localized: LocalizedStringResource("Academic Subjects", table: "WordLists", comment: "L1-Academic Subjects List Header")),
 				 words: [
 					String(localized: LocalizedStringResource("Algebra", table: "WordLists", 		comment: "L1-word  1")),
