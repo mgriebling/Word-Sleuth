@@ -17,7 +17,7 @@ struct WordsEditor: View {
 	@State private var lwords: WordList = WordList()
 	@State private var name: String = ""
 	@State private var wordList = [PlacedWord]()
-	@State private var selectedLanguage = Language.english
+	@State private var selectedLanguage = Language(rawValue: Locale.current.identifier) ?? .english
 	@State private var editWordList: Bool = false
 	
 	var body: some View {
@@ -46,7 +46,7 @@ struct WordsEditor: View {
 						print("Chose: \(selectedLanguage.description)")
 					}
 				}
-				Section(header: Text("Words (\(lwords.words.count)) _Tap List to Edit")) {
+				Section(header: Text("Words (\(lwords.words.count)) Tap List to Edit")) {
 					WordView(words: wordList, style: .paragraph)
 						.id(lwords.words)
 						.padding(.vertical, 8)

@@ -43,8 +43,10 @@ struct AchievementsView: View {
 	
 	private var contentStack: some View {
 		VStack(alignment: .leading) {
-			header("Earned Points: \(settings.player.points)")
-			Text("Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint \(Image(systemName: "lightbulb"))** button use. Compete with friends to see who has the most points!")
+			let points = settings.player.points
+			let earned = PointDetails(points: points)
+			header("Earned Points: \(points)", points: earned)
+			Text("Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint \(Image(systemName: "lightbulb"))** button use. With each 100 points you earn a new tier.  Compete with friends to see who has the most points!")
 				.font(.caption)
 			
 //			let bestTimes =
@@ -105,11 +107,22 @@ struct AchievementsView: View {
 		.frame(maxWidth: .infinity)
 	}
 	
-	func header(_ text: String) -> some View {
-		Text(text)
-			.font(.headline.bold())
-			.padding(.top)
-			.padding(.bottom, 3)
+	func header(_ text: String, points: PointDetails? = nil) -> some View {
+		HStack(alignment: .center) {
+			Text(text)
+				.font(.headline.bold())
+				.padding(.top)
+				.padding(.bottom, 3)
+			if let points, points != .empty {
+				VStack {
+					Image(points.image)
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+					Text(points.title)
+				}
+				.frame(width: 100, height: 100)
+			}
+		}
 	}
 	
 	private var sortedUnlockedBadges: [Badge] {

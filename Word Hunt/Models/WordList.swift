@@ -128,19 +128,21 @@ public enum Direction: Int, Codable, CaseIterable {
 
 public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 
-	case english = "en", german = "de", spanish = "es", swedish = "sv"
-	case norwegian = "no", italian = "it", french = "fr", japanese = "ja"
-	case chinese = "zh", russian = "ru", hindi = "hi"
-	case afrikaans = "af", arabic = "ar", greek = "el"
-	case dutch = "nl", polish = "pl", hungarian = "hu"
-	case slovak = "sk", romanian = "ro", danish = "da"
-	case bulgarian = "bg", burmese = "my", cambodian = "km", czech = "cs"
-	case estonian = "et", finnish = "fi", farsi = "fa", indonesian = "id"
-	case hebrew = "he", icelandic = "is", korean = "ko", kurdish = "ku"
-	case lithuanian = "lt", macedonian = "mk", mongolian = "mn"
-	case navajo = "nv", portuguese = "pt", serbian = "sr", swahili = "sw"
-	case turkish = "tr", ukrainian = "uk", vietnamese = "vi"
-	case tibetan = "bo", yiddish = "yi"
+	case english = "en", german = "de", spanish = "es" //, swedish = "sv"
+	//case norwegian = "no",
+	case italian = "it", french = "fr" // , japanese = "ja"
+	case russian = "ru", hindi = "hi"   // chinese = "zh",
+//	case afrikaans = "af", arabic = "ar", greek = "el"
+	case dutch = "nl", polish = "pl"   // , hungarian = "hu"
+//	case slovak = "sk", romanian = "ro", danish = "da"
+//	case bulgarian = "bg", burmese = "my", cambodian = "km", czech = "cs"
+//	case estonian = "et", finnish = "fi", farsi = "fa", indonesian = "id"
+//	case hebrew = "he", icelandic = "is", korean = "ko", kurdish = "ku"
+//	case lithuanian = "lt", macedonian = "mk", mongolian = "mn"
+//	case navajo = "nv",
+	case portuguese = "pt"  // , serbian = "sr", swahili = "sw"
+	case turkish = "tr", ukrainian = "uk"  // , vietnamese = "vi"
+//	case tibetan = "bo", yiddish = "yi"
 	
 	var alphabet: String { Alphabets.getAlphabet(for: self.rawValue) }
 	

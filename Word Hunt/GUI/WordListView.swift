@@ -43,12 +43,6 @@ struct WordListView: View {
 				dataContainer.wordLists.move(fromOffsets: offsets, toOffset: destination)
 			}
 		}
-//		.onAppear {
-//			print("Word lists is empty, adding on Appear samples...")
-//			Task.detached(priority: .background) {
-//				await dataContainer.addSampleWords()
-//			}
-//		}
 		.navigationTitle("Word Lists")
 		#if os(iOS)
 		.navigationBarTitleDisplayMode(.inline)

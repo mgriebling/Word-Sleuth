@@ -24,7 +24,7 @@ struct WordListSummary: View {
 				Text("Created: \(wordList.date, format: .dateTime.day().month().year())")
 			}
 			Text("\(wordList.words.count) words (\(wordList.language.description))")
-			Text("Words: (Average/Maximum \(wordList.averageLength, specifier: "%.2f")/\(wordList.maxLength) letters)")
+			Text("Words: (Average/Maximum \(wordList.averageLength, specifier: "%.1f")/\(wordList.maxLength) letters)")
 			Text(wordList.words.map({ $0.capitalized }).joined(separator: ", "))
 					.font(.caption)
 					.lineLimit(isCompact ? 2 : nil)

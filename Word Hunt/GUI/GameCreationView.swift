@@ -191,8 +191,11 @@ struct GameCreationView: View {
 				if level == .manual || game.level == level.value {
 					await MainActor.run {
 						print("Adding game \(game.name)")
-						dataContainer.games.insert(game, at: 0)
+						withAnimation {
+							dataContainer.games.insert(game, at: 0)
+						}
 					}
+					game.save(to: game.name)
 					sizes.removeFirst()
 					wordListsToUse.removeFirst()
 					numberOfGames -= 1

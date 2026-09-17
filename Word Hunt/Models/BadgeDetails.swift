@@ -24,7 +24,7 @@ enum BadgeDetails: Int, Codable, CaseIterable {
 			case .puzzle1:
 				"Solve a puzzle to unlock this award."
 			case .puzzle3:
-				"Complete three puzzles with to earn this badge. Earlier solved puzzles count as well. At least one should be level five or higher."
+				"Complete three puzzles to earn this badge. Earlier solved puzzles count as well. At least one should be level five or higher."
 			case .puzzle5:
 				"Work out five puzzles to earn this badge. At least two need to be level six or higher."
 			case .puzzle7:
@@ -73,7 +73,7 @@ enum BadgeDetails: Int, Codable, CaseIterable {
 		switch self {
 			case .puzzle1:   "Start the Journey"
 			case .puzzle3:   "A Hat Trick"
-			case .puzzle5:   "5 Stars"
+			case .puzzle5:   "Five Stars"
 			case .puzzle7:   "On a Streak"
 			case .puzzle10:  "Perfect 10"
 			case .puzzle20:  "Roaring Twenties"
@@ -109,8 +109,8 @@ enum BadgeDetails: Int, Codable, CaseIterable {
 			case .puzzle20:  Color(.crimsonRed)
 			case .puzzle30:  Color(.deepTeal)
 			case .puzzle50:  Color(.matteBlack)
-			case .puzzle75:  Color(.matteBlack)
-			case .puzzle100: Color(.matteBlack)
+			case .puzzle75:  Color(.emeraldGreen)
+			case .puzzle100: Color(.darkBlue)
 		}
 	}
 }

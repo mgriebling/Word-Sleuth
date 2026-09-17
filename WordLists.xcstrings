@@ -1120,7 +1120,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Послеполуденное время"
+            "value" : "Полдень"
           }
         },
         "tr" : {
@@ -36437,7 +36437,15 @@
       }
     },
     "Coralsnake" : {
-      "comment" : "L47-word 16"
+      "comment" : "L47-word 16",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korallennatter"
+          }
+        }
+      }
     },
     "Cordoba" : {
       "comment" : "L19-word 10",
@@ -39830,7 +39838,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "(Монтажный) лом"
+            "value" : "лом"
           }
         },
         "tr" : {
@@ -46016,7 +46024,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Прыжки в воду"
+            "value" : "Дайвинг"
           }
         },
         "tr" : {
@@ -60293,7 +60301,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Две недели"
+            "value" : "Двенедели"
           }
         },
         "tr" : {
@@ -68322,7 +68330,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Шлифовальный станок"
+            "value" : "дробилка"
           }
         },
         "tr" : {
@@ -72440,7 +72448,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Адский магенд"
+            "value" : "АдскаяСаламандра"
           }
         },
         "tr" : {
@@ -73789,7 +73797,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Хоккей на траве"
+            "value" : "Хоккей"
           }
         },
         "tr" : {
@@ -85315,7 +85323,21 @@
       }
     },
     "Komododragon" : {
-      "comment" : "L47-word 24"
+      "comment" : "L47-word 24",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komodowaran"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "КомодскийВаран"
+          }
+        }
+      }
     },
     "Komondor" : {
       "comment" : "L20-word 33",
@@ -87856,7 +87878,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Токарный станок"
+            "value" : "Токарныйстанок"
           }
         },
         "tr" : {
@@ -88655,7 +88677,21 @@
       }
     },
     "Leap Year" : {
-      "comment" : "L49-word 21"
+      "comment" : "L49-word 21",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leapyear"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "високосныйгод"
+          }
+        }
+      }
     },
     "Leather" : {
       "comment" : "L23-word 26\nL40-word 28",
@@ -88734,7 +88770,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lederrücken"
+            "value" : "Lederschildkröte"
           }
         },
         "es" : {
@@ -88782,7 +88818,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Кожаная спина"
+            "value" : "Кожанаяспина"
           }
         },
         "tr" : {
@@ -94897,7 +94933,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Деревянный молоток"
+            "value" : "молоток"
           }
         },
         "tr" : {
@@ -121244,7 +121280,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "(Сенные) вилы"
+            "value" : "вилы"
           }
         },
         "tr" : {
@@ -127297,7 +127333,21 @@
       }
     },
     "Puffadder" : {
-      "comment" : "L47-word 32"
+      "comment" : "L47-word 32",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puffotter"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ШумящаяГадюка"
+          }
+        }
+      }
     },
     "Pufferfish" : {
       "comment" : "L39-word 28",
@@ -137080,7 +137130,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Шлифовальный станок"
+            "value" : "Шлифовальныйстанок"
           }
         },
         "tr" : {
@@ -140435,7 +140485,21 @@
       }
     },
     "Seakrait" : {
-      "comment" : "L47-word 36"
+      "comment" : "L47-word 36",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plattschwanz"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "МорскойКрайт"
+          }
+        }
+      }
     },
     "Seal" : {
       "comment" : "L39-word 34",
@@ -143053,7 +143117,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "(Садовые) ножницы"
+            "value" : "ножницы"
           }
         },
         "tr" : {
@@ -144615,7 +144679,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Боковой Намотк"
+            "value" : "РогатаяГремучаяЗмея"
           }
         },
         "tr" : {
@@ -155984,7 +156048,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Восход (солнца)"
+            "value" : "Восход"
           }
         },
         "tr" : {
@@ -160883,7 +160947,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Пресноводная черепаха"
+            "value" : "Черепаха"
           }
         },
         "tr" : {
@@ -166853,7 +166917,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Древесная лягушка"
+            "value" : "Квакша"
           }
         },
         "tr" : {
@@ -170930,7 +170994,15 @@
       }
     },
     "Urutu" : {
-      "comment" : "L47-word 49"
+      "comment" : "L47-word 49",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уруту"
+          }
+        }
+      }
     },
     "Vagrancy" : {
       "comment" : "L18-word 49",
@@ -175388,7 +175460,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Водное поло"
+            "value" : "Водноеполо"
           }
         },
         "tr" : {
@@ -176027,7 +176099,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Будний день"
+            "value" : "Буднийдень"
           }
         },
         "tr" : {
@@ -176098,7 +176170,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Уик-энд"
+            "value" : "Уикэнд"
           }
         },
         "tr" : {
@@ -176311,7 +176383,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Поднятие тяжестей"
+            "value" : "Поднятиетяжестей"
           }
         },
         "tr" : {
@@ -177465,7 +177537,15 @@
       }
     },
     "Wimble" : {
-      "comment" : "L50-word 49"
+      "comment" : "L50-word 49",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "бурав"
+          }
+        }
+      }
     },
     "Wind" : {
       "comment" : "L21-word 43\nL54-word 48",
@@ -178941,7 +179021,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Гаечный ключ"
+            "value" : "Гаечныйключ"
           }
         },
         "tr" : {
@@ -180006,7 +180086,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Яхтенный спорт"
+            "value" : "Яхтинг "
           }
         },
         "tr" : {

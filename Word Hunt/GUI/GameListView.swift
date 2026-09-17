@@ -22,7 +22,7 @@ struct GameListView: View {
 			switch self {
 				case .all: 	   return "All"
 				case .week:    return "This Week"
-				case .playing: return "Playing"
+				case .playing: return "Solving"
 				case .new: 	   return "New"
 			}
 		}
