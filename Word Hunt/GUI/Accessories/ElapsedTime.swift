@@ -10,12 +10,17 @@ import SwiftUI
 struct ElapsedTime: View {
     // MARK: Data In
 	let text: String
-	let timer: MyTimer
+	let timer: Timer
     
 	var body: some View {
 		HStack {
 			if !text.isEmpty { Text(text) }
-			Text(formatTime(timer.elapsedTime))
+			if let tickDate = timer.lastTickDate, timer.state == .running {
+				let newTime = tickDate.addingTimeInterval(-TimeInterval(timer.elapsedTime))
+				Text(newTime, style: .timer)
+			} else {
+				Text(formatTime(timer.elapsedTime))
+			}
 		}
 	}
 	
@@ -26,7 +31,7 @@ struct ElapsedTime: View {
 		let hours = totalSeconds / secondsPerHour
 		let minutes = (totalSeconds % secondsPerHour) / secondsPerMinute
 		let seconds = totalSeconds % secondsPerMinute
-		
+		print("Elapsed time: \(totalSeconds)")
 		if hours > 0 {
 			return String(format: "%d:%02d:%02d", hours, minutes, seconds)
 		} else {

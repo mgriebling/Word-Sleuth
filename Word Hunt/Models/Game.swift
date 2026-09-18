@@ -13,7 +13,7 @@ import SwiftUI
 		get { invert ? _board.transpose() : _board }
 		set { _board = newValue }
 	}
-	var timer: MyTimer
+	var timer: Timer
 	var creationDate: Date
 	var badges: [Badge] = []
 	
@@ -42,7 +42,7 @@ import SwiftUI
 	// MARK: Initializer
 	init(level: Level, words: WordList) {
 		self._board = GameBoard(size: level.size, words: words)
-		self.timer = MyTimer(name: words.name)
+		self.timer = Timer()
 		self.creationDate = .now
 	}
 	
@@ -58,7 +58,7 @@ import SwiftUI
 		} else {
 			self._board = GameBoard(rows, cols: cols, words: words)
 		}
-		self.timer = MyTimer(name: words.name)
+		self.timer = Timer()
 		self.creationDate = .now
 	}
 	
@@ -74,7 +74,7 @@ import SwiftUI
 	required init(from decoder: any Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		self._board = try container.decode(GameBoard.self, forKey: .board)
-		self.timer = try container.decode(MyTimer.self, forKey: .timer)
+		self.timer = try container.decode(Timer.self, forKey: .timer)
 		self.badges = try container.decode([Badge].self, forKey: .badges)
 		self.creationDate = try container.decode(Date.self, forKey: .creationDate)
 	}

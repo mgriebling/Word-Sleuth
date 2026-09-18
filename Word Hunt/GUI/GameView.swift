@@ -186,13 +186,13 @@ struct GameView: View {
 						.allowsTightening(true)
 						.lineLimit(1)
 						.frame(width: 130)
-						.foregroundStyle(Color(.systemCyan))
+						.foregroundStyle(Color.secondary)
 				}
 			}
 		}
 		let settingsButton = Button(action: { showSettings = true } ) {
 			Label("Settings", systemImage: "gearshape")
-				.foregroundStyle(Color(.systemCyan))
+				.foregroundStyle(Color.secondary)
 		}
 		let winButton = Button(action: { showAwards = true } ) {
 			Image(systemName: game.badges.isEmpty ? "fireworks" : "medal")
@@ -231,7 +231,7 @@ struct GameView: View {
 
 			}
 			.id(toolbarID)
-			.foregroundStyle(Color(.systemCyan))
+			.foregroundStyle(Color.secondary)
 		}
 		
 		if #available(iOS 26.0, macOS 26.0, *) {
