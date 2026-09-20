@@ -34,7 +34,7 @@ struct GameMenuView: View {
 				ShareLink(item: game.url(name: game.name))
 			}
 			if !isInDetail {
-				FileImportButton(name: "Import Puzzle")
+				GameImportButton(name: "Import Puzzle")
 				Button(action: { showAdvancedCreate = true }) {
 					Label("Create Puzzles (Pro)", systemImage: "square.grid.4x3.fill")
 				}

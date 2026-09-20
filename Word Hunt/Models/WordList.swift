@@ -196,7 +196,6 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 		if let rawData = try? Data(contentsOf: file) {
 			let decoder = JSONDecoder()
 			if let wordList = try? decoder.decode(WordList.self, from: rawData) {
-//				print("Loaded word List: \(wordList.name)")
 				self.init(words: wordList)
 				return
 			} else {
@@ -205,6 +204,22 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 			}
 		}
 		return nil
+	}
+	
+	convenience init(name: String, author: String, from string: String) {
+		self.init()
+		let words = string
+			.trimmingCharacters(in: .whitespacesAndNewlines)
+			.components(separatedBy: .whitespacesAndNewlines
+				.union(.punctuationCharacters))
+			.filter {
+				$0.count > 3 &&					// only use words > 3 letters
+				$0.uppercased() != $0 &&		// ignore abbreviations
+				$0.contains { $0.isLetter }		// ignore words with non-letters
+			}
+			.map { $0.capitalized }
+		let finalWords = removePluralDuplicates(from: Set(words).sorted())
+		self.init(name: name, author: author, words: finalWords)
 	}
 	
 	init(name: String = "Empty", author: String = "Unknown", date: Date = Date(), words: [String]) {
@@ -236,6 +251,38 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	
 	func url(name: String) -> URL {
 		Self.documentDirectory!.appendingPathComponent("\(name).\(Self.fileExt)")
+	}
+	
+	/// Removes words that are plural duplicates from the set of *words*.
+	func removePluralDuplicates(from sortedWords: [String]) -> [String] {
+		// 1. Clean and lowercase the words, sorting by length so singular words appear first
+		var uniqueSingulars = Set<String>()
+		var result: [String] = []
+		
+		for word in sortedWords {
+			var singularForm = word
+			
+			// Check common English plural suffixes and derive the guess at a singular form
+			if word.hasSuffix("ies") && word.count > 3 {
+				// e.g., "babies" -> "baby"
+				singularForm = String(word.dropLast(3)) + "y"
+			} else if word.hasSuffix("es") && word.count > 2 {
+				// e.g., "boxes" -> "box"
+				singularForm = String(word.dropLast(2))
+			} else if word.hasSuffix("s") && word.count > 1 {
+				// e.g., "cats" -> "cat"
+				singularForm = String(word.dropLast(1))
+			}
+			
+			// If neither the singular form nor the word itself has been seen, keep it
+			if !uniqueSingulars.contains(singularForm) && !uniqueSingulars.contains(word) {
+				uniqueSingulars.insert(singularForm)
+				uniqueSingulars.insert(word)
+				result.append(word) // Keeps the original singular word
+			}
+		}
+		
+		return result
 	}
 	
 	/// Saves the word list to a file

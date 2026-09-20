@@ -15,10 +15,12 @@ struct WordsEditor: View {
 	@Environment(\.dismiss) var dismiss
 	
 	@State private var lwords: WordList = WordList()
-	@State private var name: String = ""
+	@State private var name = ""
 	@State private var wordList = [PlacedWord]()
 	@State private var selectedLanguage = Language(rawValue: Locale.current.identifier) ?? .english
-	@State private var editWordList: Bool = false
+	@State private var editWordList = false
+	@State private var useFilter = false
+	@State private var importString = ""
 	
 	var body: some View {
 		NavigationStack {
@@ -26,10 +28,12 @@ struct WordsEditor: View {
 				Section("Word List Name") {
 					TextField("Word List Name", text: $lwords.name)
 						.autocorrectionDisabled(true)
+						.showClearButton($lwords.name)
 				}
 				Section("Author") {
 					TextField("Author", text: $lwords.author)
 						.autocorrectionDisabled(true)
+						.showClearButton($lwords.author)
 				}
 				Section {
 					DatePicker("Date", selection: $lwords.date,
@@ -46,18 +50,46 @@ struct WordsEditor: View {
 						print("Chose: \(selectedLanguage.description)")
 					}
 				}
-				Section(header: Text("Words (\(lwords.words.count)) Tap List to Edit")) {
+				Section(header:
+					VStack(alignment: .leading) {
+						Text("Words (\(lwords.words.count)) *Tap List to Edit*")
+						Text("**Warning: Importing or pasting deletes existing words!**")
+						.font(.caption)
+					}
+				) {
+					HStack {
+						TextImportButton(name: "Import Text", text: $importString)
+
+						PasteButton(payloadType: String.self) { strings in
+							if let firstText = strings.first {
+								importString = firstText
+							}
+						}
+						.buttonBorderShape(.capsule)
+						
+						Button("Filter...") {
+							useFilter.toggle()
+						}
+					}
+					.buttonStyle(.borderedProminent)
+					.onChange(of: importString) {
+						/// process text string to produce a unique array of words
+						withAnimation {
+							lwords = WordList(name: lwords.name, author: lwords.author, from: importString)
+						}
+					}
+					
 					WordView(words: wordList, style: .paragraph)
 						.id(lwords.words)
-						.padding(.vertical, 8)
 						.onTapGesture {
-							if !editWordList {
-								editWordList = true
-							}
+							editWordList.toggle()
 						}
 						.sheet(isPresented: $editWordList) {
 							StringList(title: lwords.name, strings: $lwords.words)
 						}
+				}
+				.sheet(isPresented: $useFilter) {
+					FilterView()
 				}
 				.onChange(of: lwords.words) { oldValue, newValue in
 					// print("Refreshing wordList...")
@@ -102,5 +134,6 @@ struct WordsEditor: View {
 		WordsEditor(words: $words) {
 			// nothing to do
 		}
+		.environment(DataContainer())
 	}
 }

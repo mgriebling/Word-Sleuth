@@ -8,7 +8,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-struct FileImportButton: View {
+struct GameImportButton: View {
 	let name: String
 
 	@Environment(DataContainer.self) private var dataContainer
@@ -38,6 +38,6 @@ struct FileImportButton: View {
 
 
 #Preview {
-	FileImportButton(name: "Import File")
+	GameImportButton(name: "Import File")
 		.environment(DataContainer())
 }

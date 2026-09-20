@@ -47,13 +47,7 @@ struct SettingsView: View {
 					}
 					
 					if creationMode == .custom {
-						HStack {
-							Text("\(internalSettings.gameNumber) ")
-							Slider(value: Binding(
-								get: { Double(internalSettings.gameNumber) },
-								set: { internalSettings.gameNumber = Int($0) }
-							), in: 6...20)
-						}
+						IntSlider(label: "\(internalSettings.gameNumber) ", value: $internalSettings.gameNumber, range: 6...20, minValue: 6, maxValue: 20)
 					}
 			
 					HStack {
@@ -86,28 +80,29 @@ struct SettingsView: View {
 					Toggle("Sorted Across Columns", isOn: $internalSettings.sortAcrossCols)
 				}
 				
-				Section("Timer \(internalSettings.showTimer ? "On" : "Off")", isExpanded: $internalSettings.showTimer) { }
-					.onTapGesture { withAnimation { internalSettings.showTimer.toggle() } }
+				Section("Timer") {
+					Toggle("Show Timer", isOn: $internalSettings.showTimer)
+				}
 				
-				Section("Sound Effects \(internalSettings.soundsOn ? "On" : "Off")", isExpanded: $internalSettings.soundsOn) {
-					HStack {
-						Text("Volume:")
-						Text(internalSettings.soundVolume, format: .percent.precision(.fractionLength(0)))
-						Slider(value: $internalSettings.soundVolume, in: 0.0...1.0) {
-							Text("Sound Volume")
-						} minimumValueLabel: {
-							Image(systemName: "speaker")
-						} maximumValueLabel: {
-							Image(systemName: "speaker.wave.3")
-						} onEditingChanged: { editing in
-							if !editing {
-								play(sound: "success", volume: internalSettings.soundVolume)
+				Section("Sound Effects") {
+					Toggle("Enable Sound Effects", isOn: $internalSettings.soundsOn.animation())
+					if internalSettings.soundsOn {
+						HStack {
+							Text("Volume:")
+							Text(internalSettings.soundVolume, format: .percent.precision(.fractionLength(0)))
+							Slider(value: $internalSettings.soundVolume, in: 0.0...1.0) {
+								Text("Sound Volume")
+							} minimumValueLabel: {
+								Image(systemName: "speaker")
+							} maximumValueLabel: {
+								Image(systemName: "speaker.wave.3")
+							} onEditingChanged: { editing in
+								if !editing {
+									play(sound: "success", volume: internalSettings.soundVolume)
+								}
 							}
 						}
 					}
-				}
-				.onTapGesture {
-					withAnimation { internalSettings.soundsOn.toggle() }
 				}
 				.onChange(of: internalSettings.soundsOn) {
 					if internalSettings.soundsOn {
@@ -115,7 +110,7 @@ struct SettingsView: View {
 					}
 				}
 				
-				Section("\(showGridAppearance ? "Hide" : "Show") Grid Appearance", isExpanded: $showGridAppearance) {
+				Section("Grid Appearance") {
 					Picker("Selection", selection: $internalSettings.highlight) {
 						ForEach(HighLight.allCases) { mode in
 							Image(systemName: mode.image)
@@ -129,7 +124,7 @@ struct SettingsView: View {
 						Text("Font Weight:")
 						Picker("Weight:", selection: $internalSettings.fontStyle) {
 							ForEach(FontStyle.allCases, id:\.self) { level in
-								Text(level.rawValue, format: .number).tag(level)
+								Text(level.rawValue+1, format: .number).tag(level)
 							}
 						}
 						.pickerStyle(.segmented)
