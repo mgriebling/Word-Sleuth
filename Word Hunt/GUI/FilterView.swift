@@ -8,47 +8,46 @@
 import SwiftUI
 
 struct FilterView: View {
+	let wordList: WordList
+	@Binding var filter: Filter
+	
 	// MARK: Data (Function) In
 	@Environment(\.dismiss) var dismiss
 	
 	let wordRange = 3...20
 	let maxWordRange = 50...200
-	
-	@State private var maxWordCount = 100
-	@State private var minWordLength = 4
-	@State private var maxWordLength = 8
-	@State private var filterWords = true
-	
+		
     var body: some View {
 		NavigationStack {
 			Form {
-				Section("Maximum Words (\(maxWordCount))") {
-					IntSlider(label: "", value: $maxWordCount, range: maxWordRange, minValue: maxWordRange.lowerBound, maxValue: maxWordRange.upperBound)
+				Section("Maximum Words (\(filter.maxWordCount))") {
+					IntSlider(label: "", value: $filter.maxWordCount, range: maxWordRange, minValue: maxWordRange.lowerBound, maxValue: maxWordRange.upperBound)
 				}
 				
-				Section("Word Length (\(minWordLength) to \(maxWordLength) letters)") {
-					IntSlider(label: "Min:", value: $minWordLength, range: wordRange, minValue: wordRange.lowerBound, maxValue: maxWordLength)
-					IntSlider(label: "Max:", value: $maxWordLength, range: wordRange, minValue: minWordLength, maxValue: wordRange.upperBound)
+				Section("Word Length (\(filter.minWordLength) to \(filter.maxWordLength) letters)") {
+					IntSlider(label: "Min:", value: $filter.minWordLength, range: wordRange, minValue: wordRange.lowerBound, maxValue: filter.maxWordLength)
+					IntSlider(label: "Max:", value: $filter.maxWordLength, range: wordRange, minValue: filter.minWordLength, maxValue: wordRange.upperBound)
 				}
 				
 				Section("Common Words") {
-					Toggle(isOn: $filterWords) {
+					Toggle(isOn: $filter.filterWords) {
 						Text("Filter common words")
 					}
+					WordView(words: wordList.placedWords, style: .paragraph)
+						.id(wordList.words)
 				}
 			}
 			.navigationBarTitle("Word List Filter")
 			.navigationBarTitleDisplayMode(.inline)
-		}
-		.toolbar {
-			EditToolbar() {
-				// settings = internalSettings
-				dismiss()
+			.toolbar {
+				EditToolbar(okDisabled: true) { dismiss() }
 			}
 		}
     }
 }
 
 #Preview {
-    FilterView()
+	@Previewable @State var filter = Filter()
+	FilterView(wordList: SampleWords.commonWords, filter: $filter)
+		.environment(DataContainer())
 }

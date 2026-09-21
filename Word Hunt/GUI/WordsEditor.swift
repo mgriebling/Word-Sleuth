@@ -20,6 +20,7 @@ struct WordsEditor: View {
 	@State private var selectedLanguage = Language(rawValue: Locale.current.identifier) ?? .english
 	@State private var editWordList = false
 	@State private var useFilter = false
+	@State private var filter = Filter()
 	@State private var importString = ""
 	
 	var body: some View {
@@ -75,7 +76,7 @@ struct WordsEditor: View {
 					.onChange(of: importString) {
 						/// process text string to produce a unique array of words
 						withAnimation {
-							lwords = WordList(name: lwords.name, author: lwords.author, from: importString)
+							lwords = WordList(name: lwords.name, author: lwords.author, from: importString, using: filter)
 						}
 					}
 					
@@ -88,9 +89,6 @@ struct WordsEditor: View {
 							StringList(title: lwords.name, strings: $lwords.words)
 						}
 				}
-				.sheet(isPresented: $useFilter) {
-					FilterView()
-				}
 				.onChange(of: lwords.words) { oldValue, newValue in
 					// print("Refreshing wordList...")
 					wordList = lwords.words.sorted().map { PlacedWord(word: $0) }
@@ -99,6 +97,9 @@ struct WordsEditor: View {
 						words = lwords
 					}
 				}
+			}
+			.sheet(isPresented: $useFilter) {
+				FilterView(wordList: SampleWords.commonWords, filter: $filter)
 			}
 			
 			.navigationTitle("Word List Editor")
@@ -115,7 +116,7 @@ struct WordsEditor: View {
 			if let words {
 				lwords = words
 				selectedLanguage = lwords.language
-				wordList = lwords.words.map { PlacedWord(word: $0) }
+				wordList = lwords.placedWords
 			}
 		}
 	}

@@ -9,8 +9,31 @@ import Foundation
 
 struct SampleWords {
 	
+	static var commonWords: WordList {
+		let language = Locale.preferredLanguages.first ?? "en"
+		if let url = Bundle.main.url(forResource: "common_\(language)", withExtension: "txt") {
+			print(url.absoluteString)
+			if let strings = try? String(contentsOf: url, encoding: .utf8) {
+				print("Using \(language) common word list...")
+				return WordList(name: "Common", author: "", from: strings)
+			}
+		}
+		
+		// use default common English word list
+		print("Using default common word list...")
+		let words = [
+			"About", "All", "Also", "Always", "And", "Any", "Are", "Been", "But",
+			"Can", "Could", "Did", "Else", "For", "From", "Get", "Good", "Got",
+			"Had", "Has", "Have", "Her", "Here", "Him", "His", "How", "Into", "Just",
+			"Know", "Like", "Never", "New", "Now", "Our", "Over", "Said", "See",
+			"She", "Should", "Some", "Still", "That", "The", "Their", "Them", "There",
+			"They", "This", "Too", "Very", "Want", "Was", "Were", "What", "When",
+			"Will", "Would", "You", "Your"
+		]
+		return WordList(name: "Common", author: "", words: words)
+	}
+	
 	static var list: [WordList] { [
-//		WordList(name: "A Test Subject", words: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]),
 		WordList(name: String(localized: LocalizedStringResource("Academic Subjects", table: "WordLists", comment: "L1-Academic Subjects List Header")),
 				 words: [
 					String(localized: LocalizedStringResource("Algebra", table: "WordLists", 		comment: "L1-word  1")),

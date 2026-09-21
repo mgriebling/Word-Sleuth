@@ -23583,7 +23583,8 @@
             "value" : "Може"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Canada" : {
       "comment" : "L17-word 8",

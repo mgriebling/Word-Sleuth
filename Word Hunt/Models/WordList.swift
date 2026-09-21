@@ -52,8 +52,8 @@ struct CellIndex: Equatable, Codable, Hashable, CustomStringConvertible {
 	}
 }
 
-struct PlacedWord: Codable, Identifiable, Hashable {
-	let id: UUID
+public struct PlacedWord: Codable, Identifiable, Hashable {
+	public let id: UUID
 	let word: String
 	private(set) var start: CellIndex
 	private(set) var end: CellIndex
@@ -161,6 +161,13 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	}
 }
 
+public struct Filter {
+	var maxWordCount = 100
+	var minWordLength = 4
+	var maxWordLength = 8
+	var filterWords = true
+}
+
 @Observable public class WordList {
 
 	public var name: String
@@ -173,6 +180,7 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 	public var totalLetters: Int { words.reduce(0) { $1.count + $0	} }
 	public var maxLength: Int { longestWord.count }
 	public var longestWord: String { words.max(by: {$0.count < $1.count} ) ?? "" }
+	public var placedWords: [PlacedWord] { words.map { PlacedWord(word: $0) } }
 	
 	convenience init() {
 		self.init(name: "Empty", author: "Unknown", date: Date(), words: [])
@@ -206,20 +214,22 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 		return nil
 	}
 	
-	convenience init(name: String, author: String, from string: String) {
+	convenience init(name: String, author: String, from string: String, using prefs: Filter? = nil) {
 		self.init()
 		let words = string
 			.trimmingCharacters(in: .whitespacesAndNewlines)
 			.components(separatedBy: .whitespacesAndNewlines
 				.union(.punctuationCharacters))
 			.filter {
-				$0.count > 3 &&					// only use words > 3 letters
+				$0.count > 2 &&					// only use words > 2 letters
 				$0.uppercased() != $0 &&		// ignore abbreviations
 				$0.contains { $0.isLetter }		// ignore words with non-letters
 			}
 			.map { $0.capitalized }
+		let language = Language.getLanguage(from: string)
 		let finalWords = removePluralDuplicates(from: Set(words).sorted())
 		self.init(name: name, author: author, words: finalWords)
+		self.language = language ?? .english
 	}
 	
 	init(name: String = "Empty", author: String = "Unknown", date: Date = Date(), words: [String]) {
