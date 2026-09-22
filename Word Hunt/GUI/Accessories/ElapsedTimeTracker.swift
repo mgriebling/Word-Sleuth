@@ -21,19 +21,18 @@ struct ElapsedTimeTracker: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-//			.task {
-//				// start timer if onAppear didn't activate
-//				try? await Task.sleep(for: .seconds(2))
-//				if game.timer.state == .runningBeforeExit {
-////					print("Task \(game.name) started")
-//					game.timer.handleViewAppearing()
-//				}
-//			}
+			.task {
+				// start timer if onAppear didn't activate
+				try? await Task.sleep(for: .seconds(2))
+				if game.timer.state != .running {
+//					print("Task \(game.name) started")
+					game.timer.handleViewAppearing()
+				}
+			}
             .onAppear {
 				game.timer.handleViewAppearing()
             }
             .onDisappear {
-//				print("Timer: ", game.timer)
 				game.timer.handleViewDisappearing()
             }
 			.onChange(of: game) { oldValue, newValue in

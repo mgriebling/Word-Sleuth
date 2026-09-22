@@ -42,18 +42,13 @@ struct AchievementsView: View {
 	}
 	
 	private var contentStack: some View {
-		VStack(alignment: .leading) {
+		VStack(alignment: .leading, spacing: 0) {
 			let points = settings.player.points
 			let earned = PointDetails(points: points)
-			header("Earned Points: \(points)", points: earned)
-			Text("Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint \(Image(systemName: "lightbulb"))** button use. With each 100 points you earn a new tier.  Compete with friends to see who has the most points!")
+			header("Earned Points: \(points)")
+			Self.tierLevel(points: earned)
+			Text("Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint \(Image(systemName: "lightbulb"))** button use. A new tier, each with three levels, is unlocked every 100 points. Compete with friends to see who has the most points, medallions, and highest tier level!")
 				.font(.caption)
-			
-//			let bestTimes =
-//			[Time(level: 10, interval: 1000, games: 3, words: 50),
-//			 Time(level: 3, interval: 300, games: 5, words: 20),
-//			 Time(level: 1, interval: 500, games: 10, words: 5)]
-			
 			if !settings.player.bestTimes.isEmpty {
 				header("Puzzle Statistics")
 				let s = settings.player.bestTimes
@@ -107,22 +102,30 @@ struct AchievementsView: View {
 		.frame(maxWidth: .infinity)
 	}
 	
-	func header(_ text: String, points: PointDetails? = nil) -> some View {
-		HStack(alignment: .center) {
-			Text(text)
-				.font(.headline.bold())
-				.padding(.top)
-				.padding(.bottom, 3)
-			if let points, points != .empty {
-				VStack {
-					Image(points.image)
-						.resizable()
-						.aspectRatio(contentMode: .fit)
-					Text(points.title)
+	@ViewBuilder
+	static func tierLevel(points: PointDetails) -> some View {
+		if !points.isEmpty {
+			VStack(alignment: .center, spacing: 0) {
+				Text("\(points.title) Level \(points.count)")
+					.font(.title2).bold()
+				HStack(alignment: .top) {
+					ForEach(0..<points.count, id: \.self) { _ in
+						Image(points.image)
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+					}
 				}
-				.frame(width: 100, height: 100)
 			}
+			.frame(maxWidth: .infinity)
+			.frame(height: 100)
 		}
+	}
+	
+	func header(_ text: String) -> some View {
+		Text(text)
+			.font(.headline.bold())
+			.padding(.top)
+			.padding(.bottom, 3)
 	}
 	
 	private var sortedUnlockedBadges: [Badge] {

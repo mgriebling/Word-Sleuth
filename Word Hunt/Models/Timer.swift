@@ -14,12 +14,14 @@ struct Timer: Codable {
 	
 	mutating func start() {
 		guard state != .running else { return }
+		print("Started...")
 		state = .running
 		lastTickDate = Date()
 	}
 	
 	private mutating func update() {
 		guard let lastTick = lastTickDate else { return }
+		print("Updated...")
 		let currentRunDuration = Int(Date().timeIntervalSince(lastTick))
 		self.elapsedTime += currentRunDuration
 	}
@@ -29,6 +31,7 @@ struct Timer: Codable {
 		update()
 		lastTickDate = Date()
 		state = .paused
+		print("Paused...")
 	}
 	
 	mutating func handleViewDisappearing() {

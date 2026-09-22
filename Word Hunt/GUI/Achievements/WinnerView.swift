@@ -71,6 +71,8 @@ struct WinnerView: View {
 				.contentTransition(.numericText())
 				// Triggers the animation when 'points' changes
 				.animation(.bouncy, value: points)
+			let earned = PointDetails(points: points)
+			AchievementsView.tierLevel(points: earned)
 		}
 		.padding(20*scale)
 		.frame(width: width)
@@ -100,8 +102,8 @@ struct WinnerView: View {
 
 #Preview {
 	@Previewable @State var game = Game(size: 15, words: WordList())
-	WinnerView(game: game, width: 270, points: 100, animation: false)
-	WinnerView(game: game, width: 400, points: 10, badges: [Badge(details: .puzzle1), Badge(details: .puzzle3)])
-	WinnerView(game: game, width: 800, points: 1000, badges: [Badge(details: .puzzle100)])
+	WinnerView(game: game, width: 270, points: 300, animation: false)
+	WinnerView(game: game, width: 300, points: 10, badges: [Badge(details: .puzzle1), Badge(details: .puzzle3)])
+	WinnerView(game: game, width: 300, points: 1000, badges: [Badge(details: .puzzle100)])
 }
 

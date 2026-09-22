@@ -31,7 +31,6 @@ struct ElapsedTime: View {
 		let hours = totalSeconds / secondsPerHour
 		let minutes = (totalSeconds % secondsPerHour) / secondsPerMinute
 		let seconds = totalSeconds % secondsPerMinute
-		print("Elapsed time: \(totalSeconds)")
 		if hours > 0 {
 			return String(format: "%d:%02d:%02d", hours, minutes, seconds)
 		} else {

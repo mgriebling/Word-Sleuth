@@ -180,7 +180,7 @@ struct GameCreationView: View {
 		}
 		
 		// generate games in the background
-		Task.detached(priority: .background) {
+		Task.detached(priority: .userInitiated) {
 			var numberOfGames = await self.numberOfGames
 			var sizes = await self.sizes
 			var wordListsToUse = await self.wordListsToUse

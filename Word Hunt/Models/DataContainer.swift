@@ -80,24 +80,16 @@ class DataContainer {
 		for badge in lockedBadges {
 			switch badge.details {
 				case .puzzle1 where finishedGamesCount >= 1,
-						.puzzle3 where finishedGamesCount >= 3 &&
-					gameCount(for: 5...10) >= 1,
-						.puzzle5 where finishedGamesCount >= 5 &&
-					gameCount(for: 6...10) >= 2,
-						.puzzle7 where finishedGamesCount >= 7 &&
-					gameCount(for: 7...10) >= 3,
-						.puzzle10 where finishedGamesCount >= 10 &&
-					gameCount(for: 8...10) >= 4,
-						.puzzle20 where finishedGamesCount >= 20 &&
-					gameCount(for: 9...10) >= 5,
-						.puzzle30 where finishedGamesCount >= 30 &&
-					finishedGames[10] ?? 0 >= 5,
-						.puzzle50 where finishedGamesCount >= 50 &&
-					finishedGames[10] ?? 0 >= 10,
-						.puzzle75 where finishedGamesCount >= 75 &&
-					finishedGames[10] ?? 0 >= 20,
-						.puzzle100 where finishedGamesCount >= 100 &&
-					finishedGames[10] ?? 0 >= 30 && lockedBadges.count == 1:
+					 .puzzle3 where finishedGamesCount >= 3 && gameCount(for: 5...10) >= 1,
+					 .puzzle5 where finishedGamesCount >= 5 && gameCount(for: 6...10) >= 2,
+					 .puzzle7 where finishedGamesCount >= 7 && gameCount(for: 7...10) >= 3,
+					 .puzzle10 where finishedGamesCount >= 10 && gameCount(for: 8...10) >= 4,
+					 .puzzle20 where finishedGamesCount >= 20 && gameCount(for: 9...10) >= 5,
+					 .puzzle30 where finishedGamesCount >= 30 && finishedGames[10] ?? 0 >= 5,
+					 .puzzle50 where finishedGamesCount >= 50 && finishedGames[10] ?? 0 >= 10,
+					 .puzzle75 where finishedGamesCount >= 75 && finishedGames[10] ?? 0 >= 20,
+					 .puzzle100 where finishedGamesCount >= 100 && finishedGames[10] ?? 0 >= 30
+						&& lockedBadges.count == 1:
 					newlyUnlocked.append(badge)
 					print("Unlocked \(badge.details.title)")
 				default:
