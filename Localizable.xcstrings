@@ -2,88 +2,217 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
-    },
-    "**Warning: Importing or pasting deletes existing words!**" : {
-
-    },
-    "%@ Grid Appearance" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Raster-Aussehen"
+            "value" : ""
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Apariencia de la cuadrícula"
+            "value" : ""
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Apparence de la grille"
+            "value" : ""
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ ग्रिड उपस्थिति"
+            "value" : ""
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Aspetto della griglia"
+            "value" : ""
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Raster Uiterlijk"
+            "value" : ""
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Wygląd siatki"
+            "value" : ""
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Aparência da Grade"
+            "value" : ""
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Внешний вид сетки"
+            "value" : ""
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Izgara Görünümü"
+            "value" : ""
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Зовнішній вигляд сітки"
+            "value" : ""
+          }
+        }
+      }
+    },
+    "**Warning: Importing or pasting deletes existing words!**" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Warnung: Beim Importieren oder Einfeten werden vorhandene Wörter gelöscht! **"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Advertencia: ¡Importar o pegar elimina las palabras existentes! **"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Avertissement : L'importation ou le collage supprime les mots existants ! **"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**चेतावनी: आयात करना या चिपकाना मौजूदा शब्दों को हटा देता है! **"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Attenzione: l'importazione o l'incollaggio elimina le parole esistenti! **"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Waarschuwing: Importeren of plakken verwijdert bestaande woorden! **"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Ostrzeżenie: Importowanie lub wklejanie usuwa istniejące słowa! **"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Aviso: Importar ou colar exclui palavras existentes! **"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Предупреждение: Импорт или вставка удаляет существующие слова! **"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Uyarı: İçe aktarma veya yapıştırma mevcut kelimeleri siler! **"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Попередження: Імпорт або вставка видаляє існуючі слова! **"
           }
         }
       }
     },
     "%@ Level %lld" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ Stufe %2$lld"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@ Level %2$lld"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ Nivel %2$lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ Niveau %2$lld"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ स्तर %2$lld"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ Livello %2$lld"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ Niveau %2$lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ Poziom %2$lld"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ Nível %2$lld"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ Уровень %2$lld"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ Seviye %2$lld"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ Рівень %2$lld"
           }
         }
       }
@@ -306,10 +435,7 @@
     },
     "%lld" : {
       "comment" : "A label that shows the minimum value of a slider. The value is the lower bound of the range.",
-      "isCommentAutoGenerated" : true
-    },
-    "%lld " : {
-      "extractionState" : "stale",
+      "isCommentAutoGenerated" : true,
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1231,79 +1357,6 @@
         }
       }
     },
-    "5 Stars" : {
-      "comment" : "The name of the badge when the user has completed 5 puzzles.",
-      "extractionState" : "stale",
-      "isCommentAutoGenerated" : true,
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 Sterne"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 estrellas"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 étoiles"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 सितारे"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 stelle"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 sterren"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 Gwiazdek"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 Estrelas"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 звезд"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 Yıldız"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 зірок"
-          }
-        }
-      }
-    },
     "A Hat Trick" : {
       "comment" : "The title of a badge that is unlocked when the user has completed 3 puzzles.",
       "isCommentAutoGenerated" : true,
@@ -1948,11 +2001,147 @@
     },
     "Amethyst Tier" : {
       "comment" : "Tier of a gem when the user has 800-899 points.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amethyst-Stufe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de amatista"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau d'améthyste"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अमेथिस्ट टियर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello di ametista"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amethist Niveau"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warstwa ametystowa"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camada Ametista"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аметист Ярус"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ametist Kademesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аметистовий Ярус"
+          }
+        }
+      }
     },
     "Aquamarine Tier" : {
       "comment" : "Tier of a point when the user has 400-499 points.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aquamarin-Stufe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de aguamarina"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau aigue-marine"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एक्वामरीन टियर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello acquamarina"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aquamarijn Niveau"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poziom akwamarynu"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nível de água-marinha"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аквамариновый уровень"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akuamarin Kademesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аквамариновий Ярус"
+          }
+        }
+      }
     },
     "Author" : {
       "comment" : "A field for the author of a word list.",
@@ -2172,7 +2361,75 @@
     },
     "Blue Diamond Tier" : {
       "comment" : "The tier of a point when the user has 1000 or more points.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blauer Diamant-Stufe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de diamante azul"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau de diamant bleu"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ब्लू डायमंड टियर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello di diamante blu"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blauwe Diamant Tier"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poziom Blue Diamond"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camada de Diamante Azul"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уровень Blue Diamond"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mavi Elmas Kademe"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рівень блакитного діаманта"
+          }
+        }
+      }
     },
     "Cancel" : {
       "comment" : "A button that cancels a confirmation dialog.",
@@ -2390,7 +2647,75 @@
     },
     "Citrine Tier" : {
       "comment" : "The name of the Citrine Tier.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Citrin-Stufe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de citrino"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau de citrine"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिट्रीन टियर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello di citrino"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Citrien Niveau"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poziom cytrynowy"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camada de citrino"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цитрин Уровень"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sitrin Kademesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цитрин"
+          }
+        }
+      }
     },
     "Color Fill" : {
       "comment" : "Letter grid outline style with only random color fills.",
@@ -2465,15 +2790,78 @@
     },
     "Common Words" : {
       "comment" : "A section of the filter view that shows common words.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Häufige Wörter"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palabras comunes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mots Communs"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सामान्य शब्द"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parole Comuni"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veelvoorkomende woorden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popularne słowa"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palavras comuns"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Общие Слова"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yaygın Kelimeler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поширені Слова"
+          }
+        }
+      }
     },
     "Complete three puzzles to earn this badge. Earlier solved puzzles count as well. At least one should be level five or higher." : {
       "comment" : "Badge description for \"Puzzle 3\" badge.",
-      "isCommentAutoGenerated" : true
-    },
-    "Complete three puzzles with to earn this badge. Earlier solved puzzles count as well. At least one should be level five or higher." : {
-      "comment" : "Badge description for the badge with the ID `puzzle3`.",
-      "extractionState" : "stale",
       "isCommentAutoGenerated" : true,
       "localizations" : {
         "de" : {
@@ -2485,7 +2873,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Completa tres rompecabezas para ganar esta insignia. Los rompecabezas resueltos anteriormente también cuentan. Al menos uno debe ser de nivel cinco o superior."
+            "value" : "Completa tres rompecabezas para obtener esta insignia. Los rompecabezas resueltos anteriormente también cuentan. Al menos uno debe ser de nivel cinco o superior."
           }
         },
         "fr" : {
@@ -2539,7 +2927,7 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Завершіть три головоломки, щоб заробити цей значок. Раніше розгадані головоломки також мають значення. Принаймні один повинен бути на п'ятому рівні або вище."
+            "value" : "Виконайте три головоломки, щоб заробити цей значок. Раніше розгадані головоломки також мають значення. Принаймні один повинен бути на п'ятому рівні або вище."
           }
         }
       }
@@ -3478,7 +3866,75 @@
     },
     "Diamond Tier" : {
       "comment" : "Tier of a diamond point.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diamant-Stufe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de diamante"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau de diamant"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डायमंड टियर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello di diamante"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diamantlaag"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diamentowa warstwa"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nível de Diamante"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Алмазный уровень"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elmas Kademesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Алмазний Ярус"
+          }
+        }
+      }
     },
     "Discard %lld Puzzles" : {
       "comment" : "A confirmation dialog that lets the user delete all their saved puzzles.",
@@ -3997,77 +4453,71 @@
       }
     },
     "Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint %@** button use. A new tier, each with three levels, is unlocked every 100 points. Compete with friends to see who has the most points, medallions, and highest tier level!" : {
-
-    },
-    "Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint %@** button use. Compete with friends to see who has the most points!" : {
-      "comment" : "A description of the game's point system. The argument is the “lightbulb” symbol.",
-      "extractionState" : "stale",
-      "isCommentAutoGenerated" : true,
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sammeln Sie Punkte für jedes abgeschlossene Rätsel mit einem Punkt für jedes Wort. Fünf Punkte gehen für jede **Tipp %@** Taste verloren. Messen Sie sich mit Freunden, um zu sehen, wer die meisten Punkte hat!"
+            "value" : "Sammeln Sie Punkte für jedes abgeschlossene Rätsel mit einem Punkt für jedes Wort. Fünf Punkte gehen für jede **Hin-Hin-%@**-Taste verloren. Alle 100 Punkte wird eine neue Stufe mit jeweils drei Stufen freigeschaltet. Messen Sie sich mit Freunden, um zu sehen, wer die meisten Punkte, Medaillons und die höchste Stufe hat!"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gana puntos por cada rompecabezas completado con un punto por cada palabra. Se pierden cinco puntos por cada **pista %@** uso del botón. ¡Compite con amigos para ver quién tiene más puntos!"
+            "value" : "Gana puntos por cada rompecabezas completado con un punto por cada palabra. Se pierden cinco puntos por cada **pista %@** uso del botón. Un nuevo nivel, cada uno con tres niveles, se desbloquea cada 100 puntos. ¡Compite con amigos para ver quién tiene más puntos, medallones y nivel más alto!"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gagnez des points pour chaque puzzle terminé avec un point pour chaque mot. Cinq points sont perdus pour chaque utilisation du bouton **indice %@**. Affrontez vos amis pour voir qui a le plus de points !"
+            "value" : "Gagnez des points pour chaque puzzle terminé avec un point pour chaque mot. Cinq points sont perdus pour chaque utilisation du bouton **indice %@**. Un nouveau niveau, chacun avec trois niveaux, est débloqué tous les 100 points. Affrontez vos amis pour voir qui a le plus de points, de médaillons et de niveau supérieur !"
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "प्रत्येक शब्द के लिए एक अंक के साथ प्रत्येक पूर्ण पहेली के लिए अंक अर्जित करें। प्रत्येक **संकेत %@** बटन उपयोग के लिए पांच अंक खो जाते हैं। यह देखने के लिए दोस्तों के साथ प्रतिस्पर्धा करें कि किसके पास सबसे अधिक अंक हैं!"
+            "value" : "प्रत्येक शब्द के लिए एक अंक के साथ प्रत्येक पूर्ण पहेली के लिए अंक अर्जित करें। प्रत्येक **संकेत %@** बटन उपयोग के लिए पांच अंक खो जाते हैं। एक नया स्तर, प्रत्येक तीन स्तरों के साथ, हर 100 अंक में अनलॉक किया जाता है। यह देखने के लिए दोस्तों के साथ प्रतिस्पर्धा करें कि किसके पास सबसे अधिक अंक, पदक और उच्चतम स्तर है!"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Guadagna punti per ogni puzzle completato con un punto per ogni parola. Si perdono cinque punti per ogni utilizzo del pulsante **suggerimento %@**. Competi con gli amici per vedere chi ha più punti!"
+            "value" : "Guadagna punti per ogni puzzle completato con un punto per ogni parola. Si perdono cinque punti per ogni utilizzo del pulsante **suggerimento %@**. Un nuovo livello, ciascuno con tre livelli, viene sbloccato ogni 100 punti. Competi con gli amici per vedere chi ha il maggior numero di punti, medaglioni e livello più alto!"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verdien punten voor elke voltooide puzzel met één punt voor elk woord. Vijf punten gaan verloren voor elk gebruik van de **hint %@**-knop. Neem het op tegen vrienden om te zien wie de meeste punten heeft!"
+            "value" : "Verdien punten voor elke voltooide puzzel met één punt voor elk woord. Vijf punten gaan verloren voor elk gebruik van de **hint %@**-knop. Een nieuw niveau, elk met drie niveaus, wordt elke 100 punten ontgrendeld. Neem het op tegen vrienden om te zien wie de meeste punten, medaillons en het hoogste niveau heeft!"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zdobywaj punkty za każdą ukończoną zagadkę z jednym punktem za każde słowo. Pięć punktów jest straconych za każde użycie przycisku **wskazówka %@**. Rywalizuj ze znajomymi, aby zobaczyć, kto ma najwięcej punktów!"
+            "value" : "Zdobywaj punkty za każdą ukończoną zagadkę z jednym punktem za każde słowo. Pięć punktów jest straconych za każde użycie przycisku **wskazówka %@**. Nowy poziom, każdy z trzema poziomami, jest odblokowany co 100 punktów. Rywalizuj ze znajomymi, aby zobaczyć, kto ma najwięcej punktów, medalionów i najwyższy poziom!"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ganhe pontos para cada quebra-cabeça concluído com um ponto para cada palavra. Cinco pontos são perdidos para cada uso do botão **dica %@**. Competir com amigos para ver quem tem mais pontos!"
+            "value" : "Ganhe pontos para cada quebra-cabeça concluído com um ponto para cada palavra. Cinco pontos são perdidos para cada uso do botão **dica %@**. Um novo nível, cada um com três níveis, é desbloqueado a cada 100 pontos. Competir com amigos para ver quem tem mais pontos, medalhões e nível mais alto!"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Зарабатывайте очки за каждую завершенную головоломку с одним баллом за каждое слово. Пять баллов теряются за каждое использование кнопки **подскака %@**. Соревнуйтесь с друзьями, чтобы увидеть, у кого больше всего очков!"
+            "value" : "Зарабатывайте очки за каждую завершенную головоломку с одним баллом за каждое слово. Пять баллов теряются за каждое использование кнопки **подскака %@**. Новый уровень, каждый из которых имеет три уровня, открывается каждые 100 очков. Соревнуйтесь с друзьями, чтобы увидеть, у кого больше всего очков, медальонов и самый высокий уровень!"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tamamlanan her bulmaca için her kelime için bir puanla puan kazanın. Her **ipucu %@** düğme kullanımı için beş puan kaybolur. Kimin en çok puana sahip olduğunu görmek için arkadaşlarınızla yarışın!"
+            "value" : "Tamamlanan her bulmaca için her kelime için bir puanla puan kazanın. Her **ipucu %@** düğme kullanımı için beş puan kaybolur. Her biri üç seviyeden oluşan yeni bir kademe, her 100 puanda bir açılır. Kimin en çok puana, madalyaya ve en yüksek kademe seviyesine sahip olduğunu görmek için arkadaşlarınızla yarışın!"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Заробляйте бали за кожну завершену головоломку з одним балом за кожне слово. П'ять балів втрачається за кожне використання кнопки **підказка %@**. Змагайтеся з друзями, щоб побачити, хто має найбільше очок!"
+            "value" : "Заробляйте бали за кожну завершену головоломку з одним балом за кожне слово. П'ять балів втрачається за кожне використання кнопки **підказка %@**. Новий рівень, кожен з яких має три рівні, розблоковується кожні 100 очок. Змагайтеся з друзями, щоб побачити, хто має найбільше очок, медальйонів та найвищий рівень!"
           }
         }
       }
@@ -4217,10 +4667,144 @@
       }
     },
     "Emerald Tier" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smaragd-Stufe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel Esmeralda"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau d'émeraude"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पन्ना स्तर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello di smeraldo"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smaragd Niveau"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poziom Szmaragdowy"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camada Esmeralda"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изумрудный уровень"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zümrüt Kademe"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Смарагдовий рівень"
+          }
+        }
+      }
     },
     "Enable Sound Effects" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soundeffekte aktivieren"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Habilitar efectos de sonido"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activer les effets sonores"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ध्वनि प्रभाव सक्षम करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abilita effetti sonori"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geluidseffecten inschakelen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Włącz efekty dźwiękowe"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ativar Efeitos Sonoros"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Включить звуковые эффекты"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ses Efektlerini Etkinleştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкнути Звукові Ефекти"
+          }
+        }
+      }
     },
     "Every journey begins with a single step. Congratulations — you’re on your way!" : {
       "comment" : "A congratulatory message for the first badge.",
@@ -4511,11 +5095,147 @@
     },
     "Filter common words" : {
       "comment" : "A toggle to filter common words from the list.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemeinsame Wörter filtern"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrar palabras comunes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrer les mots courants"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सामान्य शब्दों को फ़िल्टर करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtra le parole comuni"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter veelvoorkomende woorden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtruj typowe słowa"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrar palavras comuns"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фильтровать общие слова"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yaygın kelimeleri filtrele"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фільтрувати поширені слова"
+          }
+        }
+      }
     },
     "Filter..." : {
       "comment" : "A button that filters words in a list.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtern..."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro..."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtre..."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़िल्टर..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro..."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter..."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtr..."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro..."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фильтр..."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtre..."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фільтр..."
+          }
+        }
+      }
     },
     "Finding a word in a word search puzzle is like finding a needle in a haystack — but one that you know is there, just waiting to be discovered." : {
       "comment" : "A description of a puzzle with a level of 7.",
@@ -4591,7 +5311,75 @@
     },
     "Five Stars" : {
       "comment" : "The title of the badge for the puzzle 5 case.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fünf Sterne"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cinco estrellas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cinq étoiles"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पांच सितारे"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cinque stelle"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vijf sterren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pięć gwiazdek"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cinco Estrelas"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пять звезд"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beş Yıldız"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "П'ять зірок"
+          }
+        }
+      }
     },
     "Font Weight:" : {
       "comment" : "Picker to select the weight of a font for the grid letters.",
@@ -4887,7 +5675,74 @@
       }
     },
     "Grid Appearance" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raster-Aussehen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apariencia de la cuadrícula"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparence de la grille"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ग्रिड उपस्थिति"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aspetto della griglia"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raster Uiterlijk"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wygląd siatki"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aparência da grade"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Внешний вид сетки"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izgara Görünümü"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зовнішній вигляд сітки"
+          }
+        }
+      }
     },
     "Highest Level First" : {
       "comment" : "Title of a puzzle order option when sorting by level in increasing order.",
@@ -5910,7 +6765,75 @@
     },
     "Maximum Words (%lld)" : {
       "comment" : "A section of the filter view that lets the user set the maximum number of words to show.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maximale Wörter (%lld)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Máximo de palabras (%lld)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maximum de mots (%lld)"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अधिकतम शब्द (%lld)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parole massime (%lld)"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maximale woorden (%lld)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maksymalna liczba słów (%lld)"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palavras Máximas (%lld)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Максимальное количество слов (%lld)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maksimum Kelimeler (%lld)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Максимальна кількість слів (%lld)"
+          }
+        }
+      }
     },
     "Missing %lld: %@" : {
       "comment" : "A caption that lists the words that are missing from the game board.",
@@ -6915,7 +7838,75 @@
     },
     "Pearl Tier" : {
       "comment" : "Tier of a pearl point.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perlenstufe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de perla"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau de perle"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पर्ल टियर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello di perla"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parellaag"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perłowy poziom"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camada Pérola"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жемчужный уровень"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İnci Kademesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перловий рівень"
+          }
+        }
+      }
     },
     "Perfect 10" : {
       "comment" : "The title of the badge when the user has completed 10 puzzles.",
@@ -7913,11 +8904,147 @@
     },
     "Ruby Tier" : {
       "comment" : "Tier of a gem when the user has 1000-1999 points.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rubin-Stufe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de rubí"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau rubis"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रूबी टियर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello Rubino"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Robijn Laag"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poziom rubinowy"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camada Ruby"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рубиновый уровень"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakut Kademesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рубіновий рівень"
+          }
+        }
+      }
     },
     "Sapphire Tier" : {
       "comment" : "The tier of a sapphire.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saphir-Stufe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de zafiro"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau de saphir"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नीलम स्तर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello di zaffiro"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saffierlaag"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warstwa Sapphire"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camada de safira"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сапфировый уровень"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Safir Katmanı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сапфіровий рівень"
+          }
+        }
+      }
     },
     "Savant" : {
       "comment" : "The name of the badge for the puzzle 50 case.",
@@ -8558,7 +9685,74 @@
       }
     },
     "Show Timer" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timer anzeigen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar temporizador"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher la minuterie"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "टाइमर दिखाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra timer"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timer tonen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czas pokazu"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar Temporizador"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Таймер шоу"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamanlayıcıyı Göster"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Таймер шоу"
+          }
+        }
+      }
     },
     "Size:" : {
       "localizations" : {
@@ -8781,6 +9975,66 @@
             "state" : "translated",
             "value" : "Lösen"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resolviendo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Résoudre"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हल करना"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Risolvere"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oplossen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozwiązywanie"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resolvendo"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Решение"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çözme"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вирішення"
+          }
         }
       }
     },
@@ -8927,75 +10181,71 @@
       }
     },
     "Sound Effects" : {
-
-    },
-    "Sound Effects %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Soundeffekte %@"
+            "value" : "Soundeffekte"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Efectos de sonido %@"
+            "value" : "Efectos sonoros"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Effets sonores %@"
+            "value" : "Effets sonores"
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ध्वनि प्रभाव %@"
+            "value" : "ध्वनि प्रभाव"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Effetti sonori %@"
+            "value" : "Effetti sonori"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Geluidseffecten %@"
+            "value" : "Geluidseffecten"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Efekty dźwiękowe %@"
+            "value" : "Efekty dźwiękowe"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Efeitos Sonoros %@"
+            "value" : "Efeitos sonoros"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Звуковые эффекты %@"
+            "value" : "Шумовые эффекты"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ses Efektleri %@"
+            "value" : "Ses Efektleri"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Звукові ефекти %@"
+            "value" : "Звукові ефекти"
           }
         }
       }
@@ -9571,82 +10821,146 @@
       }
     },
     "Timer" : {
-
-    },
-    "Timer %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Timer %@"
+            "value" : "Timer"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Temporizador %@"
+            "value" : "Cronómetro"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Minuterie %@"
+            "value" : "Minuterie"
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "टाइमर %@"
+            "value" : "टाइमर"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Timer %@"
+            "value" : "Timer"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Timer %@"
+            "value" : "Timer"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zegar %@"
+            "value" : "Timer"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Temporizador %@"
+            "value" : "Temporizador"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Таймер %@"
+            "value" : "Таймер"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zamanlayıcı %@"
+            "value" : "Zamanlayıcı"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Таймер %@"
+            "value" : "Таймер"
           }
         }
       }
     },
     "Topaz Tier" : {
       "comment" : "Title for the topaz tier.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Topas-Stufe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nivel de topacio"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niveau de topaze"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पुखराज स्तर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livello Topazio"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Topaas Niveau"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poziom Topaz"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nível Topázio"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уровень Топаза"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Topaz Kademesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рівень Топаз"
+          }
+        }
+      }
     },
     "Touch %@ at the top right to get started." : {
       "comment" : "A description of the content of the \"No puzzles created yet!\" view. The argument is the “plus” symbol.",
@@ -10370,10 +11684,76 @@
       "comment" : "A slider that lets the user select the minimum and maximum word length.",
       "isCommentAutoGenerated" : true,
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wortlänge (%1$lld bis %2$lld Buchstaben)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Word Length (%1$lld to %2$lld letters)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longitud de la palabra (%1$lld a %2$lld letras)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longueur du mot (%1$lld à %2$lld lettres)"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द की लंबाई (%1$lld से %2$lld अक्षर)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lunghezza della parola (da %1$lld a %2$lld lettere)"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordlengte (%1$lld tot %2$lld letters)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Długość słowa (%1$lld do %2$lld liter)"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprimento da Palavra (%1$lld a %2$lld letras)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Длина слова (%1$lld до %2$lld букв)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kelime Uzunluğu (%1$lld ila %2$lld harfleri)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Довжина слова (%1$lld до %2$lld букв)"
           }
         }
       }
@@ -10524,7 +11904,75 @@
     },
     "Word List Filter" : {
       "comment" : "The title of the filter view.",
-      "isCommentAutoGenerated" : true
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wortlistenfilter"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro de lista de palabras"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtre de liste de mots"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द सूची फ़िल्टर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro elenco di parole"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woordenlijstfilter"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtr listy słów"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtro da Lista de Palavras"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фильтр списка слов"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kelime Listesi Filtresi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фільтр списку слів"
+          }
+        }
+      }
     },
     "Word List Name" : {
       "comment" : "A section for the name of the word list.",
@@ -11096,17 +12544,72 @@
     },
     "Words (%lld) *Tap List to Edit*" : {
       "comment" : "A section that displays a list",
-      "isCommentAutoGenerated" : true
-    },
-    "Words (%lld) Tap List to Edit" : {
-      "comment" : "A section that displays the list of words in the word list.",
-      "extractionState" : "stale",
       "isCommentAutoGenerated" : true,
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wörter (%lld) Tippen Sie auf die Liste, um sie zu bearbeiten"
+            "value" : "Wörter (%lld) *Tippen Sie auf die Liste, um sie zu bearbeiten*"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palabras (%lld) *Toque la lista para editar*"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mots (%lld) *Appuyez sur la liste pour modifier*"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द (%lld) *संपादित करने के लिए सूची पर टैप करें*"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parole (%lld) *Tocca Elenco per modificare*"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woorden (%lld) *Tik op de lijst om te bewerken*"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Słowa (%lld) *Stuknij Listę, aby edytować*"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palavras (%lld) *Toque na Lista para Editar*"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слова (%lld) *Нажмите на список для редактирования*"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kelimeler (%lld) *Düzenlemek için Listeye dokunun*"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слова (%lld) *Торкніться списку, щоб відредагувати*"
           }
         }
       }
@@ -11125,6 +12628,66 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Words: (Average/Maximum %1$.1f/%2$lld letters)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palabras: (Promedio/Máximo %1$.1f/%2$lld letras)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mots : (Moise/maximum %1$.1f/%2$lld lettres)"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द: (औसत/अधिकतम %1$.1f/%2$lld अक्षर)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parole: (Media/Massimo %1$.1f/%2$lld lettere)"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Woorden: (Gemende/Maximale %1$.1f/%2$lld letters)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Słowa: (średnia/maksymalna %1$.1f/%2$lld litery)"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palavras: (Média/Máximo %1$.1f/%2$lld letras)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слова: (Среднее/Максимум %1$.1f/%2$lld буквы)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kelimeler: (Ortalama/Maksimum %1$.1f/%2$lld harfler)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слова: (Середні/Максимум %1$.1f/%2$lld букви)"
           }
         }
       }
