@@ -31,27 +31,62 @@ online connections or added subscriptions. Difficulty level is adjustable.
 Here are screenshots of typical puzzle grids:
 
 Word Sleuth on iPhone:
+
 ![Word Sleuth (iPhone)](img/iPhoneAir-light.png#gh-light-mode-only) 
 ![Word Sleuth (iPhone)](img/iPhoneAir-dark.png#gh-dark-mode-only) 
 
 Word Sleuth on iPad:
+
 ![Word Sleuth (iPad)](img/iPad-light.png#gh-light-mode-only) 
 ![Word Sleuth (iPad)](img/iPad-dark.png#gh-dark-mode-only) 
 
 Word Sleuth on Mac:
+
 ![Word Sleuth (Mac)](img/Mac-light.png#gh-light-mode-only) 
 ![Word Sleuth (Mac)](img/Mac-dark.png#gh-dark-mode-only) 
 
 ## Usage
-The
+On an iPhone or iPad slide your finger (on the Mac slide the mouse) over a grouping of letters either left/right, up/down, or on a diagonal that make up one of the words on the accommpanying word list. Keep selecting words until all the words have been crossed out. Words only count if they are on the word list. A pleasant beep and a highlight change will indicate a successful word match. A boink means try again. You can adjust your preferences to allow selection either in forward or reverse word letter order.
+If you get stuck, you can use the **hint** 💡 button to temporarily highlight one of the words on the letter grid. You will lose one point for each hint.
 
-### Example
-The [
+## Scoring
+You earn one point for each word. If you complete a set number (1, 3, 5, 7, 10, etc.) of games, you will be awarded one of a set of medallions. Reaching multiples of 100 points, grants you membership to one of ten gem tiers, each having three achievement levels.
 
-### Advanced configuration
-`MT
+## User Settings
+Selecting **Settings** in the rightmost **...** menu opens the *Settings* view shown below.
+
+![Settings](img/Settings-light.png#gh-light-mode-only) 
+![Settings](img/Settings-dark.png#gh-dark-mode-only) 
+
+### Puzzle Creation Defaults
+The *Number* selections set the default number of puzzles that are created with each + button touch (at the top-right of the puzzles list). Touching the *...* option, opens up a slider that allows extended game numbers from six to 20. The *Level* options set the puzzle difficulty level (level one is a 4 x 4 grid and level ten is a 20(12) x 20 grid) for each of the created puzzles. *Note: Due to limited horizontal size on an iPhone, the maximum grid size is 12 x 20.*
+
+### Word Selection
+The *Word Selection* switch enables reverse word selection by dragging from the end of a word to the beginning letter. Forward word selection is always available no matter the position of this switch.
+
+### Word List
+The word list position selection shows the puzzle-related words either to the left or the right of the letter grid (with iPhone/iPad in landscape). In a portrait orientation, the words always appear at the top of the letter grid.
+The *Sorted Across Columns* sets whether the word list is sorted across for each row from the left-most column to the right-most column. When this switch is off, the words are sorted from the top to bottom of the left-most column, and then on to subsequent columns.
+
+### Timer
+A puzzle timer counts up in seconds as long as a particular puzzle is active. If you wish, this timer can be hidden by turning this switch off. These times are accumulated and used to prepare statistics on your completed puzzles in your *Achievements* view (see below).
+
+### Sound Effects
+Small tones indicate either a successful word selection or a failed selection. A triumphant fanfare is played when you complete a puzzle. If sound effects are enabled, the volume on the tones can be adjusted. Tones are always played in the background so, if you like listening to songs while solving puzzles, your song is not interrupted.
+
+![Settings](img/Settings2-light.png#gh-light-mode-only) 
+![Settings](img/Settings2-dark.png#gh-dark-mode-only) 
+
+### Grid Appearance
+There are four options for highlighting selected words in the letter grid:
+1) Using an outline
+2) Fill the background
+3) Use both an outline and background fill
+4) Use a random multi-colored background fill
+
+The weight or boldness of the grid font can be adjusted from Ultra Light to Bold in seven steps.
+The active highlighting colors can be chosen while the word is being dragged and the final state when a correct word has been found. Then the final background color can be chosen once a word is out of play (for grid options 2 and 3).
 
 ## License
-`SwiftMath` is available under the BSL 1.1  license. See the [LICENSE](./LICENSE)
-file for more info.
+`SwiftMath` is available under the BSL 1.1 license. See the [LICENSE](./LICENSE) file for more info.
 
