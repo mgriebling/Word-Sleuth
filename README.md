@@ -6,7 +6,7 @@ a choice of 25K built-in common words, or your own categorized word lists.
 
 *Word Sleuth* is intended for the serious puzzle enthusiast who doesn't want
 bells and whistles, just professional-quality puzzles ranging from the easy-to-solve
-to newspaper-quality and better. New puzzles can be created on-the-fly without any
+to newspaper-quality and better. New puzzles and word lists can be created on-the-fly without any
 online connections or added subscriptions. Difficulty level is adjustable.
 
 ## Features
