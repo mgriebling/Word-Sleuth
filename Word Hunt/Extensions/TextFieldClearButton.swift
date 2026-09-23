@@ -1,6 +1,6 @@
 //
 //  TextFieldClearButton.swift
-//  Word Hunt
+//  Word Sleuth
 //
 //  From swiftprogramming.com on 15.07.2026.
 //

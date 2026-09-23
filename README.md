@@ -1,5 +1,4 @@
 # Word Sleuth
-
 *Word Sleuth* represents the latest generation of word search
 games giving you the ability to not only solve the puzzles but also to create 
 new puzzles using either the more than 50 curated word categories, 
@@ -11,8 +10,7 @@ to newspaper-quality and better. New puzzles can be created on-the-fly without a
 online connections or added subscriptions. Difficulty level is adjustable.
 
 ## Features
-
-* Unlimited puzzles sized from 5x5 to 20x20(iPad/Mac) / 20x12(iPhone) letter grids.
+* Unlimited puzzles sized from 5x5 to 20x20 (iPad/Mac) / 20x12 (iPhone) letter grids.
 * Created puzzles are randomly generated so no two are ever the same — even from the same word list.
 * Puzzle-based timers encourage you to improve your skill level by tracking and reporting on your progress.
 * Awards are granted for significant milestones as you progress.
@@ -32,37 +30,19 @@ online connections or added subscriptions. Difficulty level is adjustable.
 ## Examples
 Here are screenshots of typical puzzle grids:
 
-![Quadratic Formula](img/quadratic-light.png#gh-light-mode-only) 
-![Quadratic Formula](img/quadratic-dark.png#gh-dark-mode-only) 
+![Word Sleuth (iPhone)](img/iPhoneAir-light.png#gh-light-mode-only) 
+![Word Sleuth (iPhone)](img/iPhoneAir-dark.png#gh-dark-mode-only) 
 
 ## Usage
-
-The library provides a class `MTMathUILabel` which is a `UIView` that
-supports rendering math equations. To display an equation simply create
-an `MTMathUILabel` as follows:
+The
 
 ### Example
-
-The [SwiftMathDemo](https://github.com/mgriebling/SwiftMathDemo) is a SwiftUI version
-of the Objective-C demo included in `iosMath` that uses `SwiftMath` as a Swift package dependency.
+The [
 
 ### Advanced configuration
-
-`MTMathUILabel` supports some advanced configuration options:
-
-##### Math mode
-
-You can change the mode of the `MTMathUILabel` between Display Mode
-(equivalent to `$$` or `\[` in LaTeX) and Text Mode (equivalent to `$`
-or `\(` in LaTeX). The default style is Display. To switch to Text
-simply:
-
-## Future Enhancements
-
-Note this is not a complete implementation of LaTeX math mode. There are
+`MT
 
 ## License
-
-`SwiftMath` is available under the MIT license. See the [LICENSE](./LICENSE)
+`SwiftMath` is available under the BSL 1.1  license. See the [LICENSE](./LICENSE)
 file for more info.
 

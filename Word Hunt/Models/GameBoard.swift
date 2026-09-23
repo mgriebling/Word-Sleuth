@@ -1,8 +1,10 @@
 //
 //  Board.swift
-//  Word Hunt
+//  Word Sleuth
 //
 //  Created by Mike Griebling on 2022-11-09.
+//  Copyright © 2026 Computer Inspirations. All rights reserved.
+//  Source code licensed according to the BSL 1.1 (see LICENSE file).
 //
 
 import Foundation

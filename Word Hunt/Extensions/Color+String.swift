@@ -1,6 +1,6 @@
 //
 //  Color+String.swift
-//  CodeBreaker
+//  Word Sleuth
 //
 //  Created by ChatGPT on 5/12/25.
 //  Prompt: write an extension to iOS Color that converts it back and forth from a string

@@ -1,9 +1,11 @@
 //
 //  WinnerView.swift
-//  Word Hunt
+//  Word Sleuth
 //
 //  Original by Google AI on 06.07.2026.
 //  Modified by Michael Griebling on 06.10.2026
+//  Copyright © 2026 Computer Inspirations. All rights reserved.
+//  Source code licensed according to the BSL 1.1 (see LICENSE file).
 //
 
 import SwiftUI

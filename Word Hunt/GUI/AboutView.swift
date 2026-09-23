@@ -1,8 +1,10 @@
 //
 //  AboutView.swift
-//  Word Hunt
+//  Word Sleuth
 //
 //  Created by Michael Griebling on 11.07.2026.
+//  Copyright © 2026 Computer Inspirations. All rights reserved.
+//  Source code licensed according to the BSL 1.1 (see LICENSE file).
 //
 
 import SwiftUI
@@ -69,10 +71,20 @@ struct AboutView: View {
 		}
 		
 		if let copyright = Bundle.main.copyright {
-			Text(copyright)
+			Text(copyright + "\nAll rights reserved.")
 				.font(.footnote)
 				.foregroundColor(.gray)
 				.padding(.bottom)
+			Text(
+			"""
+			Zena Design™ is a wholly owned subsiduary of 
+			Computer Inspirations™. [Source code](https://github.com/mgriebling/Word-Sleuth) is licensed 
+			according to the BSL 1.1 (see [LICENSE](https://github.com/mgriebling/Word-Sleuth/blob/main/LICENSE) file).
+			"""
+			)
+			.font(.footnote)
+			.foregroundColor(.gray)
+			.padding(.bottom)
 		}
 		Spacer()
 	}

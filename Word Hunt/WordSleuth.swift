@@ -1,14 +1,16 @@
 //
-//  WordHunt.swift
-//  Word Hunt
+//  WordSleuth.swift
+//  Word Sleuth
 //
 //  Created by Mike Griebling on 2022-11-06.
+//  Copyright © 2026 Computer Inspirations. All rights reserved.
+//  Source code licensed according to the BSL 1.1 (see LICENSE file).
 //
 
 import SwiftUI
 
 @main
-struct WordHunt: App {
+struct WordSleuth: App {
 	let dataContainer = DataContainer()
 	
 	@Environment(\.openURL) private var openURL

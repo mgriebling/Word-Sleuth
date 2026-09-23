@@ -1,8 +1,10 @@
 //
 //  ElapsedTime.swift
-//  CodeBreaker
+//  Word Sleuth
 //
 //  Created by CS193p Instructor on 4/28/25.
+//  Copyright © 2026 Computer Inspirations. All rights reserved.
+//  Source code licensed according to the BSL 1.1 (see LICENSE file).
 //
 
 import SwiftUI

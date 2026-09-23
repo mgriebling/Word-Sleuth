@@ -1,8 +1,10 @@
 //
-//  AwardView.swift
-//  Word Hunt
+//  UnlockedAwardView.swift
+//  Word Sleuth
 //
 //  Created by Michael Griebling on 13.07.2026.
+//  Copyright © 2026 Computer Inspirations. All rights reserved.
+//  Source code licensed according to the BSL 1.1 (see LICENSE file).
 //
 
 import SwiftUI

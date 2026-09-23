@@ -1,3 +1,12 @@
+//
+//  MainAppView.swift
+//  Word Sleuth
+//
+//  Created by Michael Griebling on 21.08.2026.
+//  Copyright © 2026 Computer Inspirations. All rights reserved.
+//  Source code licensed according to the BSL 1.1 (see LICENSE file).
+//
+
 import SwiftUI
 
 struct MainAppView: View {
