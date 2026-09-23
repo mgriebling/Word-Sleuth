@@ -30,8 +30,13 @@ online connections or added subscriptions. Difficulty level is adjustable.
 ## Examples
 Here are screenshots of typical puzzle grids:
 
+Word Sleuth on iPhone:
 ![Word Sleuth (iPhone)](img/iPhoneAir-light.png#gh-light-mode-only) 
 ![Word Sleuth (iPhone)](img/iPhoneAir-dark.png#gh-dark-mode-only) 
+
+Word Sleuth on iPad:
+![Word Sleuth (iPhone)](img/iPad-light.png#gh-light-mode-only) 
+![Word Sleuth (iPhone)](img/iPad-dark.png#gh-dark-mode-only) 
 
 ## Usage
 The
