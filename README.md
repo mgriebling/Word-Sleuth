@@ -35,8 +35,12 @@ Word Sleuth on iPhone:
 ![Word Sleuth (iPhone)](img/iPhoneAir-dark.png#gh-dark-mode-only) 
 
 Word Sleuth on iPad:
-![Word Sleuth (iPhone)](img/iPad-light.png#gh-light-mode-only) 
-![Word Sleuth (iPhone)](img/iPad-dark.png#gh-dark-mode-only) 
+![Word Sleuth (iPad)](img/iPad-light.png#gh-light-mode-only) 
+![Word Sleuth (iPad)](img/iPad-dark.png#gh-dark-mode-only) 
+
+Word Sleuth on Mac:
+![Word Sleuth (Mac)](img/Mac-light.png#gh-light-mode-only) 
+![Word Sleuth (Mac)](img/Mac-dark.png#gh-dark-mode-only) 
 
 ## Usage
 The
