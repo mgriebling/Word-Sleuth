@@ -6545,16 +6545,10 @@
             "value" : "Man"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Man."
-          }
-        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hombre"
+            "value" : "Man"
           }
         },
         "fr" : {
@@ -6565,50 +6559,50 @@
         },
         "hi" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "पुरुष"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Uomo"
+            "value" : "Man"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Man."
+            "value" : "Man"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Człowiek"
+            "value" : "Man"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cara."
+            "value" : "Man"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Человек"
+            "value" : "Man"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Adam"
+            "value" : "Man"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Людина."
+            "value" : "Man"
           }
         }
       }

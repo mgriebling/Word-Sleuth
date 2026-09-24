@@ -1,13 +1,7 @@
 # Word Sleuth
-*Word Sleuth* represents the latest generation of word search
-games giving you the ability to not only solve the puzzles but also to create 
-new puzzles using either the more than 50 curated word categories, 
-a choice of 25K built-in common words, or your own categorized word lists.
+*Word Sleuth* represents the latest generation of word search games giving you the ability to not only solve the puzzles but also to create new puzzles using either the more than 50 curated word categories, a choice of 25K built-in common words, or your own categorized word lists.
 
-*Word Sleuth* is intended for the serious puzzle enthusiast who doesn't want
-bells and whistles, just professional-quality puzzles ranging from the easy-to-solve
-to newspaper-quality and better. New puzzles and word lists can be created on-the-fly without any
-online connections or added subscriptions. Difficulty level is adjustable.
+*Word Sleuth* is intended for the serious puzzle enthusiast who doesn't want bells and whistles, just professional-quality puzzles ranging from the easy-to-solve to newspaper-quality and better. New puzzles and word lists can be created on-the-fly without any online connections or added subscriptions. Difficulty level is adjustable.
 
 ## Features
 * Unlimited puzzles sized from 4x4 to 20x20 (iPad/Mac) / 20x12 (iPhone) letter grids.
@@ -87,7 +81,7 @@ There are four options for highlighting selected words in the letter grid:
 The weight or boldness of the grid font can be adjusted from Ultra Light to Bold in seven steps.
 The active highlighting colors can be chosen for the word that is being selected and the final state when a correct word has been found. Then the final background color can be chosen once a word is out of play (for grid options 2 and 3).
 
-### Puzzle List
+## Puzzles List
 Touching the *back arrow* ![Backarrow](img/Backarrow-light.png#gh-light-mode-only) ![Backarrow](img/Backarrow-dark.png#gh-dark-mode-only) icon on an iPhone or the *list view* ![Listview](img/ListView-light.png#gh-light-mode-only) ![Listview](img/ListView-dark.png#gh-dark-mode-only) icon on iPads and Macs displays the list of puzzles that are currently available. Along the top of the view is a selection between displaying the puzzles list or the words list. To the right is the puzzle/word creation button *(+)*.  To its right is the *...* menu. 
 
 ![Puzzle List](img/PuzzleList-light.png#gh-light-mode-only) 
@@ -102,6 +96,22 @@ Below the puzzle/word selection is a filter selection giving the ability of disp
 
 The puzzle list items, below, show the puzzle name, creation date, word matches (if applicable), elapsed time, difficulty level, and the words list used. Touching the *Words* or associated arrow will expand and/or hide the word list. If a puzzle has been solved, either a fireworks or a medallion appear to the right of the puzzle details. Tapping the fireworks or medallion displays your achievements view.
 
+### Advanced Game Creation
+Normally the *+* button at the top of the puzzle list creates new puzzles based on the user preferences setting. However, if more control is needed over the content of a puzzle, the *Create Puzzles (Pro)* menu option provides this control (see below).
+
+![Creation](img/Creation-light.png#gh-light-mode-only) 
+![Creation](img/Creation-dark.png#gh-dark-mode-only) 
+
+As in the preferences, the number of puzzles you create and the puzzle difficulty level are selectable. In this case, however, if the difficulty is set to *Man*, additional configurations are possible.
+1) The puzzle size (difficulty) can be explicity set via a menu selection.
+2) The word list to use can either use the default random word list selection or a set of specific word lists that you select manually. Note: Random, in regard to word list selection, means that word lists are chosen by random, not that the words are randomly chosen. Several of the word lists, however, such as *Random 4-7* are composed of a set of randomly-selected words ranging in size from four to seven letters (in this case).
+To generate the puzzles, touch the *check-mark* icon or cancel the puzzle creation by touching the *x* icon. The puzzle creation is a background activity so, while the first puzzle is displayed and you can begin working on the solution, puzzles continue to be created in the background. If more puzzles are being generated than the chosen sizes or word lists, the existing choices are repeated. New puzzles are ordered in the list based on your ordering choice.
+
+## Words List
+Touching the *Words* at the top of the list displays all available word lists (see below).
+
+
+
 ## License
-`SwiftMath` is available under the BSL 1.1 license. See the [LICENSE](./LICENSE) file for more info.
+*Word Sleuth* source code is available under the BSL 1.1 license. See the [LICENSE](./LICENSE) file for more info.
 
