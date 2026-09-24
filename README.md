@@ -10,7 +10,7 @@ to newspaper-quality and better. New puzzles and word lists can be created on-th
 online connections or added subscriptions. Difficulty level is adjustable.
 
 ## Features
-* Unlimited puzzles sized from 5x5 to 20x20 (iPad/Mac) / 20x12 (iPhone) letter grids.
+* Unlimited puzzles sized from 4x4 to 20x20 (iPad/Mac) / 20x12 (iPhone) letter grids.
 * Created puzzles are randomly generated so no two are ever the same — even from the same word list.
 * Puzzle-based timers encourage you to improve your skill level by tracking and reporting on your progress.
 * Awards are granted for significant milestones as you progress.
@@ -85,7 +85,22 @@ There are four options for highlighting selected words in the letter grid:
 4) Use a random multi-colored background fill
 
 The weight or boldness of the grid font can be adjusted from Ultra Light to Bold in seven steps.
-The active highlighting colors can be chosen while the word is being dragged and the final state when a correct word has been found. Then the final background color can be chosen once a word is out of play (for grid options 2 and 3).
+The active highlighting colors can be chosen for the word that is being selected and the final state when a correct word has been found. Then the final background color can be chosen once a word is out of play (for grid options 2 and 3).
+
+### Puzzle List
+Touching the *back arrow* ![Backarrow](img/Backarrow-light.png#gh-light-mode-only) ![Backarrow](img/Backarrow-dark.png#gh-dark-mode-only) icon on an iPhone or the *list view* ![Listview](img/ListView-light.png#gh-light-mode-only) ![Listview](img/ListView-dark.png#gh-dark-mode-only) icon on iPads and Macs displays the list of puzzles that are currently available. Along the top of the view is a selection between displaying the puzzles list or the words list. To the right is the puzzle/word creation button *(+)*.  To its right is the *...* menu. 
+
+![Puzzle List](img/PuzzleList-light.png#gh-light-mode-only) 
+![Puzzle List](img/PuzzleList-dark.png#gh-dark-mode-only) 
+
+The list menu (see below) allows setting user preferences; sharing the puzzle (in the detail view); importing a puzzle from a file; creating advanced option puzzles; sorting the puzzle list by name, creation date, or difficulty level; showing your awards and points; displaying more information about *Word Sleuth*; and, finally, deleting all the puzzles.
+
+![Menu](img/Menu-light.png#gh-light-mode-only) 
+![Menu](img/Menu-dark.png#gh-dark-mode-only) 
+
+Below the puzzle/word selection is a filter selection giving the ability of displaying either *All*, *This Week*'s, *Solving*, or *New* puzzles. To the right is an award display button, which either shows the completed puzzles with awards or hides them.
+
+The puzzle list items, below, show the puzzle name, creation date, word matches (if applicable), elapsed time, difficulty level, and the words list used. Touching the *Words* or associated arrow will expand and/or hide the word list. If a puzzle has been solved, either a fireworks or a medallion appear to the right of the puzzle details. Tapping the fireworks or medallion displays your achievements view.
 
 ## License
 `SwiftMath` is available under the BSL 1.1 license. See the [LICENSE](./LICENSE) file for more info.

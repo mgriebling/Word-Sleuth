@@ -103,3 +103,8 @@ struct GameMenuView: View {
 		}
 	}
 }
+
+#Preview {
+	GameMenuView(game: Game(level: .four, words: WordList()), isInDetail: false)
+		.environment(DataContainer())
+}
