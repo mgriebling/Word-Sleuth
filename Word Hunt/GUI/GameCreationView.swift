@@ -13,7 +13,7 @@ struct GameCreationView: View {
 	@Environment(DataContainer.self) private var dataContainer
 	
 	@State private var numberOfGames = 1
-	@State private var wordListOption = 1
+	@State private var wordListOption = 2
 	@State private var size = -2
 	@State private var sizes = [Int]()
 	@State private var minSize = Int(SettingsType.maxColRange.lowerBound)
@@ -61,9 +61,10 @@ struct GameCreationView: View {
 	
 				Section("Puzzle Level") {
 					Picker("Level:", selection: $level) {
-						ForEach(Level.allCases, id:\.self) { level in
+						ForEach(Level.allCases.dropFirst(), id:\.self) { level in
 							Text(level.localized).tag(level)
 						}
+						Image(systemName: "ellipsis").tag(Level.manual)
 					}
 					.pickerStyle(.segmented)
 					.onChange(of: level) { prev, newValue in
@@ -84,7 +85,7 @@ struct GameCreationView: View {
 						}
 					}
 					.onAppear {
-						size = prevLevel.size
+						size = showSize ? -2 : prevLevel.size
 					}
 					if size == -1 {
 						Stepper("Min: " + puzzleSize(size:minSize), value: $minSize, in: SettingsType.maxRowRange)
@@ -98,27 +99,28 @@ struct GameCreationView: View {
 						.onChange(of: sizeToAdd) {
 							if let size = sizeToAdd {
 								sizes.append(size)
+								sizeToAdd = nil
 							}
 						}
-						List(sizes, id: \.self) { size in
-							Text(puzzleSize(size:size))
+						List {
+							ForEach(sizes, id: \.self) { size in
+								Text(puzzleSize(size:size))
+							}
+							.onDelete { removeItems in
+								sizes.remove(atOffsets: removeItems)
+							}
 						}
 					}
 				}
-				.onTapGesture {
-					showSize.toggle()
-					if showSize { level = .manual }
-					else { level = prevLevel }
-				}
 		
-				Section("Word List to Use", isExpanded: $showWordList) {
+				Section("Word List to Use") {
 					Picker("Word List to Use:", selection: $wordListOption) {
 						Text("Random").tag(1)
 						Text("Selected").tag(2)
 					}
 					.pickerStyle(.segmented)
 					if wordListOption == 2 {
-						Picker("Choose:", selection: $wordList) {
+						Picker("Choose Word List:", selection: $wordList) {
 							ForEach(sortedWordList) { list in
 								Text(list.name).tag(list)
 							}
@@ -126,17 +128,19 @@ struct GameCreationView: View {
 						.onChange(of: wordList) {
 							if let words = wordList {
 								wordListsToUse.append(words)
+								wordList = nil // clear selection
 							}
 						}
 						
-						List(wordListsToUse, id: \.self) { list in
-							Text(list.name)
+						List {
+							ForEach(wordListsToUse, id: \.self) { list in
+								Text(list.name).tag(list)
+							}
+							.onDelete { removeItems in
+								wordListsToUse.remove(atOffsets: removeItems)
+							}
 						}
 					}
-				}
-				.onTapGesture {
-					showWordList.toggle()
-					if !showWordList { wordListOption = 1 }
 				}
 			}
 			.toolbar {

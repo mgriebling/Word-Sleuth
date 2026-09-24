@@ -94,7 +94,7 @@ The list menu (see below) allows setting user preferences; sharing the puzzle (i
 
 Below the puzzle/word selection is a filter selection giving the ability of displaying either *All*, *This Week*'s, *Solving*, or *New* puzzles. To the right is an award display button, which either shows the completed puzzles with awards or hides them.
 
-The puzzle list items, below, show the puzzle name, creation date, word matches (if applicable), elapsed time, difficulty level, and the words list used. Touching the *Words* or associated arrow will expand and/or hide the word list. If a puzzle has been solved, either a fireworks or a medallion appear to the right of the puzzle details. Tapping the fireworks or medallion displays your achievements view.
+The puzzle list items display the puzzle name, creation date, word matches (if applicable), elapsed time, difficulty level, and the words list used. Touching the *Words* or associated arrow will expand and/or hide the word list. If a puzzle has been solved, either a fireworks or a medallion appear to the right of the puzzle details. Tapping the fireworks or medallion displays your achievements view.
 
 ### Advanced Game Creation
 Normally the *+* button at the top of the puzzle list creates new puzzles based on the user preferences setting. However, if more control is needed over the content of a puzzle, the *Create Puzzles (Pro)* menu option provides this control (see below).
@@ -102,15 +102,19 @@ Normally the *+* button at the top of the puzzle list creates new puzzles based 
 ![Creation](img/Creation-light.png#gh-light-mode-only) 
 ![Creation](img/Creation-dark.png#gh-dark-mode-only) 
 
-As in the preferences, the number of puzzles you create and the puzzle difficulty level are selectable. In this case, however, if the difficulty is set to *Man*, additional configurations are possible.
-1) The puzzle size (difficulty) can be explicity set via a menu selection.
-2) The word list to use can either use the default random word list selection or a set of specific word lists that you select manually. Note: Random, in regard to word list selection, means that word lists are chosen by random, not that the words are randomly chosen. Several of the word lists, however, such as *Random 4-7* are composed of a set of randomly-selected words ranging in size from four to seven letters (in this case).
-To generate the puzzles, touch the *check-mark* icon or cancel the puzzle creation by touching the *x* icon. The puzzle creation is a background activity so, while the first puzzle is displayed and you can begin working on the solution, puzzles continue to be created in the background. If more puzzles are being generated than the chosen sizes or word lists, the existing choices are repeated. New puzzles are ordered in the list based on your ordering choice.
+As in the preferences, the number of puzzles you create and the puzzle difficulty level are selectable. In this case, however, if the difficulty is set to *...*, additional configurations are possible.
+1) The puzzle size (difficulty) can be explicity set via a menu selection. There are several options here as well: random sizes, selecting a set of sizes, choosing a range of sizes, or selecting just one size. When defining multiple puzzle sizes, each size can be deleted by swiping left on the size.
+2) The word list selector can either use the random word list selection or a set of specific word lists that you select manually. Individual word list choices can be deleted by swiping left on the list name. Note: Random, in regard to word list selection, means that word lists are chosen at random, not that the words are randomly chosen. However, several of the word lists such as *Random 4-7* are composed of a set of randomly-selected words ranging in size from four to seven letters (in this case).
+To generate the puzzles, touch the *check-mark* icon or cancel the puzzle creation by touching the *X* icon. Puzzle creation is a background activity so, while the first puzzle is displayed and you begin working on the solution, puzzles continue to be created in the background. If more puzzles are being generated than the chosen sizes or word lists, the existing choices are repeated. New puzzles are ordered in the list based on your ordering choice.
 
 ## Words List
-Touching the *Words* at the top of the list displays all available word lists (see below).
+Touching the *Words* at the top of the list displays all available word lists (see below). Each word list summary contains the number of words and language, the average and maximum length of the words, and a summary of the few lines of the word list.
 
+![WordList](img/WordList-light.png#gh-light-mode-only) 
+![WordList](img/WordList-dark.png#gh-dark-mode-only) 
 
+### Word List Editor
+Tapping on any word list opens up an editor view allowing the change of the active word list. Note: Any changes in the word list editor are immediately reflected in the actual word list. When making changes, it is usually best to rename the word list to avoid confusion with the original list. The original list is always regenerated during list updates. If you want to generate a new word list, tap on the *+* button at the top right of the word list view. This is a better option to avoid accidentally overwriting an existing list. Note: changing a word list *does not* modify any puzzles that may be based on the words in that list.
 
 ## License
 *Word Sleuth* source code is available under the BSL 1.1 license. See the [LICENSE](./LICENSE) file for more info.
