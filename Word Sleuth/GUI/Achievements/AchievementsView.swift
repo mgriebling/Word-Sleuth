@@ -96,6 +96,7 @@ struct AchievementsView: View {
 				header("Locked Badges")
 				ForEach(sortedLockedBadges) { badge in
 					LockedAwardView(badge: badge)
+						.padding(.vertical, 5)
 				}
 			}
 		}

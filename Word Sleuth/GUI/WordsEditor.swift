@@ -58,10 +58,11 @@ struct WordsEditor: View {
 						Text("Words (\(lwords.words.count)) *Tap List to Edit*")
 						Text("**Warning: Importing or pasting deletes existing words!**")
 						.font(.caption)
+						.foregroundStyle(.red)
 					}
 				) {
 					HStack {
-						TextImportButton(name: "Import Text", text: $importString)
+						TextImportButton(name: "Import", text: $importString)
 
 						PasteButton(payloadType: String.self) { strings in
 							if let firstText = strings.first {
@@ -111,6 +112,12 @@ struct WordsEditor: View {
 			.toolbar {
 				if onDone != nil {
 					EditToolbar() { done() }
+				}
+				ToolbarItem {
+					ShareLink(item: lwords.url(name: lwords.name))
+						.onAppear {
+							lwords.save(to: lwords.name)
+						}
 				}
 			}
 		}

@@ -10,7 +10,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-struct GameImportButton: View {
+struct WordListImportButton: View {
 	let name: String
 
 	@Environment(DataContainer.self) private var dataContainer
@@ -27,9 +27,9 @@ struct GameImportButton: View {
 		) { result in
 			switch result {
 				case .success(let file):
-					print("Imported puzzle: \(file.absoluteString)")
-					if let game = Game(from: file) {
-						dataContainer.games.insert(game, at: 0)
+					print("Imported Word List: \(file.absoluteString)")
+					if let wordList = WordList(from: file) {
+						dataContainer.wordLists.insert(wordList, at: 0)
 					}
 				case .failure(let error):
 					print("Import failed: \(error.localizedDescription)")

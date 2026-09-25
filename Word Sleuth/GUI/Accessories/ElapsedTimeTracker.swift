@@ -26,25 +26,31 @@ struct ElapsedTimeTracker: ViewModifier {
 			.task {
 				// start timer if onAppear didn't activate
 				try? await Task.sleep(for: .seconds(2))
-				if game.timer.state != .running {
+				if !game.isOver, game.timer.state != .running {
 //					print("Task \(game.name) started")
 					game.timer.handleViewAppearing()
 				}
 			}
             .onAppear {
-				game.timer.handleViewAppearing()
+				if !game.isOver {
+					game.timer.handleViewAppearing()
+				}
             }
             .onDisappear {
 				game.timer.handleViewDisappearing()
             }
 			.onChange(of: game) { oldValue, newValue in
-				newValue.timer.handleViewAppearing()
+				if !newValue.isOver {
+					newValue.timer.handleViewAppearing()
+				}
 				oldValue.timer.handleViewDisappearing()
 			}
             .onChange(of: scenePhase) {
 				switch scenePhase {
 					case .active:
-						game.timer.handleViewAppearing()
+						if !game.isOver {
+							game.timer.handleViewAppearing()
+						}
 					case .background:
 						game.timer.handleViewDisappearing()
 					default:

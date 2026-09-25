@@ -15,9 +15,6 @@ struct WordListView: View {
 	
 	@Environment(DataContainer.self) private var dataContainer
 	
-	// @State private var wordListToEdit: WordList? = WordList()
-	// @State private var showWordListEditor: Bool = false
-	
 	var body: some View {
 		let colors = [Color.red.opacity(0.5), Color.red.opacity(0.2)]
 		
@@ -52,25 +49,26 @@ struct WordListView: View {
 		.listStyle(.plain)
 		.toolbar {
 			addButton
+			WordListImportButton(name: "Words")
 		}
 	}
 		
-	func editButton(for wordList: WordList) -> some View {
-		Button("Edit", systemImage: "pencil") {
-//			if let selection {
-//				wordListToEdit = selection.copy()
-//				showWordListEditor.toggle()
-//			}
-		}
-	}
+//	func editButton(for wordList: WordList) -> some View {
+//		Button("Edit", systemImage: "pencil") {
+////			if let selection {
+////				wordListToEdit = selection.copy()
+////				showWordListEditor.toggle()
+////			}
+//		}
+//	}
 	
-	func deleteButton(for wordList: WordList) -> some View {
-		Button("Delete", systemImage: "minus.circle", role: .destructive) {
-			withAnimation {
-				dataContainer.wordLists.removeAll { $0 == wordList }
-			}
-		}
-	}
+//	func deleteButton(for wordList: WordList) -> some View {
+//		Button("Delete", systemImage: "minus.circle", role: .destructive) {
+//			withAnimation {
+//				dataContainer.wordLists.removeAll { $0 == wordList }
+//			}
+//		}
+//	}
 	
 	func uniqueName(for name: String) -> String {
 		var number = 0
@@ -95,19 +93,7 @@ struct WordListView: View {
 					dataContainer.wordLists.insert(selection, at: 0)
 				}
 			}
-//			showWordListEditor = true
 		}
-//		.sheet(isPresented: $showWordListEditor) {
-//			WordsEditor(words: $wordListToEdit) {
-//				if let index = dataContainer.wordLists.firstIndex(of: wordListToEdit!) {
-//					// word list already exists
-//					dataContainer.wordLists[index] = wordListToEdit!
-//				} else {
-//					// add new word list
-//					dataContainer.wordLists.insert(wordListToEdit!, at: 0)
-//				}
-//			}
-//		}
 	}
 }
 

@@ -178,7 +178,7 @@ public struct Filter {
 	public var date: Date
 	public var words: [String]
 	
-	public var averageLength: Double { Double(totalLetters) / Double(words.count) }
+	public var averageLength: Double { Double(totalLetters) / max(1, Double(words.count)) }
 	public var totalLetters: Int { words.reduce(0) { $1.count + $0	} }
 	public var maxLength: Int { longestWord.count }
 	public var longestWord: String { words.max(by: {$0.count < $1.count} ) ?? "" }

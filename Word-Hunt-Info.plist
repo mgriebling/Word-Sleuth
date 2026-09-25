@@ -16,6 +16,18 @@
 				<string>org.zenadesign.wordsleuth.wordsleuth</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Word Sleuth Word List</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.zenadesign.wordsleuth.wordlist</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleGetInfoString</key>
 	<string></string>
@@ -42,6 +54,26 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>wordSleuth</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public</string>
+				<string>data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Word Sleuth Word List</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>org.zenadesign.wordsleuth.wordlist</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>wlist</string>
 				</array>
 			</dict>
 		</dict>

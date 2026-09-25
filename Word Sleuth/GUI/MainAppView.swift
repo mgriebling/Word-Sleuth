@@ -94,7 +94,6 @@ struct MainAppView: View {
 	
 	private func initialize(size: CGSize) {
 		setLandscape(size: size)
-//		WordList.makeWordListCode(for: SampleWordLists.all)
 		withAnimation {
 			selectedPuzzle = dataContainer.games.first
 			selectedWords = dataContainer.wordLists.first

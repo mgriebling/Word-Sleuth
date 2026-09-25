@@ -158,29 +158,29 @@ class DataContainer {
 		print("Adding sample words...")
 		self.wordLists = SampleWords.list
 		
-		let randomLists = WordList.loadWordLists()
-		if !randomLists.isEmpty {
-			self.wordLists.append(contentsOf: randomLists)
-			return
-		}
+//		let randomLists = WordList.loadWordLists()
+//		if !randomLists.isEmpty {
+//			self.wordLists.append(contentsOf: randomLists)
+//			return
+//		}
 		
 		// 2. Offload the disk read and decoding to the background (Task.detached or Task)
 		// This ensures the main UI thread remains completely untouched and fluid.
-		let list = await Task.detached(priority: .background) { () -> [WordList] in
-			// This block runs entirely on a background thread
-			var list: [WordList] = []
-			for i in 3...5 {
-				for j in 7...9 {
-					print("Building random \(i)-\(j)...")
-					let words = WordList(name: "Random \(i)-\(j)", wordRange: i...j, totalWords: 100)
-					words.save(to: words.name)
-					list.append(words)
-				}
-			}
-			return list
-		}.value
+//		let list = await Task.detached(priority: .background) { () -> [WordList] in
+//			// This block runs entirely on a background thread
+//			var list: [WordList] = []
+//			for i in 3...5 {
+//				for j in 7...9 {
+//					print("Building random \(i)-\(j)...")
+//					let words = WordList(name: "Random \(i)-\(j)", wordRange: i...j, totalWords: 100)
+//					words.save(to: words.name)
+//					list.append(words)
+//				}
+//			}
+//			return list
+//		}.value
 		
-		self.wordLists.append(contentsOf: list)
+//		self.wordLists.append(contentsOf: list)
 		print("Successfully loaded without hanging!")
 	}
 }
