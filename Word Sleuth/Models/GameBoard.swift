@@ -48,11 +48,20 @@ struct GameBoard: Codable, Equatable, Hashable {
 		board = []
 		missingWords = []
 		
+		// check if random words are needed
+		switch words.owner {
+			case .random(let size, let range):
+				let list = WordList.generateWords(with: range, total: size)
+				self.words = WordList(name: words.name, author: words.author, words: list)
+				self.words.language = words.language
+			default: break
+		}
+		
 		// iterate to find the best board placement
-		if words.words.isEmpty {
+		if self.words.words.isEmpty {
 			randomFillBoard()
 		} else {
-			bestPlacement(words.words)
+			bestPlacement(self.words.words)
 			
 			// fill gaps with random letters
 			for i in 0..<rcsize {

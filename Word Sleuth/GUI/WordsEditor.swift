@@ -11,12 +11,11 @@ import SwiftUI
 
 struct WordsEditor: View {
 	@Binding var words: WordList?
-	var onDone: (() -> Void)?
 	
-	// MARK: Data (Function) In
-	@Environment(\.dismiss) var dismiss
+//	// MARK: Data (Function) In
+//	@Environment(\.dismiss) var dismiss
 	
-	@State private var lwords: WordList = WordList()
+	@State private var lwords = WordList()
 	@State private var name = ""
 	@State private var wordList = [PlacedWord]()
 	@State private var selectedLanguage = Language(rawValue: Locale.current.identifier) ?? .english
@@ -43,14 +42,10 @@ struct WordsEditor: View {
 							   displayedComponents: [.date])
 				}
 				Section {
-					Picker("Language", selection: $selectedLanguage) {
-						ForEach(Language.allCases, id: \.self) {
-							Text($0.description.capitalized)
+					Picker("Language", selection: $lwords.language) {
+						ForEach(Language.allCases, id: \.self) { language in
+							Text(language.description.capitalized).tag(language)
 						}
-					}
-					.onSubmit {
-						lwords.language = selectedLanguage
-						print("Chose: \(selectedLanguage.description)")
 					}
 				}
 				Section(header:
@@ -95,23 +90,21 @@ struct WordsEditor: View {
 				.onChange(of: lwords.words) { oldValue, newValue in
 					// print("Refreshing wordList...")
 					wordList = lwords.words.sorted().map { PlacedWord(word: $0) }
-					if onDone == nil {
-						// update passed to word list directly
-						words = lwords
-					}
 				}
 			}
 			.sheet(isPresented: $useFilter) {
 				FilterView(wordList: SampleWords.commonWords, filter: $filter)
 			}
-			
 			.navigationTitle("Word List Editor")
 #if os(iOS)
 			.navigationBarTitleDisplayMode(.inline)
 #endif
 			.toolbar {
-				if onDone != nil {
-					EditToolbar() { done() }
+				ToolbarItem(placement: .confirmationAction) {
+					Button(action: done) {
+						Image(systemName: "checkmark")
+					}
+					.disabled(words == lwords)
 				}
 				ToolbarItem {
 					ShareLink(item: lwords.url(name: lwords.name))
@@ -123,7 +116,7 @@ struct WordsEditor: View {
 		}
 		.onAppear {
 			if let words {
-				lwords = words
+				lwords = words.copy()
 				selectedLanguage = lwords.language
 				wordList = lwords.placedWords
 			}
@@ -132,18 +125,19 @@ struct WordsEditor: View {
 	
 	func done() {
 		lwords.words = wordList.map(\.word)
-		words = lwords
-		onDone?()
-		dismiss()
+		if lwords.name == words?.name {
+			lwords.name += " copy"
+		}
+		words = lwords  // just point to the new words
+		lwords.owner = .user
+		lwords.save(to: lwords.name)  // user words are saved
 	}
 }
 
 #Preview {
 	@Previewable @State var words = SampleWords.list.randomElement()
 	NavigationStack {
-		WordsEditor(words: $words) {
-			// nothing to do
-		}
+		WordsEditor(words: $words)
 		.environment(DataContainer())
 	}
 }

@@ -170,6 +170,12 @@ public struct Filter {
 	var filterWords = true
 }
 
+public enum OwnerType: Codable, Equatable {
+	case system /// owned by the system
+	case random(size: Int, range: ClosedRange<Int>) /// random number generation
+	case user   /// created by the user
+}
+
 @Observable public class WordList {
 
 	public var name: String
@@ -177,6 +183,7 @@ public struct Filter {
 	public var author: String
 	public var date: Date
 	public var words: [String]
+	public var owner: OwnerType = .system
 	
 	public var averageLength: Double { Double(totalLetters) / max(1, Double(words.count)) }
 	public var totalLetters: Int { words.reduce(0) { $1.count + $0	} }
@@ -195,6 +202,7 @@ public struct Filter {
 		self.author = try container.decode(String.self, forKey: .author)
 		self.date = try container.decode(Date.self, forKey: .date)
 		self.words = try container.decode([String].self, forKey: .words)
+		self.owner = try container.decode(OwnerType.self, forKey: .owner)
 	}
 	
 	/// Create a copy of words
@@ -232,14 +240,16 @@ public struct Filter {
 		let finalWords = removePluralDuplicates(from: Set(words).sorted())
 		self.init(name: name, author: author, words: finalWords)
 		self.language = language ?? .english
+		self.owner = .user
 	}
 	
-	init(name: String = "Empty", author: String = "Unknown", date: Date = Date(), words: [String]) {
+	init(name: String = "Empty", author: String = "Unknown", date: Date = Date(), words: [String], owner: OwnerType = .system) {
 		self.name = name
 		self.language = Language(rawValue: Locale.current.identifier) ?? .english
 		self.author = author
 		self.date = date
 		self.words = words
+		self.owner = owner
 	}
 	
 	/// Get word list with random words of a certain size (i.e., wordRange)
@@ -249,7 +259,8 @@ public struct Filter {
 		self.language = Language(rawValue: Locale.current.identifier) ?? .english
 		self.author = author
 		self.date = date
-		self.words = Self.generateWords(with: wordRange, total: totalWords)
+		self.words = []    // created dynamically during Puzzle init
+		self.owner = .random(size: totalWords, range: wordRange)
 	}
 	
 	/// Creates a copy of the word list
@@ -381,7 +392,7 @@ public struct Filter {
 
 	static var largeWordBank = loadSystemWords()
 	
-	static private func generateWords(with size: CountableClosedRange<Int>, total: Int) -> [String] {
+	static func generateWords(with size: CountableClosedRange<Int>, total: Int) -> [String] {
 		var words: [String] = []
 		while words.count < total {
 			if let word = largeWordBank.randomElement() {
@@ -404,10 +415,11 @@ extension WordList: Codable {
 		try container.encode(author, forKey: .author)
 		try container.encode(date, forKey: .date)
 		try container.encode(words, forKey: .words)
+		try container.encode(owner, forKey: .owner)
 	}
 	
 	enum CodingKeys: String, CodingKey {
-		case _name, language, author, date, words, revision
+		case _name, language, author, date, words, owner
 	}
 }
 
@@ -415,7 +427,12 @@ extension WordList: Identifiable { }  // auto-generated
 
 extension WordList: Equatable {
 	static public func == (lhs: WordList, rhs: WordList) -> Bool {
-		lhs.id == rhs.id
+		lhs.name == rhs.name &&
+		lhs.words == rhs.words &&
+		lhs.author == rhs.author &&
+		lhs.language == rhs.language &&
+		lhs.date == rhs.date &&
+		lhs.owner == rhs.owner
 	}
 }
 

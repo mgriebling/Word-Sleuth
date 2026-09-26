@@ -11,17 +11,20 @@ import SwiftUI
 
 struct EditToolbar: ToolbarContent {
 	var okDisabled: Bool = false
+	var noCancel: Bool = false
 	let onDone: (() -> Void)?
 	
 	// MARK: Data (Function) In
 	@Environment(\.dismiss) var dismiss
 	
 	var body: some ToolbarContent {
-		ToolbarItem(placement: .cancellationAction) {
-			Button(action: { dismiss() }) {
-				Image(systemName: "xmark")
+		if !noCancel {
+			ToolbarItem(placement: .cancellationAction) {
+				Button(action: { dismiss() }) {
+					Image(systemName: "xmark")
+				}
+				.tint(Color(.systemRed))
 			}
-			.tint(Color(.systemRed))
 		}
 		ToolbarItem(placement: .confirmationAction) {
 			Button(action: { onDone?(); dismiss() }) {

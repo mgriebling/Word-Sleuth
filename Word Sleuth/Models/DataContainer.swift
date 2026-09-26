@@ -108,30 +108,30 @@ class DataContainer {
 		}
 	}
 	
+	func createGame(size: Int, names: inout Set<String>) {
+		if let words = SampleWords.list.randomElement() {
+			print("Words = \(words.name), owner = \(words.owner)")
+			let game = Game(size: size, words: words)
+			if !names.contains(game.name) {
+				withAnimation {
+					self.games.insert(game, at: 0)
+				}
+				names.insert(game.name)
+				game.save(to: game.name)
+				print("Saving game \(game.name)")
+			}
+		}
+	}
+	
 	func createGames(number: Int, sizes: [Int]) {
 		assert(sizes.count >= number, "Expecting at least \(number) sizes!")
-		let game = Game(size: sizes[0],
-						words: SampleWords.list.randomElement()!)
 		var names = Set<String>()
-		var i = 1
-		games.insert(game, at: 0)
-		names.insert(game.name)
-		game.save(to: game.name)
-		print("Saving game \(game.name)")
-		Task.detached(priority: .background) {
+		createGame(size: sizes[0], names: &names) // first one user waits
+		Task.detached(priority: .userInitiated) {
+			var i = 1
 			while i < number {
-				let game = Game(size: sizes[i],
-								words: SampleWords.list.randomElement()!)
-				if !names.contains(game.name) {
-					game.save(to: game.name)
-					names.insert(game.name)
-					await MainActor.run {
-						withAnimation {
-							self.games.insert(game, at: 0)
-						}
-					}
-					i += 1
-				}
+				await self.createGame(size: sizes[i], names: &names)
+				i += 1
 			}
 		}
 	}
