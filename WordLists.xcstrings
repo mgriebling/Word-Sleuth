@@ -711,6 +711,10 @@
         }
       }
     },
+    "Ada" : {
+      "comment" : "L57-word  1",
+      "shouldTranslate" : false
+    },
     "Admiration" : {
       "comment" : "L22-word 1",
       "localizations" : {
@@ -1988,6 +1992,10 @@
           }
         }
       }
+    },
+    "ALGOL" : {
+      "comment" : "L57-word  2",
+      "shouldTranslate" : false
     },
     "Algorithm" : {
       "comment" : "L14-word 1",
@@ -5469,7 +5477,7 @@
       }
     },
     "Apex" : {
-      "comment" : "L28-word 2",
+      "comment" : "L28-word 2\nL57-word  3",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7882,6 +7890,10 @@
         }
       }
     },
+    "Assembly" : {
+      "comment" : "L57-word  4",
+      "shouldTranslate" : false
+    },
     "Assonance" : {
       "comment" : "L37-word 8",
       "localizations" : {
@@ -9159,6 +9171,10 @@
           }
         }
       }
+    },
+    "AutoIt" : {
+      "comment" : "L57-word  5",
+      "shouldTranslate" : false
     },
     "Automatic" : {
       "comment" : "L56-word  3",
@@ -11006,6 +11022,10 @@
         }
       }
     },
+    "Ballerina" : {
+      "comment" : "L57-word  6",
+      "shouldTranslate" : false
+    },
     "Ballista" : {
       "comment" : "L53-word 3",
       "localizations" : {
@@ -12639,6 +12659,10 @@
         }
       }
     },
+    "BASIC" : {
+      "comment" : "L57-word  8",
+      "shouldTranslate" : false
+    },
     "Basilisk" : {
       "comment" : "L43-word 2\nL47-word  5",
       "localizations" : {
@@ -13348,6 +13372,10 @@
           }
         }
       }
+    },
+    "BCPL" : {
+      "comment" : "L57-word  7",
+      "shouldTranslate" : false
     },
     "Beagle" : {
       "comment" : "L20-word 5",
@@ -29113,7 +29141,7 @@
       }
     },
     "Ceylon" : {
-      "comment" : "L9-word 14",
+      "comment" : "L57-word  9\nL9-word 14",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -29181,7 +29209,8 @@
             "value" : "Цейлон"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Chain" : {
       "comment" : "L36-word  6",
@@ -31597,6 +31626,10 @@
         }
       }
     },
+    "CHILL" : {
+      "comment" : "L57-word 10",
+      "shouldTranslate" : false
+    },
     "Chimera" : {
       "comment" : "L43-word 5",
       "localizations" : {
@@ -33869,6 +33902,10 @@
         }
       }
     },
+    "Clean" : {
+      "comment" : "L57-word 11",
+      "shouldTranslate" : false
+    },
     "Cleaver" : {
       "comment" : "L32-word  5",
       "localizations" : {
@@ -34507,6 +34544,10 @@
           }
         }
       }
+    },
+    "Clojure" : {
+      "comment" : "L57-word 12",
+      "shouldTranslate" : false
     },
     "Closet" : {
       "comment" : "L25-word 13",
@@ -35359,6 +35400,10 @@
           }
         }
       }
+    },
+    "COBOL" : {
+      "comment" : "L57-word 13",
+      "shouldTranslate" : false
     },
     "Cobra" : {
       "comment" : "L47-word 13",
@@ -36425,6 +36470,10 @@
         }
       }
     },
+    "CommonLisp" : {
+      "comment" : "L57-word 14",
+      "shouldTranslate" : false
+    },
     "Compass" : {
       "comment" : "L50-word 7",
       "localizations" : {
@@ -36850,6 +36899,9 @@
           }
         }
       }
+    },
+    "Computer Languages" : {
+      "comment" : "L57-Computer Languages List Header"
     },
     "Computer Science" : {
       "comment" : "L14-Computer Science List Header",
@@ -42532,7 +42584,7 @@
       }
     },
     "Crystal" : {
-      "comment" : "L21-word 8",
+      "comment" : "L21-word 8\nL57-word 15",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -43668,7 +43720,7 @@
       }
     },
     "Cyclone" : {
-      "comment" : "L44-word 6\nL54-word 6",
+      "comment" : "L44-word 6\nL54-word 6\nL57-word 16",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -44944,6 +44996,10 @@
           }
         }
       }
+    },
+    "Dart" : {
+      "comment" : "L57-word 17",
+      "shouldTranslate" : false
     },
     "Dashboard" : {
       "comment" : "L8-word 15",
@@ -46222,6 +46278,10 @@
           }
         }
       }
+    },
+    "Delphi" : {
+      "comment" : "L57-word 18",
+      "shouldTranslate" : false
     },
     "Delta" : {
       "comment" : "L21-word 9",
@@ -51909,6 +51969,10 @@
         }
       }
     },
+    "Dylan" : {
+      "comment" : "L57-word 19",
+      "shouldTranslate" : false
+    },
     "Eagle" : {
       "comment" : "L3-word 21\nL6-word 15",
       "localizations" : {
@@ -53045,6 +53109,10 @@
         }
       }
     },
+    "Eiffel" : {
+      "comment" : "L57-word 20",
+      "shouldTranslate" : false
+    },
     "Eight" : {
       "comment" : "L45-word  5",
       "localizations" : {
@@ -53902,6 +53970,10 @@
           }
         }
       }
+    },
+    "Elixir" : {
+      "comment" : "L57-word 21",
+      "shouldTranslate" : false
     },
     "Elk" : {
       "comment" : "L38-word 19",
@@ -56104,6 +56176,10 @@
         }
       }
     },
+    "Erlang" : {
+      "comment" : "L57-word 22",
+      "shouldTranslate" : false
+    },
     "Erosion" : {
       "comment" : "L21-word 11",
       "localizations" : {
@@ -56955,6 +57031,10 @@
           }
         }
       }
+    },
+    "Euclid" : {
+      "comment" : "L57-word 23",
+      "shouldTranslate" : false
     },
     "Euler" : {
       "comment" : "L45-word  8",
@@ -58589,6 +58669,10 @@
         }
       }
     },
+    "Factor" : {
+      "comment" : "L57-word 24",
+      "shouldTranslate" : false
+    },
     "Factorial" : {
       "comment" : "L41-word 11",
       "localizations" : {
@@ -59014,6 +59098,10 @@
           }
         }
       }
+    },
+    "Fantom" : {
+      "comment" : "L57-word 25",
+      "shouldTranslate" : false
     },
     "Farmer" : {
       "comment" : "L46-word 15",
@@ -64269,6 +64357,10 @@
         }
       }
     },
+    "Forth" : {
+      "comment" : "L57-word 26",
+      "shouldTranslate" : false
+    },
     "Fortnight" : {
       "comment" : "L49-word 18",
       "localizations" : {
@@ -64339,6 +64431,10 @@
           }
         }
       }
+    },
+    "Fortran" : {
+      "comment" : "L57-word 27",
+      "shouldTranslate" : false
     },
     "Forty" : {
       "comment" : "L45-word 12",
@@ -66683,6 +66779,10 @@
         }
       }
     },
+    "Futhark" : {
+      "comment" : "L57-word 28",
+      "shouldTranslate" : false
+    },
     "Futon" : {
       "comment" : "L25-word 27",
       "localizations" : {
@@ -68244,6 +68344,10 @@
           }
         }
       }
+    },
+    "Genie" : {
+      "comment" : "L57-word 29",
+      "shouldTranslate" : false
     },
     "Geography" : {
       "comment" : "L1-word 17\nL27-Geography List Header",
@@ -70019,6 +70123,10 @@
           }
         }
       }
+    },
+    "Go" : {
+      "comment" : "L57-word 30",
+      "shouldTranslate" : false
     },
     "Goblin" : {
       "comment" : "L43-word 15",
@@ -73079,6 +73187,10 @@
         }
       }
     },
+    "Groovy" : {
+      "comment" : "L57-word 31",
+      "shouldTranslate" : false
+    },
     "Grunge" : {
       "comment" : "L42-word 16",
       "localizations" : {
@@ -74143,6 +74255,10 @@
           }
         }
       }
+    },
+    "Hack" : {
+      "comment" : "L57-word 32",
+      "shouldTranslate" : false
     },
     "Haddock" : {
       "comment" : "L39-word 11",
@@ -75919,6 +76035,10 @@
         }
       }
     },
+    "Haskell" : {
+      "comment" : "L57-word 33",
+      "shouldTranslate" : false
+    },
     "Hat" : {
       "comment" : "L12-word 18",
       "localizations" : {
@@ -76415,6 +76535,10 @@
           }
         }
       }
+    },
+    "Haxe" : {
+      "comment" : "L57-word 34",
+      "shouldTranslate" : false
     },
     "Haze" : {
       "comment" : "L54-word 18",
@@ -82522,6 +82646,10 @@
         }
       }
     },
+    "Idris" : {
+      "comment" : "L57-word 35",
+      "shouldTranslate" : false
+    },
     "Igneous" : {
       "comment" : "L21-word 19",
       "localizations" : {
@@ -86859,6 +86987,10 @@
         }
       }
     },
+    "Java" : {
+      "comment" : "L57-word 36",
+      "shouldTranslate" : false
+    },
     "Javanese" : {
       "comment" : "L33-word 26\nL9-word 32",
       "localizations" : {
@@ -88420,6 +88552,10 @@
           }
         }
       }
+    },
+    "Julia" : {
+      "comment" : "L57-word 37",
+      "shouldTranslate" : false
     },
     "Juliet" : {
       "comment" : "L35-word 10",
@@ -91687,6 +91823,10 @@
         }
       }
     },
+    "Kotlin" : {
+      "comment" : "L57-word 38",
+      "shouldTranslate" : false
+    },
     "Kraken" : {
       "comment" : "L43-word 23",
       "localizations" : {
@@ -92396,6 +92536,10 @@
           }
         }
       }
+    },
+    "LabVIEW" : {
+      "comment" : "L57-word 39",
+      "shouldTranslate" : false
     },
     "Lace" : {
       "comment" : "L23-word 25",
@@ -96882,6 +97026,10 @@
         }
       }
     },
+    "Limbo" : {
+      "comment" : "L57-word 40",
+      "shouldTranslate" : false
+    },
     "Lime" : {
       "comment" : "L13-word 40",
       "localizations" : {
@@ -98018,6 +98166,10 @@
         }
       }
     },
+    "Lisp" : {
+      "comment" : "L57-word 41",
+      "shouldTranslate" : false
+    },
     "Literary Devices" : {
       "comment" : "L37-Literary Devices List Header",
       "localizations" : {
@@ -99011,6 +99163,10 @@
           }
         }
       }
+    },
+    "Logo" : {
+      "comment" : "L57-word 42",
+      "shouldTranslate" : false
     },
     "London" : {
       "comment" : "L11-word 22",
@@ -105474,7 +105630,7 @@
       }
     },
     "Mercury" : {
-      "comment" : "L40-word 30",
+      "comment" : "L40-word 30\nL57-word 43",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -109449,6 +109605,10 @@
         }
       }
     },
+    "Modula" : {
+      "comment" : "L57-word 44",
+      "shouldTranslate" : false
+    },
     "Mohair" : {
       "comment" : "L23-word 28",
       "localizations" : {
@@ -109519,6 +109679,10 @@
           }
         }
       }
+    },
+    "Mojo" : {
+      "comment" : "L57-word 45",
+      "shouldTranslate" : false
     },
     "Mole" : {
       "comment" : "L38-word 44",
@@ -116265,6 +116429,10 @@
         }
       }
     },
+    "Nim" : {
+      "comment" : "L57-word 46",
+      "shouldTranslate" : false
+    },
     "Nine" : {
       "comment" : "L45-word 25",
       "localizations" : {
@@ -118040,6 +118208,10 @@
         }
       }
     },
+    "Oberon" : {
+      "comment" : "L57-word 48",
+      "shouldTranslate" : false
+    },
     "Object" : {
       "comment" : "L14-word 31",
       "localizations" : {
@@ -118182,6 +118354,10 @@
         }
       }
     },
+    "ObjectiveC" : {
+      "comment" : "L57-word 47",
+      "shouldTranslate" : false
+    },
     "Oboe" : {
       "comment" : "L31-word 30",
       "localizations" : {
@@ -118252,6 +118428,10 @@
           }
         }
       }
+    },
+    "OCaml" : {
+      "comment" : "L57-word 49",
+      "shouldTranslate" : false
     },
     "Ocarina" : {
       "comment" : "L31-word 31",
@@ -124720,6 +124900,10 @@
         }
       }
     },
+    "Pascal" : {
+      "comment" : "L57-word 50",
+      "shouldTranslate" : false
+    },
     "Pashto" : {
       "comment" : "L33-word 35",
       "localizations" : {
@@ -131110,6 +131294,10 @@
         }
       }
     },
+    "PLI" : {
+      "comment" : "L57-word 51",
+      "shouldTranslate" : false
+    },
     "Pliers" : {
       "comment" : "L50-word 27",
       "localizations" : {
@@ -135796,6 +135984,10 @@
         }
       }
     },
+    "Prolog" : {
+      "comment" : "L57-word 52",
+      "shouldTranslate" : false
+    },
     "Prologue" : {
       "comment" : "L37-word 38",
       "localizations" : {
@@ -137499,6 +137691,10 @@
           }
         }
       }
+    },
+    "PureScript" : {
+      "comment" : "L57-word 53",
+      "shouldTranslate" : false
     },
     "Purgatory" : {
       "comment" : "L55-word 71",
@@ -140198,6 +140394,10 @@
         }
       }
     },
+    "Raku" : {
+      "comment" : "L57-word 54",
+      "shouldTranslate" : false
+    },
     "Ramekin" : {
       "comment" : "L32-word 30",
       "localizations" : {
@@ -141191,6 +141391,10 @@
           }
         }
       }
+    },
+    "ReasonML" : {
+      "comment" : "L57-word 55",
+      "shouldTranslate" : false
     },
     "Receiver" : {
       "comment" : "L56-word 71",
@@ -145736,6 +145940,10 @@
         }
       }
     },
+    "RPG" : {
+      "comment" : "L57-word 56",
+      "shouldTranslate" : false
+    },
     "Rubber" : {
       "comment" : "L40-word 40",
       "localizations" : {
@@ -146376,7 +146584,7 @@
       }
     },
     "Rust" : {
-      "comment" : "L13-word 60",
+      "comment" : "L13-word 60\nL57-word 57",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -149712,6 +149920,10 @@
         }
       }
     },
+    "Scala" : {
+      "comment" : "L57-word 58",
+      "shouldTranslate" : false
+    },
     "Scale" : {
       "comment" : "L32-word 34",
       "localizations" : {
@@ -150066,6 +150278,10 @@
           }
         }
       }
+    },
+    "Scheme" : {
+      "comment" : "L57-word 59",
+      "shouldTranslate" : false
     },
     "Schipperke" : {
       "comment" : "L20-word 58",
@@ -157102,6 +157318,10 @@
         }
       }
     },
+    "Simula" : {
+      "comment" : "L57-word 60",
+      "shouldTranslate" : false
+    },
     "Sin" : {
       "comment" : "L55-word 86",
       "localizations" : {
@@ -159806,6 +160026,10 @@
         }
       }
     },
+    "Smalltalk" : {
+      "comment" : "L57-word 61",
+      "shouldTranslate" : false
+    },
     "Smog" : {
       "comment" : "L54-word 35",
       "localizations" : {
@@ -161651,6 +161875,10 @@
           }
         }
       }
+    },
+    "Solidity" : {
+      "comment" : "L57-word 62",
+      "shouldTranslate" : false
     },
     "Soliloquy" : {
       "comment" : "L37-word 47",
@@ -169816,6 +170044,10 @@
           }
         }
       }
+    },
+    "Swift" : {
+      "comment" : "L57-word 63",
+      "shouldTranslate" : false
     },
     "Swimming" : {
       "comment" : "L29-word 43\nL48-word 41",
@@ -183319,6 +183551,10 @@
         }
       }
     },
+    "TypeScript" : {
+      "comment" : "L57-word 64",
+      "shouldTranslate" : false
+    },
     "Typhoon" : {
       "comment" : "L44-word 45\nL54-word 45",
       "localizations" : {
@@ -184389,6 +184625,14 @@
           }
         }
       }
+    },
+    "VAL" : {
+      "comment" : "L57-word 65",
+      "shouldTranslate" : false
+    },
+    "Vala" : {
+      "comment" : "L57-word 66",
+      "shouldTranslate" : false
     },
     "Valence" : {
       "comment" : "L10-word 49",
@@ -186094,6 +186338,10 @@
         }
       }
     },
+    "Verilog" : {
+      "comment" : "L57-word 67",
+      "shouldTranslate" : false
+    },
     "Vermilion" : {
       "comment" : "L13-word 72",
       "localizations" : {
@@ -186590,6 +186838,10 @@
           }
         }
       }
+    },
+    "VHDL" : {
+      "comment" : "L57-word 68",
+      "shouldTranslate" : false
     },
     "Victor" : {
       "comment" : "L35-word 22",
@@ -193052,6 +193304,10 @@
         }
       }
     },
+    "X10" : {
+      "comment" : "L57-word 69",
+      "shouldTranslate" : false
+    },
     "Xenon" : {
       "comment" : "L10-word 50",
       "localizations" : {
@@ -195542,6 +195798,10 @@
           }
         }
       }
+    },
+    "Zig" : {
+      "comment" : "L57-word 70",
+      "shouldTranslate" : false
     },
     "Zinc" : {
       "comment" : "L40-word 50",

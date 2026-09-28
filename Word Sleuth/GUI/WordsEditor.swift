@@ -74,6 +74,7 @@ struct WordsEditor: View {
 					.onChange(of: importString) {
 						/// process text string to produce a unique array of words
 						withAnimation {
+							filter.filterCommonWords = true
 							lwords = WordList(name: lwords.name, author: lwords.author, from: importString, using: filter)
 						}
 					}

@@ -11,28 +11,29 @@ import Foundation
 
 struct SampleWords {
 	
-	static var commonWords: WordList {
+	static var commonWords = loadCommonWords()
+	
+	static func loadCommonWords() -> [String] {
 		let language = Locale.preferredLanguages.first ?? "en"
 		if let url = Bundle.main.url(forResource: "common_\(language)", withExtension: "txt") {
 			print(url.absoluteString)
 			if let strings = try? String(contentsOf: url, encoding: .utf8) {
 				print("Using \(language) common word list...")
-				return WordList(name: "Common", author: "", from: strings)
+				var filter = Filter(); filter.filterCommonWords = false
+				return WordList(name: "Dummy", author: "", from: strings, using: filter).words
 			}
 		}
-		
-		// use default common English word list
-		print("Using default common word list...")
-		let words = [
+		print("Using default english common word list...")
+		return [
 			"About", "All", "Also", "Always", "And", "Any", "Are", "Been", "But",
 			"Can", "Could", "Did", "Else", "For", "From", "Get", "Good", "Got",
 			"Had", "Has", "Have", "Her", "Here", "Him", "His", "How", "Into", "Just",
-			"Know", "Like", "Never", "New", "Now", "Our", "Over", "Said", "See",
-			"She", "Should", "Some", "Still", "That", "The", "Their", "Them", "There",
-			"They", "This", "Too", "Very", "Want", "Was", "Were", "What", "When",
-			"Will", "Would", "You", "Your"
+			"Know", "Like", "Make", "Never", "New", "Not", "Now", "One", "Other", "Our",
+			"Out", "Over", "People", "Said", "Say", "See", "She", "Should", "Some",
+			"Still", "Take", "Than", "That", "The", "Their", "Them", "Then", "There",
+			"They", "This", "Time", "Too", "Very", "Want", "Was", "Were", "What",
+			"When", "Which", "Who", "Will", "With", "Would", "Year", "You", "Your"
 		]
-		return WordList(name: "Common", author: "", words: words)
 	}
 	
 	static var list: [WordList] { [
@@ -816,6 +817,79 @@ struct SampleWords {
 					String(localized: LocalizedStringResource("Yellow", table: "WordLists", comment: "L13-word 75")),
 				 ]),
 		
+		WordList(name: String(localized: LocalizedStringResource("Computer Languages", table: "WordLists", comment: "L57-Computer Languages List Header")),
+				 words:  [
+					String(localized: LocalizedStringResource("Ada", table: "WordLists", 		comment: "L57-word  1")),
+					String(localized: LocalizedStringResource("ALGOL", table: "WordLists", 		comment: "L57-word  2")),
+					String(localized: LocalizedStringResource("Apex", table: "WordLists", 		comment: "L57-word  3")),
+					String(localized: LocalizedStringResource("Assembly", table: "WordLists", 	comment: "L57-word  4")),
+					String(localized: LocalizedStringResource("AutoIt", table: "WordLists", 	comment: "L57-word  5")),
+					String(localized: LocalizedStringResource("Ballerina", table: "WordLists", 	comment: "L57-word  6")),
+					String(localized: LocalizedStringResource("BCPL", table: "WordLists", 		comment: "L57-word  7")),
+					String(localized: LocalizedStringResource("BASIC", table: "WordLists", 		comment: "L57-word  8")),
+					String(localized: LocalizedStringResource("Ceylon", table: "WordLists", 	comment: "L57-word  9")),
+					String(localized: LocalizedStringResource("CHILL", table: "WordLists", 		comment: "L57-word 10")),
+					String(localized: LocalizedStringResource("Clean", table: "WordLists", 		comment: "L57-word 11")),
+					String(localized: LocalizedStringResource("Clojure", table: "WordLists", 	comment: "L57-word 12")),
+					String(localized: LocalizedStringResource("COBOL", table: "WordLists", 		comment: "L57-word 13")),
+					String(localized: LocalizedStringResource("CommonLisp", table: "WordLists", comment: "L57-word 14")),
+					String(localized: LocalizedStringResource("Crystal", table: "WordLists", 	comment: "L57-word 15")),
+					String(localized: LocalizedStringResource("Cyclone", table: "WordLists", 	comment: "L57-word 16")),
+					String(localized: LocalizedStringResource("Dart", table: "WordLists", 		comment: "L57-word 17")),
+					String(localized: LocalizedStringResource("Delphi", table: "WordLists", 	comment: "L57-word 18")),
+					String(localized: LocalizedStringResource("Dylan", table: "WordLists", 		comment: "L57-word 19")),
+					String(localized: LocalizedStringResource("Eiffel", table: "WordLists", 	comment: "L57-word 20")),
+					String(localized: LocalizedStringResource("Elixir", table: "WordLists", 	comment: "L57-word 21")),
+					String(localized: LocalizedStringResource("Erlang", table: "WordLists", 	comment: "L57-word 22")),
+					String(localized: LocalizedStringResource("Euclid", table: "WordLists", 	comment: "L57-word 23")),
+					String(localized: LocalizedStringResource("Factor", table: "WordLists", 	comment: "L57-word 24")),
+					String(localized: LocalizedStringResource("Fantom", table: "WordLists", 	comment: "L57-word 25")),
+					String(localized: LocalizedStringResource("Forth", table: "WordLists", 		comment: "L57-word 26")),
+					String(localized: LocalizedStringResource("Fortran", table: "WordLists", 	comment: "L57-word 27")),
+					String(localized: LocalizedStringResource("Futhark", table: "WordLists", 	comment: "L57-word 28")),
+					String(localized: LocalizedStringResource("Genie", table: "WordLists", 		comment: "L57-word 29")),
+					String(localized: LocalizedStringResource("Go", table: "WordLists", 		comment: "L57-word 30")),
+					String(localized: LocalizedStringResource("Groovy", table: "WordLists", 	comment: "L57-word 31")),
+					String(localized: LocalizedStringResource("Hack", table: "WordLists", 		comment: "L57-word 32")),
+					String(localized: LocalizedStringResource("Haskell", table: "WordLists", 	comment: "L57-word 33")),
+					String(localized: LocalizedStringResource("Haxe", table: "WordLists", 		comment: "L57-word 34")),
+					String(localized: LocalizedStringResource("Idris", table: "WordLists", 		comment: "L57-word 35")),
+					String(localized: LocalizedStringResource("Java", table: "WordLists", 		comment: "L57-word 36")),
+					String(localized: LocalizedStringResource("Julia", table: "WordLists", 		comment: "L57-word 37")),
+					String(localized: LocalizedStringResource("Kotlin", table: "WordLists", 	comment: "L57-word 38")),
+					String(localized: LocalizedStringResource("LabVIEW", table: "WordLists", 	comment: "L57-word 39")),
+					String(localized: LocalizedStringResource("Limbo", table: "WordLists", 		comment: "L57-word 40")),
+					String(localized: LocalizedStringResource("Lisp", table: "WordLists", 		comment: "L57-word 41")),
+					String(localized: LocalizedStringResource("Logo", table: "WordLists", 		comment: "L57-word 42")),
+					String(localized: LocalizedStringResource("Mercury", table: "WordLists", 	comment: "L57-word 43")),
+					String(localized: LocalizedStringResource("Modula", table: "WordLists", 	comment: "L57-word 44")),
+					String(localized: LocalizedStringResource("Mojo", table: "WordLists", 		comment: "L57-word 45")),
+					String(localized: LocalizedStringResource("Nim", table: "WordLists", 		comment: "L57-word 46")),
+					String(localized: LocalizedStringResource("ObjectiveC", table: "WordLists", comment: "L57-word 47")),
+					String(localized: LocalizedStringResource("Oberon", table: "WordLists", 	comment: "L57-word 48")),
+					String(localized: LocalizedStringResource("OCaml", table: "WordLists", 		comment: "L57-word 49")),
+					String(localized: LocalizedStringResource("Pascal", table: "WordLists", 	comment: "L57-word 50")),
+					String(localized: LocalizedStringResource("PLI", table: "WordLists", 		comment: "L57-word 51")),
+					String(localized: LocalizedStringResource("Prolog", table: "WordLists", 	comment: "L57-word 52")),
+					String(localized: LocalizedStringResource("PureScript", table: "WordLists", comment: "L57-word 53")),
+					String(localized: LocalizedStringResource("Raku", table: "WordLists", 		comment: "L57-word 54")),
+					String(localized: LocalizedStringResource("ReasonML", table: "WordLists", 	comment: "L57-word 55")),
+					String(localized: LocalizedStringResource("RPG", table: "WordLists", 		comment: "L57-word 56")),
+					String(localized: LocalizedStringResource("Rust", table: "WordLists", 		comment: "L57-word 57")),
+					String(localized: LocalizedStringResource("Scala", table: "WordLists",		comment: "L57-word 58")),
+					String(localized: LocalizedStringResource("Scheme", table: "WordLists", 	comment: "L57-word 59")),
+					String(localized: LocalizedStringResource("Simula", table: "WordLists", 	comment: "L57-word 60")),
+					String(localized: LocalizedStringResource("Smalltalk", table: "WordLists", 	comment: "L57-word 61")),
+					String(localized: LocalizedStringResource("Solidity", table: "WordLists", 	comment: "L57-word 62")),
+					String(localized: LocalizedStringResource("Swift", table: "WordLists", 		comment: "L57-word 63")),
+					String(localized: LocalizedStringResource("TypeScript", table: "WordLists", comment: "L57-word 64")),
+					String(localized: LocalizedStringResource("VAL", table: "WordLists", 		comment: "L57-word 65")),
+					String(localized: LocalizedStringResource("Vala", table: "WordLists", 		comment: "L57-word 66")),
+					String(localized: LocalizedStringResource("Verilog", table: "WordLists", 	comment: "L57-word 67")),
+					String(localized: LocalizedStringResource("VHDL", table: "WordLists", 		comment: "L57-word 68")),
+					String(localized: LocalizedStringResource("X10", table: "WordLists", 		comment: "L57-word 69")),
+					String(localized: LocalizedStringResource("Zig", table: "WordLists", 		comment: "L57-word 70")),
+				 ]),
 		
 		WordList(name: String(localized: LocalizedStringResource("Computer Science", table: "WordLists", comment: "L14-Computer Science List Header")),
 				 words:  [

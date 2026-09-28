@@ -18,7 +18,7 @@ struct WordView: View {
     #if os(iOS)
 	@State private var isPhone = UIDevice.current.userInterfaceIdiom == .phone
 	#else
-	@State private var isPhone: Bool = false
+	@State private var isPhone = false
     #endif
 	
 	@Environment(DataContainer.self) private var dataContainer
@@ -166,22 +166,12 @@ struct WordView: View {
 
 #Preview {
 	let words: [PlacedWord] =
-		SampleWords.list[1].words.enumerated().map { index, word in
+		SampleWords.list[3].words.enumerated().map { index, word in
 			PlacedWord(word: word, highlighted: Bool.random() ? -1 : 0)
 		}
 	WordView(words: words, style: .columns, maxWordLength: SampleWords.list[1].maxLength)
 		.environment(DataContainer())
 	WordView(words: words, style: .paragraph)
-		.environment(DataContainer())
-}
-
-#Preview("German") {
-	let words: [PlacedWord] =
-		SampleWords.list[3].words.enumerated().map { index, word in
-			PlacedWord(word: word, highlighted: Bool.random() ? -1 : 0)
-		}
-	WordView(words: words, style: .columns, maxWordLength: SampleWords.list[3].maxLength)
-		.environment(\.locale, Locale(identifier: "de"))
 		.environment(DataContainer())
 }
 

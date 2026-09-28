@@ -130,21 +130,9 @@ public enum Direction: Int, Codable, CaseIterable {
 
 public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 
-	case english = "en", german = "de", spanish = "es" //, swedish = "sv"
-	//case norwegian = "no",
-	case italian = "it", french = "fr" // , japanese = "ja"
-	case russian = "ru", hindi = "hi"   // chinese = "zh",
-//	case afrikaans = "af", arabic = "ar", greek = "el"
-	case dutch = "nl", polish = "pl"   // , hungarian = "hu"
-//	case slovak = "sk", romanian = "ro", danish = "da"
-//	case bulgarian = "bg", burmese = "my", cambodian = "km", czech = "cs"
-//	case estonian = "et", finnish = "fi", farsi = "fa", indonesian = "id"
-//	case hebrew = "he", icelandic = "is", korean = "ko", kurdish = "ku"
-//	case lithuanian = "lt", macedonian = "mk", mongolian = "mn"
-//	case navajo = "nv",
-	case portuguese = "pt"  // , serbian = "sr", swahili = "sw"
-	case turkish = "tr", ukrainian = "uk"  // , vietnamese = "vi"
-//	case tibetan = "bo", yiddish = "yi"
+	case english = "en", german = "de", spanish = "es", italian = "it", french = "fr"
+	case russian = "ru", hindi = "hi", dutch = "nl", polish = "pl"
+	case portuguese = "pt", turkish = "tr", ukrainian = "uk"
 	
 	var alphabet: String { Alphabets.getAlphabet(for: self.rawValue) }
 	
@@ -165,9 +153,9 @@ public enum Language: String, Codable, CaseIterable, CustomStringConvertible {
 
 public struct Filter {
 	var maxWordCount = 100
-	var minWordLength = 4
-	var maxWordLength = 8
-	var filterWords = true
+	var minWordLength = 3
+	var maxWordLength = SettingsType.maxRowRange.upperBound
+	var filterCommonWords = true
 }
 
 public enum OwnerType: Codable, Equatable {
@@ -224,22 +212,32 @@ public enum OwnerType: Codable, Equatable {
 		return nil
 	}
 	
-	convenience init(name: String, author: String, from string: String, using prefs: Filter? = nil) {
+	convenience init(name: String, author: String, from string: String, using prefs: Filter) {
 		self.init()
+		let wordLength = prefs.minWordLength...prefs.maxWordLength
 		let words = string
 			.trimmingCharacters(in: .whitespacesAndNewlines)
 			.components(separatedBy: .whitespacesAndNewlines
 				.union(.punctuationCharacters))
 			.filter {
-				$0.count > 2 &&					// only use words > 2 letters
-				$0.uppercased() != $0 &&		// ignore abbreviations
-				$0.contains { $0.isLetter }		// ignore words with non-letters
+				wordLength.contains($0.count) && // use wordLength words
+				$0.uppercased() != $0 &&		 // ignore abbreviations
+				$0.contains { $0.isLetter }		 // ignore words with non-letters
 			}
 			.map { $0.capitalized }
-		let language = Language.getLanguage(from: string)
-		let finalWords = removePluralDuplicates(from: Set(words).sorted())
+		let language = Language.getLanguage(from: string) ?? .english
+		print("Found language \(language)")
+		var finalWords = removePluralDuplicates(from: Set(words).sorted())
+		if prefs.filterCommonWords {
+			// remove commonly-occurring words
+			finalWords = removeCommonWords(from: finalWords)
+		}
+		if finalWords.count > prefs.maxWordCount {
+			// reduce the number of words
+			finalWords = Array(finalWords.shuffled().prefix(prefs.maxWordCount))
+		}
 		self.init(name: name, author: author, words: finalWords)
-		self.language = language ?? .english
+		self.language = language
 		self.owner = .user
 	}
 	
@@ -276,6 +274,18 @@ public enum OwnerType: Codable, Equatable {
 		Self.documentDirectory!.appendingPathComponent("\(name).\(Self.fileExt)")
 	}
 	
+	/// Removes any common words
+	func removeCommonWords(from words: [String]) -> [String] {
+		var result = [String]()
+		let commonWords = Set(SampleWords.commonWords)
+		for word in words {
+			if !commonWords.contains(word) {
+				result.append(word)
+			}
+		}
+		return result
+	}
+	
 	/// Removes words that are plural duplicates from the set of *words*.
 	func removePluralDuplicates(from sortedWords: [String]) -> [String] {
 		// 1. Clean and lowercase the words, sorting by length so singular words appear first
@@ -285,7 +295,7 @@ public enum OwnerType: Codable, Equatable {
 		for word in sortedWords {
 			var singularForm = word
 			
-			// Check common English plural suffixes and derive the guess at a singular form
+			// Check common English plural suffixes and generate a singular form
 			if word.hasSuffix("ies") && word.count > 3 {
 				// e.g., "babies" -> "baby"
 				singularForm = String(word.dropLast(3)) + "y"

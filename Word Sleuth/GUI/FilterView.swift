@@ -10,11 +10,12 @@
 import SwiftUI
 
 struct FilterView: View {
-	let wordList: WordList
+	let wordList: [String]
 	@Binding var filter: Filter
 	
 	// MARK: Data (Function) In
 	@Environment(\.dismiss) var dismiss
+	@State private var words = WordList()
 	
 	let wordRange = 3...20
 	let maxWordRange = 50...200
@@ -32,17 +33,20 @@ struct FilterView: View {
 				}
 				
 				Section("Common Words") {
-					Toggle(isOn: $filter.filterWords) {
+					Toggle(isOn: $filter.filterCommonWords) {
 						Text("Filter common words")
 					}
-					WordView(words: wordList.placedWords, style: .paragraph)
-						.id(wordList.words)
+					WordView(words: words.placedWords, style: .paragraph)
+						.id(words.words)
 				}
+			}
+			.onAppear {
+				words = WordList(words: wordList)
 			}
 			.navigationBarTitle("Word List Filter")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
-				EditToolbar(okDisabled: true) { dismiss() }
+				EditToolbar() { dismiss() }
 			}
 		}
     }
