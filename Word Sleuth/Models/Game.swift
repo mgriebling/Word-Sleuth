@@ -148,7 +148,7 @@ import SwiftUI
 	static var fileExt: String { "wordsleuth" }
 	
 	func url(name: String) -> URL {
-		Self.documentDirectory!.appendingPathComponent("\(name).\(Self.fileExt)")
+		Self.documentDirectory!.appending(path: "\(name).\(Self.fileExt)")
 	}
 	
 	static func save(games: [Game]) { games.forEach { $0.save(to: $0.name) } }
@@ -182,10 +182,12 @@ import SwiftUI
 	
 	func delete() {
 		do {
+			// Caution url.path() encodes space and other characters
+			// 		   url.path doesn't
 			// Delete from disk
 			let url = url(name: self.name)
-			print("url = \(url.path())")
-			if FileManager.default.fileExists(atPath: url.path()) {
+			print("url = \(url.path)")
+			if FileManager.default.fileExists(atPath: url.path) {
 				try FileManager.default.removeItem(at: url)
 				print("Deleting \(url.path)")
 			}

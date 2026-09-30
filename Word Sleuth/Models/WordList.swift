@@ -271,7 +271,7 @@ public enum OwnerType: Codable, Equatable {
 	}
 	
 	func url(name: String) -> URL {
-		Self.documentDirectory!.appendingPathComponent("\(name).\(Self.fileExt)")
+		Self.documentDirectory!.appending(path: "\(name).\(Self.fileExt)")
 	}
 	
 	/// Removes any common words
@@ -390,28 +390,48 @@ public enum OwnerType: Codable, Equatable {
 	}
 	
 	static func loadSystemWords() -> [String] {
-		let language = Locale.preferredLanguages.first ?? "en"
-		if let wordFilePath = Bundle.main.path(forResource: "words_\(language)", ofType: "txt") {
-			if let content = try? String(contentsOfFile: wordFilePath, encoding: .utf8) {
-				print("Loaded words_\(language).txt")
-				return content.components(separatedBy: .newlines)
-			}
+		//let language = Locale.preferredLanguages.first ?? "en"
+		// Force just the base two-letter prefix (e.g., "en-US" -> "en")
+		let language = Locale.preferredLanguages.first?
+			.components(separatedBy: "-").first ?? "en"
+		guard let wordFilePath = Bundle.main.path(forResource: "words_\(language)", ofType: "txt"),
+			  let content = try? String(contentsOfFile: wordFilePath, encoding: .utf8) else {
+			return ["error", "fallback", "words"]
 		}
-		return ["error", "fallback", "words"]
+		
+		print("Loaded words_\(language).txt")
+		
+		// FIX 1: Map to standard Strings to break the Substring memory reference back to 'content'
+		// FIX 2: Filter out empty lines immediately so .randomElement() never picks a blank space
+		return content.components(separatedBy: .newlines)
+			.map { String($0) }
+			.filter { !$0.isEmpty }
 	}
 
 	static var largeWordBank = loadSystemWords()
-	
+
 	static func generateWords(with size: CountableClosedRange<Int>, total: Int) -> [String] {
-		var words: [String] = []
-		while words.count < total {
+		// FIX 3: Use a Set for 'words' instead of an Array.
+		// Checking `!words.contains(...)` on a massive array in a loop is incredibly slow
+		// and can cause thread timeouts outside the debugger.
+		var words = Set<String>()
+		
+		// FIX 4: Add a safety breakout counter so your production app can NEVER infinitely loop
+		var attempts = 0
+		let maxAttempts = total * 100
+		
+		while words.count < total && attempts < maxAttempts {
+			attempts += 1
+			
 			if let word = largeWordBank.randomElement() {
-				if size.contains(word.count), !words.contains(word.capitalized) {
-					words.append(word.capitalized)
+				let capitalizedWord = word.capitalized
+				if size.contains(word.count) && !words.contains(capitalizedWord) {
+					words.insert(capitalizedWord)
 				}
 			}
 		}
-		return words.sorted()
+		
+		return Array(words).sorted()
 	}
 }
 

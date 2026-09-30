@@ -26,7 +26,7 @@ struct GameSummary: View {
 			if game.matched > 0 {
 				Text("Matched: \(game.matched) of \(game.placedWords.count) words")
 			}
-			if game.timer.elapsedTime > 0 {
+			if game.timer.elapsedTime > 0 || game.timer.state == .running {
 				let title = String(localized: "Elapsed Time: ")
 				ElapsedTime(text: title, timer: game.timer)
 			}

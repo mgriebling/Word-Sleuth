@@ -19696,76 +19696,8 @@
         }
       }
     },
-    "Bouclé" : {
-      "comment" : "L23-word 4",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bouclé"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bouclé"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bouclé"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "बकले"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Riccio"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bouclé"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bouclé"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Boucle"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Букле"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bukle"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Букле"
-          }
-        }
-      }
+    "Boucle" : {
+      "comment" : "L23-word 4"
     },
     "Bouzouki" : {
       "comment" : "L31-word 6",
@@ -73546,76 +73478,8 @@
         }
       }
     },
-    "Guitarrón" : {
-      "comment" : "L31-word 19",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Guitarrón"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Guitarrón"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Guitare"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "गिटारोन"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chitarrone"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gitaar"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gitara"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Guitarra"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Гитаррон"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gitar"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Гітаррон"
-          }
-        }
-      }
+    "Guitarron" : {
+      "comment" : "L31-word 19"
     },
     "Gujarati" : {
       "comment" : "L33-word 18",
@@ -193304,10 +193168,6 @@
         }
       }
     },
-    "X10" : {
-      "comment" : "L57-word 69",
-      "shouldTranslate" : false
-    },
     "Xenon" : {
       "comment" : "L10-word 50",
       "localizations" : {
@@ -195011,6 +194871,9 @@
           }
         }
       }
+    },
+    "Yorick" : {
+      "comment" : "L57-word 69"
     },
     "York" : {
       "comment" : "L9-word 60",

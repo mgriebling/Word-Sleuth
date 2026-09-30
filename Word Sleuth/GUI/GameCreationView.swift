@@ -8,6 +8,7 @@
 //
 
 import SwiftUI
+import OSLog
 
 struct GameCreationView: View {
 	@Environment(DataContainer.self) private var dataContainer
@@ -92,6 +93,7 @@ struct GameCreationView: View {
 						Stepper("Max: " + puzzleSize(size:maxSize), value: $maxSize, in: SettingsType.maxRowRange)
 					} else if size == -2 {
 						Picker("Size:", selection: $sizeToAdd) {
+							Text("None").tag(nil as Int?)
 							ForEach(SettingsType.maxRowRange, id:\.self) { index in
 								Text(puzzleSize(size:index)).tag(index)
 							}
@@ -121,6 +123,7 @@ struct GameCreationView: View {
 					.pickerStyle(.segmented)
 					if wordListOption == 2 {
 						Picker("Choose Word List:", selection: $wordList) {
+							Text("None").tag(nil as WordList?)
 							ForEach(sortedWordList) { list in
 								Text(list.name).tag(list)
 							}
@@ -173,16 +176,22 @@ struct GameCreationView: View {
 				sizes.append(Int.random(in: minSize...maxSize))
 			}
 		}
-		while sizes.count < numberOfGames {
+		
+		var attempts = 0
+		let maxAttempts = numberOfGames * 100
+		while sizes.count < numberOfGames, attempts < maxAttempts {
 			sizes.append(contentsOf: sizes)
+			attempts += 1
 		}
 		if wordListOption == 1 {
 			for _ in 0..<numberOfGames {
 				wordListsToUse.append(dataContainer.wordLists.randomElement()!)
 			}
 		}
-		while wordListsToUse.count < numberOfGames {
+		attempts = 0
+		while wordListsToUse.count < numberOfGames, attempts < maxAttempts {
 			wordListsToUse.append(contentsOf: wordListsToUse)
+			attempts += 1
 		}
 		
 		// generate games in the background
@@ -191,12 +200,12 @@ struct GameCreationView: View {
 			var sizes = await self.sizes
 			var wordListsToUse = await self.wordListsToUse
 			let level = await self.level
-			while numberOfGames > 0 {
-				print("Generating game...")
+			var attempts = 0
+			
+			while numberOfGames > 0, attempts < maxAttempts {
 				let game = Game(size: sizes[0], words: wordListsToUse[0])
 				if level == .manual || game.level == level.value {
 					await MainActor.run {
-						print("Adding game \(game.name)")
 						withAnimation {
 							dataContainer.games.insert(game, at: 0)
 						}
@@ -206,6 +215,7 @@ struct GameCreationView: View {
 					wordListsToUse.removeFirst()
 					numberOfGames -= 1
 				}
+				attempts += 1
 			}
 		}
 	}

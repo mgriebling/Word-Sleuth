@@ -1,5 +1,5 @@
 //
-//  MyTimer.swift
+//  Timer.swift
 //  Word Sleuth
 //
 //  Created by Michael Griebling on 28.06.2026.
