@@ -13,6 +13,7 @@ struct AchievementsView: View {
 	
 	@State private var unlockedBadges: [Badge] = []
 	@State private var lockedBadges: [Badge] = []
+	@State private var showAverage = false
 	
 	@Environment(DataContainer.self) private var dataContainer
 	
@@ -51,14 +52,26 @@ struct AchievementsView: View {
 			Self.tierLevel(points: earned)
 			Text("Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint \(Image(systemName: "lightbulb"))** button use. A new tier, each with three levels, is unlocked every 100 points. Compete with friends to see who has the most points, medallions, and highest tier level!")
 				.font(.caption)
-			if !settings.player.bestTimes.isEmpty {
-				header("Puzzle Statistics")
-				let s = settings.player.bestTimes
-				let total = s.reduce(0) { $0 + $1.games }
-				Grid(alignment: .center, horizontalSpacing: 0, verticalSpacing: 8) {
+			let times = sampleTimes //   settings.player.bestTimes
+			let title = String(localized: showAverage ? "Best" : "Average")
+			let invTitle = String(localized: !showAverage ? "Best" : "Average")
+			let total = times.reduce(0) { $0 + $1.games }
+			
+			if !times.isEmpty {
+				HStack(alignment: .firstTextBaseline) {
+					header("Puzzle Statistics")
+					Button("Show \(title)") {
+						withAnimation {
+							showAverage.toggle()
+						}
+					}
+				}
+				.padding(.bottom, 5)
+				
+				Grid(alignment: .center, horizontalSpacing: 0, verticalSpacing: 3) {
 					GridRow {
 						Text("Level").bold()
-						Text("Best Time").bold()
+						Text("\(invTitle) Time").bold()
 						Text("Time/Word").bold()
 						Text("Puzzles (\(total))").bold()
 					}
@@ -66,17 +79,22 @@ struct AchievementsView: View {
 					Divider()
 					
 					// Data Rows
-					ForEach(s.sorted{ $0.level < $1.level }) { item in
+					ForEach(times.sorted{ $0.level < $1.level }) { item in
 						GridRow(alignment: .center) {
 							Text(item.level, format: .number)
-							Text(Duration.seconds(item.interval), format: .time(pattern: .hourMinuteSecond))
-							Text("\(Int(item.interval) / item.words) secs")
+							if showAverage {
+								Text(Duration.seconds(item.totalTime/Double(item.games)), format: .time(pattern: .hourMinuteSecond))
+								Text("\(Int(item.totalTime) / item.totalWords) secs")
+							} else {
+								Text(Duration.seconds(item.interval), format: .time(pattern: .hourMinuteSecond))
+								Text("\(Int(item.interval) / item.words) secs")
+							}
 							Text(item.games, format: .number)
 						}
 					}
 				}
 			}
-
+			
 			if !unlockedBadges.isEmpty {
 				header("Your Earned Badges")
 				ScrollView(.horizontal) {
@@ -142,6 +160,11 @@ struct AchievementsView: View {
 			$0.details.rawValue < $1.details.rawValue
 		}
 	}
+	
+	private var sampleTimes = [
+		Time(level: 3, interval: 300, totalTime: 1000, totalWords: 100, games: 3, words: 25),
+		Time(level: 4, interval: 400, totalTime: 1600, totalWords: 150, games: 3, words: 40)
+	]
 }
 
 #Preview {

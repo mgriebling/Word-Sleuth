@@ -27,7 +27,7 @@ struct WordListImportButton: View {
 		) { result in
 			switch result {
 				case .success(let file):
-					print("Imported Word List: \(file.absoluteString)")
+					print("Imported Word List: \(file)")
 					if let wordList = WordList(from: file) {
 						dataContainer.wordLists.insert(wordList, at: 0)
 					}

@@ -17,6 +17,7 @@ struct WordListView: View {
 	
 	var body: some View {
 		let colors = [Color.red.opacity(0.5), Color.red.opacity(0.2)]
+		let base = [Color.clear, .clear]
 		
 		List(selection: $selection) {
 			ForEach(dataContainer.wordLists, id: \.self) { wordList in
@@ -29,7 +30,7 @@ struct WordListView: View {
 				.listRowBackground(
 					RoundedRectangle(cornerRadius: 20)
 						.fill(
-							selection == wordList ? LinearGradient(colors: colors, startPoint: .bottom, endPoint: .top) : LinearGradient(colors: [.clear, .clear], startPoint: .bottom, endPoint: .top)
+							LinearGradient(colors: selection == wordList ? colors : base, startPoint: .bottom, endPoint: .top)
 						)
 				)
 			}

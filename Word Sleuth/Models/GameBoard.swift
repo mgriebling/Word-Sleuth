@@ -61,7 +61,12 @@ struct GameBoard: Codable, Equatable, Hashable {
 		if self.words.words.isEmpty {
 			randomFillBoard()
 		} else {
-			bestPlacement(self.words.words)
+			// remove dashes and spaces separating words (esp. in French/German)
+			var newWords = [String]()
+			self.words.words.forEach { word in
+				newWords.append(word.components(separatedBy: [" ", "-"]).joined())
+			}
+			bestPlacement(newWords)
 			
 			// fill gaps with random letters
 			for i in 0..<rcsize {

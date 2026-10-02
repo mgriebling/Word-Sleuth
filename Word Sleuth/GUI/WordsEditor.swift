@@ -12,8 +12,7 @@ import SwiftUI
 struct WordsEditor: View {
 	@Binding var words: WordList?
 	
-//	// MARK: Data (Function) In
-//	@Environment(\.dismiss) var dismiss
+	@Environment(DataContainer.self) private var dataContainer
 	
 	@State private var lwords = WordList()
 	@State private var name = ""
@@ -21,61 +20,90 @@ struct WordsEditor: View {
 	@State private var selectedLanguage = Language(rawValue: Locale.current.identifier) ?? .english
 	@State private var editWordList = false
 	@State private var useFilter = false
+	@State private var editing = false
 	@State private var filter = Filter()
+	@State private var randomWords = false
 	@State private var importString = ""
 	
 	var body: some View {
 		NavigationStack {
 			Form {
 				Section("Word List Name") {
-					TextField("Word List Name", text: $lwords.name)
-						.autocorrectionDisabled(true)
-						.showClearButton($lwords.name)
+					if editing {
+						TextField("Word List Name", text: $lwords.name)
+							.autocorrectionDisabled(true)
+							.showClearButton($lwords.name)
+					} else {
+						Text(lwords.name)
+					}
 				}
 				Section("Author") {
-					TextField("Author", text: $lwords.author)
-						.autocorrectionDisabled(true)
-						.showClearButton($lwords.author)
+					if editing {
+						TextField("Author", text: $lwords.author)
+							.autocorrectionDisabled(true)
+							.showClearButton($lwords.author)
+					} else {
+						Text(lwords.author)
+					}
 				}
-				Section {
-					DatePicker("Date", selection: $lwords.date,
-							   displayedComponents: [.date])
+				Section("Creation Date") {
+					if editing {
+						DatePicker("Date", selection: $lwords.date,
+								   displayedComponents: [.date])
+					} else {
+						Text(lwords.date, format: .dateTime.day().month().year())
+					}
 				}
-				Section {
-					Picker("Language", selection: $lwords.language) {
-						ForEach(Language.allCases, id: \.self) { language in
-							Text(language.description.capitalized).tag(language)
+				Section("Language") {
+					if editing {
+						Picker("Language", selection: $lwords.language) {
+							ForEach(Language.allCases, id: \.self) { language in
+								Text(language.description.capitalized).tag(language)
+							}
 						}
+					} else {
+						Text(lwords.language.description)
 					}
 				}
 				Section(header:
 					VStack(alignment: .leading) {
-						Text("Words (\(lwords.words.count)) *Tap List to Edit*")
-						Text("**Warning: Importing or pasting deletes existing words!**")
-						.font(.caption)
-						.foregroundStyle(.red)
+					Text("Words (\(lwords.words.count)) \(editing ? "*Tap List to Edit*" : "")")
+						if editing {
+							Text("**Warning: Importing or pasting deletes existing words!**")
+								.font(.caption)
+								.foregroundStyle(.red)
+						}
 					}
 				) {
-					HStack {
-						TextImportButton(name: "Import", text: $importString)
-
-						PasteButton(payloadType: String.self) { strings in
-							if let firstText = strings.first {
-								importString = firstText
+					if editing {
+						HStack {
+							TextImportButton(name: "Text", text: $importString)
+							
+							PasteButton(payloadType: String.self) { strings in
+								if let firstText = strings.first {
+									importString = firstText
+								}
+							}
+							.buttonBorderShape(.capsule)
+							let randomText = String(localized: "Dynamically filled with \(filter.maxWordCount) random words")
+							Button("Random") {
+								let low = filter.minWordLength
+								let high = filter.maxWordLength
+								lwords = WordList(name: "Random \(low)-\(high)", wordRange: low...high, totalWords: filter.maxWordCount)
+								lwords.words = [randomText]
+							}
+							
+							Button(action: { useFilter.toggle() }) {
+								Image(systemName: "gearshape.fill")
 							}
 						}
-						.buttonBorderShape(.capsule)
-						
-						Button("Filter...") {
-							useFilter.toggle()
-						}
-					}
-					.buttonStyle(.borderedProminent)
-					.onChange(of: importString) {
-						/// process text string to produce a unique array of words
-						withAnimation {
-							filter.filterCommonWords = true
-							lwords = WordList(name: lwords.name, author: lwords.author, from: importString, using: filter)
+						.buttonStyle(.borderedProminent)
+						.onChange(of: importString) {
+							/// process text string to produce a unique array of words
+							withAnimation {
+								filter.filterCommonWords = true
+								lwords = WordList(name: lwords.name, author: lwords.author, from: importString, using: filter)
+							}
 						}
 					}
 					
@@ -101,11 +129,20 @@ struct WordsEditor: View {
 			.navigationBarTitleDisplayMode(.inline)
 #endif
 			.toolbar {
+				ToolbarItem(placement: .topBarLeading) {
+					Button(action: { withAnimation { editing.toggle() }}) {
+						if editing {
+							Image(systemName: "xmark")
+						} else {
+							Text("Edit")
+						}
+					}
+				}
 				ToolbarItem(placement: .confirmationAction) {
 					Button(action: done) {
 						Image(systemName: "checkmark")
 					}
-					.disabled(words == lwords)
+					.disabled(!editing)
 				}
 				ToolbarItem {
 					ShareLink(item: lwords.url(name: lwords.name))
@@ -125,13 +162,20 @@ struct WordsEditor: View {
 	}
 	
 	func done() {
-		lwords.words = wordList.map(\.word)
-		if lwords.name == words?.name {
-			lwords.name += " copy"
+		if let _ = words {
+			words!.words = wordList.map(\.word)
+			if lwords.name == words!.name {
+				words!.name += " Copy"
+			} else {
+				words!.name = lwords.name
+			}
+			words!.author = lwords.author
+			words!.date = lwords.date
+			words!.owner = .user
+			words!.save(to: words!.name)  // user words are saved
+			lwords = words!.copy()
 		}
-		words = lwords  // just point to the new words
-		lwords.owner = .user
-		lwords.save(to: lwords.name)  // user words are saved
+		editing = false
 	}
 }
 

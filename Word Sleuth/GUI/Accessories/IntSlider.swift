@@ -27,11 +27,11 @@ struct IntSlider: View {
 				   in: Double(range.lowerBound) ... Double(range.upperBound),
 				   step: 1.0)
 			{
-				Text("")
+				Text(verbatim: "")
 			} minimumValueLabel: {
-				Text("\(range.lowerBound)")
+				Text(range.lowerBound, format: .number)
 			} maximumValueLabel: {
-				Text("\(range.upperBound)")
+				Text(range.upperBound, format: .number)
 			}
 		}
 	}

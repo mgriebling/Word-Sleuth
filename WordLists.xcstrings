@@ -6062,7 +6062,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aigue-marine"
+            "value" : "Aiguemarine"
           }
         },
         "hi" : {
@@ -7411,7 +7411,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Incendie criminel"
+            "value" : "Incendiecriminel"
           }
         },
         "hi" : {
@@ -15300,7 +15300,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Binärprogramm"
+            "value" : "Binär"
           }
         },
         "es" : {
@@ -16223,7 +16223,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schwarzes Loch"
+            "value" : "SchwarzesLoch"
           }
         },
         "es" : {
@@ -18365,7 +18365,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Faire bouillir"
+            "value" : "Bouillir"
           }
         },
         "hi" : {
@@ -24971,7 +24971,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mettre quelque chose en conserve"
+            "value" : "Boîte"
           }
         },
         "hi" : {
@@ -25022,8 +25022,7 @@
             "value" : "Може"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "Canada" : {
       "comment" : "L17-word 8",
@@ -29730,7 +29729,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Faire des ménages"
+            "value" : "Ménages"
           }
         },
         "hi" : {
@@ -29872,7 +29871,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Charbon de bois"
+            "value" : "Charbon"
           }
         },
         "hi" : {
@@ -32432,7 +32431,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chow-chow"
+            "value" : "Chowchow"
           }
         },
         "hi" : {
@@ -37705,7 +37704,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Types de conteneurs"
+            "value" : "Types de Conteneurs"
           }
         },
         "hi" : {
@@ -38273,7 +38272,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Conditions de cuisson"
+            "value" : "Conditions de Cuisson"
           }
         },
         "hi" : {
@@ -38770,7 +38769,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Velours côtelé"
+            "value" : "Velours"
           }
         },
         "hi" : {
@@ -45022,7 +45021,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Base de données"
+            "value" : "Basededonnées"
           }
         },
         "hi" : {
@@ -49292,7 +49291,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Races de chiens"
+            "value" : "Races de Chiens"
           }
         },
         "hi" : {
@@ -50428,7 +50427,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Petit verre"
+            "value" : "Verre"
           }
         },
         "hi" : {
@@ -54351,7 +54350,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Détournement de fonds"
+            "value" : "Détournementdefonds"
           }
         },
         "hi" : {
@@ -58406,7 +58405,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tissus et textiles"
+            "value" : "Tissus et Textiles"
           }
         },
         "hi" : {
@@ -61112,7 +61111,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pare-feu"
+            "value" : "Parefeu"
           }
         },
         "hi" : {
@@ -66019,7 +66018,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Faire frire"
+            "value" : "Frire"
           }
         },
         "hi" : {
@@ -71859,7 +71858,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Grille de foyer"
+            "value" : "Grilledefoyer"
           }
         },
         "hi" : {
@@ -75420,7 +75419,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Articles de quincaillerie"
+            "value" : "Matérielinformatique"
           }
         },
         "hi" : {
@@ -79333,7 +79332,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Étui de revolver"
+            "value" : "Étuiderevolver"
           }
         },
         "hi" : {
@@ -90640,7 +90639,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Se pieuter"
+            "value" : "Pieuter"
           }
         },
         "hi" : {
@@ -96912,7 +96911,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Citron vert"
+            "value" : "Citronvert"
           }
         },
         "hi" : {
@@ -97338,7 +97337,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Linge de maison"
+            "value" : "Linge"
           }
         },
         "hi" : {
@@ -102245,7 +102244,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Homicide involontaire"
+            "value" : "Homicide"
           }
         },
         "hi" : {
@@ -103168,7 +103167,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Faire mariner"
+            "value" : "Mariner"
           }
         },
         "hi" : {
@@ -105369,7 +105368,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Faire fondre"
+            "value" : "Fondre"
           }
         },
         "hi" : {
@@ -106351,7 +106350,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mexiko-Stadt"
+            "value" : "MexikoStadt"
           }
         },
         "es" : {
@@ -107712,7 +107711,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Viande hachée"
+            "value" : "Viandehachée"
           }
         },
         "hi" : {
@@ -109779,7 +109778,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Laniment d'argent"
+            "value" : "Lanimentd'argent"
           }
         },
         "hi" : {
@@ -112406,7 +112405,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Grande tasse"
+            "value" : "Grandetasse"
           }
         },
         "hi" : {
@@ -115317,7 +115316,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Des Pays-Bas"
+            "value" : "PaysBas"
           }
         },
         "hi" : {
@@ -115802,7 +115801,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "New York"
+            "value" : "NewYork"
           }
         },
         "es" : {
@@ -121374,7 +121373,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chien de loutre"
+            "value" : "Loutre"
           }
         },
         "hi" : {
@@ -124928,7 +124927,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mot de passe"
+            "value" : "Motdepasse"
           }
         },
         "hi" : {
@@ -126845,7 +126844,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Faux témoignage"
+            "value" : "Fauxémoignage"
           }
         },
         "hi" : {
@@ -128762,7 +128761,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vol à la tire"
+            "value" : "Volàlatire"
           }
         },
         "hi" : {
@@ -133097,7 +133096,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Loulou de Poméranie"
+            "value" : "Poméranie"
           }
         },
         "hi" : {
@@ -135582,7 +135581,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unité centrale"
+            "value" : "processeur"
           }
         },
         "hi" : {
@@ -137720,7 +137719,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sac à main"
+            "value" : "Sacmain"
           }
         },
         "hi" : {
@@ -149163,7 +149162,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L'Arabie Saoudite"
+            "value" : "ArabieSaoudite"
           }
         },
         "hi" : {
@@ -149305,7 +149304,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Faire sauter"
+            "value" : "Fairesauter"
           }
         },
         "hi" : {
@@ -155141,7 +155140,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vol à l'étalage"
+            "value" : "Volàl'étalage"
           }
         },
         "hi" : {
@@ -161892,7 +161891,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gelöster Stoff"
+            "value" : "GelösterStoff"
           }
         },
         "es" : {
@@ -162401,7 +162400,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Afrique du Sud"
+            "value" : "AfriqueduSud"
           }
         },
         "hi" : {
@@ -163182,7 +163181,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Excès de vitesse"
+            "value" : "Excèsvitesse"
           }
         },
         "hi" : {
@@ -176676,7 +176675,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pain grillé"
+            "value" : "Paingrillé"
           }
         },
         "hi" : {
@@ -183721,7 +183720,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sous-vêtements"
+            "value" : "Sousvêtements"
           }
         },
         "hi" : {
@@ -184153,7 +184152,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "États-Unis"
+            "value" : "ÉtatsUnis"
           }
         },
         "hi" : {
@@ -186867,7 +186866,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Viêt Nam"
+            "value" : "ViêtNam"
           }
         },
         "hi" : {
