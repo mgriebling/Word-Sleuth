@@ -17,8 +17,8 @@ struct FilterView: View {
 	@Environment(\.dismiss) var dismiss
 	@State private var words = WordList()
 	
-	let wordRange = 3...20		// same thing here
-	let maxWordRange = 50...200 // this should be a constant somewhere
+	let wordRange = 3...20		
+	let maxWordRange = 50...200
 		
     var body: some View {
 		NavigationStack {
