@@ -86,7 +86,8 @@ struct GameView: View {
 			.frame(maxWidth: isPhone && game.rows > 16 ? 150 : 400, maxHeight: .infinity)
 			
 			VStack {
-				FloatingWord(activeWord: $selectedWord)
+				Spacer()
+				FloatingWord(activeWord: selectedWord)
 				Spacer()
 			}
 		}
@@ -147,7 +148,7 @@ struct GameView: View {
 			
 			VStack {
 				Spacer()
-				FloatingWord(activeWord: $selectedWord)
+				FloatingWord(activeWord: selectedWord)
 				Spacer()
 			}
 		}
