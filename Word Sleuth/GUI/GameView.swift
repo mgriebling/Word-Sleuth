@@ -84,7 +84,6 @@ struct GameView: View {
 			WordView(words: game.board.wordPlacements,
 					 maxWordLength: game.board.words.maxLength)
 			.frame(maxWidth: isPhone && game.rows > 16 ? 150 : 400, maxHeight: .infinity)
-			//.background(.gray.opacity(0.2))
 			
 			VStack {
 				FloatingWord(activeWord: $selectedWord)
@@ -121,15 +120,9 @@ struct GameView: View {
 		// portrait mode
 		VSView {
 			portraitWordList()
-			//	.background(.pink.opacity(0.3))
 			
 			LetterGridView(game: game, allowDrag: true, isLandscape: false, selectedWord: $selectedWord, settings: $settings)
 				.layoutPriority(1)
-//				.onAppear {
-//					if !showWords, game.rows < 18 {
-//						showWords = true
-//					}
-//				}
 			Spacer()
 		}
 		.padding(.horizontal)
@@ -153,6 +146,7 @@ struct GameView: View {
 			}
 			
 			VStack {
+				Spacer()
 				FloatingWord(activeWord: $selectedWord)
 				Spacer()
 			}

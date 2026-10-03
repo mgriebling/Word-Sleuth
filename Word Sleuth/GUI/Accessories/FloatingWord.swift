@@ -17,9 +17,7 @@ struct FloatingWord: View {
 	
     var body: some View {
 		let cellSize: CGFloat = 30
-		//let start = dragStartCell ?? CellIndex()
-		//let offset = cellSize * CGFloat(numRows) / 4
-		let grey = Color.gray.opacity(0.6) //  .systemGray4)
+		let grey = Color.gray.opacity(0.8)
 		let frameWidth = activeWord.count/2 + 1
 		VStack {
 			Text(activeWord)
@@ -39,7 +37,6 @@ struct FloatingWord: View {
 		.zIndex(10)
 		.opacity(activeWord.isEmpty ? 0.0 : 1.0)
 		.animation(.none, value: frameWidth)
-		//.offset(y: start.row > numRows/2 ? -offset : offset)
     }
 }
 
