@@ -74,28 +74,28 @@ struct GameCreationView: View {
 					}
 				}
 				
-				let puzzleTitle = "Puzzle Size" + (level == .manual ? "" : " (" + puzzleSize(size: level.size) + ")")
+				let puzzleTitle = "Puzzle Level: " + (level == .manual ? "" : Self.puzzleSize(level: level))
 
 				Section(puzzleTitle, isExpanded: $showSize) {
 					Picker("Choose size:", selection: $size) {
 						Text("Random").tag(0)
 						Text("Random in range").tag(-1)
-						Text("Selected Sizes").tag(-2)
-						ForEach(SettingsType.maxRowRange, id:\.self) { index in
-							Text(puzzleSize(size: index)).tag(index)
+						Text("Selected Levels").tag(-2)
+						ForEach(SettingsType.maxRowRange, id:\.self) { size in
+							Text(Self.puzzleSize(size: size)).tag(size)
 						}
 					}
 					.onAppear {
 						size = showSize ? -2 : prevLevel.size
 					}
 					if size == -1 {
-						Stepper("Min: " + puzzleSize(size:minSize), value: $minSize, in: SettingsType.maxRowRange)
-						Stepper("Max: " + puzzleSize(size:maxSize), value: $maxSize, in: SettingsType.maxRowRange)
+						Stepper("Min: " + Self.puzzleSize(size: minSize), value: $minSize, in: SettingsType.maxRowRange.lowerBound...maxSize)
+						Stepper("Max: " + Self.puzzleSize(size: maxSize), value: $maxSize, in: minSize...SettingsType.maxRowRange.upperBound)
 					} else if size == -2 {
-						Picker("Size:", selection: $sizeToAdd) {
+						Picker("Level:", selection: $sizeToAdd) {
 							Text("None").tag(nil as Int?)
-							ForEach(SettingsType.maxRowRange, id:\.self) { index in
-								Text(puzzleSize(size:index)).tag(index)
+							ForEach(SettingsType.maxRowRange, id:\.self) { size in
+								Text(Self.puzzleSize(size: size)).tag(size)
 							}
 						}
 						.onChange(of: sizeToAdd) {
@@ -106,7 +106,7 @@ struct GameCreationView: View {
 						}
 						List {
 							ForEach(sizes, id: \.self) { size in
-								Text(puzzleSize(size:size))
+								Text(Self.puzzleSize(size:size))
 							}
 							.onDelete { removeItems in
 								sizes.remove(atOffsets: removeItems)
@@ -156,14 +156,21 @@ struct GameCreationView: View {
 		}
     }
 	
-	private func puzzleSize(size: Int = 0) -> String {
-		let rows = size == 0 ? level.size : size
-		#if os(iOS)
-		let cols = UIDevice.current.userInterfaceIdiom == .phone ? min(12, rows) : rows
-		#else
-		let cols = rows
-		#endif
-		return "\(rows) ⨉ \(cols)"
+	static func puzzleSize(size: Int = 0, level: Level = .manual) -> String {
+		var level = level
+		if size == 0, level != .manual {
+			let (rows, cols) = Game.rowsAndCols(for: level)
+			return "\(level.rawValue) (\(rows) ⨉ \(cols))"
+		} else {
+			let rows = size
+			#if os(iOS)
+			let cols = UIDevice.current.userInterfaceIdiom == .phone ? min(12, rows) : rows
+			#else
+			let cols = rows
+			#endif
+			if level == .manual { level = Level(size: size) }
+			return "\(level.rawValue) (\(rows) ⨉ \(cols))"
+		}
 	}
 	
 	private func createGames() {
@@ -204,7 +211,7 @@ struct GameCreationView: View {
 			
 			while numberOfGames > 0, attempts < maxAttempts {
 				let game = Game(size: sizes[0], words: wordListsToUse[0])
-				if level == .manual || game.level == level.value {
+				if level == .manual || game.level == level {
 					await MainActor.run {
 						withAnimation {
 							dataContainer.games.insert(game, at: 0)

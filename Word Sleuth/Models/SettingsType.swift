@@ -10,13 +10,18 @@
 import SwiftUI
 
 public struct SettingsType {
+	#if os(iOS)
+	static let isPhone = UIDevice.current.userInterfaceIdiom == .phone
+	#else
+	static let isPhone = false
+	#endif
+	
 	static let maxRowRange = 4...20
 	static let maxColRange = 4...20
 	
 	var player: Player
 	
 	var gameNumber: Int
-	var level: Level
 	
 	var highlight: HighLight
 	var selectionColor: Color
@@ -39,6 +44,10 @@ public struct SettingsType {
 	var sortIncreasing: Bool
 	
 	var allowReverseSelection: Bool
+	var showFloatingWord: Bool
+	
+	var minLevel: Int
+	var maxLevel: Int
 	
 	init() {
 		self.gameNumber = 1
@@ -52,12 +61,14 @@ public struct SettingsType {
 		self.showTimer = true
 		self.horizontal = .left
 		self.vertical = .below
-		self.level = .five
 		self.fontStyle = .regular
 		self.sortAcrossCols = true
 		self.sortPuzzles = .name
 		self.sortIncreasing = true
 		self.allowReverseSelection = false
+		self.showFloatingWord = true
+		self.minLevel = 1
+		self.maxLevel = 10
 	}
 	
 	init(_ settings: Self) {
@@ -73,8 +84,9 @@ extension SettingsType: Codable {
 	enum CodingKeys: String, CodingKey {
 		case gameNumber, player, highlight, selectionColor,
 			 selectionOKColor, highlightColor, soundsOn, soundVolume, showTimer,
-			 horizontal, vertical, level, fontStyle, sortAcrossCols,
-			 sortPuzzles, sortIncreasing, allowReverseSelection
+			 horizontal, vertical, fontStyle, sortAcrossCols,
+			 sortPuzzles, sortIncreasing, allowReverseSelection,
+			 showFloatingWord, minLevel, maxLevel
 	}
 	
 	public init(from decoder: Decoder) throws {
@@ -90,12 +102,14 @@ extension SettingsType: Codable {
 		self.showTimer = try container.decode(Bool.self, forKey: .showTimer)
 		self.horizontal = try container.decode(Horizontal.self, forKey: .horizontal)
 		self.vertical = try container.decode(Vertical.self, forKey: .vertical)
-		self.level = try container.decode(Level.self, forKey: .level)
 		self.fontStyle = try container.decode(FontStyle.self, forKey: .fontStyle)
 		self.sortAcrossCols = try container.decode(Bool.self, forKey: .sortAcrossCols)
 		self.sortPuzzles = try container.decode(PuzzleOrder.self, forKey: .sortPuzzles)
 		self.sortIncreasing = try container.decode(Bool.self, forKey: .sortIncreasing)
 		self.allowReverseSelection = try container.decode(Bool.self, forKey: .allowReverseSelection)
+		self.showFloatingWord = try container.decode(Bool.self, forKey: .showFloatingWord)
+		self.minLevel = try container.decode(Int.self, forKey: .minLevel)
+		self.maxLevel = try container.decode(Int.self, forKey: .maxLevel)
 	}
 	
 	public func encode(to encoder: Encoder) throws {
@@ -111,12 +125,14 @@ extension SettingsType: Codable {
 		try container.encode(self.showTimer, forKey: .showTimer)
 		try container.encode(self.horizontal, forKey: .horizontal)
 		try container.encode(self.vertical, forKey: .vertical)
-		try container.encode(self.level, forKey: .level)
 		try container.encode(self.fontStyle, forKey: .fontStyle)
 		try container.encode(self.sortAcrossCols, forKey: .sortAcrossCols)
 		try container.encode(self.sortPuzzles, forKey: .sortPuzzles)
 		try container.encode(self.sortIncreasing, forKey: .sortIncreasing)
 		try container.encode(self.allowReverseSelection, forKey: .allowReverseSelection)
+		try container.encode(self.showFloatingWord, forKey: .showFloatingWord)
+		try container.encode(self.minLevel, forKey: .minLevel)
+		try container.encode(self.maxLevel, forKey: .maxLevel)
 	}
 }
 
@@ -178,11 +194,11 @@ enum PuzzleOrder: String, CaseIterable, Identifiable, Codable {
 	var id: Self { self }
 }
 
-enum Level: Int, CaseIterable, Identifiable, Codable {
-	case manual, one, two, three, four, five, six
-	case seven, eight, nine, ten
+enum Level: Int, CaseIterable, Comparable, Identifiable, Codable {
 	
-	var value: Int { self.rawValue }
+	case manual = 0, one, two, three, four, five, six, seven, eight, nine, ten
+	
+	init(size: Int = 0) { self = Self.level(for: size) }
 	
 	/// returns the game grid size to give this level
 	var size: Int {
@@ -201,23 +217,49 @@ enum Level: Int, CaseIterable, Identifiable, Codable {
 		}
 	}
 	
+	static func level(for size: Int) -> Level {
+		if size < 0 { return .manual }
+		let cols = SettingsType.isPhone ? min(12, size) : size
+		func xs(_ i: Int) -> Int { SettingsType.isPhone ? i * min(12, i) : i*i }
+		let cells = cols * size
+		let s4 = 4*4, s6 = 6*6, s8 = 8*8, s10 = 10*10, s12 = 12*12
+		let s14 = xs(14), s16 = xs(16), s18 = xs(18), s19 = xs(19), s20 = xs(20)
+		switch cells {
+			case 0...s4:      return .one
+			case s4-1...s6:   return .two
+			case s6-1...s8:   return .three
+			case s8-1...s10:  return .four
+			case s10-1...s12: return .five
+			case s12-1...s14: return .six
+			case s14-1...s16: return .seven
+			case s16-1...s18: return .eight
+			case s18-1...s19: return .nine
+			case s19-1...s20: return .ten
+			default: 		  return .five
+		}
+	}
+	
+	static func < (lhs: Level, rhs: Level) -> Bool {
+		lhs.rawValue < rhs.rawValue
+	}
+	
 	var localized: LocalizedStringKey {
 		if self == .manual { return "Man" }
-		return LocalizedStringKey(value.formatted())
+		return LocalizedStringKey(rawValue.formatted())
 	}
 
 	var id: Self { self }
 }
 
 enum CreationMode: Int, CaseIterable, Identifiable, Codable {
-	case oneGame , twoGames, threeGames, fourGrames,
+	case oneGame = 1, twoGames, threeGames, fourGrames,
 		 fiveGames, custom
 	
 	var localized: LocalizedStringKey {
 		if self == .custom { return "Custom" }
 		return LocalizedStringKey(number.formatted())
 	}
-	var number: Int { self.rawValue + 1 }
+	var number: Int { self.rawValue }
 	var id: Self { self }
 }
 

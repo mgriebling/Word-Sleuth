@@ -7003,6 +7003,9 @@
         }
       }
     },
+    "Level Range:" : {
+
+    },
     "Level:" : {
       "localizations" : {
         "ar" : {
@@ -10419,7 +10422,11 @@
         }
       }
     },
+    "Selected Levels" : {
+
+    },
     "Selected Sizes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -10877,6 +10884,9 @@
         }
       }
     },
+    "Show Floating Word" : {
+
+    },
     "Show Timer" : {
       "localizations" : {
         "ar" : {
@@ -10954,6 +10964,7 @@
       }
     },
     "Size:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

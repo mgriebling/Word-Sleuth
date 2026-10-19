@@ -37,16 +37,16 @@ struct GameEditor: View {
 	var body: some View {
 		NavigationStack {
 			Form {
-				Section("Default Level") {
-					Picker("Level:", selection: $settings.level) {
-						ForEach(Level.allCases.dropFirst(), id:\.self) { level in
-							Text(level.rawValue, format: .number).tag(level) //  "\(level.rawValue)").tag(level)
-						}
-					}
-					.pickerStyle(.segmented)
-					.onChange(of: settings.level, updateGame)
-	
-				}
+//				Section("Default Level") {
+//					Picker("Level:", selection: $settings.level) {
+//						ForEach(Level.allCases.dropFirst(), id:\.self) { level in
+//							Text(level.rawValue, format: .number).tag(level) //  "\(level.rawValue)").tag(level)
+//						}
+//					}
+//					.pickerStyle(.segmented)
+//					.onChange(of: settings.level, updateGame)
+//	
+//				}
 				Section("Word List", isExpanded: $showWordList) {
 					Picker("Word List Selection:", selection: $selectedWordList) {
 						ForEach(words, id:\.self) { Text($0.name) }
@@ -119,7 +119,7 @@ struct GameEditor: View {
 	func updateGame() {
 //		print("Grid size: \(settings.level.size)")
 //		print("Updating game with \(selectedWordList.words.count) words")
-		lgame = Game(size: settings.level.size, words: selectedWordList)
+//		lgame = Game(size: settings.level.size, words: selectedWordList)
 		gameID = UUID()
 //		print("Finished game update")
 	}

@@ -24,6 +24,11 @@ struct SettingsView: View {
 	@State private var creationMode: CreationMode = .oneGame
 	@State private var selectedWord = ""
 	@State private var showGridAppearance = false
+	@State private var minSize = Level.one.rawValue
+	@State private var maxSize = Level.ten.rawValue
+	
+	// MARK: Local constants - number of puzzles to generate
+	let puzzleRange = 6...20
 	
 	var body: some View {
 		NavigationStack {
@@ -42,24 +47,20 @@ struct SettingsView: View {
 							if creationMode != .custom {
 								internalSettings.gameNumber = creationMode.number
 							} else {
-								internalSettings.gameNumber = 6
+								internalSettings.gameNumber = puzzleRange.lowerBound
 							}
 						}
 						.pickerStyle(.segmented)
 					}
 					
 					if creationMode == .custom {
-						IntSlider(label: "\(internalSettings.gameNumber) ", value: $internalSettings.gameNumber, range: 6...20, minValue: 6, maxValue: 20)
+						IntSlider(label: "\(internalSettings.gameNumber) ", value: $internalSettings.gameNumber, range: puzzleRange, minValue: puzzleRange.lowerBound, maxValue: puzzleRange.upperBound)
 					}
 			
-					HStack {
-						Text("Level:")
-						Picker("Level:", selection: $internalSettings.level) {
-							ForEach(Level.allCases.dropFirst(), id:\.self) { level in
-								Text(level.value, format: .number)
-							}
-						}
-						.pickerStyle(.segmented)
+					VStack(alignment: .leading) {
+						Text("Level Range:")
+						Stepper("Min: " + GameCreationView.puzzleSize(level: Level(rawValue: settings.minLevel) ?? .one), value: $settings.minLevel, in: 1...settings.maxLevel)
+						Stepper("Max: " + GameCreationView.puzzleSize(level: Level(rawValue: settings.maxLevel) ?? .one), value: $settings.maxLevel, in: settings.minLevel...10)
 					}
 				}
 				
@@ -80,6 +81,7 @@ struct SettingsView: View {
 					}
 					
 					Toggle("Sorted Across Columns", isOn: $internalSettings.sortAcrossCols)
+					Toggle("Show Floating Word", isOn: $internalSettings.showFloatingWord)
 				}
 				
 				Section("Timer") {

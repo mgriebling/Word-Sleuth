@@ -172,7 +172,12 @@ struct GameListView: View {
 	var addButton: some View {
 		Button("Add Puzzle", systemImage: "plus") {
 			let number = settings.gameNumber
-			let sizes = Array(repeating: settings.level.size, count: number)
+			var sizes = Array(repeating: Level.five.size, count: number)
+			let minLevel = Level(rawValue: settings.minLevel) ?? Level.one
+			let maxLevel = Level(rawValue: settings.maxLevel) ?? Level.ten
+			for index in sizes.indices {
+				sizes[index] = Int.random(in: minLevel.size...maxLevel.size)
+			}
 			dataContainer.createGames(number: number, sizes: sizes)
 			self.selection = dataContainer.games.first
 		}

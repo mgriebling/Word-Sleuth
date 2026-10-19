@@ -108,7 +108,8 @@ class DataContainer {
 		}
 	}
 	
-	func createGame(size: Int, names: inout Set<String>) {
+	@discardableResult
+	func createGame(size: Int, names: inout Set<String>) -> Bool {
 		if let words = SampleWords.list.randomElement() {
 			print("Words = \(words.name), owner = \(words.owner)")
 			let game = Game(size: size, words: words)
@@ -119,19 +120,22 @@ class DataContainer {
 				names.insert(game.name)
 				game.save(to: game.name)
 				print("Saving game \(game.name)")
+				return true
 			}
 		}
+		return false
 	}
 	
 	func createGames(number: Int, sizes: [Int]) {
 		assert(sizes.count >= number, "Expecting at least \(number) sizes!")
-		var names = Set<String>()
+		var names = Set<String>()  // avoid having duplicate games
 		createGame(size: sizes[0], names: &names) // first one user waits
 		Task.detached(priority: .userInitiated) {
 			var i = 1
 			while i < number {
-				await self.createGame(size: sizes[i], names: &names)
-				i += 1
+				if await self.createGame(size: sizes[i], names: &names) {
+					i += 1
+				}
 			}
 		}
 	}

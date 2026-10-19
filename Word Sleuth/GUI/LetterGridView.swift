@@ -84,26 +84,12 @@ struct LetterGridView: View {
 			}
 		}
 		.onAppear {
-			let invert = isLandscape && (game.rows > game.cols)
-			// board = invert ? game.transpose() : game.board
-//			settings.highlight = .outlineFill
-//			settings.highlightColor = Color(.yellow)
-//			settings.selectionColor = Color(.blue)
-//			settings.selectionOKColor = Color(.green)
+			// let invert = isLandscape && (game.rows > game.cols)
 			game.setOrientation(landscape: isLandscape)
 			numCols = game.cols
 			numRows = game.rows
-			//				settings.fontStyle = .regular
-			//				for i in 0..<game.placedWords.count {
-			//					board.highlightWord(i, Int.random(in: 0...7))
-			//				}
-//			game.board.highlightWord(0, 4)
-//			game.board.highlightWord(1, 1)
-//			game.board.highlightWord(5, 2)
-			//game.board.highlightWord(10, 3)
-			//				print(game.board.words.words)
 			placedSet = Set(game.board.wordPlacements.map({ $0.extended }))
-			print("invert = \(invert), isLandscape = \(isLandscape)")
+			// print("invert = \(invert), isLandscape = \(isLandscape)")
 		}
 		.gesture(
 			DragGesture(minimumDistance: 5, coordinateSpace: .named("GridSpace"))
@@ -180,20 +166,12 @@ struct LetterGridView: View {
 							let size = (newValue.height + newValue.width) * 0.5
 							self.cellSize = size
 							self.width = size * CGFloat(game.board.cols) * 0.8
-						//	print(newValue.width, newValue.height, self.width)
 						}
 					}
 				}
 			}
 		}
-		//.background(.pink.opacity(0.3))
-		// 1. Force the grid to maintain a perfect 1:1 square ratio
 		.aspectRatio(CGFloat(game.board.cols)/CGFloat(game.board.rows), contentMode: .fit)
-		// 2. Expand strictly along the preferred axis based on orientation
-//		.frame(
-//			maxWidth: isLandscape ? nil : .infinity,
-//			maxHeight: isLandscape ? .infinity : nil
-//		)
 		.ignoresSafeArea()
 	}
 	
@@ -262,7 +240,6 @@ struct LetterGridView: View {
 	
 	
 	func removeActiveWord(colorIndex: Int) {
-		//print(game.selectedWord, words)
 		if let index = game.words.firstIndex(of: selectedWord.lowercased()) {
 			game.board.highlightWord(index, colorIndex)
 			selectedWord = ""
@@ -275,21 +252,21 @@ struct LetterGridView: View {
 		if let targetWord = detectedWord {
 			// Check to avoid duplicates
 			if let _ = dragStartCell, let _ = dragCurrentCell {
-				effect("success")
 				removeActiveWord(colorIndex: colors.indices.randomElement()!)
+				soundEffect("success")
 				print("SUCCESS: Found Word \(targetWord.capitalized)")
 			}
 		} else {
 			selectedWord = ""
-			effect("oops")
+			soundEffect("oops")
 		}
 		
 		if game.isOver {
-			effect("victory-chime")
+			soundEffect("victory-chime")
 			settings.player.add(points: game.words.count)
 			animateWin = true
 			game.timer.stop()
-			settings.player.updateTimes(level: game.level, interval: TimeInterval(game.timer.elapsedTime), words: game.words.count)
+			settings.player.updateTimes(level: game.level.rawValue, interval: TimeInterval(game.timer.elapsedTime), words: game.words.count)
 			dataContainer.unlockBadges(newGame: game, player: settings.player)
 			game.save(to: game.name)
 		}
@@ -302,7 +279,7 @@ struct LetterGridView: View {
 		}
 	}
 	
-	private func effect(_ sound: String) {
+	private func soundEffect(_ sound: String) {
 		if settings.soundsOn {
 			SoundManager.shared.playSound(named: sound, type: "mp3", volume: Float(settings.soundVolume))
 		}

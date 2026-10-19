@@ -30,7 +30,7 @@ struct GameSummary: View {
 				let title = String(localized: "Elapsed Time: ")
 				ElapsedTime(text: title, timer: game.timer)
 			}
-			Text("Level: \(game.level) (\(game.rows) ⨉ \(game.cols))")
+			Text("Level: \(game.level.rawValue) (\(game.rows) ⨉ \(game.cols))")
 				.frame(maxWidth: .infinity, alignment: .leading)
 			HStack {
 				Text("Words(\(game.words.count)): ")
