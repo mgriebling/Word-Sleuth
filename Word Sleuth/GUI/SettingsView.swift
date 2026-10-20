@@ -20,7 +20,7 @@ struct SettingsView: View {
 	@Environment(\.dismiss) var dismiss
 	
 	@State private var internalSettings = SettingsType()
-	@State private var game = Game(size: SettingsType.maxColRange.lowerBound, words: words)
+	@State private var game = Game(name: "Demo", size: SettingsType.maxColRange.lowerBound, words: words)
 	@State private var creationMode: CreationMode = .oneGame
 	@State private var selectedWord = ""
 	@State private var showGridAppearance = false

@@ -30,8 +30,8 @@ class DataContainer {
 			addSampleGames()
 		}
 		
-		// wordLists = WordList.loadWordLists()
-		print("Word lists is empty, adding init samples...")
+		wordLists = WordList.loadWordLists()
+		// print("Word lists is empty, adding init samples...")
 		Task.detached(priority: .background) {
 			await self.addSampleWords()
 		}
@@ -42,7 +42,7 @@ class DataContainer {
 	
 	static var sample20x20: DataContainer {
 		let container = DataContainer()
-		container.games = [Game(20, cols: 20, words: SampleWords.list[2])]
+		container.games = [Game(name: "Sample20x20", 20, cols: 20, words: SampleWords.list[2])]
 		return container
 	}
 	
@@ -108,32 +108,63 @@ class DataContainer {
 		}
 	}
 	
-	@discardableResult
-	func createGame(size: Int, names: inout Set<String>) -> Bool {
-		if let words = SampleWords.list.randomElement() {
-			print("Words = \(words.name), owner = \(words.owner)")
-			let game = Game(size: size, words: words)
-			if !names.contains(game.name) {
-				withAnimation {
-					self.games.insert(game, at: 0)
-				}
-				names.insert(game.name)
-				game.save(to: game.name)
-				print("Saving game \(game.name)")
-				return true
-			}
-		}
-		return false
+	/// Returns true if a puzzle with the name "name" exists
+	private func puzzleContains(_ name: String) -> Bool {
+		games.contains { $0.name == name }
 	}
 	
-	func createGames(number: Int, sizes: [Int]) {
+	/// Returns true if a puzzle with the name "name" exists
+	private func wordListContains(_ name: String) -> Bool {
+		wordLists.contains { $0.name == name }
+	}
+	
+	/// Return a unique name with *name* as a basis where *contains* return true if name exists
+	private func getUniqueName(name: String, contains: (String) -> Bool) -> String {
+		if contains(name) {
+			// make a unique name
+			var number = 1
+			while contains(name+"\(number)") { number += 1 }
+			return name+"\(number)"
+		}
+		return name
+	}
+	
+	/// Return a unique wordlist name with *name* as a basis
+	func getUniqueWordListName(_ name: String) -> String {
+		getUniqueName(name: name, contains: wordListContains)
+	}
+	
+	/// Return a unique wordlist name with *name* as a basis
+	func getUniquePuzzleName(_ name: String) -> String {
+		getUniqueName(name: name, contains: puzzleContains)
+	}
+	
+	@discardableResult
+	func createGame(size: Int, words: WordList? = nil) -> Bool {
+		let w: WordList
+		if let words { w = words }
+		else if let words = wordLists.randomElement() { w = words }
+		else { w = WordList() }
+			
+		print("Words = \(w.name), owner = \(w.owner)")
+		let game = Game(name: getUniquePuzzleName(w.name), size: size, words: w)
+		
+		withAnimation {
+			self.games.insert(game, at: 0)
+		}
+		game.save(to: game.name)
+		print("Saving game \(game.name)")
+		return true
+	}
+	
+	func createGames(number: Int, sizes: [Int], wordlists: [WordList] = []) {
 		assert(sizes.count >= number, "Expecting at least \(number) sizes!")
-		var names = Set<String>()  // avoid having duplicate games
-		createGame(size: sizes[0], names: &names) // first one user waits
+		let noWords = wordlists.isEmpty
+		createGame(size: sizes[0], words: noWords ? nil : wordlists[0]) // first one user waits
 		Task.detached(priority: .userInitiated) {
 			var i = 1
 			while i < number {
-				if await self.createGame(size: sizes[i], names: &names) {
+				if await self.createGame(size: sizes[i], words: noWords ? nil : wordlists[i]) {
 					i += 1
 				}
 			}

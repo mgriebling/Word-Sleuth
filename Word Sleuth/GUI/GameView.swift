@@ -85,10 +85,12 @@ struct GameView: View {
 					 maxWordLength: game.board.words.maxLength)
 			.frame(maxWidth: isPhone && game.rows > 16 ? 150 : 400, maxHeight: .infinity)
 			
-			VStack {
-				Spacer()
-				FloatingWord(activeWord: selectedWord)
-				Spacer()
+			if settings.showFloatingWord {
+				VStack {
+					Spacer()
+					FloatingWord(activeWord: selectedWord)
+					Spacer()
+				}
 			}
 		}
 	}
@@ -146,10 +148,12 @@ struct GameView: View {
 				divider()
 			}
 			
-			VStack {
-				Spacer()
-				FloatingWord(activeWord: selectedWord)
-				Spacer()
+			if settings.showFloatingWord {
+				VStack {
+					Spacer()
+					FloatingWord(activeWord: selectedWord)
+					Spacer()
+				}
 			}
 		}
 	}
@@ -310,7 +314,7 @@ struct GameView: View {
 
 #Preview {
 	@Previewable
-	@State var game = Game(18, cols: 18, words: SampleWords.list[0])
+	@State var game = Game(name: "Sample18x18", 18, cols: 18, words: SampleWords.list[0])
 	NavigationStack {
 		GameView(game: game)
 			.environment(DataContainer())

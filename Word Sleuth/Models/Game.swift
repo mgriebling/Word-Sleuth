@@ -18,6 +18,7 @@ import SwiftUI
 	var timer: Timer
 	var creationDate: Date
 	var badges: [Badge] = []
+	var name: String
 	
 	private let oneWeek: TimeInterval = 7 * 24 * 60 * 60 // seconds/week
 	
@@ -25,7 +26,6 @@ import SwiftUI
 	var placedWords: [PlacedWord] { _board.wordPlacements }
 	var rows: Int		   		  { _board.rows }
 	var cols: Int				  { _board.cols }
-	var name: String			  { _board.words.name }
 	var matched: Int 			  { placedWords.filter({ $0.highlighted }).count }
 	var words: [String]			  { placedWords.map { $0.word }}
 	var isOver: Bool 		  	  { matched == placedWords.count }
@@ -42,17 +42,18 @@ import SwiftUI
 	#endif
 	
 	// MARK: Initializer
-	init(level: Level, words: WordList) {
+	init(name: String, level: Level, words: WordList) {
 		self._board = GameBoard(size: level.size, words: words)
 		self.timer = Timer()
 		self.creationDate = .now
+		self.name = name
 	}
 	
-	convenience init(size: Int, words: WordList) {
-		self.init(size, cols: size, words: words)
+	convenience init(name: String, size: Int, words: WordList) {
+		self.init(name: name, size, cols: size, words: words)
 	}
 	
-	init(_ rows: Int, cols: Int, words: WordList) {
+	init(name: String, _ rows: Int, cols: Int, words: WordList) {
 		assert(SettingsType.maxRowRange.contains(rows), "Expecting rows in \(SettingsType.maxRowRange)")
 		assert(SettingsType.maxColRange.contains(cols), "Expecting columns in \(SettingsType.maxColRange)")
 		if Self.isPhone {
@@ -62,6 +63,7 @@ import SwiftUI
 		}
 		self.timer = Timer()
 		self.creationDate = .now
+		self.name = name
 	}
 	
 	/// Copies a game
@@ -69,6 +71,7 @@ import SwiftUI
 		self._board = game._board
 		self.timer = game.timer
 		self.badges = game.badges
+		self.name = game.name
 		self.creationDate = game.creationDate
 	}
 	
@@ -79,6 +82,7 @@ import SwiftUI
 		self.timer = try container.decode(Timer.self, forKey: .timer)
 		self.badges = try container.decode([Badge].self, forKey: .badges)
 		self.creationDate = try container.decode(Date.self, forKey: .creationDate)
+		self.name = try container.decode(String.self, forKey: .name)
 	}
 	
 	convenience init?(from file: URL) {
@@ -201,9 +205,10 @@ extension Game: Codable {
 		try container.encode(timer, forKey: .timer)
 		try container.encode(badges, forKey: .badges)
 		try container.encode(creationDate, forKey: .creationDate)
+		try container.encode(name, forKey: .name)
 	}
 	
-	enum CodingKeys: String, CodingKey { case board, timer, badges, creationDate }
+	enum CodingKeys: String, CodingKey { case board, timer, badges, creationDate, name }
 }
 
 extension Game: Hashable {

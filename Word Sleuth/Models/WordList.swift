@@ -166,7 +166,13 @@ public enum OwnerType: Codable, Equatable {
 
 @Observable public class WordList {
 
-	public var name: String
+	private var _name: String   // store the name here
+	
+	public var name: String {
+		set { _name = Self.getUniqueName(name: newValue) }
+		get { _name }
+	}
+	
 	public var language: Language
 	public var author: String
 	public var date: Date
@@ -185,7 +191,7 @@ public enum OwnerType: Codable, Equatable {
 	
 	required public init(from decoder: Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
-		self.name = try container.decode(String.self, forKey: ._name)
+		self._name = try container.decode(String.self, forKey: ._name)
 		self.language = try container.decode(Language.self, forKey: .language)
 		self.author = try container.decode(String.self, forKey: .author)
 		self.date = try container.decode(Date.self, forKey: .date)
@@ -242,7 +248,7 @@ public enum OwnerType: Codable, Equatable {
 	}
 	
 	init(name: String = "Empty", author: String = "Unknown", date: Date = Date(), words: [String], owner: OwnerType = .system) {
-		self.name = name
+		self._name = Self.getUniqueName(name: name)
 		self.language = Language(rawValue: Locale.current.identifier) ?? .english
 		self.author = author
 		self.date = date
@@ -253,7 +259,7 @@ public enum OwnerType: Codable, Equatable {
 	/// Get word list with random words of a certain size (i.e., wordRange)
 	init(name: String = "Empty", author: String = "Unknown", date: Date = Date(),
 		 wordRange: CountableClosedRange<Int>, totalWords: Int) {
-		self.name = name
+		self._name = Self.getUniqueName(name: name)
 		self.language = Language(rawValue: Locale.current.identifier) ?? .english
 		self.author = author
 		self.date = date
@@ -336,6 +342,7 @@ public enum OwnerType: Codable, Equatable {
 	
 	func delete() {
 		try? FileManager.default.removeItem(at: url(name: self.name))
+		Self.names.remove(self.name)
 	}
 	
 	func resource(from s: String, list: Int, word: Int = 0) -> String {
@@ -374,11 +381,12 @@ public enum OwnerType: Codable, Equatable {
 			let contents = try fileManager.contentsOfDirectory(at: documentsURL,
 					includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
 			
-			// Filter for files with fileExt extension (case-insensitive)
+			// Filter for files with fileExt extension and user flag (case-insensitive)
 			let wordListURLs = contents.filter { $0.pathExtension.lowercased() == fileExt }
 			var wordLists = [WordList]()
 			for url in wordListURLs {
-				if let wordList = WordList(from: url) {
+				if let wordList = WordList(from: url), wordList.owner == .user {
+					print("Adding word list \(wordList.name)")
 					wordLists.append(wordList)
 				}
 			}
@@ -389,8 +397,23 @@ public enum OwnerType: Codable, Equatable {
 		}
 	}
 	
+	/// Keep track of all the word list names
+	static private var names = Set<String>()
+	
+	/// Return a unique name with *name* as a basis
+	static func getUniqueName(name: String) -> String {
+		if names.contains(name) {
+			// make a unique name
+			var number = 1
+			while names.contains(name+"\(number)") { number += 1 }
+			names.insert(name+"\(number)")
+			return name+"\(number)"
+		}
+		names.insert(name)
+		return name
+	}
+	
 	static func loadSystemWords() -> [String] {
-		//let language = Locale.preferredLanguages.first ?? "en"
 		// Force just the base two-letter prefix (e.g., "en-US" -> "en")
 		let language = Locale.preferredLanguages.first?
 			.components(separatedBy: "-").first ?? "en"

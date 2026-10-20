@@ -103,7 +103,7 @@ struct WinnerView: View {
 }
 
 #Preview {
-	@Previewable @State var game = Game(size: 15, words: WordList())
+	@Previewable @State var game = Game(name: "Sample", size: 15, words: WordList())
 	WinnerView(game: game, width: 270, points: 300, animation: false)
 	WinnerView(game: game, width: 300, points: 10, badges: [Badge(details: .puzzle1), Badge(details: .puzzle3)])
 	WinnerView(game: game, width: 300, points: 1000, badges: [Badge(details: .puzzle100)])

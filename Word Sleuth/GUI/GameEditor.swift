@@ -23,7 +23,7 @@ struct GameEditor: View {
 	@AppStorage(.settings) private var settings
 	
 	// MARK: Internal State
-	@State private var lgame = Game(size: 5, words: WordList()) // dummy board
+	@State private var lgame = Game(name: "Dummy", size: 5, words: WordList()) // dummy board
 	@State private var selectedWordList = WordList()    // active word list
 	@State private var showWordList = false
 	@State private var showEmptyAlert = false
@@ -127,7 +127,7 @@ struct GameEditor: View {
 
 #Preview {
 	@Previewable
-	@State var game: Game? = Game(size: 12, words: SampleWords.list[1])
+	@State var game: Game? = Game(name: "Sample", size: 12, words: SampleWords.list[1])
 	GameEditor(game: $game) {
 		print("Updated game")
 	}

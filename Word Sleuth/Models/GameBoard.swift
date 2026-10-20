@@ -255,7 +255,6 @@ struct GameBoard: Codable, Equatable, Hashable {
 	func transpose() -> GameBoard {
 		if rows <= cols { return self }
 		var swapped = Array(repeating: Cell(letter: " "), count: rcsize)
-		// printBoard(board: self)
 		
 		// Swap the rows and columns
 		for row in 0..<rows {
@@ -266,18 +265,14 @@ struct GameBoard: Codable, Equatable, Hashable {
 		
 		// Adjust the highlighting
 		var placements = self.wordPlacements
-//		print("-------------------------------------")
-//		print(placements); print()
 		for (index, placement) in placements.enumerated() {
 			placements[index] = placement.transpose()
 		}
-//		print(placements)
 		
 		var newBoard = self
 		newBoard.board = swapped
 		newBoard.wordPlacements = placements
 		swap(&newBoard.rows, &newBoard.cols)
-		// printBoard(board: newBoard)
 		return newBoard
 	}
 	

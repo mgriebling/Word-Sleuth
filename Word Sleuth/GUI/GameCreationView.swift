@@ -203,27 +203,30 @@ struct GameCreationView: View {
 		
 		// generate games in the background
 		Task.detached(priority: .userInitiated) {
-			var numberOfGames = await self.numberOfGames
-			var sizes = await self.sizes
-			var wordListsToUse = await self.wordListsToUse
-			let level = await self.level
-			var attempts = 0
+			let numberOfGames = await self.numberOfGames
+			let sizes = await self.sizes
+			let wordListsToUse = await self.wordListsToUse
+//			let level = await self.level
+//			let attempts = 0
 			
-			while numberOfGames > 0, attempts < maxAttempts {
-				let game = Game(size: sizes[0], words: wordListsToUse[0])
-				if level == .manual || game.level == level {
-					await MainActor.run {
-						withAnimation {
-							dataContainer.games.insert(game, at: 0)
-						}
-					}
-					game.save(to: game.name)
-					sizes.removeFirst()
-					wordListsToUse.removeFirst()
-					numberOfGames -= 1
-				}
-				attempts += 1
-			}
+			await dataContainer.createGames(number: numberOfGames, sizes: sizes, wordlists: wordListsToUse)
+			
+//			while numberOfGames > 0, attempts < maxAttempts {
+//				let name = wordListsToUse[0].name
+//				let game = Game(name: name, size: sizes[0], words: wordListsToUse[0])
+//				if level == .manual || game.level == level {
+//					await MainActor.run {
+//						withAnimation {
+//							dataContainer.games.insert(game, at: 0)
+//						}
+//					}
+//					game.save(to: game.name)
+//					sizes.removeFirst()
+//					wordListsToUse.removeFirst()
+//					numberOfGames -= 1
+//				}
+//				attempts += 1
+//			}
 		}
 	}
 }

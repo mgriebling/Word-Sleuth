@@ -172,13 +172,19 @@ struct GameListView: View {
 	var addButton: some View {
 		Button("Add Puzzle", systemImage: "plus") {
 			let number = settings.gameNumber
-			var sizes = Array(repeating: Level.five.size, count: number)
+			var sizes = [Level]()
 			let minLevel = Level(rawValue: settings.minLevel) ?? Level.one
 			let maxLevel = Level(rawValue: settings.maxLevel) ?? Level.ten
-			for index in sizes.indices {
-				sizes[index] = Int.random(in: minLevel.size...maxLevel.size)
+			for level in Level.allCases.dropFirst() {
+				sizes.append(level)
 			}
-			dataContainer.createGames(number: number, sizes: sizes)
+			while sizes.count < number {
+				sizes.append(contentsOf: sizes)
+			}
+			print("minLevel = \(minLevel)")
+			print("maxLevel = \(maxLevel)")
+			print("sizes = \(sizes)")
+			dataContainer.createGames(number: number, sizes: sizes.map({ $0.size }))
 			self.selection = dataContainer.games.first
 		}
 	}

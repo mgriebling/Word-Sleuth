@@ -117,7 +117,6 @@ struct WordsEditor: View {
 						}
 				}
 				.onChange(of: lwords.words) { oldValue, newValue in
-					// print("Refreshing wordList...")
 					wordList = lwords.words.sorted().map { PlacedWord(word: $0) }
 				}
 			}
@@ -164,11 +163,7 @@ struct WordsEditor: View {
 	func done() {
 		if let _ = words {
 			words!.words = wordList.map(\.word)
-			if lwords.name == words!.name {
-				words!.name += " Copy"
-			} else {
-				words!.name = lwords.name
-			}
+			words!.name = lwords.name
 			words!.author = lwords.author
 			words!.date = lwords.date
 			words!.owner = .user

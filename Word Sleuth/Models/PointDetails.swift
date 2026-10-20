@@ -69,18 +69,19 @@ enum PointDetails: Codable {
 		}
 	}
 	
+	/// Added five levels to each tier to go to 5000 points
 	init(points: Int) {
 		switch points {
-			case 100...399:   self = .topaz(points / 100)
-			case 400...699:   self = .citrine((points - 300) / 100)
-			case 700...999:   self = .amethyst((points - 600) / 100)
-			case 1000...1299: self = .aquamarine((points - 900) / 100)
-			case 1300...1599: self = .pearl((points - 1200) / 100)
-			case 1600...1899: self = .diamond((points - 1500) / 100)
-			case 1900...2199: self = .ruby((points - 1800) / 100)
-			case 2200...2499: self = .sapphire((points - 2100) / 100)
-			case 2500...2799: self = .emerald((points - 2400) / 100)
-			case 2800... : 	  self = .blueDiamond((points - 2700) / 100)
+			case 100...599:   self = .topaz(points / 100)
+			case 600...1099:  self = .citrine((points - 500) / 100)
+			case 1100...1599: self = .amethyst((points - 1000) / 100)
+			case 1600...2099: self = .aquamarine((points - 1500) / 100)
+			case 2100...2599: self = .pearl((points - 2000) / 100)
+			case 2600...3099: self = .diamond((points - 2500) / 100)
+			case 3100...3599: self = .ruby((points - 3000) / 100)
+			case 3600...4099: self = .sapphire((points - 3500) / 100)
+			case 4100...4599: self = .emerald((points - 4000) / 100)
+			case 4600... : 	  self = .blueDiamond((points - 4500) / 100)
 			default: 		  self = .empty
 		}
 	}

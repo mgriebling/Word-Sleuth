@@ -92,7 +92,7 @@ struct GameSummary: View {
 
 #Preview {
 	@Previewable
-	@State var game = Game(size: 20, words: SampleWords.list[0])
+	@State var game = Game(name: "Sample", size: 20, words: SampleWords.list[0])
 	GameSummary(game: game)
 		.onAppear {
 //			for i in game.board.wordPlacements.indices.dropLast() {

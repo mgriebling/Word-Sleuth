@@ -50,7 +50,7 @@ struct AchievementsView: View {
 			let earned = PointDetails(points: points)
 			header("Earned Points: \(points)")
 			Self.tierLevel(points: earned)
-			Text("Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint \(Image(systemName: "lightbulb"))** button use. A new tier, each with three levels, is unlocked every 100 points. Compete with friends to see who has the most points, medallions, and highest tier level!")
+			Text("Earn points for each completed puzzle with one point for each word. Five points are lost for each **hint \(Image(systemName: "lightbulb"))** button use. A new tier, each with five levels, is unlocked every 100 points. Compete with friends to see who has the most points, medallions, and highest tier level!")
 				.font(.caption)
 			let times = settings.player.bestTimes
 			let title = String(localized: showAverage ? "Best" : "Average")

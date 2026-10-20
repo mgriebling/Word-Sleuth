@@ -71,12 +71,6 @@
     },
     "Word Sleuth Word List" : {
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "قائمة كلمات Word Sleuth"
-          }
-        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",

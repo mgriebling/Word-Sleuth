@@ -53,23 +53,6 @@ struct WordListView: View {
 			WordListImportButton(name: "Words")
 		}
 	}
-		
-//	func editButton(for wordList: WordList) -> some View {
-//		Button("Edit", systemImage: "pencil") {
-////			if let selection {
-////				wordListToEdit = selection.copy()
-////				showWordListEditor.toggle()
-////			}
-//		}
-//	}
-	
-//	func deleteButton(for wordList: WordList) -> some View {
-//		Button("Delete", systemImage: "minus.circle", role: .destructive) {
-//			withAnimation {
-//				dataContainer.wordLists.removeAll { $0 == wordList }
-//			}
-//		}
-//	}
 	
 	func uniqueName(for name: String) -> String {
 		var number = 0
