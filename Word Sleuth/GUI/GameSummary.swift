@@ -20,7 +20,7 @@ struct GameSummary: View {
 
 	var body: some View {
 		VStack(alignment: .leading) {
-			Text("\(game.board.words.name) Puzzle").font(.title2).bold()
+			Text("\(game.name) Puzzle").font(.title2).bold()
 			Text("Created: ") +
 			Text(game.creationDate.formatted(.relative(presentation: .named, unitsStyle: .wide)).capitalized)
 			if game.matched > 0 {

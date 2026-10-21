@@ -14,7 +14,7 @@ struct SettingsView: View {
 	@AppStorage(.settings) private var settings
 	
 	// Word for the demo grid to show selection/hightling
-	static let words = WordList(words: ["Test", "High", "Push", "Unit", "Best", "Ever", "Swift"])
+	static let words = WordList(name: "Settings", words: ["Test", "High", "Push", "Unit", "Best", "Ever", "Swift"])
 	
 	// MARK: Data (Function) In
 	@Environment(\.dismiss) var dismiss

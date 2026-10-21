@@ -247,7 +247,7 @@ public enum OwnerType: Codable, Equatable {
 		self.owner = .user
 	}
 	
-	init(name: String = "Empty", author: String = "Unknown", date: Date = Date(), words: [String], owner: OwnerType = .system) {
+	init(name: String, author: String = "Unknown", date: Date = Date(), words: [String], owner: OwnerType = .system) {
 		self._name = Self.getUniqueName(name: name)
 		self.language = Language(rawValue: Locale.current.identifier) ?? .english
 		self.author = author
@@ -257,7 +257,7 @@ public enum OwnerType: Codable, Equatable {
 	}
 	
 	/// Get word list with random words of a certain size (i.e., wordRange)
-	init(name: String = "Empty", author: String = "Unknown", date: Date = Date(),
+	init(name: String, author: String = "Unknown", date: Date = Date(),
 		 wordRange: CountableClosedRange<Int>, totalWords: Int) {
 		self._name = Self.getUniqueName(name: name)
 		self.language = Language(rawValue: Locale.current.identifier) ?? .english

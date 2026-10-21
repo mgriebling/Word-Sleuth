@@ -1,0 +1,42 @@
+{
+  "meta" : {
+    "version" : "2024-11-15"
+  },
+  "resources" : {
+    "leaderboardImages" : {
+      "wordsleuth.leaderboard-en-CA" : [
+        {
+          "localID" : "wordsleuth.leaderboard-en-CA",
+          "url" : "en-CA\/LeaderboardImage-wordsleuth.leaderboard-en-CA.png"
+        }
+      ]
+    },
+    "leaderboardLocalizations" : {
+      "wordsleuth.leaderboard" : [
+        {
+          "formatterSuffix" : "",
+          "formatterSuffixSingular" : "",
+          "locale" : "en-CA",
+          "localID" : "wordsleuth.leaderboard-en-CA",
+          "name" : "Best Word Sleuths"
+        }
+      ]
+    },
+    "leaderboards" : [
+      {
+        "activityProperties" : {
+
+        },
+        "archived" : false,
+        "defaultFormatter" : "INTEGER",
+        "referenceName" : "Word Sleuth Leaders",
+        "scoreRangeEnd" : null,
+        "scoreRangeStart" : null,
+        "scoreSortType" : "DESC",
+        "submissionType" : "BEST_SCORE",
+        "vendorIdentifier" : "wordsleuth.leaderboard",
+        "visibility" : "SHOW_FOR_ALL"
+      }
+    ]
+  }
+}

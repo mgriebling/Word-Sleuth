@@ -19,6 +19,12 @@ class DataContainer {
 	var isLandscape = false
 
 	init(loadSampleGames: Bool = false) {
+		wordLists = WordList.loadWordLists()
+		// print("Word lists is empty, adding init samples...")
+		Task.detached(priority: .background) {
+			await self.addSampleWords()
+		}
+		
 		if games.isEmpty {
 			// load any saved games
 			print("Loading games...")
@@ -30,12 +36,6 @@ class DataContainer {
 			addSampleGames()
 		}
 		
-		wordLists = WordList.loadWordLists()
-		// print("Word lists is empty, adding init samples...")
-		Task.detached(priority: .background) {
-			await self.addSampleWords()
-		}
-
 		badges = Badge.loadBadges()
 		createBadgesIfNeeded()
 	}
@@ -121,10 +121,12 @@ class DataContainer {
 	/// Return a unique name with *name* as a basis where *contains* return true if name exists
 	private func getUniqueName(name: String, contains: (String) -> Bool) -> String {
 		if contains(name) {
+			print("Found name \(name)")
 			// make a unique name
 			var number = 1
-			while contains(name+"\(number)") { number += 1 }
-			return name+"\(number)"
+			var puzzleName: String { name + "-\(number)" }
+			while contains(puzzleName) { number += 1 }
+			return puzzleName
 		}
 		return name
 	}
@@ -184,38 +186,15 @@ class DataContainer {
 	
 	private func addSampleGames() {
 		if games.isEmpty {
-			let sizes = (0..<10).map { _ in Int.random(in: 10...20) }
-			createGames(number: sizes.count, sizes: sizes)
+			let sizes = (0..<10).map { _ in Int.random(in: 8...20) }
+			let words = SampleWords.list.shuffled()
+			createGames(number: sizes.count, sizes: sizes, wordlists: Array(words[0..<10]))
 		}
 	}
 	
 	func addSampleWords() async {
 		print("Adding sample words...")
 		self.wordLists = SampleWords.list
-		
-//		let randomLists = WordList.loadWordLists()
-//		if !randomLists.isEmpty {
-//			self.wordLists.append(contentsOf: randomLists)
-//			return
-//		}
-		
-		// 2. Offload the disk read and decoding to the background (Task.detached or Task)
-		// This ensures the main UI thread remains completely untouched and fluid.
-//		let list = await Task.detached(priority: .background) { () -> [WordList] in
-//			// This block runs entirely on a background thread
-//			var list: [WordList] = []
-//			for i in 3...5 {
-//				for j in 7...9 {
-//					print("Building random \(i)-\(j)...")
-//					let words = WordList(name: "Random \(i)-\(j)", wordRange: i...j, totalWords: 100)
-//					words.save(to: words.name)
-//					list.append(words)
-//				}
-//			}
-//			return list
-//		}.value
-		
-//		self.wordLists.append(contentsOf: list)
 		print("Successfully loaded without hanging!")
 	}
 }

@@ -41,7 +41,7 @@ struct FilterView: View {
 				}
 			}
 			.onAppear {
-				words = WordList(words: wordList)
+				words = WordList(name: "Filter", words: wordList)
 			}
 			.navigationBarTitle("Word List Filter")
 			.navigationBarTitleDisplayMode(.inline)
