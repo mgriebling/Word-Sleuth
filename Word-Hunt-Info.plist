@@ -36,6 +36,8 @@
 		<key>UIImageName</key>
 		<string></string>
 	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
