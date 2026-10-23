@@ -26,6 +26,7 @@ struct GameView: View {
 	@State private var showingText = true
 	@State private var selectedWord = ""
 	@State private var isHovering = false
+	@State private var reverseMatch = false
 	
 	#if os(iOS)
 	typealias HSView = HStack
@@ -104,7 +105,7 @@ struct GameView: View {
 				divider()
 			}
 			
-			LetterGridView(game: game, allowDrag: true, isLandscape: true, selectedWord: $selectedWord, settings: $settings)
+			LetterGridView(game: game, allowDrag: true, isLandscape: true, selectedWord: $selectedWord, settings: $settings, reverseMatch: $reverseMatch)
 				.layoutPriority(1)
 				.frame(maxWidth: .infinity, maxHeight: .infinity)
 			
@@ -124,7 +125,7 @@ struct GameView: View {
 		VSView {
 			portraitWordList()
 			
-			LetterGridView(game: game, allowDrag: true, isLandscape: false, selectedWord: $selectedWord, settings: $settings)
+			LetterGridView(game: game, allowDrag: true, isLandscape: false, selectedWord: $selectedWord, settings: $settings, reverseMatch: $reverseMatch)
 				.layoutPriority(1)
 			Spacer()
 		}
@@ -151,7 +152,7 @@ struct GameView: View {
 			if settings.showFloatingWord {
 				VStack {
 					Spacer()
-					FloatingWord(activeWord: selectedWord)
+					FloatingWord(activeWord: selectedWord, isReversed: reverseMatch)
 					Spacer()
 				}
 			}

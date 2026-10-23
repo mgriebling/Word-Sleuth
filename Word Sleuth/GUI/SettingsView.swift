@@ -26,6 +26,7 @@ struct SettingsView: View {
 	@State private var showGridAppearance = false
 	@State private var minSize = Level.one.rawValue
 	@State private var maxSize = Level.ten.rawValue
+	@State private var reverse = false
 	
 	// MARK: Local constants - number of puzzles to generate
 	let puzzleRange = 6...20
@@ -136,7 +137,7 @@ struct SettingsView: View {
 					
 					HStack {
 						Spacer()
-						LetterGridView(game: game, allowDrag: true, selectedWord: $selectedWord, settings: $internalSettings).id(UUID())
+						LetterGridView(game: game, allowDrag: true, selectedWord: $selectedWord, settings: $internalSettings, reverseMatch: $reverse).id(UUID())
 							.frame(maxWidth: 300, maxHeight: 300)
 							.onAppear {
 								game.board.highlightWord(0, 2)

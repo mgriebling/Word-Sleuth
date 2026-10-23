@@ -14,7 +14,7 @@ struct CellIndex: Equatable, Codable, Hashable, CustomStringConvertible {
 	let row: Int
 	let col: Int
 	
-	var description: String { "(\(row),\(col))" }
+	var description: String { String(format: "%02d%02d", row, col) }
 	
 	init() { self.init(row: 0, col: 0) }
 	
@@ -62,7 +62,9 @@ public struct PlacedWord: Codable, Identifiable, Hashable {
 	private(set) var direction: Direction
 	var highlighted: Bool { _colorIndex >= 0 }	  // color index if >= 0
 	var _colorIndex: Int
-	var extended: String  { word + start.description } // used as set element
+	
+	var extended: String { word + start.description } // lookup set element
+	var reversed: String { String(word.reversed().dropLast(word.count-2)) + end.description }
 	
 	init(word:String, start:CellIndex = CellIndex(), end:CellIndex = CellIndex(),
 		 direction:Direction = .right, highlighted:Int = -1) {
@@ -91,7 +93,8 @@ public struct PlacedWord: Codable, Identifiable, Hashable {
 	}
 }
 
-public enum Direction: Int, Codable, CaseIterable {
+public enum Direction: Int, Codable, CaseIterable, CustomStringConvertible {
+	
 	case left, right, down, up, diagonalUpLeft, diagonalUpRight,
 		 diagonalDownLeft, diagonalDownRight
 	
@@ -122,6 +125,19 @@ public enum Direction: Int, Codable, CaseIterable {
 			case .down, .diagonalDownLeft, .diagonalDownRight: return 1
 			case .up, .diagonalUpLeft, .diagonalUpRight: return -1
 			case .left, .right: return 0
+		}
+	}
+	
+	public var description: String {
+		switch self {
+			case .left: "L"
+			case .right: "R"
+			case .down: "D"
+			case .up: "U"
+			case .diagonalUpLeft: "UL"
+			case .diagonalDownLeft: "DL"
+			case .diagonalDownRight: "DR"
+			case .diagonalUpRight: "UR"
 		}
 	}
 	

@@ -29,6 +29,7 @@ struct GameEditor: View {
 	@State private var showEmptyAlert = false
 	@State private var gameID = UUID()			// forces letter grid updates
 	@State private var selectedWord = ""
+	@State private var reversed = false
 	
 	var words: [WordList] {
 		dataContainer.wordLists.sorted { $0.name < $1.name }
@@ -58,7 +59,7 @@ struct GameEditor: View {
 				.onTapGesture(perform: toggleWordList)
 
 				Section(header: wordListTitle) {
-					LetterGridView(game: lgame, selectedWord: $selectedWord, settings: $settings).id(gameID)
+					LetterGridView(game: lgame, selectedWord: $selectedWord, settings: $settings, reverseMatch: $reversed).id(gameID)
 				}
 			}
 			.onAppear(perform: setUpGame)

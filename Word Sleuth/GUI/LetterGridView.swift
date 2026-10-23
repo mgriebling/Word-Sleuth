@@ -18,6 +18,7 @@ struct LetterGridView: View {
 	
 	@Binding var selectedWord: String
 	@Binding var settings: SettingsType
+	@Binding var reverseMatch: Bool
 	
 	@Environment(\.horizontalSizeClass) var horizontalSizeClass
 	@Environment(\.colorScheme) var colorScheme
@@ -27,7 +28,9 @@ struct LetterGridView: View {
 	@State private var dragStartCell: CellIndex?
 	@State private var dragCurrentCell: CellIndex?
 	@State private var selectionDirection: Direction?
-	@State private var placedSet = Set<String>()
+	
+	@State private var placedSet = Set<String>()	// forward word check
+	@State private var reverseSet = Set<String>()   // reverse word check
 	
 	@State private var numRows = 1
 	@State private var numCols = 1
@@ -38,14 +41,14 @@ struct LetterGridView: View {
 	@State private var width: CGFloat = 400
 	
 	#if os(macOS)
-	let background: Color = Color(NSColor.controlBackgroundColor)
+	let background = Color(NSColor.controlBackgroundColor)
 	@State private var backColors = [
 		Color(.systemCyan).opacity(0.3),
 		Color(NSColor.controlBackgroundColor),
 		Color(.systemGray).opacity(0.4)
 	]
 	#else
-	let background: Color = Color(.systemBackground)
+	let background = Color(.systemBackground)
 	@State private var backColors = [
 		Color(.systemCyan).opacity(0.3),
 		Color(.systemBackground),
@@ -84,12 +87,14 @@ struct LetterGridView: View {
 			}
 		}
 		.onAppear {
-			// let invert = isLandscape && (game.rows > game.cols)
 			game.setOrientation(landscape: isLandscape)
 			numCols = game.cols
 			numRows = game.rows
-			placedSet = Set(game.board.wordPlacements.map({ $0.extended }))
-			// print("invert = \(invert), isLandscape = \(isLandscape)")
+			reverseMatch = false
+			placedSet = Set(game.placedWords.map({ $0.extended }))
+			reverseSet = Set(game.placedWords.map({ $0.reversed }))
+			print(placedSet)
+			print(reverseSet)
 		}
 		.gesture(
 			DragGesture(minimumDistance: 5, coordinateSpace: .named("GridSpace"))
@@ -131,6 +136,9 @@ struct LetterGridView: View {
 	func isWordMatch(start: CellIndex?, end: CellIndex?) -> Bool {
 		let activeWord = selectedWord
 		guard !activeWord.isEmpty, let start, let end else { return false }
+		let reverseWord = String(activeWord.prefix(2).lowercased() + start.description)
+		reverseMatch = reverseSet.contains(reverseWord)
+		print("Word: \(activeWord), Reversed: \(reverseMatch), Key: \(reverseWord), start: \(start)")
 		let setElement1 = PlacedWord(word: activeWord, start: start).extended
 		let setElement2 = PlacedWord(word: activeWord, start: end).extended
 		if placedSet.contains(setElement1) || placedSet.contains(setElement2) {
@@ -273,6 +281,7 @@ struct LetterGridView: View {
 		
 		// UI cleanup sequence
 		withAnimation(.easeOut(duration: 0.15)) {
+			selectedWord = ""
 			dragStartCell = nil
 			dragCurrentCell = nil
 			selectionDirection = nil
@@ -291,6 +300,7 @@ struct LetterGridView: View {
 	@State var game = Game(name: "Sample", 20, cols: 10, words: SampleWords.list[2])
 	@Previewable @State var settings = SettingsType()
 	@Previewable @State var selectedWord = ""
-	LetterGridView(game: game, allowDrag: true, isLandscape: true, selectedWord: $selectedWord, settings: $settings)
+	@Previewable @State var reverseMatched = false
+	LetterGridView(game: game, allowDrag: true, isLandscape: true, selectedWord: $selectedWord, settings: $settings, reverseMatch: $reverseMatched)
 		.environment(DataContainer.sample20x20)
 }
