@@ -15,6 +15,9 @@ struct WordListView: View {
 	
 	@Environment(DataContainer.self) private var dataContainer
 	
+	// 1. Detect if this iOS app is currently running on a Mac
+	let isMacTarget = ProcessInfo.processInfo.isiOSAppOnMac
+	
 	var body: some View {
 		let colors = [Color.red.opacity(0.5), Color.red.opacity(0.2)]
 		let base = [Color.clear, .clear]
@@ -43,6 +46,7 @@ struct WordListView: View {
 				dataContainer.wordLists.move(fromOffsets: offsets, toOffset: destination)
 			}
 		}
+		.listRowSpacing(isMacTarget ? 20 : 0)
 		.navigationTitle("Word Lists")
 		#if os(iOS)
 		.navigationBarTitleDisplayMode(.inline)

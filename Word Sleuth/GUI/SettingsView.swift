@@ -24,8 +24,6 @@ struct SettingsView: View {
 	@State private var creationMode: CreationMode = .oneGame
 	@State private var selectedWord = ""
 	@State private var showGridAppearance = false
-	@State private var minSize = Level.one.rawValue
-	@State private var maxSize = Level.ten.rawValue
 	@State private var reverse = false
 	
 	// MARK: Local constants - number of puzzles to generate
@@ -60,8 +58,18 @@ struct SettingsView: View {
 			
 					VStack(alignment: .leading) {
 						Text("Level Range:")
-						Stepper("Min: " + GameCreationView.puzzleSize(level: Level(rawValue: settings.minLevel) ?? .one), value: $settings.minLevel, in: 1...settings.maxLevel)
-						Stepper("Max: " + GameCreationView.puzzleSize(level: Level(rawValue: settings.maxLevel) ?? .one), value: $settings.maxLevel, in: settings.minLevel...10)
+						Stepper("Min: " + GameCreationView.puzzleSize(level: Level(rawValue: internalSettings.minLevel) ?? .one),
+								value: $internalSettings.minLevel,
+								in: 1...internalSettings.maxLevel)
+						Stepper("Max: " + GameCreationView.puzzleSize(level: Level(rawValue: internalSettings.maxLevel) ?? .one),
+								value: $internalSettings.maxLevel,
+								in: internalSettings.minLevel...10)
+					}
+					.onChange(of: internalSettings.minLevel) { oldValue, newValue in
+						print("Min level = \(newValue)")
+					}
+					.onChange(of: internalSettings.maxLevel) { oldValue, newValue in
+						print("Max level = \(newValue)")
 					}
 				}
 				

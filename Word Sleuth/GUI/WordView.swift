@@ -38,6 +38,7 @@ struct WordView: View {
 			}
 		}
 		.fontWeight(.regular)
+		.dynamicTypeSize(...DynamicTypeSize.xxxLarge)
 	}
 	
 	@ViewBuilder

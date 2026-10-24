@@ -32,6 +32,9 @@ struct GameListView: View {
 		var id: Filter { return self }
 	}
 	
+	// 1. Detect if this iOS app is currently running on a Mac
+	let isMacTarget = ProcessInfo.processInfo.isiOSAppOnMac
+	
 	// MARK: Data Owned by me
 	@State private var showGameEditor = false
 	@State private var showOptions = false
@@ -111,6 +114,7 @@ struct GameListView: View {
 					dataContainer.deleteGames(at: IndexSet(realIndices))
 				}
 			}
+			.listRowSpacing(isMacTarget ? 20 : 0)
 			.navigationTitle("Puzzles")
 			#if os(iOS)
 			.navigationBarTitleDisplayMode(.inline)
@@ -173,10 +177,10 @@ struct GameListView: View {
 		Button("Add Puzzle", systemImage: "plus") {
 			let number = settings.gameNumber
 			var sizes = [Level]()
-			let minLevel = Level(rawValue: settings.minLevel) ?? Level.one
-			let maxLevel = Level(rawValue: settings.maxLevel) ?? Level.ten
-			for level in Level.allCases.dropFirst() {
-				sizes.append(level)
+			let minLevel = settings.minLevel
+			let maxLevel = settings.maxLevel
+			for level in minLevel...maxLevel {
+				sizes.append(Level(rawValue: level)!)
 			}
 			while sizes.count < number {
 				sizes.append(contentsOf: sizes)
