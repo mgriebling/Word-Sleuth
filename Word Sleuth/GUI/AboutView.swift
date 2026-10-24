@@ -75,13 +75,7 @@ struct AboutView: View {
 				.font(.footnote)
 				.foregroundColor(.gray)
 				.padding(.bottom)
-			Text(
-			"""
-			Zena Design™ is a wholly owned subsiduary of 
-			Computer Inspirations™. [Source code](https://github.com/mgriebling/Word-Sleuth) is licensed 
-			according to the BSL 1.1 (see [LICENSE](https://github.com/mgriebling/Word-Sleuth/blob/main/LICENSE) file).
-			"""
-			)
+			Text("Zena Design™ is a wholly owned subsidiary of Computer Inspirations™. [Source code](https://github.com/mgriebling/Word-Sleuth) is licensed according to the BSL 1.1 (see  [LICENSE](https://github.com/mgriebling/Word-Sleuth/blob/main/LICENSE) file).")
 			.font(.footnote)
 			.foregroundColor(.gray)
 			.padding(.bottom)
