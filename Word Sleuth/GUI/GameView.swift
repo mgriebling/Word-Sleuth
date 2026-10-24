@@ -89,7 +89,9 @@ struct GameView: View {
 			if settings.showFloatingWord {
 				VStack {
 					Spacer()
-					FloatingWord(activeWord: selectedWord)
+					FloatingWord(activeWord: selectedWord,
+								 isReversed: reverseMatch,
+								 allowReversed: settings.allowReverseSelection)
 					Spacer()
 				}
 			}
@@ -152,7 +154,9 @@ struct GameView: View {
 			if settings.showFloatingWord {
 				VStack {
 					Spacer()
-					FloatingWord(activeWord: selectedWord, isReversed: reverseMatch)
+					FloatingWord(activeWord: selectedWord,
+								 isReversed: reverseMatch,
+								 allowReversed: settings.allowReverseSelection)
 					Spacer()
 				}
 			}

@@ -185,9 +185,9 @@ struct GameListView: View {
 			while sizes.count < number {
 				sizes.append(contentsOf: sizes)
 			}
-			print("minLevel = \(minLevel)")
-			print("maxLevel = \(maxLevel)")
-			print("sizes = \(sizes)")
+//			print("minLevel = \(minLevel)")
+//			print("maxLevel = \(maxLevel)")
+//			print("sizes = \(sizes)")
 			dataContainer.createGames(number: number, sizes: sizes.map({ $0.size }))
 			self.selection = dataContainer.games.first
 		}

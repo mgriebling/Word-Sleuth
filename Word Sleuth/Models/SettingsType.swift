@@ -50,9 +50,9 @@ public struct SettingsType {
 	var maxLevel: Int
 	
 	init() {
-		self.gameNumber = 1
+		self.gameNumber = 10
 		self.player = Player()
-		self.highlight = .allCases.first!
+		self.highlight = HighLight.colorFill
 		self.selectionColor = Color(.systemBlue)
 		self.selectionOKColor = Color(.systemGreen)
 		self.highlightColor = Color(.systemYellow)
@@ -65,7 +65,7 @@ public struct SettingsType {
 		self.sortAcrossCols = true
 		self.sortPuzzles = .name
 		self.sortIncreasing = true
-		self.allowReverseSelection = false
+		self.allowReverseSelection = true
 		self.showFloatingWord = true
 		self.minLevel = 1
 		self.maxLevel = 10

@@ -138,7 +138,7 @@ struct LetterGridView: View {
 		guard !activeWord.isEmpty, let start, let end else { return false }
 		let reverseWord = String(activeWord.prefix(2).lowercased() + start.description)
 		reverseMatch = reverseSet.contains(reverseWord)
-//		print("Word: \(activeWord), Reversed: \(reverseMatch), Key: \(reverseWord), start: \(start)")
+		print("Word: \(activeWord), Reversed: \(reverseMatch), Key: \(reverseWord), start: \(start)")
 		let setElement1 = PlacedWord(word: activeWord, start: start).extended
 		let setElement2 = PlacedWord(word: activeWord, start: end).extended
 		if placedSet.contains(setElement1) || placedSet.contains(setElement2) {

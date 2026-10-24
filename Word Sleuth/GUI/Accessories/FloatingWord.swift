@@ -12,7 +12,8 @@ import SwiftUI
 struct FloatingWord: View {
 	
 	let activeWord: String
-	var isReversed: Bool = false
+	var isReversed = false
+	var allowReversed = true
 	
 	@AppStorage(.settings) private var settings
 	
@@ -20,9 +21,12 @@ struct FloatingWord: View {
 		let cellSize: CGFloat = 30
 		let grey = Color.gray.opacity(0.8)
 		let frameWidth = activeWord.count/2 + 1
-		let word = settings.allowReverseSelection && isReversed ? String(activeWord.reversed()) : activeWord
-		VStack {
-			Text(word)
+		Group {
+			if isReversed && allowReversed {
+				Text(String(activeWord.reversed()))
+			} else {
+				Text(activeWord)
+			}
 		}
 		.font(.system(size: cellSize, weight: settings.fontStyle.weight))
 		.lineLimit(1)
@@ -40,5 +44,6 @@ struct FloatingWord: View {
 }
 
 #Preview {
-	FloatingWord(activeWord: "Testing Word")
+	FloatingWord(activeWord: "TESTING WORD")
+	FloatingWord(activeWord: "DROW GNITSET", isReversed: true, allowReversed: true)
 }
