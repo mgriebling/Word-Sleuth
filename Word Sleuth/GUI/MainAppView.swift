@@ -177,5 +177,5 @@ enum Tabs: Hashable {
 // MARK: - Preview
 #Preview {
 	MainAppView()
-		.environment(DataContainer(loadSampleGames: true))
+		.environment(DataContainer())
 }

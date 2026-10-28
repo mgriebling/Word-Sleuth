@@ -15,6 +15,7 @@ struct CellIndex: Equatable, Codable, Hashable, CustomStringConvertible {
 	let col: Int
 	
 	var description: String { String(format: "%02d%02d", row, col) }
+	var inverted: String { String(format: "%02d%02d", col, row) }
 	
 	init() { self.init(row: 0, col: 0) }
 	

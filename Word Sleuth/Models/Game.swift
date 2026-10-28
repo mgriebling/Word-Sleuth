@@ -24,8 +24,8 @@ import SwiftUI
 	
 	// MARK: Convenience attributes
 	var placedWords: [PlacedWord] { _board.wordPlacements }
-	var rows: Int		   		  { _board.rows }
-	var cols: Int				  { _board.cols }
+	var rows: Int		   		  { board.rows }
+	var cols: Int				  { board.cols }
 	var matched: Int 			  { placedWords.filter({ $0.highlighted }).count }
 	var words: [String]			  { placedWords.map { $0.word }}
 	var isOver: Bool 		  	  { matched == placedWords.count }

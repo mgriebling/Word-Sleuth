@@ -40,15 +40,26 @@ class SoundManager: NSObject, AVAudioPlayerDelegate {
 		
 		let nextSound = soundQueue.removeFirst()
 		
-		do {
-			audioPlayer = try AVAudioPlayer(contentsOf: nextSound.url)
-			audioPlayer?.delegate = self // Required to catch the completion hook
-			audioPlayer?.volume = nextSound.volume
-			audioPlayer?.prepareToPlay()
-			audioPlayer?.play()
-		} catch {
-			print("Failed to play sound: \(error.localizedDescription)")
-			playNext() // Skip broken file and move to next
+		Task.detached(priority: .userInitiated) { [weak self] in
+			guard let self = self else { return }
+			
+			do {
+				// read file and initialize player off the main thread
+				let player = try AVAudioPlayer(contentsOf: nextSound.url)
+				player.prepareToPlay()
+				
+				await MainActor.run {
+					self.audioPlayer = player
+					self.audioPlayer?.delegate = self // Required to catch the completion hook
+					self.audioPlayer?.volume = nextSound.volume
+					self.audioPlayer?.play()
+				}
+			} catch {
+				print("Failed to play sound: \(error.localizedDescription)")
+				await MainActor.run {
+					self.playNext() // Skip broken file and move to next
+				}
+			}
 		}
 	}
 	

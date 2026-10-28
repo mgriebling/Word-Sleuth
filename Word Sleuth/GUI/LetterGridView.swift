@@ -35,7 +35,8 @@ struct LetterGridView: View {
 	@State private var numRows = 1
 	@State private var numCols = 1
 	@State private var animateWin = false
-	@State private var done: Bool = false
+	@State private var done = false
+	@State private var lastTouch: CGPoint? = nil
 	
 	@State private var cellSize: CGFloat = 40
 	@State private var width: CGFloat = 400
@@ -57,9 +58,13 @@ struct LetterGridView: View {
 	#endif
 	
 	let spacing: CGFloat = 0	// space between columns and rows
-	let colors = [Color.red, .orange, .yellow, .green, .blue, .brown, .purple, .pink, .mint]
+	let colors = [
+		Color(.systemRed), Color(.systemOrange), Color(.systemYellow),
+		Color(.systemGreen), Color(.systemBlue), Color(.systemBrown),
+		Color(.systemPurple), Color(.systemPink), Color(.systemMint)
+	]
 	let color = Color(.systemCyan)
-
+	
 	var body: some View {
 		let isCompact = horizontalSizeClass == .compact
 		let padding: CGFloat = isCompact ? 10 : 20  // space between frame and letters
@@ -88,18 +93,20 @@ struct LetterGridView: View {
 		}
 		.onAppear {
 			game.setOrientation(landscape: isLandscape)
-			numCols = game.cols
-			numRows = game.rows
+			numCols = game.board.cols
+			numRows = game.board.rows
 			reverseMatch = false
 			placedSet = Set(game.placedWords.map({ $0.extended }))
 			reverseSet = Set(game.placedWords.map({ $0.reversed }))
-//			print(placedSet)
-//			print(reverseSet)
+			print(reverseSet)
 		}
 		.gesture(
+			//MultiFingerDragGesture(minimumDistance: 0, coordinateSpace: .named("GridSpace"))
 			DragGesture(minimumDistance: 5, coordinateSpace: .named("GridSpace"))
 				.onChanged { value in
-					processDrag(location: value.location, startLocation: value.startLocation, cellSize: cellSize, pad: padding)
+					processDrag(location: value.location,
+								startLocation: value.startLocation,
+								cellSize: cellSize, pad: padding)
 				}
 				.onEnded { _ in
 					evaluateAndSaveWord()
@@ -134,19 +141,28 @@ struct LetterGridView: View {
 	}
 	
 	func isWordMatch(start: CellIndex?, end: CellIndex?) -> Bool {
-		let activeWord = selectedWord
+		let activeWord = selectedWord.lowercased()
 		guard !activeWord.isEmpty, let start, let end else { return false }
-		let reverseWord = String(activeWord.prefix(2).lowercased() + start.description)
-		reverseMatch = reverseSet.contains(reverseWord)
-		print("Word: \(activeWord), Reversed: \(reverseMatch), Key: \(reverseWord), start: \(start)")
-		let setElement1 = PlacedWord(word: activeWord, start: start).extended
-		let setElement2 = PlacedWord(word: activeWord, start: end).extended
+		let swapped = game.invert
+		let skey = swapped ? start.inverted : start.description
+		let ekey = swapped ? end.inverted : end.description
+		
+		Task { @MainActor in
+			let reverseWord = String(activeWord.prefix(2) + skey)
+			reverseMatch = reverseSet.contains(reverseWord)
+			print("Word: \(activeWord), Reversed: \(reverseMatch), Key: \(reverseWord), start: \(start), inverted: \(swapped)")
+		}
+		
+		let setElement1 = activeWord + skey
+		let setElement2 = activeWord + ekey
+		//print("Match1 = \(setElement1), match2 = \(setElement2)")
 		if placedSet.contains(setElement1) || placedSet.contains(setElement2) {
 			return true
 		}
 		let reversedWord = String(activeWord.reversed())
-		let setElement3 = PlacedWord(word: reversedWord, start: end).extended
+		let setElement3 = reversedWord + ekey
 		if settings.allowReverseSelection, placedSet.contains(setElement3) {
+			// FIXME: Need to update outside of GUI update loop
 			selectedWord = reversedWord
 			return true
 		}
@@ -295,12 +311,12 @@ struct LetterGridView: View {
 	}
 }
 
-#Preview {
-	@Previewable
-	@State var game = Game(name: "Sample", 20, cols: 10, words: SampleWords.list[2])
-	@Previewable @State var settings = SettingsType()
-	@Previewable @State var selectedWord = ""
-	@Previewable @State var reverseMatched = false
-	LetterGridView(game: game, allowDrag: true, isLandscape: true, selectedWord: $selectedWord, settings: $settings, reverseMatch: $reverseMatched)
-		.environment(DataContainer.sample20x20)
-}
+//#Preview {
+//	@Previewable
+//	@State var game = Game(name: "Sample", 20, cols: 10, words: SampleWords.list[2])
+//	@Previewable @State var settings = SettingsType()
+//	@Previewable @State var selectedWord = ""
+//	@Previewable @State var reverseMatched = false
+//	LetterGridView(game: game, allowDrag: true, isLandscape: true, selectedWord: $selectedWord, settings: $settings, reverseMatch: $reverseMatched)
+//		.environment(DataContainer.sample20x20)
+//}

@@ -17,23 +17,25 @@ class DataContainer {
 	var wordLists = [WordList]()
 	var badges = [Badge]()
 	var isLandscape = false
-
+	
 	init(loadSampleGames: Bool = false) {
-		wordLists = WordList.loadWordLists()
-		// print("Word lists is empty, adding init samples...")
-		Task.detached(priority: .background) {
-			await self.addSampleWords()
+		let loadGames = Task { () -> [Game] in
+			Game.loadGames()
 		}
+		
+		addSampleWords()
 		
 		if games.isEmpty {
 			// load any saved games
 			print("Loading games...")
-			games = Game.loadGames()
-		}
-		
-		if games.isEmpty || loadSampleGames  {
-			print("Adding sample games...")
-			addSampleGames()
+			Task(priority: .userInitiated) {
+				games = await loadGames.value
+				
+				if games.isEmpty || loadSampleGames  {
+					print("Adding sample games...")
+					addSampleGames()
+				}
+			}
 		}
 		
 		badges = Badge.loadBadges()
@@ -133,7 +135,8 @@ class DataContainer {
 	
 	/// Return a unique wordlist name with *name* as a basis
 	func getUniqueWordListName(_ name: String) -> String {
-		getUniqueName(name: name, contains: wordListContains)
+		// getUniqueName(name: name, contains: wordListContains)
+		name
 	}
 	
 	/// Return a unique wordlist name with *name* as a basis
@@ -192,7 +195,7 @@ class DataContainer {
 		}
 	}
 	
-	func addSampleWords() async {
+	func addSampleWords() {
 		print("Adding sample words...")
 		self.wordLists = SampleWords.list
 		print("Successfully loaded without hanging!")
