@@ -98,7 +98,7 @@ struct LetterGridView: View {
 			reverseMatch = false
 			placedSet = Set(game.placedWords.map({ $0.extended }))
 			reverseSet = Set(game.placedWords.map({ $0.reversed }))
-			print(reverseSet)
+//			print(reverseSet)
 		}
 		.gesture(
 			//MultiFingerDragGesture(minimumDistance: 0, coordinateSpace: .named("GridSpace"))
@@ -150,7 +150,7 @@ struct LetterGridView: View {
 		Task { @MainActor in
 			let reverseWord = String(activeWord.prefix(2) + skey)
 			reverseMatch = reverseSet.contains(reverseWord)
-			print("Word: \(activeWord), Reversed: \(reverseMatch), Key: \(reverseWord), start: \(start), inverted: \(swapped)")
+//			print("Word: \(activeWord), Reversed: \(reverseMatch), Key: \(reverseWord), start: \(start), inverted: \(swapped)")
 		}
 		
 		let setElement1 = activeWord + skey
@@ -162,7 +162,6 @@ struct LetterGridView: View {
 		let reversedWord = String(activeWord.reversed())
 		let setElement3 = reversedWord + ekey
 		if settings.allowReverseSelection, placedSet.contains(setElement3) {
-			// FIXME: Need to update outside of GUI update loop
 			selectedWord = reversedWord
 			return true
 		}

@@ -64,13 +64,15 @@ struct GameMenuView: View {
 				let name = "Word Sleuth"
 				Label("About \(name)", systemImage: "info.circle")
 			}
-			Divider()
-			Button(action: { isShowingDeleteConfirmation = true } ) {
-				Label("Delete All", systemImage: "trash")
-					.tint(Color(.systemRed))
-					.foregroundStyle(Color(.systemRed))
+			if !isInDetail {
+				Divider()
+				Button(action: { isShowingDeleteConfirmation = true } ) {
+					Label("Delete All", systemImage: "trash")
+						.tint(Color(.systemRed))
+						.foregroundStyle(Color(.systemRed))
+				}
+				.disabled(dataContainer.games.isEmpty)
 			}
-			.disabled(dataContainer.games.isEmpty)
 		} label: {
 			Image(systemName: "ellipsis")
 		}
